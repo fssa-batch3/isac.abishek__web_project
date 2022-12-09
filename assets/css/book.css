@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0px;
+    background-color: #f2f2ff;
+}
+
+.menu-bar {
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    background-color: #fff;
+
+}
+
+.menu-bar img {
+    margin-left: 100px;
+}
+
+.menu-bar ul {
+    display: flex;
+}
+
+.menu-bar ul li {
+    position: relative;
+    margin-right: 30px;
+    list-style: none;
+    font-size: 18px;
+    padding-top: 6px;
+    font-weight: 400;
+}
+
+.menu-bar ul li::after {
+    content: '';
+    display: block;
+    background-color: #d70f64;
+    height: 2px;
+    width: 0%;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.menu-bar ul li:hover::after {
+    width: 100%;
+}
+
+.menu-bar ul li a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #d70f64;
+}
+
+/* nav bar ends  */
+.sec1h1 {
+    background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/bookback.jpg);
+    background-attachment: fixed;
+    background-size: 1510px;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 30vh;
+    text-align: center;
+    font-size: 40px;
+    padding-top: 150px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: white;
+    letter-spacing: 1px;
+}
+
+/* animation*/
+/* .sec1h1 h1{
+    background: url(../images/back.png);
+    color: transparent;
+    -webkit-text-stroke: 0.50px white;
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation:back 20s linear infinite;
+}
+@keyframes back{
+    100%{
+        background-position: 2000px 0;
+    }
+} */
+.sec2 h2 {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.join {
+    cursor: pointer;
+    background-color:#d70f64;
+    color: white;
+    font-weight: 500;
+    position: relative;
+    /* top: 160px; */
+    /* left: 70px; */
+    padding: 20px 85px;
+    border: none;
+    margin-top: 80px;
+   
+}
+.join:hover{
+    background-color: #f2f2ff;
+    color: #d70f64;
+    border: 1px solid #d70f64;
+    padding: 18px 83px;
+}
+
+.dropdown-menu {
+    position: relative;
+    display: none;
+    width: 400px;
+}
+
+.dropdown-menu1 {
+    display: none;
+    border:2px solid #d70f64
+}
+
+.dropdown-menu1 ul li {
+    margin-bottom: 20px;
+    list-style: none;
+}
+
+.dropdown-menu1 ul li a {
+    text-decoration: none;
+    padding-left: 60px;
+    padding-top: 30px;
+}
+
+.dropdown1:hover .dropdown-menu1 {
+    background-color: aliceblue;
+    height: 80px;
+    width: 190px;
+    border: 2px solid #d70f64;
+    display: block;
+    position: relative;
+    left: 30%;
+    top: 10%;
+    padding-bottom: 15px;
+}
+
+.dropdown1:hover .dropdown-menu ul {
+    margin: 10px;
+}
+
+.dropdown1:hover .dropdown-menu ul li {
+    width: 120px;
+}
+.hos1{
+    display: flex;
+    justify-content: space-evenly;
+    /* border:2px solid #d70f64 */
+    padding-top: 40px;
+    padding-bottom: 60px;
+    
+}
+.hos1 img{
+    box-shadow: 2px 4px 10px 6px gray;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.hos1 img:hover{
+    transform: scale(1.1);
+    box-shadow: 1px 2px 5px 3px gray;
+}
+.hos1 p{
+    padding-top: 30px;
+    width: 500px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight:bold;
+}
+#footer{
+    position: relative;
+   /* top: 2150px; */
+}
+footer {
+    background-color: #d70f64;
+    padding-top: 50px;
+}
+.foot1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 100px 0px 160px;
+    color: white;
+}
+.fb img {
+    padding-left: 15px;
+}
+.foot2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 100px 0px 160px;
+    color: white;
+}
+.foot2p p {
+    font-weight: 500;
+    padding-top: 20px;
+}
+.foot22p {
+    display: flex;
+}
+.foot22p p {
+    padding-left: 60px;
+    padding-top: 20px;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+.foot3 {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin: 30px 100px 0px 160px;
+}
+.add p {
+    padding-left: 30px;
+}
+.mail p {
+    padding-left: 30px;
+}
