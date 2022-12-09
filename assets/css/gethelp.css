@@ -1,0 +1,364 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+/* nav bar  */
+.menu-bar {
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.menu-bar img {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 100px;
+}
+
+.menu-bar ul {
+    list-style: none;
+    display: flex;
+    margin-top: 0px;
+}
+
+.menu-bar ul li {
+    position: relative;
+    margin-right: 30px;
+    list-style: none;
+    font-size: 18px;
+    padding-top: 6px;
+    font-weight: 400;
+    position: relative;
+}
+
+.menu-bar ul li::after {
+    content: '';
+    display: block;
+    background-color: #d70f64;
+    height: 2px;
+    width: 0%;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.menu-bar ul li:hover::after {
+    width: 100%;
+}
+
+.menu-bar ul li a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #d70f64;
+}
+
+/* dropdown menu style */
+.dropdown-menu1 {
+    display: none;
+}
+.dropdown-menu1 ul li{
+    margin-bottom: 20px;
+    list-style: none;
+}
+.dropdown-menu1 ul li a{
+    text-decoration: none;
+    padding-left: 12px;
+    padding-top: 30px;
+}
+.dropdown1:hover .dropdown-menu1 {
+    background-color: aliceblue;
+    height: 70px;
+    width: 190px;
+    border-bottom: 2px solid #d70f64;
+    border-top: 10px solid white;
+    display: block;
+    position: absolute;
+    left: 20%;
+    top: 90%;
+}
+
+.dropdown1:hover .dropdown-menu ul {
+    margin: 10px;
+}
+
+.dropdown1:hover .dropdown-menu ul li { 
+    width: 120px;
+}
+/* get help background img  */
+.gethelpbg {
+    background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/gethelpmain.jpg);
+    background-attachment: fixed;
+    background-size: 1510px;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 30vh;
+    text-align: center;
+    font-size: 40px;
+    padding-top: 150px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: white;
+    letter-spacing: 1px;
+}
+
+/* animation*/
+/* .sec1h1 h1{
+    background: url(../images/back.png);
+    color: transparent;
+    -webkit-text-stroke: 0.50px white;
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation:back 20s linear infinite;
+}
+@keyframes back{
+    100%{
+        background-position: 2000px 0;
+    }
+} */
+.join {
+    cursor: pointer;
+    background-color: white;
+    color: #d70f64;
+    font-weight: 500;
+    position: relative;
+    /* top: 160px; */
+    left: 70px;
+    padding: 20px 85px;
+    border: none;
+    margin-top: 80px;
+}
+
+.dropdown-menu{
+    position: relative;
+    display:none;
+  }
+
+
+
+.helptypes {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top: 100px;
+    background-color: #d70f64;
+    padding-top: 100px;
+    padding-bottom: 50px;
+
+}
+
+.helptypes p {
+    text-align: center;
+    color: white;
+    position: relative;
+    top: 30px;
+}
+
+.helptypes h1 {
+    text-align: center;
+    color: white;
+}
+
+.info {
+    height: 500px;
+}
+
+.medicinfo h1 {
+    position: relative;
+    top: 150px;
+    margin-left: 100px;
+    font-weight: 400;
+    color: #d70f64;
+}
+
+.medicinfo p {
+    position: relative;
+    top: 280px;
+    text-align: center;
+    height: 250px;
+    font-size: 25px;
+    margin: 0px 100px;
+    color: #d70f64;
+    text-shadow: 1px 1px rgb(124, 118, 118);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.medicimgs {
+    display: flex;
+    position: relative;
+    top: 180px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.medicimgs img{
+    padding: 50px;
+    width: 900px;
+    transition: 0.3s;
+}
+
+.medicimgs img:hover {
+    transform: scale(1.1);
+    
+}
+
+.medicimgs::-webkit-scrollbar {
+    display: none;
+}
+
+#hrgt {
+    position: relative;
+    top: 230px;
+}
+
+.productinfo h1 {
+    position: relative;
+    margin-top: 235px;
+    margin-left: 100px;
+    font-weight: 400;
+    color: white;
+    padding-top: 40px;
+}
+
+.productinfo {
+    background-color: #d70f64;
+    height: 800px;
+    z-index: -1;
+}
+
+.productinfo p {
+    position: relative;
+    top: 80px;
+    text-align: center;
+    height: 250px;
+    font-size: 25px;
+    margin: 0px 100px;
+    color: white;
+    text-shadow: 1px 1px rgb(124, 118, 118);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.productsimgs {
+    display: flex;
+    position: relative;
+    top: 20px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.productinfo img {
+    padding: 20px;
+    width: 550px;
+    transition: 0.3s;
+}
+
+.productsimgs img:hover {
+    transform: scale(1.1);
+}
+
+.productsimgs::-webkit-scrollbar {
+    display: none;
+}
+
+.medicimgs {
+    display: flex;
+    position: relative;
+    top: 180px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.medicimgs img {
+    padding: 20px;
+    width: 480px;
+    transition: 0.3s;
+}
+
+.medicimgs img:hover {
+    transform: scale(1.1);
+}
+
+.medicimgs::-webkit-scrollbar {
+    display: none;
+}
+
+.govtinfo {
+    background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/medical-camp.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 1587px;
+    min-height: 100vh;
+}
+
+.govtinfo h1 {
+    position: relative;
+    top: 150px;
+    margin-left: 100px;
+    font-weight: 400;
+    color: #d70f64;
+}
+
+.govtinfo p {
+    position: relative;
+    text-shadow: 1px 1px rgb(124, 118, 118);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    top: 280px;
+    text-align: center;
+    height: 220px;
+    font-size: 25px;
+    margin: 0px 100px;
+    color: white;
+}
+/* footer  */
+#footer{
+    position: relative;
+   top: 2150px;
+}
+footer {
+    background-color: #d70f64;
+    padding-top: 50px;
+}
+.foot1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 100px 0px 160px;
+    color: white;
+}
+.fb img {
+    padding-left: 15px;
+}
+.foot2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 100px 0px 160px;
+    color: white;
+}
+.foot2p p {
+    font-weight: 500;
+    padding-top: 20px;
+}
+.foot22p {
+    display: flex;
+}
+.foot22p p {
+    padding-left: 60px;
+    padding-top: 20px;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+.foot3 {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin: 30px 100px 0px 160px;
+}
+.add p {
+    padding-left: 30px;
+}
+.mail p {
+    padding-left: 30px;
+}

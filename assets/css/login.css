@@ -1,0 +1,143 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Raleway', sans-serif;
+}
+.contianer {
+    background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/kids.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.formbox {
+    background-color: white;
+    height: 66%;
+    width: 30%;
+    position: absolute;
+    left: 35%;
+    top: 20%;
+    border-radius: 20px;
+}
+.logo img {
+    position: relative;
+    top: 20px;
+    left: 150px;
+}
+.btns h1 {
+    position: relative;
+    top: 30px;
+    text-align: center;
+    font-size: 40px;
+    color: #d70f64;
+}
+#log {
+    color: black;
+    position: relative;
+    top: 50px;
+    width: 400px;
+    left: 20px;
+    border-bottom: 1px solid silver;
+    border-top: 1px solid silver;
+}
+.mail p {
+    position: relative;
+    top: 75px;
+    left: 20px;
+    color: silver;
+}
+.mail input {
+    border-bottom: 2px solid #d70f64;
+    outline: none;
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    padding-left: 40px;
+    width: 370px;
+    color: black;
+}
+.text {
+    position: relative;
+    top: 85px;
+    border: none;
+    width: 400px;
+    left: 20px;
+}
+.pass p {
+    position: relative;
+    top: 105px;
+    left: 20px;
+    color: silver;
+}
+.pass input {
+    border-bottom: 2px solid #d70f64;
+    outline: none;
+    font-size: 20px;
+    padding-left: 40px;
+    width: 370px;
+    color: black;
+}
+.password {
+    position: relative;
+    top: 115px;
+    border: none;
+    width: 400px;
+    left: 20px;
+}
+#logbtnhr {
+    position: relative;
+    top: 190px;
+    width: 400px;
+    left: 20px;
+}
+.join {
+    cursor: pointer;
+    background-color: #d70f64;
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+    top: 160px;
+    left: 140px;
+    padding: 20px 60px;
+    border: none;
+}
+.loginimgs {
+    position: relative;
+    top: 170px;
+}
+.loginimgs p {
+    text-align: center;
+    padding-top: 10px;
+}
+.logimg {
+    position: relative;
+    top: 180px;
+    left: 70px;
+}
+.logimg img {
+    padding-left: 40px;
+}
+.new {
+    position: relative;
+    top: 210px;
+    text-align: center;
+}
+.new a {
+    text-decoration: none;
+    color: #d70f64;
+}
+.new a::after {
+    content: '';
+    background-color: #d70f64;
+    height: 2px;
+    width: 0%;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.new a:hover::after {
+    width: 29%;
+}
