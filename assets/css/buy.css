@@ -74,7 +74,7 @@ body {
     letter-spacing: 1px;
 }
 /* animation*/
-.gethelpbg h1{
+.gethelpb h1{
     background: url(../images/back.png);
     color: transparent;
     -webkit-text-stroke: 0.50px white;
