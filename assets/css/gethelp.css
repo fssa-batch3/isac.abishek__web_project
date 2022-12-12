@@ -107,7 +107,7 @@ body {
 }
 
 /* animation*/
-.sec1h1 h1{
+.gethelpbg h1{
     background: url(../images/back.png);
     color: transparent;
     -webkit-text-stroke: 0.50px white;

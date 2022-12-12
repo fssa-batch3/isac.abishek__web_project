@@ -90,19 +90,6 @@ body {
   letter-spacing: 1px;
   color: #d70f64;
 }
-.main1full h1{
-  background: url(../images/back.png);
-  color: transparent;
-  -webkit-text-stroke: 0.5px white;
-  -webkit-background-clip: text;
-  background-position: 0 0;
-  animation:back 20s linear infinite;
-}
-@keyframes back{
-  100%{
-      background-position: 2000px 0;
-  }
-}
 .main1full p {
   text-align: center;
   margin: 30px 35px;
