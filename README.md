@@ -2,6 +2,8 @@
 problem statement-
                 Most of the differently abled people are not able to get help.
                 From my website they can get all the information and help .
+  problem solving:
+                https://docs.google.com/document/d/1ryTrFtzeK-nR8YXKLslrgeNQpLn6GBWsQFWT2CI3oZs/edit?usp=sharing
 market research-
                 https://docs.google.com/document/d/1cigM3kUCGRp_Xy8lkjm2nfL3UIrAIE4fzLdgPO2hKPc/edit?usp=sharing
 wire frame-
