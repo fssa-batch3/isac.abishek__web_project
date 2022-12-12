@@ -84,7 +84,7 @@ body {
     letter-spacing: 1px;
 }
 /* animation*/
-/* .sec1h1 h1{
+.sec1h1 h1{
     background: url(../images/back.png);
     color: transparent;
     -webkit-text-stroke: 0.50px white;
@@ -96,7 +96,7 @@ body {
     100%{
         background-position: 2000px 0;
     }
-} */
+}
 .words p {
     text-align: center;
     background-color: rgba(249, 247, 242, 255);

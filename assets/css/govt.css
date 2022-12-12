@@ -76,7 +76,7 @@ body {
 }
 
 /* animation*/
-/* .sec1h1 h1{
+.sec1h1 h1{
     background: url(../images/back.png);
     color: transparent;
     -webkit-text-stroke: 0.50px white;
@@ -88,7 +88,7 @@ body {
     100%{
         background-position: 2000px 0;
     }
-} */
+}
 table,
 td,
 th {
