@@ -61,7 +61,7 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    filter: blur(8px);
+    filter: blur(40px);
     /* position: relative; */
 }
 .contactadd{
