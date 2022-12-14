@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+/* nav bar  */
+.menu-bar {
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.menu-bar img {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 100px;
+}
+
+.menu-bar ul {
+    list-style: none;
+    display: flex;
+    margin-top: 0px;
+}
+
+.menu-bar ul li {
+    position: relative;
+    margin-right: 30px;
+    list-style: none;
+    font-size: 18px;
+    padding-top: 6px;
+    font-weight: 400;
+    position: relative;
+}
+
+.menu-bar ul li::after {
+    content: '';
+    display: block;
+    background-color: #d70f64;
+    height: 2px;
+    width: 0%;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.menu-bar ul li:hover::after {
+    width: 100%;
+}
+
+.menu-bar ul li a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #d70f64;
+}
+table,
+td,
+th {
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 15px;
+}
+
+tr:nth-child(odd) {
+    background-color: #fbcee1;
+}
+th{
+    background-color: #d70f64;
+    color: white;
+}
+td{
+    border: 2px solid gray;
+}
+table{
+    width:1300px;
+    margin: 90px;
+    border: 2px solid gray;
+}
+h1{
+    text-align: center;
+    color: #d70f64;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+footer {
+    background-color: #d70f64;
+    padding-top: 50px;
+}
+.foot1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 100px 0px 160px;
+    color: white;
+}
+.fb img {
+    padding-left: 15px;
+}
+.foot2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 100px 0px 160px;
+    color: white;
+}
+.foot2p p {
+    font-weight: 500;
+    padding-top: 20px;
+}
+.foot22p {
+    display: flex;
+}
+.foot22p p {
+    padding-left: 60px;
+    padding-top: 20px;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+.foot3 {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin: 30px 100px 0px 160px;
+}
+.add p {
+    padding-left: 30px;
+}
+.mail p {
+    padding-left: 30px;
+}
