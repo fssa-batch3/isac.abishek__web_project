@@ -36,7 +36,7 @@ body {
     padding-top: 6px;
     font-weight: 400;
 }
-
+/* nav hover effect  */
 .menu-bar ul li::after {
     content: '';
     display: block;

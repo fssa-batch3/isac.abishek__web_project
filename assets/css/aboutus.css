@@ -32,8 +32,8 @@ body {
     font-size: 18px;
     padding-top: 6px;
     font-weight: 400;
-    position: relative;
 }
+/* nav hover style  */
 .menu-bar ul li::after {
     content: '';
     display: block;
@@ -83,26 +83,6 @@ body {
     color: white;
     letter-spacing: 1px;
 }
-/* animation*/
-.sec1h1 h1{
-    background: url(../images/back.png);
-    color: transparent;
-    -webkit-text-stroke: 0.50px white;
-    -webkit-background-clip: text;
-    background-position: 0 0;
-    animation:back 20s linear infinite;
-}
-@keyframes back{
-    100%{
-        background-position: 2000px 0;
-    }
-}
-.words p {
-    text-align: center;
-    background-color: rgba(249, 247, 242, 255);
-    padding: 10px 0px 10px 0px;
-    font-weight: 400;
-}
 /* our moto  */
 .moto {
     display: flex;
@@ -131,7 +111,6 @@ body {
 .mission h1 {
     padding-top: 100px;
     font-size: 40px;
-    font-weight: 100;
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 1px;
@@ -149,7 +128,6 @@ body {
 .abtus h1 {
     padding-top: 100px;
     font-size: 40px;
-    font-weight: 100;
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 1px;

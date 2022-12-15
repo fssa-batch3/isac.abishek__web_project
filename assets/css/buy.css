@@ -6,6 +6,7 @@
 body {
     font-family: 'Raleway', sans-serif;
 }
+
 /* nav bar  */
 .menu-bar {
     height: 120px;
@@ -34,7 +35,6 @@ body {
     font-size: 18px;
     padding-top: 6px;
     font-weight: 400;
-    position: relative;
 }
 
 .menu-bar ul li::after {
@@ -73,78 +73,72 @@ body {
     color: white;
     letter-spacing: 1px;
 }
-/* animation*/
-.gethelpbg h1{
-    background: url(../images/back.png);
-    color: transparent;
-    -webkit-text-stroke: 0.50px white;
-    -webkit-background-clip: text;
-    background-position: 0 0;
-    animation:back 20s linear infinite;
-}
-@keyframes back{
-    100%{
-        background-position: 2000px 0;
-    }
-}
+
 .sec2 h2 {
     text-align: center;
     padding-top: 50px;
     padding-bottom: 50px;
 }
+
 .join {
     cursor: pointer;
-    background-color:#d70f64;
+    background-color: #d70f64;
     color: white;
     font-weight: 500;
     position: relative;
-    /* top: 160px; */
-    /* left: 70px; */
     padding: 20px 85px;
     border: none;
     margin-top: 40px;
-   
+
 }
-.join:hover{
+
+.join:hover {
     background-color: #f2f2ff;
     color: #d70f64;
     border: 1px solid #d70f64;
     padding: 18px 83px;
 }
-.products{
+
+.products {
     background-color: rgb(255, 239, 239);
-    height:550px;
+    height: 550px;
     width: 400px;
     text-align: center;
     border-radius: 20px;
     margin: 45px;
 }
-.products img{
+
+.products img {
     width: 300px;
     height: 300px;
-    /* margin-left: 50px; */
     margin-top: 50px;
     border-radius: 10px;
 }
-.products h1{
+
+.products h1 {
     margin-top: 20px;
 }
-.products p{
+
+.products p {
     margin-top: 20px;
 }
-.sec3{
+
+.sec3 {
     display: flex;
     flex-wrap: wrap;
 }
+
 .foot1 {
     display: flex;
     justify-content: space-between;
     margin: 20px 100px 0px 160px;
     color: white;
 }
-#footer{
+
+#footer {
     background-color: #d70f64;
 }
+
 .fb img {
     padding-left: 15px;
 }

@@ -34,7 +34,6 @@ body {
     font-size: 18px;
     padding-top: 6px;
     font-weight: 400;
-    position: relative;
 }
 
 .menu-bar ul li::after {
@@ -106,37 +105,19 @@ body {
     letter-spacing: 1px;
 }
 
-/* animation*/
-.gethelpbg h1{
-    background: url(../images/back.png);
-    color: transparent;
-    -webkit-text-stroke: 0.50px white;
-    -webkit-background-clip: text;
-    background-position: 0 0;
-    animation:back 20s linear infinite;
-}
-@keyframes back{
-    100%{
-        background-position: 2000px 0;
-    }
-}
+/* button  */
+
 .join {
     cursor: pointer;
     background-color: white;
     color: #d70f64;
     font-weight: 500;
     position: relative;
-    /* top: 160px; */
     left: 70px;
     padding: 20px 85px;
     border: none;
     margin-top: 80px;
 }
-
-
-
-
-
 .helptypes {
     display: flex;
     justify-content: space-around;
@@ -147,7 +128,6 @@ body {
     padding-bottom: 50px;
 
 }
-
 .helptypes p {
     text-align: center;
     color: white;
@@ -269,8 +249,9 @@ body {
     overflow-y: hidden;
 }
 
-.medicimgs img {
+.medicimgs marquee img {
     padding: 20px;
+    height: 400px;
     width: 480px;
     transition: 0.3s;
 }

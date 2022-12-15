@@ -34,7 +34,6 @@ body {
     font-size: 18px;
     padding-top: 6px;
     font-weight: 400;
-    position: relative;
 }
 
 .menu-bar ul li::after {
@@ -73,27 +72,13 @@ body {
     color: white;
     letter-spacing: 1px;
 }
-/* animation*/
-.gethelpbg h1{
-    background: url(../images/back.png);
-    color: transparent;
-    -webkit-text-stroke: 0.50px white;
-    -webkit-background-clip: text;
-    background-position: 0 0;
-    animation:back 20s linear infinite;
-}
-@keyframes back{
-    100%{
-        background-position: 2000px 0;
-    }
-}
+/* button  */
 .join {
     cursor: pointer;
     background-color:#d70f64;
     color: white;
     font-weight: 500;
     position: relative;
-    /* top: 160px; */
     left: 190px;
     padding: 20px 85px;
     border: none;

@@ -2,10 +2,12 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   font-family: 'Raleway', sans-serif;
   margin: 0px;
 }
+
 .menu-bar {
   height: 120px;
   display: flex;
@@ -14,14 +16,17 @@ body {
   position: sticky;
   top: 0px;
   background-color: #fff;
-  
+
 }
+
 .menu-bar img {
   margin-left: 100px;
 }
+
 .menu-bar ul {
   display: flex;
 }
+
 .menu-bar ul li {
   position: relative;
   margin-right: 30px;
@@ -30,6 +35,7 @@ body {
   padding-top: 6px;
   font-weight: 400;
 }
+
 .menu-bar ul li::after {
   content: '';
   display: block;
@@ -39,30 +45,37 @@ body {
   margin: auto;
   transition: 0.5s;
 }
+
 .menu-bar ul li:hover::after {
   width: 100%;
 }
+
 .menu-bar ul li a {
   font-size: 20px;
   text-decoration: none;
   color: #d70f64;
 }
+
 /* dropdown menu style */
 .dropdown-menu {
   display: none;
 }
+
 .menu-bar ul li:hover .dropdown-menu {
   display: block;
   position: absolute;
   left: 0;
   top: 90%;
 }
+
 .menu-bar ul li:hover .dropdown-menu ul {
   margin: 10px;
 }
+
 .menu-bar ul li:hover .dropdown-menu ul li {
   width: 120px;
 }
+
 /*welcome*/
 .main2 {
   display: flex;
@@ -70,6 +83,7 @@ body {
   margin-top: 300px;
   margin-bottom: 300px;
 }
+
 .main1 {
   background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/handicapped\ person.jpg);
   background-attachment: fixed;
@@ -80,39 +94,41 @@ body {
   justify-content: center;
   min-height: 90vh;
 }
+
 .main1full h1 {
   text-align: center;
   font-size: 40px;
-  font-weight: 900;
   margin: 0 0 20px;
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 1px;
   color: #d70f64;
 }
+
 .main1full p {
   text-align: center;
   margin: 30px 35px;
   font-size: 18px;
-  font-weight: 300;
+  font-weight:700;
   line-height: 2;
   color: white;
-  font-weight: 700;
 }
+
 .main1full img {
   margin-left: 280px;
 }
+
 /* about  */
 .main2full h1 {
   text-align: center;
   font-size: 40px;
-  font-weight: 100;
   margin: 0 0 20px;
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 1px;
   color: #d70f64;
 }
+
 .main2full p {
   text-align: center;
   margin: 0px 0px 35px;
@@ -120,6 +136,7 @@ body {
   font-weight: 300;
   line-height: 2;
 }
+
 .learn {
   color: #fff;
   background-color: #d70f64;
@@ -131,12 +148,14 @@ body {
   text-transform: uppercase;
   transition: 0.5s;
 }
+
 .learn:hover {
   color: #d70f64;
   background-color: white;
   border: 2px solid #d70f64;
   transform: scale(1.1);
 }
+
 /* gethelp  */
 .main3 {
   background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/gethelp.jpg);
@@ -149,33 +168,26 @@ body {
   align-items: center;
   min-height: 100vh;
 }
+
 .main3full h1 {
   text-align: center;
   font-size: 40px;
-  font-weight: 100;
   margin: 0 0 20px;
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 1px;
   color: #d70f64;
 }
-/* .main3full h1{
-  background: url(../images/back.png);
-  color: transparent;
-  -webkit-text-stroke: 1px white;
-  -webkit-background-clip: text;
-  background-position: 0 0;
-  animation:back 20s linear infinite;
-} */
+
 .main3full p {
   text-align: center;
   margin: 20px 35px;
   font-size: 18px;
-  font-weight: 300;
   line-height: 2;
   color: white;
   font-weight: 700;
 }
+
 .gethelp {
   color: white;
   background-color: #d70f64;
@@ -187,12 +199,14 @@ body {
   text-transform: uppercase;
   transition: 0.5s;
 }
+
 .gethelp:hover {
   color: #d70f64;
   background-color: white;
   border: 2px solid #d70f64;
   transform: scale(1.1);
 }
+
 /* get involved  */
 .main4 {
   background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/vol.jpg);
@@ -205,33 +219,26 @@ body {
   align-items: center;
   min-height: 100vh;
 }
+
 .main4full h1 {
   color: #d70f64;
   text-align: center;
   font-size: 40px;
-  font-weight: 100;
   margin: 0 0 20px;
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 1px;
-  font-weight: 300;
 }
-/* .main4full h1{
-  background: url(../images/back.png);
-  color: transparent;
-  -webkit-text-stroke: 0.50px white;
-  -webkit-background-clip: text;
-  animation:back 20s linear infinite;
-} */
+
 .main4full p {
   text-align: center;
   margin: 20px 0px 35px;
   font-size: 18px;
-  font-weight: 300;
   line-height: 2;
   color: white;
   font-weight: 700;
 }
+
 .join {
   background-color: #d70f64;
   color: white;
@@ -243,12 +250,14 @@ body {
   text-transform: uppercase;
   transition: 0.5s;
 }
+
 .join:hover {
   color: #d70f64;
   background-color: white;
   border: 2px solid #d70f64;
   transform: scale(1.1);
 }
+
 /* be inspire  */
 .main5 {
   background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/inspiration-run.jpg);
@@ -261,34 +270,26 @@ body {
   align-items: center;
   min-height: 100vh;
 }
+
 .main5full h1 {
   text-align: center;
   font-size: 40px;
-  font-weight: 100;
   margin: 0 0 20px;
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 1px;
   color: #d70f64;
 }
-/* 
- .main5full h1{
-  background: url(../images/back.png);
-  color: transparent;
-  -webkit-text-stroke: 0.50px white;
-  -webkit-background-clip: text;
-  background-position: 0 0;
-  animation:back 20s linear infinite;
-} */
+
 .main5full p {
   text-align: center;
   margin: 20px 0px 35px;
   font-size: 18px;
-  font-weight: 300;
   line-height: 2;
   color: white;
   font-weight: 700;
 }
+
 /* contact  */
 .main6 {
   background-color: #d70f64;
@@ -298,26 +299,26 @@ body {
   padding-top: 300px;
   padding-bottom: 300px;
 }
+
 .main6full h1 {
   text-align: center;
   font-size: 40px;
-  font-weight: 100;
   margin: 0 0 20px;
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 1px;
   color: white;
-  font-weight: 300;
 }
+
 .main6full p {
   text-align: center;
   margin: 20px 0px 35px;
   font-size: 18px;
-  font-weight: 300;
   line-height: 2;
   color: #fff;
   font-weight: 700;
 }
+
 .CONTACTS {
   color: #d70f64;
   background-color: white;
@@ -329,12 +330,14 @@ body {
   text-transform: uppercase;
   transition: 0.5s;
 }
+
 .CONTACTS:hover {
   color: white;
   background-color: #d70f64;
   border: 2px solid white;
   transform: scale(1.1);
 }
+
 /* footer  */
 .foot1 {
   display: flex;
@@ -342,34 +345,41 @@ body {
   margin: 20px 100px 0px 160px;
   color: #d70f64;
 }
+
 .fb img {
   padding-left: 15px;
 }
+
 .foot2 {
   display: flex;
   justify-content: space-between;
   margin: 0px 100px 0px 160px;
   color: #d70f64;
 }
+
 .foot2p p {
   font-weight: 500;
   padding-top: 20px;
 }
+
 .foot22p {
   display: flex;
 }
+
 .foot22p p {
   padding-left: 60px;
   padding-top: 20px;
   font-weight: 500;
   margin-bottom: 50px;
 }
+
 .foot3 {
   display: flex;
   justify-content: space-between;
   color: #d70f64;
   margin: 30px 100px 0px 160px;
 }
+
 .foot3 p {
   padding-left: 30px;
 }

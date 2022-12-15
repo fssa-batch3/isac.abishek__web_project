@@ -35,9 +35,8 @@ body {
     font-size: 18px;
     padding-top: 6px;
     font-weight: 400;
-    position: relative;
 }
-
+/* menu bar hover style  */
 .menu-bar ul li::after {
     content: '';
     display: block;
@@ -75,20 +74,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* animation*/
-.sec1h1 h1{
-    background: url(../images/back.png);
-    color: transparent;
-    -webkit-text-stroke: 0.50px white;
-    -webkit-background-clip: text;
-    background-position: 0 0;
-    animation:back 20s linear infinite;
-}
-@keyframes back{
-    100%{
-        background-position: 2000px 0;
-    }
-}
+
 table,
 td,
 th {
@@ -121,6 +107,7 @@ table{
     margin: 90px;
     border: 2px solid gray;
 }
+/* footer  */
 footer {
     background-color: #d70f64;
     padding-top: 50px;

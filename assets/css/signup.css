@@ -1,9 +1,11 @@
-*{
+* {
     margin: 0%;
 }
-body{
+
+body {
     margin: 0%;
 }
+
 .contianer {
     background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/signup.jfif);
     background-size: cover;
@@ -13,6 +15,7 @@ body{
     width: 100%;
     position: absolute;
 }
+
 .formbox {
     background-color: white;
     height: 92%;
@@ -22,11 +25,13 @@ body{
     border-radius: 20px;
     top: 40px;
 }
+
 .logo img {
     position: relative;
     top: 20px;
     left: 150px;
 }
+
 .btns h1 {
     position: relative;
     top: 30px;
@@ -34,6 +39,7 @@ body{
     font-size: 40px;
     color: #d70f64;
 }
+
 #log {
     color: black;
     position: relative;
@@ -43,15 +49,18 @@ body{
     border-bottom: 1px solid silver;
     border-top: 1px solid silver;
 }
-.firstname{
+
+.firstname {
     margin-top: 20px;
 }
+
 .firstname p {
     position: relative;
     top: 75px;
     left: 20px;
     color: silver;
 }
+
 .firstname input {
     border-bottom: 2px solid #d70f64;
     outline: none;
@@ -63,15 +72,18 @@ body{
     width: 370px;
     color: black;
 }
-.mobileno{
+
+.mobileno {
     margin-top: 20px;
 }
+
 .mobileno p {
     position: relative;
     top: 75px;
     left: 20px;
     color: silver;
 }
+
 .mobileno input {
     border-bottom: 2px solid #d70f64;
     outline: none;
@@ -83,9 +95,11 @@ body{
     width: 370px;
     color: black;
 }
-.mail{
+
+.mail {
     margin-top: 20px;
 }
+
 .mail p {
     position: relative;
     top: 75px;
@@ -104,6 +118,7 @@ body{
     width: 370px;
     color: black;
 }
+
 .text {
     position: relative;
     top: 85px;
@@ -111,15 +126,18 @@ body{
     width: 400px;
     left: 20px;
 }
-.password{
+
+.password {
     margin-top: 10px;
 }
+
 .pass p {
     position: relative;
     top: 95px;
     left: 20px;
     color: silver;
 }
+
 .pass input {
     border-bottom: 2px solid #d70f64;
     outline: none;
@@ -128,6 +146,7 @@ body{
     width: 370px;
     color: black;
 }
+
 .password {
     position: relative;
     top: 100px;
@@ -135,12 +154,14 @@ body{
     width: 400px;
     left: 20px;
 }
+
 #logbtnhr {
     position: relative;
     top: 60px;
     width: 400px;
     left: 20px;
 }
+
 .join {
     cursor: pointer;
     background-color: #d70f64;
@@ -153,29 +174,35 @@ body{
     border: none;
 
 }
+
 .loginimgs {
     position: relative;
     top: 50px;
     text-align: center;
     padding-top: 10px;
 }
+
 .logimg {
     position: relative;
     top: 70px;
     left: 70px;
 }
+
 .logimg img {
     padding-left: 40px;
 }
+
 .new {
     position: relative;
     top: 90px;
     text-align: center;
 }
+
 .new a {
     text-decoration: none;
     color: #d70f64;
 }
+
 .new a::after {
     content: '';
     background-color: #d70f64;
@@ -185,10 +212,12 @@ body{
     margin: auto;
     transition: 0.5s;
 }
+
 .new a:hover::after {
     width: 19%;
 }
-.bottom{
+
+.bottom {
     height: 300px;
     margin-top: 100px;
 }

@@ -6,6 +6,7 @@
 body {
     font-family: 'Raleway', sans-serif;
 }
+
 /* nav bar  */
 .menu-bar {
     height: 120px;
@@ -34,7 +35,6 @@ body {
     font-size: 18px;
     padding-top: 6px;
     font-weight: 400;
-    position: relative;
 }
 
 .menu-bar ul li::after {
@@ -50,56 +50,62 @@ body {
 .menu-bar ul li:hover::after {
     width: 100%;
 }
+
 .menu-bar ul li a {
     font-size: 20px;
     text-decoration: none;
     color: white;
 }
-.bgimg{
-    height:800px;
-    background-image:url(../images/contactbg.png);
+
+/* nav ends  */
+.bgimg {
+    height: 800px;
+    background-image: url(../images/contactbg.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     filter: blur(40px);
-    /* position: relative; */
 }
-.contactadd{
+
+.contactadd {
     z-index: 2;
-    position: relative;
-    background-color: rgba(0,0,0, 0.4); 
+    background-color: rgba(0, 0, 0, 0.4);
     color: white;
     font-weight: bold;
     border: 3px solid #d70f64;
     position: absolute;
     top: 250px;
     left: 150px;
-    z-index: 2;
     width: 80%;
 }
-.contactadd h1{
+
+.contactadd h1 {
     margin-top: 20px;
     color: #d70f64;
     text-shadow: 2px 2px 10px white;
     text-transform: uppercase;
     text-align: center;
 }
-.contactadd h1:hover{
+
+.contactadd h1:hover {
     color: #f1f1f1;
     text-shadow: 2px 2px 10px #d70f64;
 }
-.contactadd h3{
+
+.contactadd h3 {
     margin: 20px;
     color: #d70f64;
     text-transform: uppercase;
     margin-left: 100px;
 }
-.contactadd p{
+
+.contactadd p {
     margin-top: 20px;
     text-transform: uppercase;
     margin-left: 200px;
 }
-.contactadd h2{
+
+.contactadd h2 {
     margin-top: 50px;
     color: #d70f64;
     text-shadow: 2px 2px 10px white;

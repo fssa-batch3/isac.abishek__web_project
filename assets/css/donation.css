@@ -55,29 +55,28 @@ body {
     text-decoration: none;
     color: #d70f64;
 }
-/* nav bar ends  */
-main{
+.abtdoc {
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+    margin-left: 45%;
+    padding-top: 100px;
+}
+
+.texts h2 {
+    padding-top: 60px;
+    color: #d70f64;
+    text-shadow: 1px 1px rgb(124, 118, 118);
+}
+
+.infos h4 {
+    padding-top: 65px;
+    font-size: 20px;
+    color: #d70f64;
+    text-shadow: 1px 1px rgb(124, 118, 118);
+}
+h1{
+    color: #d70f64;
     text-align: center;
-    color: #d70f64;
-    font-family:cursive;
-}
-main h1 h2{
-    color: #d70f64;
-}
-/* button  */
-.join {
-    cursor: pointer;
-    background-color:#d70f64;
-    color: white;
-    font-weight: 500;
-    position: relative;
-    padding: 20px 85px;
-    border: none;
-    margin-top: 40px; 
-}
-.join:hover{
-    background-color: #f2f2ff;
-    color: #d70f64;
-    border: 1px solid #d70f64;
-    padding: 18px 83px;
+    margin-top: 40px;
 }
