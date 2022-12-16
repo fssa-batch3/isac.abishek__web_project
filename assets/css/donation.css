@@ -6,13 +6,14 @@
 body {
     font-family: 'Raleway', sans-serif;
 }
+
 /* nav bar  */
 .menu-bar {
     height: 120px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
+    background-color: #d70f64;
 }
 
 .menu-bar img {
@@ -39,7 +40,7 @@ body {
 .menu-bar ul li::after {
     content: '';
     display: block;
-    background-color: #d70f64;
+    background-color: white;
     height: 2px;
     width: 0%;
     margin: auto;
@@ -53,14 +54,23 @@ body {
 .menu-bar ul li a {
     font-size: 20px;
     text-decoration: none;
-    color: #d70f64;
+    color: white;
 }
+
 .abtdoc {
     display: flex;
     justify-content: space-between;
     width: 45%;
-    margin-left: 45%;
-    padding-top: 100px;
+    margin-left: 10%;
+    padding-top: 110px;
+
+}
+
+.abtdoc img {
+    position: absolute;
+    left: 70%;
+    z-index: -1;
+    width: 25%;
 }
 
 .texts h2 {
@@ -69,14 +79,176 @@ body {
     text-shadow: 1px 1px rgb(124, 118, 118);
 }
 
-.infos h4 {
-    padding-top: 65px;
-    font-size: 20px;
-    color: #d70f64;
-    text-shadow: 1px 1px rgb(124, 118, 118);
-}
-h1{
+h1 {
     color: #d70f64;
     text-align: center;
     margin-top: 40px;
+}
+
+.formbox {
+    background-color: white;
+    height: 62%;
+    width: 30%;
+    position: absolute;
+    left: 35%;
+
+    border-radius: 20px;
+    top: 29%;
+}
+
+.firstname input {
+    border-bottom: 2px solid #d70f64;
+    outline: none;
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    padding-left: 40px;
+    width: 370px;
+    color: black;
+}
+
+.mobileno {
+    margin-top: 70px;
+}
+
+.mobileno input {
+    border-bottom: 2px solid #d70f64;
+    outline: none;
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    padding-left: 40px;
+    width: 370px;
+    color: black;
+}
+
+.mail {
+    margin-top: 70px;
+}
+
+
+.mail input {
+    border-bottom: 2px solid #d70f64;
+    outline: none;
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    padding-left: 40px;
+    width: 370px;
+    color: black;
+}
+
+.text {
+    position: relative;
+    top: 85px;
+    border: none;
+    width: 400px;
+    left: 20px;
+}
+
+
+
+.pass input {
+    border-bottom: 2px solid #d70f64;
+    outline: none;
+    font-size: 20px;
+    padding-left: 40px;
+    width: 370px;
+    color: black;
+}
+
+.password {
+    position: relative;
+    top: 100px;
+    border: none;
+    width: 400px;
+    left: 20px;
+    margin-top: 70px;
+}
+
+.paymentimgs img {
+    width: 50px;
+    position: relative;
+    margin-right: 80px;
+    left: 20%;
+    margin-top: 40px;
+}
+
+.paymentimgs {
+    margin-top: 200px;
+}
+.paymentimgs p{
+    margin-top: 70px;
+    color: #d70f64;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 70px;
+}
+
+.paymentimgs h2 {
+    margin-left: 30%;
+    color: #d70f64;
+}
+.paymentimgs h3 {
+    margin-left: 33%;
+    color: #d70f64;
+    margin-top: 40px;
+}
+
+#hr {
+    position: relative;
+    top: 120px;
+    width: 500px;
+    left: 250px;
+}
+
+/* footer  */
+.foot1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 100px 0px 160px;
+    color: white;
+}
+footer{
+    background-color: #d70f64;
+}
+.fb img {
+    padding-left: 15px;
+}
+
+.foot2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 100px 0px 160px;
+    color: white;
+}
+
+.foot2p p {
+    font-weight: 500;
+    padding-top: 20px;
+}
+
+.foot22p {
+    display: flex;
+}
+
+.foot22p p {
+    padding-left: 60px;
+    padding-top: 20px;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+.foot3 {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin: 30px 100px 0px 160px;
+}
+
+.foot3 p {
+    padding-left: 30px;
 }
