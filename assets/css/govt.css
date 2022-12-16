@@ -15,7 +15,9 @@ body {
     align-items: center;
     background-color: #d70f64;
 }
-
+caption{
+    display: none;
+}
 .menu-bar img {
     margin-top: 0px;
     margin-bottom: 0px;

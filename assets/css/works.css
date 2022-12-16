@@ -68,7 +68,9 @@ table {
     border-collapse: collapse;
     width: 100%;
 }
-
+caption{
+    display: none;
+}
 th,
 td {
     padding: 15px;
