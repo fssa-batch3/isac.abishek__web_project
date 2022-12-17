@@ -105,6 +105,20 @@ body {
     color: white;
     letter-spacing: 1px;
 }
+/* animation*/
+.gethelpbg h1{
+    background: url(../images/back.png);
+    color: transparent;
+    -webkit-text-stroke: 0.50px white;
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation:back 20s linear infinite;
+}
+@keyframes back{
+    100%{
+        background-position: 2000px 0;
+    }
+}
 
 /* button  */
 
