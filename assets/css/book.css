@@ -154,14 +154,12 @@ body {
 }
 
 .hos1 img {
-    box-shadow: 2px 4px 10px 6px gray;
     border-radius: 20px;
     transition: 0.5s;
 }
 
 .hos1 img:hover {
-    transform: scale(1.1);
-    box-shadow: 1px 2px 5px 3px gray;
+    box-shadow: 5px 10px 18px #888888;
 }
 
 .hos1 p {

@@ -119,6 +119,9 @@ li {
     margin-top: 50px;
     border-radius: 10px;
 }
+.products img:hover{
+    box-shadow: 5px 10px 18px #888888;
+}
 
 .products h1 {
     margin-top: 20px;

@@ -73,7 +73,9 @@ body {
     z-index: -1;
     width: 25%;
 }
-
+.abtdoc img:hover{
+    box-shadow: 5px 10px 18px #888888;
+}
 .texts h2 {
     padding-top: 60px;
     color: #d70f64;
