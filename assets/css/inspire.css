@@ -1,0 +1,202 @@
+/* stylesheet for booking page  */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0px;
+    background-color: #f2f2ff;
+}
+/* navbar  */
+.menu-bar {
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    background-color: #fff;
+
+}
+
+.menu-bar img {
+    margin-left: 100px;
+}
+
+.menu-bar ul {
+    display: flex;
+}
+
+.menu-bar ul li {
+    position: relative;
+    margin-right: 30px;
+    list-style: none;
+    font-size: 18px;
+    padding-top: 6px;
+    font-weight: 400;
+}
+
+/* nav hover style  */
+.menu-bar ul li::after {
+    content: '';
+    display: block;
+    background-color: #d70f64;
+    height: 2px;
+    width: 0%;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.menu-bar ul li:hover::after {
+    width: 100%;
+}
+
+.menu-bar ul li a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #d70f64;
+}
+.sec1h1 {
+    background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/inspirebg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 0%;
+    background-repeat: no-repeat;
+    min-height: 30vh;
+    text-align: center;
+    font-size: 40px;
+    padding-top: 150px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: white;
+    letter-spacing: 1px;
+}
+/* animation*/
+.sec1h1 h1{
+    background: url(../images/back.png);
+    color: transparent;
+    -webkit-text-stroke: 0.50px white;
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation:back 20s linear infinite;
+}
+@keyframes back{
+    100%{
+        background-position: 2000px 0;
+    }
+}
+.sec2{
+    background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/nick2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #f2f2ff;
+}
+.sec2,.sec3,.sec4,.sec5 h2{
+    padding-top:100px;
+text-align: center;
+}
+.sec2,.sec3,.sec4,.sec5 p{
+    text-align: center;
+}
+iframe{
+    /* margin-left: 28%; */
+    margin-top: 100px;
+    border-radius: 20px;
+    
+}
+.nick{
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    font-size: 50px;
+    font-weight: bold;
+    padding-left: 20px;
+    text-shadow: 2px 2px gray;
+}
+.nickyt{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 40px;
+}
+.nick h3{
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.nick img{
+    border-radius: 50%;
+}
+.sec3{
+    background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/steve.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #f2f2ff;
+}
+.sec4{
+    background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/Mariyappan.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #f2f2ff;
+}
+.sec5{
+    background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/jesica.webp);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #f2f2ff;
+}
+.foot1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 100px 0px 160px;
+    color: white;
+}
+#footer{
+    background-color: #d70f64;
+}
+.fb img {
+    padding-left: 15px;
+}
+
+.foot2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 100px 0px 160px;
+    color: white;
+}
+
+.foot2p p {
+    font-weight: 500;
+    padding-top: 20px;
+}
+
+.foot22p {
+    display: flex;
+}
+
+.foot22p p {
+    padding-left: 60px;
+    padding-top: 20px;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+.foot3 {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin: 30px 100px 0px 160px;
+}
+
+.foot3 p {
+    padding-left: 30px;
+}
