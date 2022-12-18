@@ -98,19 +98,39 @@ body {
         background-position: 2000px 0;
     }
 }
+.words p{
+    text-align: center;
+    font-weight: 400;
+    margin-top: 40px;
+    animation-name: slide;
+    animation-duration: 2s;
+}
+@keyframes slide{
+    0%{opacity: 0;}
+    100%{ opacity: 1;}
+    }
 /* our moto  */
 .moto {
     display: flex;
     justify-content: space-around;
     margin-top: 30px;
+    animation-name: new;
+    animation-duration: 2s;
 }
+@keyframes new{
+    0%{transform: translateX(1500px);opacity: 0;}
+    100%{transform: translateX(0px); opacity: 1;}
+    }
 .moto p {
     font-weight: 400;
     color: #d70f64;
 }
 .works {
     margin-top: 40px;
+    animation-name: slide;
+  animation-duration: 4s;
 }
+
 .works h1 {
     margin-left: 80px;
     color: #d70f64;

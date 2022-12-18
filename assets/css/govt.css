@@ -96,6 +96,17 @@ td,
 th {
     border: 1px solid #ddd;
     text-align: left;
+    animation: new;
+    animation-duration: 2s;
+
+}
+@keyframes new{
+    0%{
+        transform: translateX(1500px);opacity: 0;
+    }
+    100%{
+        transform: translate(0px);opacity: 1;
+    }
 }
 
 table {

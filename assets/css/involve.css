@@ -1,4 +1,4 @@
-/* style sheet for get involovve page  */
+/* style sheet for get involovve page and schemes  */
 * {
     margin: 0;
     padding: 0;
@@ -97,6 +97,8 @@ body {
     left: 190px;
     padding: 20px 85px;
     border: none;
+    animation-name: slide;
+  animation-duration: 2s;
     margin-top: 40px;
    
 }
@@ -115,17 +117,30 @@ body {
     color: #d70f64;
     text-align: center;
     margin-top: 80px;
+    animation-name: slide;
+  animation-duration: 2s;
 }
+@keyframes slide{
+    0%{opacity: 0;}
+    100%{ opacity: 1;}
+    }
+
 .sec1 p{
     text-align: center;
     color: gray;
     margin-top: 50px;
+    animation-name: slide;
+  animation-duration: 2s;
 }
 .sec1 img{
     border-radius: 20px;
+    animation-name: slide;
+  animation-duration: 2s;
 }
+
 .sec1 img:hover{
     box-shadow: 5px 10px 18px #888888;
+    
 }
 .foot1 {
     display: flex;

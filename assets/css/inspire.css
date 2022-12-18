@@ -1,4 +1,4 @@
-/* stylesheet for booking page  */
+/* stylesheet for inspire  */
 * {
     margin: 0;
     padding: 0;
@@ -95,19 +95,41 @@ body {
     background-repeat: no-repeat;
     color: #f2f2ff;
 }
-.sec2,.sec3,.sec4,.sec5 h2{
+ h2{
     padding-top:100px;
 text-align: center;
+animation-name: slide;
+animation-duration: 2s;
 }
-.sec2,.sec3,.sec4,.sec5 p{
+ p{
     text-align: center;
+    animation-name: slide;
+    animation-duration: 2s;
+}
+@keyframes slide{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity:1
+    }
 }
 iframe{
-    /* margin-left: 28%; */
+   
     margin-top: 100px;
     border-radius: 20px;
-    
+    animation-name: new;
+    animation-duration: 4s;
 }
+@keyframes new{
+    0%{
+        transform: translateX(1500px);opacity: 0;
+    }
+    100%{
+        transform: translate(0px);opacity: 1;
+    }
+}
+
 .nick{
     display: flex;
     justify-content: center;
@@ -154,6 +176,7 @@ iframe{
     background-repeat: no-repeat;
     color: #f2f2ff;
 }
+/* footer  */
 .foot1 {
     display: flex;
     justify-content: space-between;

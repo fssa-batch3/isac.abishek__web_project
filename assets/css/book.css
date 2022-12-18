@@ -9,6 +9,10 @@ body {
     margin: 0px;
     background-color: #f2f2ff;
 }
+@keyframes slide{
+    0%{opacity: 0;}
+    100%{ opacity: 1;}
+    }
 /* navbar  */
 .menu-bar {
     height: 120px;
@@ -96,6 +100,8 @@ body {
     text-align: center;
     padding-top: 50px;
     padding-bottom: 50px;
+    animation-name: slide;
+    animation-duration: 2s;
 }
 /* button  */
 .join {
@@ -107,7 +113,8 @@ body {
     padding: 20px 85px;
     border: none;
     margin-top: 80px;
-
+animation-name: slide;
+animation-duration: 2s;
 }
 
 .join:hover {
@@ -164,12 +171,14 @@ body {
     justify-content: space-evenly;
     padding-top: 40px;
     padding-bottom: 60px;
-
+animation-name: slide;
 }
 
 .hos1 img {
     border-radius: 20px;
     transition: 0.5s;
+    animation-duration: 2s;
+    animation-name: slide;
 }
 
 .hos1 img:hover {
@@ -181,6 +190,8 @@ body {
     width: 500px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
+    animation-name: slide;
+    animation-duration: 2s;
 }
 /* footer  */
 #footer {

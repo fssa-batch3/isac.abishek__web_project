@@ -132,6 +132,8 @@ body {
     padding: 20px 85px;
     border: none;
     margin-top: 80px;
+    animation-name: slide;
+    animation-duration: 2s;
 }
 .helptypes {
     display: flex;
@@ -148,11 +150,18 @@ body {
     color: white;
     position: relative;
     top: 30px;
+    animation-name: slide;
+    animation-duration: 2s;
 }
-
+@keyframes slide{
+    0%{opacity: 0;}
+    100%{ opacity: 1;}
+    }
 .helptypes h1 {
     text-align: center;
     color: white;
+    animation-name: slide;
+    animation-duration: 2s;
 }
 
 .info {
@@ -192,12 +201,20 @@ body {
     width: 500px;
     transition: 0.3s;
     border-radius: 20px;
+    animation-name: new;
+animation-duration: 8s;
+
 }
 
 .medicimgs img:hover {
     transform: scale(1.1);
     box-shadow: 5px 10px 18px #888888;
-    
+}
+
+
+@keyframes new{
+0%{transform: translateX(1500px);opacity: 0;}
+100%{transform: translateX(0px); opacity: 1;}
 }
 
 .medicimgs::-webkit-scrollbar {
@@ -248,8 +265,9 @@ body {
     margin-left: 40px;
     width: 500px;
     transition: 0.3s;
+    animation-name: new;
+animation-duration: 4s;
 }
-
 .productsimgs img:hover {
     transform: scale(1.1);
     box-shadow: 5px 10px 18px #888888;
@@ -267,7 +285,7 @@ body {
     overflow-y: hidden;
 }
 
-.medicimgs marquee img {
+.medicimgs img {
     padding: 20px;
     height: 400px;
     width: 480px;

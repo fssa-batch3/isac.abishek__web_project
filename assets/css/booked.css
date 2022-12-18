@@ -64,6 +64,8 @@ main{
 }
 main h1 h2{
     color: #d70f64;
+    animation-name: slide;
+    animation-duration: 2s;
 }
 /* button  */
 .join {
@@ -75,10 +77,20 @@ main h1 h2{
     padding: 20px 85px;
     border: none;
     margin-top: 40px; 
+    animation-name: slide;
+    animation-duration: 2s;
 }
 .join:hover{
     background-color: #f2f2ff;
     color: #d70f64;
     border: 1px solid #d70f64;
     padding: 18px 83px;
+}
+@keyframes slide{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity:1
+    }
 }

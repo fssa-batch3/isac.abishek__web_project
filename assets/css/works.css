@@ -94,15 +94,25 @@ table {
     width: 1300px;
     margin: 90px;
     border: 2px solid gray;
+    animation-name: new;
+    animation-duration: 4s;
 }
-
+@keyframes new{
+    0%{ transform: translateX(1500px);opacity: 0;}
+    100%{transform: translateX(0px);opacity: 1;}
+    }
 h1 {
     text-align: center;
     color: #d70f64;
     margin-bottom: 30px;
     margin-top: 30px;
+    animation-name: slide;
+    animation-duration: 2s;
 }
-
+@keyframes slide{
+    0%{opacity: 0;}
+    100%{ opacity: 1;}
+    }
 footer {
     background-color: #d70f64;
     padding-top: 50px;

@@ -8,6 +8,10 @@ body {
   font-family: 'Raleway', sans-serif;
   margin: 0px;
 }
+@keyframes slide{
+  0%{opacity: 0;}
+  100%{ opacity: 1;}
+  }
 
 .menu-bar {
   height: 120px;
@@ -94,6 +98,7 @@ body {
   display: flex;
   justify-content: center;
   min-height: 90vh;
+  
 }
 
 .main1full h1 {
@@ -104,6 +109,8 @@ body {
   font-weight: 400;
   letter-spacing: 1px;
   color: #d70f64;
+  animation-name: slide;
+  animation-duration: 2s;
 }
 
 .main1full p {
@@ -113,6 +120,8 @@ body {
   font-weight:700;
   line-height: 2;
   color: white;
+ animation-name: slide;
+  animation-duration: 4s;
 }
 
 .main1full img {
@@ -128,6 +137,7 @@ body {
   font-weight: 400;
   letter-spacing: 1px;
   color: #d70f64;
+  
 }
 
 .main2full p {
@@ -136,6 +146,7 @@ body {
   font-size: 18px;
   font-weight: 300;
   line-height: 2;
+ 
 }
 
 .learn {

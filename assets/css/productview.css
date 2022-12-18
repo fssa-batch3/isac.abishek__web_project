@@ -61,8 +61,13 @@ body {
 .sec2 {
     display: flex;
     justify-content: space-around;
+    animation-name: slide;
+    animation-duration: 4s;
 }
-
+@keyframes slide{
+    0%{opacity: 0;}
+    100%{ opacity: 1;}
+    }
 /* button  */
 .join {
     cursor: pointer;
@@ -90,6 +95,8 @@ h3 {
     margin-top: 40px;
     margin-bottom: 20px;
     color: #d70f64;
+    animation-name: slide;
+    animation-duration: 2s;
 }
 
 .triimage img {
@@ -110,6 +117,8 @@ li {
     text-align: center;
     border-radius: 20px;
     margin: 45px;
+    animation-name: new;
+    animation-duration: 4s;
 }
 
 .products img {
@@ -119,6 +128,11 @@ li {
     margin-top: 50px;
     border-radius: 10px;
 }
+@keyframes new{
+    0%{transform: translateX(1500px);opacity: 0;}
+    100%{transform: translateX(0px); opacity: 1;}
+    }
+    
 .products img:hover{
     box-shadow: 5px 10px 18px #888888;
 }
