@@ -46,7 +46,7 @@
                 </div>
                 <div class="bottom">
                 <hr id="logbtnhr">
-                
+                <!-- <a href=""><button class="join" onclick="isac" >LOGIN</button></a> -->
                 <button class="join" onclick="isac()">LOGIN</button>
                 <div class="loginimgs">
                     <p>Or Login With</p>
@@ -86,7 +86,24 @@
         }
         arr.push(user_data)
         localStorage.setItem("userinfo",JSON.stringify(arr))
-    }   
+        
+
+
+        //localStoage.setItem("key","value")
+        if(Name!=="" && mobileno!==""){
+            if(password==confirmpassword){
+             
+            window.location.href = "volunteerlogin.html"
+         
+        }
+        else{
+            alert("new password confirm password are not match")
+        }
+        }
+        else{
+            alert("edhavadhu podu")
+        }     
+    }
     </script>
 </body>
 </html>

@@ -55,13 +55,14 @@
 
 
         function isac() {
-            const volunteerloginname = (document.getElementById("email".value));
-            const volunteerloginpassword = (document.getElementById("password").value);
+            let volunteerloginname = (document.getElementById("email").value);
+            let volunteerloginpassword = (document.getElementById("password").value);
 
            const volunteerdatas=JSON.parse(localStorage.getItem("userinfo"));
            
            let check; 
            volunteerdatas.find(element=>{
+            
             if(element["user_name"]==volunteerloginname && element ["password"]==volunteerloginpassword){
                 return check=1
             }
