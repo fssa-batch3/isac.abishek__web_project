@@ -23,24 +23,27 @@
                 <h1>Voulnteer Login</h1>
                 <hr id="log">
                 <div class="mail">
-                    <p>Email Address</p>
-                    <input type="email" class="text" required>
+                    <p>user name</p>
+                    <input type="text" class="text"  id="email">
 
                 </div>
 
                 <div class="pass">
                     <p>Password</p>
-                    <input type="password" class="password" required>
+                    <input type="password" class="password" required id="password">
 
                 </div>
                 <hr id="logbtnhr">
-                <a href="volunteerwork.html"><button class="join">LOGIN</button></a>
+                <!-- <a href="volunteerwork.html"> -->
+                <button class="join" type="button" onclick="isac()">LOGIN</button>
+                <!-- </a> -->
                 <div class="loginimgs">
                     <p>Or Login With</p>
                 </div>
                 <div class="logimg">
-                    <img src="../../assets/images/facebook.png" width="50px" alt="error"><img src="../../assets/images/mail.png" width="50px"
-                        alt="error"><img src="../../assets/images/twitter.png" width="50px" alt="error">
+                    <img src="../../assets/images/facebook.png" width="50px" alt="error"><img
+                        src="../../assets/images/mail.png" width="50px" alt="error"><img
+                        src="../../assets/images/twitter.png" width="50px" alt="error">
                 </div>
                 <div class="new">
                     <p>New user </p><a href="../../pages/volunteerpages/volunteersignup.html">REGISTER HERE</a>
@@ -48,6 +51,34 @@
             </div>
         </div>
     </div>
+    <script>
+
+
+        function isac() {
+            const volunteerloginname = (document.getElementById("email".value));
+            const volunteerloginpassword = (document.getElementById("password").value);
+
+           const volunteerdatas=JSON.parse(localStorage.getItem("userinfo"));
+           
+           let check; 
+           volunteerdatas.find(element=>{
+            if(element["user_name"]==volunteerloginname && element ["password"]==volunteerloginpassword){
+                return check=1
+            }
+            else{
+                return check=0
+            }
+           })
+           if(check==1){
+            window.location.href = "volunteerwork.html"
+           }
+           else{
+            alert("password wrong")
+           }
+            
+        }
+       
+    </script>
 </body>
 
 </html>

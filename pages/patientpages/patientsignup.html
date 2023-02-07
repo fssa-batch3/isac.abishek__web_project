@@ -24,36 +24,32 @@
                 <hr id="log">
                 <div class="firstname">
                     <p> Name</p>
-                    <input type="text" class="text">
+                    <input type="text" class="text" id="name">
                 </div>
-
                 <div class="mobileno">
                     <p>mobile number</p>
-                    <input type="text" class="text">
+                    <input type="text" class="text"  id="mobileno"  >
                 </div>
-
                 <div class="mail">
                     <p>Email Address</p>
-                    <input type="email" class="text" required>
+                    <input type="email" class="text" required id="email" >
 
                 </div>
                 <div class="pass">
                     <p>New Password</p>
-                    <input type="password" class="password" required>
+                    <input type="password" class="password" required id="password" >
 
                 </div>
                 <br>
                 <div class="pass">
                     <p>Confirm Password</p>
-                    <input type="password" class="password" required>
+                    <input type="password" class="password" required id="confirmpassword" >
 
                 </div>
-
-
                 
                 <div class="bottom">
                 <hr id="logbtnhr">
-                <a href="gethelp.html"><button class="join">LOGIN</button></a>
+                <button class="join" onclick="isac()">LOGIN</button>
                 <div class="loginimgs">
                     <p>Or Login With</p>
                 </div>
@@ -68,5 +64,36 @@
             </div>
         </div>
     </div>
+    <script>
+        
+        
+        function isac(){
+            let Name= document.getElementById("name").value
+        let mobileno= document.getElementById("mobileno").value
+        let email= document.getElementById("email").value
+        let password= document.getElementById("password").value
+         let confirmpassword=document.getElementById("confirmpassword").value
+        // console.log(Name)
+        // console.log(mobileno)
+        // console.log(email)
+        // console.log(password)
+        // console.log(confirmpassword)
+        if(Name!=="" && mobileno!==""){
+            if(password==confirmpassword){
+             
+            window.location.href = "patientlogin.html"
+            localStorage.setItem("patientname", Name);
+            localStorage.setItem("patientpassword", confirmpassword);
+         
+        }
+        else{
+            alert("new password confirm password are not match")
+        }
+        }
+        else{
+            alert("edhavadhu podu")
+        }     
+    }
+    </script>
 </body>
 </html>

@@ -23,18 +23,18 @@
                 <h1>Donar login</h1>
                 <hr id="log">
                 <div class="mail">
-                    <p>Email Address</p>
-                    <input type="email" class="text" required>
+                    <p>user name</p>
+                    <input type="name" class="text"  id="email">
 
                 </div>
 
                 <div class="pass">
                     <p>Password</p>
-                    <input type="password" class="password" required>
+                    <input type="password" class="password"  id="password">
 
                 </div>
                 <hr id="logbtnhr">
-                <a href="donation.html"><button class="join">LOGIN</button></a>
+                <button class="join">LOGIN</button>
                 <div class="loginimgs">
                     <p>Or Login With</p>
                 </div>
@@ -48,6 +48,25 @@
             </div>
         </div>
     </div>
+    <script>
+    function isac() {
+            const donarloginname = (document.getElementById("name").value);
+            const donarloginpassword = (document.getElementById("password").value);
+            let donarname=localStorage.getItem("donarname");
+            let donarpassword= localStorage.getItem("donarpassword");
+            if(donarloginname==donarname){
+                if(donarloginpassword==donarpassword){
+                    window.location.href = "donation.html"
+                }
+                else{
+                    alert("incorrect password da panda")
+                }
+            }
+            else{
+            alert("useremailah thappu da")
+            } 
+        }
+    </script>
 </body>
 
 </html>

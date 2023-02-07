@@ -89,6 +89,53 @@ body {
 .dropdown1:hover .dropdown-menu ul li { 
     width: 120px;
 }
+@media screen and (max-width:600px) {
+    .menu-bar {
+      height: 80px;
+      display:contents ;
+      justify-content: space-between;
+      align-items: none;
+      position: sticky;
+      top: 0px;
+      /* border: 2px solid red; */
+      background-color: #fff;
+    
+    }
+    
+    .menu-bar img {
+      margin-left:0px;
+      margin-top: 0px;
+      width: 80px;
+      /* border: 2px solid red; */
+      position: relative;
+      left:40%;
+      
+    }
+    
+    .menu-bar ul {
+      display: flex;
+      margin-top: 10px;
+      width:550px;
+      margin-left: 10px;
+      /* border: 2px solid red; */
+     
+    }
+    
+    .menu-bar ul li {
+      position: relative;
+      margin-right: 13px;
+      list-style: none;
+      padding-top: 6px;
+      
+    }
+    .menu-bar ul li a {
+      font-size: 9px;
+      text-decoration: none;
+      color: #d70f64;
+     
+    }
+}
+
 /* get help background img  */
 .gethelpbg {
     background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/gethelpmain.jpg);
@@ -104,6 +151,23 @@ body {
     font-weight: 400;
     color: white;
     letter-spacing: 1px;
+}
+@media screen and (max-width:600px) {
+    .gethelpbg {
+        background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/gethelpmain.jpg);
+        background-attachment: fixed;
+        background-size: 700px;
+        background-position: top;
+        background-repeat: no-repeat;
+        min-height: 15vh;
+        text-align: center;
+        font-size: 20px;
+        padding-top: 150px;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: white;
+        letter-spacing: 1px;
+    }
 }
 /* animation*/
 .gethelpbg h1{

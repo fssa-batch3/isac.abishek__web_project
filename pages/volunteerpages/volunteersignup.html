@@ -22,31 +22,32 @@
                 <hr id="log">
                 <div class="firstname">
                     <p> Name</p>
-                    <input type="text" class="text">
+                    <input type="text" class="text" id="name">
                 </div>
                 <div class="mobileno">
                     <p>mobile number</p>
-                    <input type="text" class="text">
+                    <input type="text" class="text"  id="mobileno" >
                 </div>
                 <div class="mail">
                     <p>Email Address</p>
-                    <input type="email" class="text" required>
+                    <input type="email" class="text" required id="email">
 
                 </div>
                 <div class="pass">
                     <p>New Password</p>
-                    <input type="password" class="password" required>
+                    <input type="password" class="password" required id="password" >
 
                 </div>
                 <br>
                 <div class="pass">
                     <p>Confirm Password</p>
-                    <input type="password" class="password" required>
+                    <input type="password" class="password" id="confirmpassword" required >
 
                 </div>
                 <div class="bottom">
                 <hr id="logbtnhr">
-                <a href="volunteerwork.html"><button class="join">LOGIN</button></a>
+                
+                <button class="join" onclick="isac()">LOGIN</button>
                 <div class="loginimgs">
                     <p>Or Login With</p>
                 </div>
@@ -61,5 +62,31 @@
             </div>
         </div>
     </div>
+    <script>
+
+
+       function isac(){
+        let Name= document.getElementById("name").value
+        let mobileno= document.getElementById("mobileno").value
+        let email= document.getElementById("email").value
+        let password= document.getElementById("password").value
+         let confirmpassword=document.getElementById("confirmpassword").value
+         let user_data= {
+            "user_name": Name,
+            "password" : password,
+            "mobileno":mobileno,
+            "user_email":email
+        }
+        let arr;
+        if(arr=JSON.parse(localStorage.getItem("userinfo"))){
+            JSON.parse(localStorage.getItem("userinfo"))
+        }
+        else{
+            arr=[]
+        }
+        arr.push(user_data)
+        localStorage.setItem("userinfo",JSON.stringify(arr))
+    }   
+    </script>
 </body>
 </html>

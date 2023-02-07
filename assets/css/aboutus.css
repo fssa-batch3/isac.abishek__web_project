@@ -68,6 +68,52 @@ body {
 .menu-bar ul li:hover .dropdown-menu ul li {
     width: 120px;
 }
+@media screen and (max-width:600px) {
+    .menu-bar {
+      height: 80px;
+      display:contents ;
+      justify-content: space-between;
+      align-items: none;
+      position: sticky;
+      top: 0px;
+      /* border: 2px solid red; */
+      background-color: #fff;
+    
+    }
+    
+    .menu-bar img {
+      margin-left:0px;
+      margin-top: 0px;
+      width: 80px;
+      /* border: 2px solid red; */
+      position: relative;
+      left:40%;
+      
+    }
+    
+    .menu-bar ul {
+      display: flex;
+      margin-top: 10px;
+      width:550px;
+      margin-left: 10px;
+      /* border: 2px solid red; */
+     
+    }
+    
+    .menu-bar ul li {
+      position: relative;
+      margin-right: 13px;
+      list-style: none;
+      padding-top: 6px;
+      
+    }
+    .menu-bar ul li a {
+      font-size: 9px;
+      text-decoration: none;
+      color: #d70f64;
+     
+    }
+}
 /*navbarends*/
 .sec1h1 {
     background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/aboutusbg.jpeg);
@@ -96,6 +142,23 @@ body {
 @keyframes back{
     100%{
         background-position: 2000px 0;
+    }
+}
+@media screen and (max-width:600px) {
+    .sec1h1 {
+        background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/aboutusbg.jpeg);
+        background-attachment: fixed;
+        background-size: 700px;
+        background-position: top;
+        background-repeat: no-repeat;
+        min-height: 15vh;
+        text-align: center;
+        font-size: 20px;
+        padding-top: 150px;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: white;
+        letter-spacing: 1px;
     }
 }
 .words p{
@@ -136,6 +199,11 @@ body {
     color: #d70f64;
     font-weight: 300;
 }
+@media screen and (max-width:600px) {
+    .works h1 {
+        margin-left: 160px;
+    }
+}
 /* our mission  */
 .mission {
     background-color: #d70f64;
@@ -156,6 +224,19 @@ body {
     font-size: 20px;
     padding-bottom: 100px;
 }
+@media screen and (max-width:600px) {
+    .mission {
+        padding: 0px;
+    }
+    .mission h1 {
+        font-size: 20px;
+        padding-left: 10px;
+    }
+    .mission p {
+        padding-left: 40px;
+        font-size: 15px;
+    }
+}
 /* about us  */
 .abtus {
     padding: 0px 100px;
@@ -172,6 +253,19 @@ body {
     padding-top: 20px;
     font-size: 20px;
     padding-bottom: 100px;
+}
+@media screen and (max-width:600px) {
+    .abtus {
+        padding: 0px;
+    }
+    .abtus h1 {
+        font-size: 20px;
+        padding-left: 10px;
+    }
+    .abtus p {
+        padding-left: 40px;
+        font-size: 15px;
+    }
 }
 /* footer  */
 footer {
@@ -218,3 +312,56 @@ footer {
 .mail p {
     padding-left: 30px;
 }
+@media screen and (max-width:600px)  {
+    .foot1 {
+      color: white;
+      margin-left: 25px;
+      width: 350px;
+    }
+    .foot1 img{
+      width: 100px;
+    }
+    
+    .fb img {
+      padding-left: 15px;
+      width: 25px;
+  
+    }
+    .foot2 {
+      display: contents;
+      color:white;
+      
+    }
+    
+    .foot2p p {
+      font-weight: 500;
+      /* padding-top: 20px; */
+    }
+    
+    .foot22p {
+      display: flex;
+    }
+    
+    .foot22p p {
+      padding-top: 20px;
+      font-weight: 500;
+      margin-bottom: 0px;
+    }
+    
+    .foot3 {
+      margin-left: 0px;
+      color: white;
+      width: 400px;
+    }
+    
+    .foot3 p {
+      font-size: 10px;
+      margin-right: 20px;
+    }
+    .foot3 h4{
+    
+      font-size: 15px;
+      margin-right: 20px;
+    }
+    
+  }

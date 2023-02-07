@@ -31,7 +31,7 @@
     </nav>
     <!-- nav ends  -->
     <main>
-          <h1>18/12/22 WORKS AND AREAS</h1>  
+          <h1> HI <span id="name"> isac</span> 18/12/22 WORKS AND AREAS</h1>  
         <section class="sec2">
             <table> <caption>work</caption>
                 <tr>
@@ -136,6 +136,13 @@
           </div>
         </div>
       </footer>
+      <script>
+        // localStorage.getItem("user_email")
+        // console.log("user_email")
+        const user_name=localStorage.getItem("volunteername")
+       
+        document.getElementById("name").innerText = user_name
+      </script>
       </body>
       
       </html>

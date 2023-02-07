@@ -47,7 +47,7 @@
       <h2>ADDRESS</h2>
     </div>
     <div class="infos">
-      <h4>JHON</h4>
+      <h4 id="name">john</h4>
       <h4>vellamal hospital</h4>
       <h4>7305876534</h4>
       <h4>9-12am</h4>
@@ -95,5 +95,12 @@
     </div>
   </div>
 </footer>
+<script>
+  // localStorage.getItem("user_email")
+  // console.log("user_email")
+  const user_email=localStorage.getItem("user_email")
+  console.log(user_email)
+  document.getElementById(name).innerText=user_email
+</script>
 </body>
 </html>
