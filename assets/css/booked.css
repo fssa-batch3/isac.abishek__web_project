@@ -5,72 +5,20 @@
 }
 
 body {
-    font-family: 'Raleway', sans-serif;
-}
-/* nav bar  */
-.menu-bar {
-    height: 120px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
+    font-family: 'Merienda', cursive;
+    /* background-image: url(../images/bodybg.jpg); */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    
 }
 
-.menu-bar img {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 100px;
-}
-
-.menu-bar ul {
-    list-style: none;
-    display: flex;
-    margin-top: 0px;
-}
-
-.menu-bar ul li {
-    position: relative;
-    margin-right: 30px;
-    list-style: none;
-    font-size: 18px;
-    padding-top: 6px;
-    font-weight: 400;
-}
-
-.menu-bar ul li::after {
-    content: '';
-    display: block;
-    background-color: #d70f64;
-    height: 2px;
-    width: 0%;
-    margin: auto;
-    transition: 0.5s;
-}
-
-.menu-bar ul li:hover::after {
-    width: 100%;
-}
-
-.menu-bar ul li a {
-    font-size: 20px;
-    text-decoration: none;
-    color: #d70f64;
-}
-/* nav bar ends  */
-main{
-    text-align: center;
-    color: #d70f64;
-    font-family:cursive;
-}
-main h1 h2{
-    color: #d70f64;
-    animation-name: slide;
-    animation-duration: 2s;
-}
 /* button  */
 .join {
     cursor: pointer;
-    background-color:#d70f64;
+    background-color:#6C3DD9;
     color: white;
     font-weight: 500;
     position: relative;
@@ -82,8 +30,8 @@ main h1 h2{
 }
 .join:hover{
     background-color: #f2f2ff;
-    color: #d70f64;
-    border: 1px solid #d70f64;
+    color: #6C3DD9;
+    border: 1px solid #6C3DD9;
     padding: 18px 83px;
 }
 @keyframes slide{

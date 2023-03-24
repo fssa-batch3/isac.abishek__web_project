@@ -8,38 +8,52 @@
   <link rel="stylesheet" href="../../assets/css/buy.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="icon" href="../../assets/images/icon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../../assets/css/common.css">
+  <script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
   <title>gethelp</title>
 </head>
 
 <body>
   <nav>
-    <div class="menu-bar">
-      <img src="../../assets/images/logo.png" width="200px" alt="image error">
-      <ul>
+    <div class="side-nav">
+      <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg">
+      <ul class="navlinks">
 
-        <li><a href="../../index.html">HOME</a></li>
-        <li><a href="../about/schemes.html">SCHEMES</a></li>
-        <li><a href="../donarpages/donarlogin.html">DONATE US</a></li>
-        <li><a href="../about/aboutus.html">ABOUT</a></li>
-        <li><a href="../patientpages/gethelp.html">GET HELP</a>
-        </li>
-        <li><a href="../donarpages/involve.html">GET INVOLVED</a></li>
-        <li><a href="../beinspired/inspire.html">BE INSPIRED</a></li>
+
+        <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
+        <li><a href="../donarpages/donarlogin.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a></li>
+        <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i>
+            <p>About</p>
+          </a></li>
+        <li><a href="../patientpages/gethelp.html"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
+        <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>GetInvolved</a></li>
+        <li><a href="../beinspired/inspire.html"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
+        <li><a href="../about/profile.html"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
+        <div class="active"></div>
       </ul>
     </div>
   </nav>
+
   <main>
-    <section>
-      <div class="gethelpbg">
-        <h1>BUY PRODUCTS</h1>
-      </div>
+    <!-- <div class="checkbox">
+      <label for="click" class="text" >screen reader</label>
+      <input type="checkbox" id="click" onclick="reader()">
+
+    </div> -->
+    <div class="gethelpbg">
+      <h1>buy products</h1>
+
+
+
+    </div>
+    <div class="full">
       <section class="sec2">
         <h2>Here you can buy the products .<br>Here the list of products which is we collabed with shops<br>
           You can get products free and low cost</h2>
       </section>
       <section class="sec3">
-        <div class="products">
+        <!-- <div class="products">
                     <img src="../../assets/images/tricycle.png" alt="image error">
                     <h1>TRICYCLE</h1>
                     <p>here tricycle for you contact to buy</p>
@@ -92,264 +106,398 @@
                     <h1>BLACK GOGGLES</h1>
                     <p>here black goggles for you contact to buy</p>
                     <a href="black.html"><button class="join">Contact</button></a>
-                </div>
+                </div> -->
+
       </section>
-      <footer id="footer">
-        <div class="foot1">
-          <img src="../../assets/images/logo.png" width="180px" alt="image error">
-          <div class="fb">
+  </main>
+  </div>
+  <!-- footer  -->
+  <footer id="footer">
+    <div class="foot1">
+      <img src="../../assets/images/logo.png" width="180px" alt="image error">
+      <div class="fb">
 
-            <a href=""> <img src="../../assets/images/facebook.png" width="45px" alt="image error"></a>
-            <a href=""> <img src="../../assets/images/youtube.png" width="45px" alt="image error"></a>
-            <a href=""> <img src="../../assets/images/insta.png" width="45px" alt="image error"></a>
-            <a href=""> <img src="../../assets/images/mail.png" width="45px" alt="image error"></a>
-            <a href=""> <img src="../../assets/images/whatsapp.png" width="45px" alt="image error"></a>
-          </div>
-        </div>
-        <!-- footer  -->
-
-        <div class="foot3">
-          <div class="add">
-            <h4>FRESHTRUST:</h4>
-
-            <p> Sathyadev Ave, opp.<br> Chettinad Vidyashram, MRC Nagar<br> Raja Annamalai Puram,<br> Chennai, Tamil
-              Nadu 600028</p>
-          </div>
-          <div class="mail">
-            <h4>Phone numbers: (11.00 AM to 7.00 PM)</h4>
-            <p> +91-123456789<br>
-              +91-123456789
-              <br>Email: isacdevaabishek@gamil.com
-            </p>
-          </div>
-        </div>
-        <div class="foot2">
-          <div class="foot2p">
-            <p>&copy;2022</p>
-          </div>
-          <div class="foot22p">
-            <p>HELP</p>
-            <p>DONATE</p>
-            <p>BLESSED</p>
-
-          </div>
-        </div>
-      </footer>
-      <!-- <script>
-
-        let div_products;
-        let img_cards;
-
-        let h1_product_title;
-        let p_card_text;
-        let a_tags;
-        let button_tags;
-
-        // const product_images=["../../assets/images/tricycle.png" ,"../../assets/images/wheelchair.jfif","../../assets/images/Special hearing aids.jpg","../../assets/images/Artificial limbs.jpg","../../assets/images/Crutches.jpg","../../assets/images/Magnifier for visually impaired students.jpg","../../assets/images/bike1.jpg","../../assets/images/stick.jpg","../../assets/images/black.jpg"]
-        // const product_names=["tricycle","wheelchair","hearingaid","artificial limb","crutches","magnifier","bike","stick","blackgoogles"];
-        // const abt_products=["here tricycle for you contact to buy","here wheelchair for you contact to buy","here hearingaid for you contact to buy","here artificial limb for you contact to buy","here crutches for you contact to buy","here magnifier for you contact to buy","here bike for you contact to buy","here stick for you contact to buy","here black googles for you contact to buy"]
-
-        const products = [
-          {
-            product_images:
-            {
-              "source": "../../assets/images/tricycle.png",
-              "alternatetext": "tricycleimage"
-            },
-            product_names: "tricycle",
-            abt_products: "here tricycle for you contact to buy"
-          },
-          {
-            product_images:
-            {
-              "source": "../../assets/images/wheelchair.jfif",
-              "alternatetext": "wheelchairimage"
-            },
-            product_names: "wheelchair",
-            abt_products: "here wheelchair for you contact to buy"
-          },
-          {
-
-            product_images:
-            {
-              "source": "../../assets/images/Special hearing aids.jpg",
-              "alternatetext": "hearingaidimage"
-            },
-            product_names: "hearingaid",
-            abt_products: "here hearing aid for you contact to buy"
-          },
-          {
-            product_images:
-            {
-              "source": "../../assets/images/Crutches.jpg",
-              "alternatetext": "crutchesimage"
-            },
-            product_names: "Crutches",
-            abt_products: "here Crutches for you contact to buy"
-          },
-          {
-            product_images: {
-              "source": "../../assets/images/Magnifier for visually impaired students.jpg",
-              "alternatetext": "magnifierimage"
-            },
-            product_names: "Magnifier",
-            abt_products: "here Magnifier for you contact to buy"
-          },
-          {
-            product_images: {
-              "source": "../../assets/images/bike1.jpg",
-              "alternatetext": "bikeimage"
-            },
-            product_names: "bike",
-            abt_products: "here bike for you contact to buy"
-          },
-          {
-            product_images: {
-              "source": "../../assets/images/stick.jpg",
-              "alternatetext": "stickimage"
-            },
-            product_names: "stick",
-            abt_products: "here stick for you contact to buy"
-          },
-          {
-            product_images: {
-              "source": "../../assets/images/black.jpg",
-              "alternatetext": "blackimage"
-            },
-            product_names: "googles",
-            abt_products: "here googles for you contact to buy"
-          },
-          {
-            product_images: {
-              "source": "../../assets/images/Artificial limbs.jpg",
-              "alternatetext": "limbsimage"
-            },
-            product_names: "Artificial limbs",
-            abt_products: "here Artificial limbs for you contact to buy"
-          },
-
- {
-            product_images:
-            {
-              "source": "../../assets/images/tricycle.png",
-              "alternatetext": "tricycleimage"
-            },
-            product_names: "tricycle",
-            abt_products: "here tricycle for you contact to buy"
-          },
-          {
-            product_images:
-            {
-              "source": "../../assets/images/wheelchair.jfif",
-              "alternatetext": "wheelchairimage"
-            },
-            product_names: "wheelchair",
-            abt_products: "here wheelchair for you contact to buy"
-          },
-          {
-
-            product_images:
-            {
-              "source": "../../assets/images/Special hearing aids.jpg",
-              "alternatetext": "hearingaidimage"
-            },
-            product_names: "hearingaid",
-            abt_products: "here hearing aid for you contact to buy"
-          },
-          {
-            product_images:
-            {
-              "source": "../../assets/images/Crutches.jpg",
-              "alternatetext": "crutchesimage"
-            },
-            product_names: "Crutches",
-            abt_products: "here Crutches for you contact to buy"
-          },
-          {
-            product_images: {
-              "source": "../../assets/images/Magnifier for visually impaired students.jpg",
-              "alternatetext": "magnifierimage"
-            },
-            product_names: "Magnifier",
-            abt_products: "here Magnifier for you contact to buy"
-          },
-          {
-            product_images: {
-              "source": "../../assets/images/bike1.jpg",
-              "alternatetext": "bikeimage"
-            },
-            product_names: "bike",
-            abt_products: "here bike for you contact to buy"
-          },
-          {
-            product_images: {
-              "source": "../../assets/images/stick.jpg",
-              "alternatetext": "stickimage"
-            },
-            product_names: "stick",
-            abt_products: "here stick for you contact to buy"
-          },
-          {
-            product_images: {
-              "source": "../../assets/images/black.jpg",
-              "alternatetext": "blackimage"
-            },
-            product_names: "googles",
-            abt_products: "here googles for you contact to buy"
-          },
-          {
-            product_images: {
-              "source": "../../assets/images/Artificial limbs.jpg",
-              "alternatetext": "limbsimage"
-            },
-            product_names: "Artificial limbs",
-            abt_products: "here Artificial limbs for you contact to buy"
-          },
-        ]
+        <a href=""> <img src="../../assets/images/facebook.png" width="45px" alt="image error"></a>
+        <a href=""> <img src="../../assets/images/youtube.png" width="45px" alt="image error"></a>
+        <a href=""> <img src="../../assets/images/insta.png" width="45px" alt="image error"></a>
+        <a href=""> <img src="../../assets/images/mail.png" width="45px" alt="image error"></a>
+        <a href=""> <img src="../../assets/images/whatsapp.png" width="45px" alt="image error"></a>
+      </div>
+    </div>
 
 
-        for (let i = 0; i < 9; i++) {
+    <div class="foot3">
+      <div class="add">
+        <h4>FRESHTRUST:</h4>
+
+        <p> Sathyadev Ave, opp.<br> Chettinad Vidyashram, MRC Nagar<br> Raja Annamalai Puram,<br> Chennai, Tamil
+          Nadu 600028</p>
+      </div>
+      <div class="mail">
+        <h4>Phone numbers: (11.00 AM to 7.00 PM)</h4>
+        <p> +91-123456789<br>
+          +91-123456789
+          <br>Email: isacdevaabishek@gamil.com
+        </p>
+      </div>
+    </div>
+    <div class="foot2">
+      <div class="foot2p">
+        <p>&copy;2022</p>
+      </div>
+      <div class="foot22p">
+        <p>HELP</p>
+        <p>DONATE</p>
+        <p>BLESSED</p>
+
+      </div>
+    </div>
+  </footer>
+  <script>
+
+
+    // let msg = new SpeechSynthesisUtterance();
+    // let voices = speechSynthesis.getVoices();
+    // msg.voice = voices[0];
+    // let tags = document.querySelectorAll('p,a,h1,h2,h3'); // add more tags for you project
+    // tags.forEach((tag) => {
+    //     tag.addEventListener('click', (e) => {
+
+    //         msg.text = e.target.innerText;
+    //         tag.style.backgroundColor = "yellow";
+    //         speechSynthesis.speak(msg);
+
+    //         let interval = setInterval(() => {
+    //             if(!speechSynthesis.speaking){
+    //                 tag.style.removeProperty('background-color');
+    //                 clearInterval(interval);
+    //             }
+    //         }, 100);
+
+    //     });
+    // });
 
 
 
-          //  <div class="products"> </div>
-          div_products = document.createElement("div");
-          div_products.setAttribute("class", "products");
-          console.log(div_products)
+    let div_products;
+    let img_cards;
+
+    let h1_product_title;
+    let p_card_text;
+    let a_tags;
+    let button_tags;
+
+    // const product_images=["../../assets/images/tricycle.png" ,"../../assets/images/wheelchair.jfif","../../assets/images/Special hearing aids.jpg","../../assets/images/Artificial limbs.jpg","../../assets/images/Crutches.jpg","../../assets/images/Magnifier for visually impaired students.jpg","../../assets/images/bike1.jpg","../../assets/images/stick.jpg","../../assets/images/black.jpg"]
+    // const product_names=["tricycle","wheelchair","hearingaid","artificial limb","crutches","magnifier","bike","stick","blackgoogles"];
+    // const abt_products=["here tricycle for you contact to buy","here wheelchair for you contact to buy","here hearingaid for you contact to buy","here artificial limb for you contact to buy","here crutches for you contact to buy","here magnifier for you contact to buy","here bike for you contact to buy","here stick for you contact to buy","here black googles for you contact to buy"]
+
+    let products = [
+      {
+        product_images:
+        {
+          "source": "../../assets/images/tricycle.png",
+          "alternatetext": "tricycleimage"
+        },
+        product_name: "tricycle",
+        abt_products: " tricycle for you contact to buy"
+      },
+      {
+        product_images:
+        {
+          "source": "../../assets/images/wheelchair.jfif",
+          "alternatetext": "wheelchairimage"
+        },
+        product_name: "wheelchair",
+        abt_products: " wheelchair for you contact to buy"
+      },
+      {
+
+        product_images:
+        {
+          "source": "../../assets/images/Special hearing aids.jpg",
+          "alternatetext": "hearingaidimage"
+        },
+        product_name: "hearingaid",
+        abt_products: " hearing aid for you contact to buy"
+      },
+      {
+        product_images:
+        {
+          "source": "../../assets/images/Crutches.jpg",
+          "alternatetext": "crutchesimage"
+        },
+        product_name: "Crutches",
+        abt_products: " Crutches for you contact to buy"
+      },
+      {
+        product_images: {
+          "source": "../../assets/images/Magnifier for visually impaired students.jpg",
+          "alternatetext": "magnifierimage"
+        },
+        product_name: "Magnifier",
+        abt_products: " Magnifier for you contact to buy"
+      },
+      {
+        product_images: {
+          "source": "../../assets/images/bike1.jpg",
+          "alternatetext": "bikeimage"
+        },
+        product_name: "bike",
+        abt_products: " bike for you contact to buy"
+      },
+      {
+        product_images: {
+          "source": "../../assets/images/stick.jpg",
+          "alternatetext": "stickimage"
+        },
+        product_name: "stick",
+        abt_products: " stick for you contact to buy"
+      },
+      {
+        product_images: {
+          "source": "../../assets/images/black.jpg",
+          "alternatetext": "blackimage"
+        },
+        product_name: "googles",
+        abt_products: " googles for you contact to buy"
+      },
+      {
+        product_images: {
+          "source": "../../assets/images/Artificial limbs.jpg",
+          "alternatetext": "limbsimage"
+        },
+        product_name: "Artificial limbs",
+        abt_products: " Artificial limbs for you contact to buy"
+      },
+
+      {
+        product_images:
+        {
+          "source": "../../assets/images/tricycle.png",
+          "alternatetext": "tricycleimage"
+        },
+        product_name: "tricycle",
+        abt_products: " tricycle for you contact to buy"
+      },
+      {
+        product_images:
+        {
+          "source": "../../assets/images/wheelchair.jfif",
+          "alternatetext": "wheelchairimage"
+        },
+        product_name: "wheelchair",
+        abt_products: " wheelchair for you contact to buy"
+      },
+      {
+
+        product_images:
+        {
+          "source": "../../assets/images/Special hearing aids.jpg",
+          "alternatetext": "hearingaidimage"
+        },
+        product_name: "hearingaid",
+        abt_products: " hearing aid for you contact to buy"
+      },
+      {
+        product_images:
+        {
+          "source": "../../assets/images/Crutches.jpg",
+          "alternatetext": "crutchesimage"
+        },
+        product_name: "Crutches",
+        abt_products: " Crutches for you contact to buy"
+      },
+      {
+        product_images: {
+          "source": "../../assets/images/Magnifier for visually impaired students.jpg",
+          "alternatetext": "magnifierimage"
+        },
+        product_name: "Magnifier",
+        abt_products: " Magnifier for you contact to buy"
+      },
+      {
+        product_images: {
+          "source": "../../assets/images/bike1.jpg",
+          "alternatetext": "bikeimage"
+        },
+        product_name: "bike",
+        abt_products: " bike for you contact to buy"
+      },
+      {
+        product_images: {
+          "source": "../../assets/images/stick.jpg",
+          "alternatetext": "stickimage"
+        },
+        product_name: "stick",
+        abt_products: " stick for you contact to buy"
+      },
+      {
+        product_images: {
+          "source": "../../assets/images/black.jpg",
+          "alternatetext": "blackimage"
+        },
+        product_name: "googles",
+        abt_products: " googles for you contact to buy"
+      },
+      {
+        product_images: {
+          "source": "../../assets/images/Artificial limbs.jpg",
+          "alternatetext": "limbsimage"
+        },
+        product_name: "Artificial limbs",
+        abt_products: " Artificial limbs for you contact to buy"
+      },
+    ]
+    let new_request = JSON.parse(localStorage.getItem("productrequest"))
+    products = products.concat(new_request)
+
+    for (let i = 0; i < products.length; i++) {
 
 
-          //  <img src="" alt=""/>
-          img_cards = document.createElement("img");
-          img_cards.setAttribute("src", products[i]["product_images"]["source"]);
-          img_cards.setAttribute("alt", products[i]["product_images"]["alternatetext"]);
-          div_products.append(img_cards);
+
+      //  <div class="products"> </div>
+      div_products = document.createElement("div");
+      div_products.setAttribute("class", "products");
+      console.log(div_products)
 
 
-          //  <h1 class="card-title"> </h1>
-          h1_product_title = document.createElement("h1");
-
-          h1_product_title.innerText = products[i].product_names;
-          div_products.append(h1_product_title);
-
-          //  <p class="card-text"> </p>
-          p_card_text = document.createElement("p");
-          p_card_text.innerText = products[i].abt_products;
-          div_products.append(p_card_text);
+      //  <img src="" alt=""/>
+      img_cards = document.createElement("img");
+      img_cards.setAttribute("src", products[i]["product_images"]["source"]);
+      img_cards.setAttribute("alt", products[i]["product_images"]["alternatetext"]);
+      div_products.append(img_cards);
 
 
-          //  <a href=><button class=join></button><a/>
-          a_tags=document.createElement("a");
-          a_tags.setAttribute("href","")
-          div_products.append(a_tags);
+      //  <h1 class="card-title"> </h1>
+      h1_product_title = document.createElement("h1");
 
-          button_tags = document.createElement("button");
-          button_tags.setAttribute("class", "join");
-          button_tags.innerText = "contact"
-          a_tags.append(button_tags);
+      h1_product_title.innerText = products[i].product_name;
+      div_products.append(h1_product_title);
 
-          document.querySelector("section.sec3").append(div_products);
-        }
-      </script> -->
+      //  <p class="card-text"> </p>
+      p_card_text = document.createElement("p");
+      p_card_text.innerText = products[i].abt_products;
+      div_products.append(p_card_text);
+
+
+      //  <a href=><button class=join></button><a/>
+      a_tags = document.createElement("a");
+      a_tags.setAttribute("href", "projectview.html?name=" + products[i]["product_name"])
+      div_products.append(a_tags);
+
+      button_tags = document.createElement("button");
+      button_tags.setAttribute("class", "join");
+      button_tags.innerText = "contact"
+      a_tags.append(button_tags);
+
+      document.querySelector("section.sec3").append(div_products);
+    }
+
+    //     let tags=document.querySelectorAll('h1');
+    //     // let msg;
+    //  tags.forEach((tag)=>{
+    //   tag.addEventListener('click',(e)=>{
+    //     msg.text=e.target.innerText;
+    //     speechSynthesis.speak(msg);
+    //    });
+    //   });
+
+
+    // function reader() {
+      // let toggled = document.getElementById("click");
+
+
+      // let value = toggled.checked;
+      // console.log(value + "first")
+
+      // let msg = new SpeechSynthesisUtterance();//Interface,
+
+      // let tags = document.querySelectorAll('p,a,h1,h2,h3');
+      // if (toggled.checked == true) {
+      //   console.log("isac")
+
+
+      //   // add more tags for you project
+      //   tags.forEach((tag) => {
+      //     tag.addEventListener('click', (e) => {
+
+      //       msg.text = e.target.innerText;
+      //       tag.style.backgroundColor = "yellow";
+      //       tag.style.color = "black";
+      //       speechSynthesis.speak(msg);
+
+      //       let interval = setInterval(() => {
+      //         if (!speechSynthesis.speaking) {
+      //           tag.style.removeProperty('background-color');
+      //           // tag.style.removeProperty('color');
+      //           // tag.style.removeProperty('color');
+      //           clearInterval(interval);
+      //         }
+      //       }, 100);
+
+      //     });
+      //   });
+
+
+      //   //  if (toggled.checked==false) {
+      //   // msg=" "
+      //   //  voices=" "
+      //   //  tags=" "
+      //   // console.log("off");
+      //   //  }
+
+      // }
+
+      // if (toggled.checked == false) {
+      //   speechSynthesis.cancel();
+      //   msg = " "
+      //   voices = " "
+      //   tags = " "
+      //   console.log("off");
+      //   confirm("1")
+      // }
+      //   else {
+
+      //     let value = toggled.value;
+      //     console.log(value + "second")
+
+
+      //     let msg = " "
+      //     let voices = " "
+      //     //  tags=" "
+      //     let tags = document.querySelectorAll('p,a,h1,h2,h3');
+      //     tags.forEach((tag) => {
+      //       tag.addEventListener('click', (e) => {
+
+      //         msg.text = e.target.innerText;
+      //         // tag.style.backgroundColor = "grey";
+      //         // tag.style.color = "black";
+      //         // speechSynthesis.speak(msg);
+
+
+
+      //       });
+      //     });
+      //     let interval = setInterval(() => {
+      //       if (!speechSynthesis.speaking) {
+      //         tag.style.removeProperty('background-color');
+      //         // tag.style.removeProperty('color')
+      //         // tag.style.removeProperty('color');
+      //         clearInterval(interval);
+      //       }
+      //     }, 100);
+      //     console.log("off");
+
+      //   }
+
+    // }
+
+
+
+
+
+
+  </script>
 
 </body>
 

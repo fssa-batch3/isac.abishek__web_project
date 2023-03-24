@@ -6,10 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;800;900;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
   <title>freshtrust</title>
   <link rel="icon" href="assets/images/icon.png">
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
 </head>
 
 <body>
@@ -20,25 +22,29 @@
     <ul>
       <li><a href="index.html">HOME</a></li>
       <li><a href="pages/about/schemes.html">SCHEMES</a></li>
-      <li><a href="pages/donarpages/donarlogin.html">DONATE US</a></li>
+      <li><a href="pages/volunteerpages/signup.html">DONATE US</a></li>
       <li><a href="pages/about/aboutus.html">ABOUT</a></li>
       <li><a href="#">GET HELP</a>
 
         <div class="dropdown-menu">
           <ul>
-            <li><a href="pages/patientpages/patientlogin.html">User login</a></li>
+            <li><a href="pages/volunteerpages/signup.html">User login</a></li>
           </ul>
         </div>
       </li>
       <li><a href="pages/donarpages/involve.html">GET INVOLVED</a></li>
-      <li><a href="pages/beinspired/inspire.html">BE INSPIRED</a></li>
+      <li><a href="pages/volunteerpages/signup.html">BE INSPIRED</a></li>
+      <li><a href="pages/volunteerpages/signup.html">sign up</a></li>
     </ul>
   </div>
 </nav>
 <!-- body pages  -->
   <main>
-    <section class="main1">
-      <div class="main1full">
+    <section  class="main1">
+      <div data-aos="fade-zoom-in"
+      data-aos-easing="ease-in-back"
+      data-aos-delay="300"
+      data-aos-offset="0" class="main1full">
         <h1>WELCOME TO FRESH TRUST</h1>
         <p>
           We are fresh trust for the people who are diffrently abled peoples</p>
@@ -48,7 +54,10 @@
       </div>
     </section>
     <section class="main2">
-      <div class="main2full">
+      <div data-aos="fade-zoom-in"
+      data-aos-easing="ease-in-back"
+      data-aos-delay="300"
+      data-aos-offset="0"class="main2full">
         <h1>About us</h1>
         <p>
           "Channeling the goodwill of communities & Bringing hope to people in need" <br> Click the learn more button to
@@ -58,35 +67,47 @@
     </section>
 
     <section class="main3">
-      <div class="main3full">
+      <div data-aos="fade-zoom-in"
+      data-aos-easing="ease-in-back"
+      data-aos-delay="300"
+      data-aos-offset="0" class="main3full">
         <h1>GET HELP</h1>
         <p> "The best advice I can give to anyone going through a rough patch is to never be afraid to ask for help."
         </p>
         <p>Do a patient login and see the get help features available for you</p>
-        <br><a href="pages/patientpages/patientlogin.html"><button class="gethelp">GET HELP</button></a>
+        <br><a href="pages/volunteerpages/signup.html"><button class="gethelp">GET HELP</button></a>
       </div>
     </section>
     <section class="main4">
-      <div class="main4full">
+      <div data-aos="fade-zoom-in"
+      data-aos-easing="ease-in-back"
+      data-aos-delay="300"
+      data-aos-offset="0" class="main4full">
 
         <h1>GET INVOLVED</h1>
         <p> “ when We Give Cheerfully And Accept Gratefully, Everyone Is Blessed.”</p>
         <p>Click here to join with us as volunteer and donate us </p>
-        <br><a href="pages/donarpages/involve.html"><button class="join">JOIN WITH US</button></a>
+        <br><a href="pages/volunteerpages/signup.html"><button class="join">JOIN WITH US</button></a>
       </div>
     </section>
     <section class="main5">
-      <div class="main5full">
+      <div data-aos="fade-zoom-in"
+      data-aos-easing="ease-in-back"
+      data-aos-delay="300"
+      data-aos-offset="0" class="main5full">
 
         <h1>BE INSPIRED</h1>
         <p>
           “Show up, show up, show up, and after a while the muse shows up, too.”</p>
         <p>Click here to see latest motivational videos</p>
-        <br><a href="pages/beinspired/inspire.html"><button class="join">SEE LATEST</button></a>
+        <br><a href="pages/volunteerpages/signup.html"><button class="join">SEE LATEST</button></a>
       </div>
     </section>
     <section class="main6">
-      <div class="main6full">
+      <div data-aos="fade-zoom-in"
+      data-aos-easing="ease-in-back"
+      data-aos-delay="300"
+      data-aos-offset="0" class="main6full">
         <h1>CONTACT</h1>
         <p> It's good hearts like you who inspire us to do what we do. Your comments, ideas and questions push us to<br>
         </p>
@@ -96,8 +117,11 @@
     </section>
   </main>
   <!-- footer  -->
-  <footer id="footer">
-    <div class="foot1">
+  <footer  id="footer">
+    <div data-aos="fade-zoom-in"
+    data-aos-easing="ease-in-back"
+    data-aos-delay="300"
+    data-aos-offset="0" class="foot1">
       <img src="assets/images/logo.png" width="180px" alt="">
       <div class="fb">
 
@@ -138,7 +162,29 @@
     </div>
   </footer>
 </body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  
+  AOS.init();
+  let msg = new SpeechSynthesisUtterance();
+// let voices = speechSynthesis.getVoices();
+// msg.voice = voices[0];
+let tags = document.querySelectorAll('p,a,h1,h2,h3'); // add more tags for you project
+tags.forEach((tag) => {
+    tag.addEventListener('click', (e) => {
+        
+        msg.text = e.target.innerText;
+        tag.style.backgroundColor = "yellow";
+        tag.style.color = "black";
+        speechSynthesis.speak(msg);
+        
+        let interval = setInterval(() => {
+            if(!speechSynthesis.speaking){
+                tag.style.removeProperty('background-color');
+                clearInterval(interval);
+            }
+        }, 100);
+        
+    });
+});
 </script>
 </html>

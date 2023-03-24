@@ -5,9 +5,15 @@
 }
 
 body {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Merienda', cursive;
+    font-family: 'Merienda', cursive;
+    /* background-image: url(../images/circle-scatter-haikei3.png); */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
-/* nav bar  */
+
 .menu-bar {
     height: 120px;
     display: flex;
@@ -40,7 +46,7 @@ body {
 .menu-bar ul li::after {
     content: '';
     display: block;
-    background-color: #d70f64;
+    background-color: #6C3DD9;
     height: 2px;
     width: 0%;
     margin: auto;
@@ -54,7 +60,7 @@ body {
 .menu-bar ul li a {
     font-size: 20px;
     text-decoration: none;
-    color: #d70f64;
+    color: #6C3DD9;
 }
 @media screen and (max-width:600px) {
     .menu-bar {
@@ -98,7 +104,7 @@ body {
     .menu-bar ul li a {
       font-size: 9px;
       text-decoration: none;
-      color: #d70f64;
+      color: #6C3DD9;
      
     }
 }
@@ -117,6 +123,7 @@ body {
     font-weight: 400;
     color: white;
     letter-spacing: 1px;
+    /* width: 1137px; */
 }
 /* animation*/
 .gethelpbg h1{
@@ -127,6 +134,7 @@ body {
     background-position: 0 0;
     animation:back 20s linear infinite;
 }
+
 @keyframes back{
     100%{
         background-position: 2000px 0;
@@ -134,7 +142,7 @@ body {
 }
 @media screen and (max-width:600px) {
     .gethelpbg {
-        background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/govt2.jpg);
+        background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/govt.jpg);
         background-attachment: fixed;
         background-size: 700px;
         background-position: top;
@@ -152,7 +160,7 @@ body {
 /* button  */
 .join {
     cursor: pointer;
-    background-color:#d70f64;
+    background-color:#6C3DD9;
     color: white;
     font-weight: 500;
     position: relative;
@@ -162,25 +170,27 @@ body {
     animation-name: slide;
   animation-duration: 2s;
     margin-top: 40px;
-   
+   border-radius: 20px;
 }
 .join:hover{
     background-color: #f2f2ff;
-    color: #d70f64;
-    border: 1px solid #d70f64;
+    color: #6C3DD9;
+    border: 1px solid #6C3DD9;
     padding: 18px 83px;
 }
 .sec1{
     display: flex;
     justify-content: space-around;
     margin-top: 100px;
+    /* border: 2px solid red; */
 }
 .sec1 h1{
-    color: #d70f64;
+    color: #6C3DD9;
     text-align: center;
     margin-top: 80px;
     animation-name: slide;
   animation-duration: 2s;
+  /* border: 2px solid black; */
 }
 @keyframes slide{
     0%{opacity: 0;}
@@ -193,17 +203,17 @@ body {
     margin-top: 50px;
     animation-name: slide;
   animation-duration: 2s;
+  /* border: 2px solid blue; */
 }
 .sec1 img{
     border-radius: 20px;
     animation-name: slide;
   animation-duration: 2s;
+  transition: 0.5s;
+  /* border: 2px solid green; */
 }
 
-.sec1 img:hover{
-    box-shadow: 5px 10px 18px #888888;
-    
-}
+
 @media screen and (max-width:600px) {
     .sec1{
         display: contents;
@@ -227,18 +237,23 @@ body {
         padding: 10px 45px;
     }
 }
-.foot1 {
+/* .foot1 {
     display: flex;
     justify-content: space-between;
     margin: 20px 100px 0px 160px;
     color: white;
 }
 #footer{
-    background-color: #d70f64;
+    background-color: #6C3DD9;
     margin-top: 200px;
 }
 .fb img {
     padding-left: 15px;
+    
+}
+.icon{
+    margin-left: 135px;
+    chan /
 }
 
 .foot2 {
@@ -269,6 +284,8 @@ body {
     justify-content: space-between;
     color: white;
     margin: 30px 100px 0px 160px;
+    margin-left: 300px;
+    chan
 }
 
 .foot3 p {
@@ -297,7 +314,7 @@ body {
     
     .foot2p p {
       font-weight: 500;
-      /* padding-top: 20px; */
+      padding-top: 20px;
     }
     
     .foot22p {
@@ -327,3 +344,151 @@ body {
     }
     
   }
+ */
+
+.full{
+  position: relative;
+  left: 290px;
+  width: 1190px;
+  padding-bottom: 100px;
+  /* border: 2px solid greenyellow; */
+}
+
+.side-nav{
+    width: 70px;
+    overflow: hidden;
+    height: 100%;
+    background-color:#f2f2ff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px 40px;
+    padding-left: 0px;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+   
+}
+.side-nav:hover{
+    width: 250px;
+}
+.logo{
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.navlinks{
+    list-style: none;
+    position: relative;
+}
+.navlinks {
+    position: relative;
+    top:20px;
+}
+.navlinks li{
+    padding: 10px 0;
+}
+
+.navlinks li a{
+    color: #6C3DD9;
+    text-decoration: none;
+    padding: 20px 14px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+.navlinks li a i{
+    font-size: 22px;
+    white-space: nowrap;
+    margin-right: 20px;
+}
+
+.active{
+    background-color: #6C3DD9;
+    width:100%;
+    height:47px;
+    position: absolute;
+    left: 6%;
+    top:3% ;
+    z-index: -1;
+    border-radius: 6px;
+    box-shadow:0 5px 10px rgba(255, 255, 255, 0.4) ;
+    display: none;
+    transition: top 0.5s;
+}
+
+.navlinks li:hover a{
+    color: white;
+    transition: 0.3s; 
+}
+.navlinks li:hover i{
+   transform: rotate(360deg);
+    transition: 0.3s; 
+}
+.navlinks li:hover ~ .active{
+    display: block;
+}
+
+
+
+.navlinks li:nth-child(1):hover ~ .active{
+    top:5%
+}
+.navlinks li:nth-child(2):hover ~ .active{
+    top:14.5%
+}
+.navlinks li:nth-child(3):hover ~ .active{
+    top:28%
+}
+.navlinks li:nth-child(4):hover ~ .active{
+    top:40.5%
+}
+.navlinks li:nth-child(5):hover ~ .active{
+    top:53%
+}
+.navlinks li:nth-child(6):hover ~ .active{
+    top:65.5%
+}
+.navlinks li:nth-child(7):hover ~ .active{
+    top:78%
+}
+.navlinks li:nth-child(8):hover ~ .active{
+    top:90.5%
+}
+.side-nav img{
+     margin-left: 30px;
+}
+i{
+    padding-right: 30px;
+    padding-left: 30px;
+   /* width: 60px; */
+   color: black;
+   transition: 1s;
+}
+/* i:hover{
+    transform: rotate(360deg);
+} */
+ul{
+    margin-top: 20px;
+}
+
+@media only screen and (max-width:600px) {
+    .side-nav{
+        width: 110px;
+
+    }
+    img{
+        display: none;
+    }
+    nav-links li a i p{
+        display: none;
+    }
+    nav-links li a i{
+        margin-right: 0;
+    }
+    nav-links li a{
+        justify-content: center;
+    }
+}

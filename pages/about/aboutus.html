@@ -7,41 +7,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>about fresh trust</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="icon" href="../../assets/images/icon.png">
     <link rel="stylesheet" href="../../assets/css/aboutus.css">
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <!-- body starts  -->
 <body>
-    <div class="menu-bar">
-        <img src="../../assets/images/logo.png" width="200px" alt="image error">
-        <!-- nav bar starts  -->
-        <ul>
-            <li><a href="../../index.html">HOME</a></li>
-            <li><a href="../about/schemes.html">SCHEMES</a></li>
-            <li><a href="../donarpages/donarlogin.html">DONATE US</a></li>
-            <li><a href="../about/aboutus.html">ABOUT</a></li>
-            <li><a href="">GET HELP</a>
+   
+    <div  class="side-nav">
+        <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg">
+      <ul class="navlinks">
+           
+            
+            <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
+            <li><a id="donationlink"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a></li>
+            <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i><p>About</p></a></li>
 
-                <div class="dropdown-menu">
-                    <ul>
-                        <li><a href="../patientpages/patientlogin.html">User login</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href="../donarpages/involve.html">GET INVOLVED</a></li>
-            <li><a href="../beinspired/inspire.html">BE INSPIRED</a></li>
-        </ul>
-    </div>
+            <li><a id="gethelp"><i class="fa-solid fa-truck-medical"></i> Gethelp</a></li>
+            <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>GetInvolved</a></li>
+            <li><a id="beinspiredlink"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
+            <li><a id="myprofile"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
+            <div class="active"></div>
+          </ul>
+      </div>
+   
     <main>
         <!-- content starts  -->
         <section class="aboutsec1">
-            <div class="sec1h1">
+            <div  class="sec1h1">
                 <h1>ABOUT US</h1>
             </div>
+            <div class="full abtusfull">
             <div class="words">
-                <p>For us, it's not just about bringing goodthing to diffrently abled people . It's about making
+                <p>For us, it's not just about bringing goodthing to diffrently abled people .<br> It's about making
                     a connection, which is  we sit down with them and  dreaming up </p>
                 <p>we help if god will help us </p>
             </div>
@@ -53,33 +55,49 @@
                     <p>BLESSED!</p>
                 </div>
             </div>
+            </div>
         </section>
+        
         <section class="aboutsec2">
             <div class="mission">
-                <h1>OUR MISSION</h1>
-                <p>we are here to give an oppturnity to difrently abled people to raise them from theri illness<br> give
-                    them good life with lot of motivations by videos and camps<br>and buy them a what they need with our
+                <div class="full abtusfull">
+                <h1 data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-delay="300"
+                data-aos-offset="0">OUR MISSION</h1>
+
+                <p data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-delay="300"
+                data-aos-offset="0">we are here to give an oppturnity to difrently abled people to raise them from theri illness<br> give
+                    them good life with lot of motivations by videos and camps and buy them a what they need with our
                     trust
                     <br><br> "Every person above the ordinary has a certain mission that they are called to fulfill."
                 </p>
+                </div>
             </div>
-            <div class="abtus">
-                <h1>ABOUT US</h1>
-                <p> Very often, people of a community want to help those in need, but do not know how they can
+            <div class="full abtusfull">
+            <div  class="abtus">
+                <h1 >ABOUT US</h1>
+
+                <p > Very often, people of a community want to help those in need, but do not know how they can
                     contribute,or don’t have the free time to make
                     a significant individual contribution.<br><br> At fresh trust, we channel the goodwill of community
-                    members,
+                    members,<br>
                     organizing and coordinating contributions
                     <br> so as to effectively bring help to people in need.
                 </p>
             </div>
-
+        </div>
         </section>
+   
+
     </main>
+
     <!-- footer starts  -->
     <footer>
         <div class="foot1">
-            <img src="../../assets/images/logo.png" width="180px" alt="image error">
+            <img src="../../assets/images/logo.png" width="180px" alt="image error" class="icon">
             <div class="fb">
 
                 <a href=""> <img src="../../assets/images/facebook.png" width="45px" alt="image error"></a>
@@ -118,6 +136,61 @@
             </div>
         </div>
     </footer>
+    <script>
+        AOS.init();
+      </script>
+      <script>
+
+
+
+// let msg = new SpeechSynthesisUtterance();
+// let voices = speechSynthesis.getVoices();
+// msg.voice = voices[0];
+// let tags = document.querySelectorAll('p,a,h1,h2,h3'); 
+// tags.forEach((tag) => {
+//     tag.addEventListener('click', (e) => {
+        
+//         msg.text = e.target.innerText;
+//         tag.style.backgroundColor = "yellow";
+
+//         tag.style.color = "black";
+//         speechSynthesis.speak(msg);
+        
+//         let interval = setInterval(() => {
+//             if(!speechSynthesis.speaking){
+//                 tag.style.removeProperty('background-color');
+//                 clearInterval(interval);
+//             }
+//         }, 100);
+        
+//     });
+// });
+let arr = localStorage.getItem("userprofile_name");
+     console.log(arr)
+    // let arr2=JSON.parse(localStorage.getItem("volprofile_name"));
+    let gethelp=  document.getElementById("gethelp");
+    let donation=  document.getElementById("donationlink");
+    let beinspired=document.getElementById("beinspiredlink");
+   let profile=document.getElementById("myprofile");
+
+    if(arr==null){
+    
+        gethelp.setAttribute("href","../volunteerpages/signup.html");
+        donation.setAttribute("href","../volunteerpages/signup.html");
+        beinspired.setAttribute("href","../volunteerpages/signup.html");
+        profile.setAttribute("href","../volunteerpages/signup.html");
+    }
+    else{
+       console.log("isac");
+        gethelp.setAttribute("href","gethelp.html");
+        donation.setAttribute("href","../donarpages/donationrequest.html");
+        beinspired.setAttribute("href","../beinspired/inspire.html");
+        profile.setAttribute("href","../volunteerpages/profile.html");
+    } 
+
+
+
+   </script>
 </body>
 
 </html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Product to Local Storage</title>
+  <style>
+   h1{
+      text-align: center;
+    }
+    form{
+      width:500px;
+     margin: auto;
+    }
+    label {
+      /* display: block; */
+      margin-bottom: 5px;
+    }
+    input, textarea {
+      width:500px; 
+
+      padding: 5px;
+     margin-bottom: 10px; 
+    }
+    button {
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: none;
+    }
+    #donation,#hospital,#product{
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Add Product to Local Storage</h1>
+  <form>
+
+    <label for="donation">donation</label><input type="radio" name="user" id="donation" value="donation" onclick="selector()" >
+  <label for="hospital">hospital</label><input type="radio" name="user" id="hospital" value="hospital" onclick="selector()" >
+  <label for="product">product</label><input type="radio" name="user" id="product" value="product" onclick="selector()" >
+  
+  <label for="request_id" id="request_id"></label>
+  <input type="text" id="req_id" name="request_id">
+  <label for="request_img" id="image"></label>
+    <input type="url" id="request_img" name="request_title">
+    <label for="request_img" id="alternate"></label>
+    <input type="text" id="img_alt" name="request_title">
+    <label for="request_title" id="title"></label>
+    <input type="text" id="request_title" name="request_title" required>
+    <label for="about_request" id="about"></label>
+    <input type="text" id="about_request" name="about_request" required>
+    <label for="requested_by" id="by"></label>
+    <input type="text" id="requested_by" name="requested_by" required>
+    <label for="requests_address" id="address"></label>
+    <textarea id="requests_address" name="requests_address" required></textarea>
+    <button  id="add-donation" onclick="donation()" disabled>Add donation request</button>
+    <button  id="add-product" onclick="add_product()" disabled>Add Product</button>
+    <button  id="add-hospital" onclick="add_hospital()" disabled>Add hospital</button>
+
+  </form>
+  <script>
+    function selector() {
+      
+    
+    let hospital=document.getElementById("hospital").checked
+    let donations=document.getElementById("donation").checked
+    let product=document.getElementById("product").checked
+    if(hospital===false&&donations===false&&product===true){
+      document.getElementById("request_id").innerText="product id"
+      document.getElementById("image").innerText="product image"
+      document.getElementById("alternate").innerText="image alternate text"
+      document.getElementById("title").innerText="product title"
+      document.getElementById("about").innerText="about product"
+      document.getElementById("address").innerText=""
+      document.getElementById("by").innerText=""
+      document.getElementById("requested_by").setAttribute("disabled","")
+      document.getElementById("requests_address").setAttribute("disabled","")
+     let button1= document.getElementById("add-product")
+     let button2= document.getElementById("add-hospital")
+     let button3= document.getElementById("add-donation")
+   
+
+      button1.style.display="block"
+      button2.style.display="none"
+      button3.style.display="none"
+
+     
+      
+    }
+    if(hospital===false&&donations===true&&product===false){
+      document.getElementById("request_id").innerText="request id"
+      document.getElementById("image").innerText="donation request image"
+      document.getElementById("alternate").innerText="image alternate text"
+      document.getElementById("title").innerText="request title"
+      document.getElementById("about").innerText="about request"
+      document.getElementById("by").innerText="request by"
+      document.getElementById("address").innerText="address"
+      document.getElementById("requested_by").removeAttribute("disabled")
+      document.getElementById("requests_address").removeAttribute("disabled")
+      
+
+
+      let button1= document.getElementById("add-product")
+     let button2= document.getElementById("add-hospital")
+     let button3= document.getElementById("add-donation")
+   
+
+      button1.style.display="none"
+      button2.style.display="none"
+      button3.style.display="block"
+    }
+    if(hospital===true&&donations===false&&product===false){
+      document.getElementById("request_id").innerText="hospital id"
+
+      document.getElementById("image").innerText="hospital image"
+      document.getElementById("alternate").innerText="image alternate text"
+      document.getElementById("title").innerText="hospital title"
+      document.getElementById("about").innerText="doctor name"
+      document.getElementById("by").innerText="speaclist in"
+      document.getElementById("address").innerText="address"
+      document.getElementById("requested_by").removeAttribute("disabled")
+      document.getElementById("requests_address").removeAttribute("disabled")
+    
+      
+      let button1= document.getElementById("add-product")
+     let button2= document.getElementById("add-hospital")
+     let button3= document.getElementById("add-donation")
+   
+
+      button1.style.display="none"
+      button2.style.display="block"
+      button3.style.display="none"
+    }
+  }
+function donation(){
+  let request_img=document.getElementById("request_img").value
+  let img_alt=document.getElementById("img_alt").value
+  let request_title  = document.getElementById("request_title").value
+  let about_request= document.getElementById("about_request").value
+  let requested_by = document.getElementById("requested_by").value
+  let requests_address= document.getElementById("requests_address").value
+
+
+  
+  let newrequests = {
+    requests_images:
+      {
+        "source": request_img,
+        "alternatetext": img_alt
+      },
+  //  "requests_images":request_img,
+  //  "img_alt":img_alt,
+    "request_title":request_title,
+    "about_request":about_request,
+    "requested_by":requested_by,
+    "requests_address":requests_address
+  };
+
+  
+  let requests = JSON.parse(localStorage.getItem('donationrequests')) ||[];
+
+
+  requests.push(newrequests);
+
+  
+  localStorage.setItem("donationrequests",JSON.stringify(requests));
+
+};
+function add_product(){
+  let request_img=document.getElementById("request_img").value
+  let img_alt=document.getElementById("img_alt").value
+  let product_title  = document.getElementById("request_title").value
+  let about_product= document.getElementById("about_request").value
+  
+
+  
+  let newrequests = {
+    product_images: {
+          "source":request_img,
+          "alternatetext":img_alt
+        },
+  //   "requests_images":request_img,
+  //  "img_alt":img_alt,
+    "product_name":product_title,
+    "abt_products":about_product,
+  };
+
+  let requests = JSON.parse(localStorage.getItem('productrequest')) ||[];
+
+  requests.push(newrequests);
+
+  localStorage.setItem("productrequest",JSON.stringify(requests));
+
+}
+
+
+function add_hospital(){
+  let hospital_title  = document.getElementById("request_title").value
+  let request_img=document.getElementById("request_img").value
+  let img_alt=document.getElementById("img_alt").value
+  let doctor_name= document.getElementById("about_request").value
+  let specialist_in = document.getElementById("requested_by").value
+  let hospital_address= document.getElementById("requests_address").value
+
+  
+  let newhospital = {
+    hospitals_images:
+        {
+          "source": request_img,
+          "alternatetext":img_alt
+        },
+  //  "requests_images":request_img,
+  //  "img_alt":img_alt,
+    "hospital_title":hospital_title,
+    "doctor_name":doctor_name,
+    "specialist_in":specialist_in ,
+    "hospital_address":hospital_address
+  };
+
+  
+  let newhospitalrequests = JSON.parse(localStorage.getItem('hospitalrequests')) ||[];
+
+
+  newhospitalrequests.push(newhospital);
+
+  
+  localStorage.setItem("hospitalrequests",JSON.stringify(newhospitalrequests));
+
+}
+  </script>
+</body>
+</html>

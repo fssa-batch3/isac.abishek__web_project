@@ -7,35 +7,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/govt.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../assets/css/common.css">
     <link rel="icon" href="../../assets/images/icon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
     <title>gethelp</title>
 </head>
 
 <body>
     <nav>
-    <div class="menu-bar">
-        <img src="../../assets/images/logo.png" width="200px" alt="">
-        <ul>
-            
-            <li><a href="../../index.html">HOME</a></li>
-            <li><a href="../about/schemes.html">SCHEMES</a></li>
-            <li><a href="../donarpages/donarlogin.html">DONATE US</a></li>
-            <li><a href="../about/aboutus.html">ABOUT</a></li>
-            <li><a href="../patientpages/gethelp.html">GET HELP</a>
-            </li>
-            <li><a href="../donarpages/involve.html">GET INVOLVED</a></li>
-            <li><a href="../beinspired/inspire.html">BE INSPIRED</a></li>
-        </ul>
-    </div>
+        <div class="side-nav">
+            <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg">
+          <ul class="navlinks">
+               
+             
+                <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
+                <li><a id="donationlink"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a></li>
+                <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i><p>About</p></a></li>
+                <li><a  id="gethelp"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
+                <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>GetInvolved</a></li>
+                <li><a id="beinspiredlink"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
+                <li><a id="myprofile"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
+                <div class="active"></div>
+              </ul>
+          </div>
 </nav>
 <!-- body starts  -->
 <main>
+    
     <section class="sec1">
         <div class="sec1h1">
             <h1>GOVERNMENT SCHEMES </h1>
         </div>
     </section>
+    <div class="full govtfull">
     <section class="sec2">
         <table><caption>govt scehems</caption>
             <tr>
@@ -226,11 +231,12 @@
             </tr>
           </table>
     </section>
+</div>
 </main>
 <!-- footer  -->
 <footer>
     <div class="foot1">
-        <img src="../../assets/images/logo.png" width="180px" alt="">
+        <img src="../../assets/images/logo.png" width="180px" alt="" class="icon">
         <div class="fb">
 
             <a href=""> <img src="../../assets/images/facebook.png" width="45px" alt="image error"></a>
@@ -269,4 +275,53 @@
     </div>
 </footer>
 </body>
+
+<script>
+    
+//     let msg = new SpeechSynthesisUtterance();
+// let voices = speechSynthesis.getVoices();
+// msg.voice = voices[0];
+// let tags = document.querySelectorAll('p,a,h1,h2,h3'); // add more tags for you project
+// tags.forEach((tag) => {
+//     tag.addEventListener('click', (e) => {
+        
+//         msg.text = e.target.innerText;
+//         tag.style.backgroundColor = "yellow";
+//         speechSynthesis.speak(msg);
+        
+//         let interval = setInterval(() => {
+//             if(!speechSynthesis.speaking){
+//                 tag.style.removeProperty('background-color');
+//                 clearInterval(interval);
+//             }
+//         }, 100);
+        
+//     });
+// });   
+
+     let arr = localStorage.getItem("userprofile_name");
+     console.log(arr)
+    // let arr2=JSON.parse(localStorage.getItem("volprofile_name"));
+    let gethelp=  document.getElementById("gethelp");
+    let donation=  document.getElementById("donationlink");
+    let beinspired=document.getElementById("beinspiredlink");
+   let profile=document.getElementById("myprofile");
+
+    if(arr==null){
+    
+        gethelp.setAttribute("href","../volunteerpages/signup.html");
+        donation.setAttribute("href","../volunteerpages/signup.html");
+        beinspired.setAttribute("href","../volunteerpages/signup.html");
+        profile.setAttribute("href","../volunteerpages/signup.html");
+    }
+    else{
+       console.log("isac");
+        gethelp.setAttribute("href","gethelp.html");
+        donation.setAttribute("href","../donarpages/donationrequest.html");
+        beinspired.setAttribute("href","../beinspired/inspire.html");
+        profile.setAttribute("href","../volunteerpages/profile.html");
+    } 
+
+   
+</script>
 </html>

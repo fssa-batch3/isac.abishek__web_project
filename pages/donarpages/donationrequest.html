@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../assets/css/book.css">
+  <link rel="stylesheet" href="../../assets/css/common.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" href="../../assets/images/icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
+  <script src="../../assets/sweetalert.min.js"></script>
+  <title>donation request</title>
+</head>
+
+<body>
+  <!-- nav bar starts  -->
+  <nav>
+    <div class="side-nav">
+      <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg">
+      <ul class="navlinks">
+
+
+        <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
+        <li><a href="../donarpages/donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a>
+        </li>
+        <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i>
+            <p>About</p>
+          </a></li>
+        <li><a href="../patientpages/gethelp.html"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
+        <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>GetInvolved</a></li>
+        <li><a href="../beinspired/inspire.html"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
+        <li><a href="../about/profile.html"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
+        <div class="active"></div>
+    </div>
+  </nav>
+  <section class="sec1">
+    <div class="sec1h1 donationbg">
+      <h1>Donate now</h1>
+    </div>
+  </section>
+  <div class="full">
+    <section class="sec2">
+      <h2>Here is our verified needs of help<br>Help us by donating to help them</h2>
+    </section>
+  </div>
+  <!-- <section>
+        <h1>add your request</h1>
+        <form>
+          <label for=""></label>
+        </form>
+
+    </section> -->
+  <!-- footer starts  -->
+  <footer id="footer">
+    <div class="foot1">
+      <img src="../../assets/images/logo.png" width="180px" alt="apollo-hospital-image" class="icon">
+      <div class="fb">
+
+        <a href=""> <img src="../../assets/images/facebook.png" width="45px" alt="fb"></a>
+        <a href=""> <img src="../../assets/images/youtube.png" width="45px" alt="youtube"></a>
+        <a href=""> <img src="../../assets/images/insta.png" width="45px" alt="insta"></a>
+        <a href=""> <img src="../../assets/images/mail.png" width="45px" alt="mail"></a>
+        <a href=""> <img src="../../assets/images/whatsapp.png" width="45px" alt="watsap"></a>
+      </div>
+    </div>
+
+
+    <div class="foot3">
+      <div class="add">
+        <h3>FRESHTRUST:</h3>
+
+        <p> Sathyadev Ave, opp.<br> Chettinad Vidyashram, MRC Nagar<br> Raja Annamalai Puram,<br> Chennai, Tamil Nadu
+          600028</p>
+      </div>
+      <div class="mail">
+        <h4>Phone numbers: (11.00 AM to 7.00 PM)</h4>
+        <p> +91-123456789<br>
+          +91-123456789
+          <br>Email: isacdevaabishek@gamil.com
+        </p>
+      </div>
+    </div>
+    <div class="foot2">
+      <div class="foot2p">
+        <p>&copy;2022</p>
+      </div>
+      <div class="foot22p">
+        <p>HELP</p>
+        <p>DONATE</p>
+        <p>BLESSED</p>
+
+      </div>
+    </div>
+  </footer>
+  <script>
+
+    // let msg = new SpeechSynthesisUtterance();
+    // let voices = speechSynthesis.getVoices();
+    // msg.voice = voices[0];
+    // let tags = document.querySelectorAll('p,a,h1,h2,h3'); // add more tags for you project
+    // tags.forEach((tag) => {
+    //   tag.addEventListener('click', (e) => {
+
+    //     msg.text = e.target.innerText;
+    //     tag.style.backgroundColor = "yellow";
+    //     tag.style.color = "black";
+    //     speechSynthesis.speak(msg);
+
+    //     let interval = setInterval(() => {
+    //       if (!speechSynthesis.speaking) {
+    //         tag.style.removeProperty('background-color');
+    //         clearInterval(interval);
+    //       }
+    //     }, 100);
+
+    //   });
+    // });
+
+    let div_requests
+    let img
+    let address
+    let request_title
+    let about_request
+    let requested_by
+    let dropdown1
+    let button
+    let dropdown_menu1
+
+    let a1
+    let contact_holder;
+
+    let requests;
+
+
+        requests=[
+       { 
+        requests_images:
+      {
+        "source": "../../assets/images/flood.jpg",
+        "alternatetext": "hospitalimage"
+      },
+      request_title:"FLOOD:",
+       about_request:"We fresthtrust decided to help flood in kerla help us by donating money.press the donate now to open donation portal",
+       requested_by:"isac",
+      requests_address: "7305836758"
+    },
+    {
+      requests_images:
+      {
+        "source": "../../assets/images/kiddonation.webp",
+        "alternatetext": "hospitalimage"
+      },
+      request_title:"kid donation:",
+       about_request:"We fresthtrust decided to help flood in kerla help us by donating money.press the donate now to open donation portal",
+       requested_by:"isac",
+      requests_address: "7305836758"},
+    {
+      requests_images:
+      {
+        "source": "../../assets/images/fooddonation.jpg",
+        "alternatetext": "hospitalimage"
+      },
+      request_title:"FLOOD:",
+       about_request:"We fresthtrust decided to help flood in kerla help us by donating money.press the donate now to open donation portal",
+       requested_by:"isac",
+      requests_address: "7305836758"
+    }
+
+       ]
+    // localStorage.setItem("donationrequests",JSON.stringify(requests));
+    let requestform = JSON.parse(localStorage.getItem("donationrequests"))
+   let new_request=requests.concat(requestform)
+
+    // let new_request = JSON.parse(localStorage.getItem("donationrequests"));
+
+    for (let i = 0; i < new_request.length; i++) {
+
+      //  <div class="hos1"></div>
+      div_requests = document.createElement("div");
+      div_requests.setAttribute("class", "hos1");
+
+      // <img src="../../assets/images/apollo-hospital-image.jpg" width="500px" alt="apollo-hospital-image">
+      img = document.createElement("img");
+      
+      img.setAttribute("src", new_request[i]["requests_images"]["source"]);
+      img.setAttribute("alt", new_request[i]["requests_images"]["alternatetext"]);
+      // img.setAttribute("src", new_request[i]["requests_images"]);
+      // img.setAttribute("alt", new_request[i]["img_alt"]);
+      img.setAttribute("width", "300px");
+      img.setAttribute("height", "200px");
+      div_requests.append(img);
+
+    
+
+
+      //  <p></p> 
+
+
+      contact_holder = document.createElement("div")
+      contact_holder.setAttribute("class", "contactholder")
+
+      // const anker = document.createElement("a")
+      // anker.setAttribute("href","../../requestfrom.html?pro_id="+new_request[i].request_title)
+      // contact_holder.append(anker)
+
+      // const btn = document.createElement("button")
+      // btn.innerHTML = "EDIT"
+      // anker.append(btn)
+
+      div_requests.append(contact_holder);
+
+      request_title = document.createElement("p");
+      request_title.setAttribute("class", "addressp");
+      // request_title.setAttribute("width","300px");
+      request_title.innerHTML ="<span>donation title</span>:- "+ new_request[i].request_title;
+      contact_holder.append(request_title);
+
+      about_request = document.createElement("p");
+      about_request.setAttribute("class", "addressp");
+      about_request.innerHTML = "<span>about request</span>:- "+new_request[i].about_request;
+      contact_holder.append(about_request);
+
+      requested_by = document.createElement("p");
+      requested_by.setAttribute("class", "addressp");
+      requested_by.innerHTML ="<span>requested by</span>:- "+ new_request[i].requested_by;
+      contact_holder.append(requested_by);
+
+      address = document.createElement("p");
+      address.setAttribute("class", "addressp");
+      address.innerHTML = "<span>contact</span>:- "+new_request[i].requests_address;
+      contact_holder.append(address);
+
+
+      // div class dropdown-menu1
+      dropdown1 = document.createElement("div");
+      dropdown1.setAttribute("class", "dropdown1");
+      div_requests.append(dropdown1);
+
+
+      a1 = document.createElement("a");
+      a1.setAttribute("href", "donation.html")
+      dropdown1.append(a1)
+      //    button class join 
+      button = document.createElement("button");
+      button.setAttribute("class", "join");
+      button.innerText = "booknow"
+      a1.append(button);
+      document.querySelector(".sec2").append(div_requests);
+    }
+
+  </script>
+</body>
+
+</html>

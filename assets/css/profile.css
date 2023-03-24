@@ -1,0 +1,163 @@
+ *{
+    padding: 0px;
+    font-family: 'Merienda', cursive;
+ }
+
+body{
+    color:#6C3DD9 ;
+    font-family: 'Merienda', cursive;
+    background-image: url(../images/circle-scatter-haikei.png);
+    /* background-color: white; */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0px;
+ 
+
+}
+.profile{
+    width: 1000px;
+    height: 700px;
+    margin: auto;
+    background-color: #ede6ff;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.5);
+    margin-top: 150px;
+    margin-right: 190px;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+    border-radius: 30px;
+   
+}
+.imgcontainer{
+    background-color: #fff;
+    height: 500px;
+    width: 300px;
+    border:2px solid #6C3DD9;
+    border-radius: 40px;
+    
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.5);
+}
+
+.imgcontainer img{
+    border-radius: 50%;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+
+/* .info{
+    color:#6C3DD9;
+    font-size: 30px;
+    padding-bottom: 40px;
+} */
+ p{
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 0px auto;
+    font-weight: bold;
+    padding-top: 0px;
+   /* padding-bottom: 30px; */
+   /* border: 2px solid red; */
+
+}
+.main{
+    background-color: #fff;
+    height: 500px;
+    width: 500px;
+    border:2px solid #6C3DD9;
+    border-radius: 40px;
+    
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.5);
+}
+label{
+    font-size: 20px;
+    text-transform: uppercase;
+   font-weight: 800;
+}
+.profileicons{
+    font-size: 20px;
+   margin: 0px;
+   padding: 0px;
+   /* border: 2px solid red; */
+   color: #6C3DD9;
+}
+input{
+    border: none;
+    border-bottom: 2px solid #6C3DD9;
+    outline: none;
+    font-size: 20px;
+    /* padding-left:20px; */
+    color: #6a2aff;
+    /* box-shadow: 0 4px 10px 0 rgba(0,0,0,0.5); */
+    /* width: 370px; */
+}
+.main input{
+   margin-left: 150px;
+}
+.name{
+    margin-top: 70px;
+    margin-left: 30px;
+}
+.name1 p{
+    margin-top: 20px;
+    margin-left: 100px;
+}
+.name1 input{
+        margin-left: 100px;
+       /* border: 2px solid red; */
+       width: 100px;
+}
+.name2 i{
+    margin-right: 10px;
+    /* border: 2px solid red; */
+}
+.name2 p{
+    margin-top: 10px;
+    margin-left: 190px;
+}
+.main button{
+    cursor: pointer;
+    background-color: #6C3DD9;
+    color: #fff;
+    position: relative;
+    /* bottom: 15px; */
+    /* top: 110px; */
+    /* left: 750px; */
+    padding: 10px 30px;
+    border: none;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+.edit{
+    font-size: 15px;
+   margin: 0px;
+   padding: 0px;
+   color: #fff;
+}
+/* #edit_btn{
+    cursor: pointer;
+    background-color: #6C3DD9;
+    color: #fff;
+    position: relative;
+    bottom: 15px;
+    top: 110px;
+    left: 750px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 20px;
+    text-transform: uppercase;
+    
+}
+.edit{
+    padding: 0px;
+    padding-right: 10px;
+    margin: 0px;
+    color: #fff;
+} */
+
+

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Donate Now</title>
+	<link rel="stylesheet" href="../../assets/css/donation.css">
+	<link rel="stylesheet" href="../../assets/css/common.css">
+	<script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<!-- include the jQuery library from a CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<!-- include the jQuery UI library from a CDN -->
+	<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+	<!-- include the jQuery UI CSS theme -->
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
+	<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+	<nav>
+		<div class="side-nav">
+			<img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg">
+			<ul class="navlinks">
+
+
+				<li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
+				<li><a href="../donarpages/donationrequest.html"><i
+							class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a></li>
+				<li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i>
+						<p>About</p>
+					</a></li>
+				<li><a href="../patientpages/gethelp.html"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
+				<li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>GetInvolved</a></li>
+				<li><a href="../beinspired/inspire.html"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
+				<li><a href="../about/profile.html"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
+				<div class="active"></div>
+		</div>
+	</nav>
+	<div class="full book">
+		<div class="container">
+			<!-- <div class="img-container"> -->
+			<h1>Donate Now</h1>
+			<img src="../../assets/images/donateus.jpg" alt="" width="425px" class="bookimg ">
+			<!-- </div> -->
+			<form>
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name" required>
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required>
+				<label for="mobile">Mobile</label>
+				<input type="text" id="mobile" name="mobile" required>
+				<label for="mobile">booking date</label>
+				<input type="text" id="calender" name="mobile" pattern="\d{4}-\d{2}-\d{2}" required>
+				<button id="submit" onclick="isac()"> submit</button>
+			</form>
+ 
+		</div>
+	</div>
+</body>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+
+
+	let input = "1234567890"
+
+	let op = "";
+	for (i = 0; i <= 7; i++) {
+		op += input.charAt(Math.floor(Math.random() * op.length));
+	}
+	console.log(op);
+
+
+	function sendemail() {
+
+
+		Email.send({
+			Host: "smtp.elasticemail.com",
+			Username: "freshtrustproject@gmail.com",
+			Password: "3A631975AD1F826BFD0004A6C73ACFA2BC54",
+			// To: document.getElementById("email").value,
+			To:"isacdevaabishek2@gmail.com",
+			From: "freshtrustproject@gmail.com",
+			Subject: "hospital application",
+			Body: "NAME: " + document.getElementById("name").value
+				+ "<br> email: " + document.getElementById("email").value
+				+ "<br> MOBILE NUMBER: " + document.getElementById("mobile").value
+				+ "<br> Hi " + name + "congragultion you booking was confirmed your 8 applicant id is" + op + "dont miss it"
+
+		}).then(
+			//   message => swal("yep!", "email sent to us we will contact you soon", "sucess")
+			message => alert(message)
+		);
+	} 
+
+
+
+	// let msg = new SpeechSynthesisUtterance();
+	// let voices = speechSynthesis.getVoices();
+	// msg.voice = voices[0];
+	// let tags = document.querySelectorAll('p,a,h1,h2,h3'); // add more tags for you project
+	// tags.forEach((tag) => {
+	// 	tag.addEventListener('click', (e) => {
+
+	// 		msg.text = e.target.innerText;
+	// 		tag.style.backgroundColor = "yellow";
+	// 		tag.style.color = "black";
+	// 		speechSynthesis.speak(msg);
+
+	// 		let interval = setInterval(() => {
+	// 			if (!speechSynthesis.speaking) {
+	// 				tag.style.removeProperty('background-color');
+	// 				clearInterval(interval);
+	// 			}
+	// 		}, 100);
+
+	// 	});
+	// });
+	// let arr = JSON.parse(localStorage.getItem("userprofile_name"));
+
+	// document.getElementById("name").value = arr["user_name"]
+
+	// document.getElementById("mobile").value = arr["mobileno"]
+	// document.getElementById("email").value = arr["user_email"]
+
+
+
+
+
+
+
+
+	const today = new Date();
+	console.log(today);
+	// const today = new Date();
+	$('#calender').datepicker({
+		minDate: today
+	});
+
+
+	function isac() {
+		let name = document.getElementById("name").value;
+		let email = document.getElementById("email").value;
+		let mobile = document.getElementById("mobile").value;
+		let calender = document.getElementById("calender").value;
+		console.log(calender);
+		booking_datas = {
+			"user_name": name,
+			"user_mobile": mobile,
+			"user_email": email,
+			"date": calender
+		}
+
+
+		if (name && email && mobile && calender !== null) {
+
+			let bookingarray = JSON.parse(localStorage.getItem("booking_info")) ?? []
+			bookingarray.push(booking_datas)
+			localStorage.setItem("booking_info", JSON.stringify(bookingarray))
+		}
+		sendemail();
+	}
+    
+	//const arr = JSON.parse(localStorage.getItem("donationrequests"))
+
+
+	// const link = window.location.search
+	// const link_2 = new URLSearchParams(link)
+	// const link_3 = 
+
+	// arr.find(function (obj) {
+	// 	if (obj["request_title"] === ) {
+			
+	// 	}
+
+	// })
+
+
+
+</script>
+
+</html>

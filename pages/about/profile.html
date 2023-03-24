@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/profile.css">
+  <link rel="stylesheet" href="../../assets/css/common.css">
+</head>
+<body>
+  <div  class="side-nav">
+    <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg">
+  <ul class="navlinks">
+       
+        
+        <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
+        <li><a href="../donarpages/donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a></li>
+        <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i>About</a></li>
+        <li><a href="../patientpages/gethelp.html"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
+        <li><a href="../donarpages/involve.html"><i class="fa-solid fa-life-ring"></i>GetInvolved</a></li>
+        <li><a href="../beinspired/inspire.html"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
+        <li><a href="../volunteerpages/profile.html"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
+        <div class="active"></div>
+      </ul>
+  </div>
+ <div class="profile">
+  <div class="imgcontainer">
+   
+    <img src="../../assets/images/aniyuki-sad-anime-avatar-image-32.jpg" alt="" width="200px" >
+    <div class="name name1">
+      <i class="fa-solid fa-signature profileicons"></i> <label for="user_name">name : </label>
+      <br><input type="text" id="user_name" disabled>
+     <!-- <p id="user_name">isaxc</p> -->
+  </div>
+  
+</div>
+  <div class="main">
+    <div class="name2 name">
+    <i class="fa-solid fa-mobile-screen profileicons"></i><label for="mobile_no">mobile_no : </label><br>
+   <input type="text" id="mobile_no" disabled><br><br>
+    <!-- <p id="mobile_no"></p> -->
+    <i class="fa-solid fa-id-card profileicons"></i><label for="addhar">addhar : </label><br>
+    <input type="text" id="addhar" disabled><br><br>
+    <i class="fa-solid fa-id-card profileicons"></i><label for="addhar">role : </label><br>
+    <input type="text" id="role" disabled><br><br>
+    <!-- <p id="addhar"></p> -->
+     <i class="fa-solid fa-envelope profileicons"></i><label for="email">email : </label><br>
+    <input type="text" id="email"disabled><br><br>
+    <!-- <p id="email"></p> -->
+   <i class="fa-solid fa-location-dot profileicons"></i><label for="address">address : </label><br>
+    <input type="text" id="address" disabled><br><br>
+    <!-- <p id="address"></p> -->
+    </div>
+    
+     
+     <button id="edit_btn" >edit</button>
+     <a href="../../index.html"><button id="logoutbtn">logout</button></a>
+     <button id="deletebtn" onclick="dlt()">delete</button>
+   </div>
+ </div>
+ 
+  <script>
+
+// let msg = new SpeechSynthesisUtterance();
+// let voices = speechSynthesis.getVoices();
+// msg.voice = voices[0];
+// let tags = document.querySelectorAll('p,a,h1,h2,h3'); // add more tags for you project
+// tags.forEach((tag) => {
+//     tag.addEventListener('click', (e) => {
+        
+//         msg.text = e.target.innerText;
+//         tag.style.backgroundColor = "yellow";
+//         tag.style.color = "black";
+//         speechSynthesis.speak(msg);
+        
+//         let interval = setInterval(() => {
+//             if(!speechSynthesis.speaking){
+//                 tag.style.removeProperty('background-color');
+//                 clearInterval(interval);
+//             }
+//         }, 100);
+        
+//     });
+// });
+    
+    let arr = JSON.parse(localStorage.getItem("user"));
+    // let arr2=JSON.parse(localStorage.getItem("volunteer"));
+    let userprofile_name=localStorage.getItem("userprofile_name");
+   let result;
+        if(arr!==null){
+    arr.find( function(e){
+      if(userprofile_name==e["user_email"]){
+          result=e  
+
+          document.getElementById("user_name").value = result["user_name"]
+   
+    document.getElementById("mobile_no").value = result["mobileno"]
+    document.getElementById("addhar").value= result["aadhar"]
+    
+    // document.getElementById("role").value= result["role"]
+    if(result["user"]==true){
+    document.getElementById("role").value= "user"
+
+    }
+    else{
+    document.getElementById("role").value= "volunteer"
+
+    }
+
+
+    
+    document.getElementById("address").value = result["address"]
+    document.getElementById("email").value = result["user_email"]
+      }
+      
+    })
+  }
+  //         if(arr2!==null){
+  //   arr2.find( function(e){
+  //     if(userprofile_name==e["user_email"]){
+  //         result=e  
+
+  //         document.getElementById("user_name").value = result["user_name"]
+   
+  //   document.getElementById("mobile_no").value = result["mobileno"]
+  //   document.getElementById("addhar").value= result["aadhar"]
+    
+  //   document.getElementById("address").value = result["address"]
+  //   document.getElementById("email").value = result["user_email"]
+  //     }
+      
+  //   })
+  // }
+    
+    
+    
+
+
+  //   let arr2=JSON.parse(localStorage.getItem("volprofile_name"));
+  //   document.getElementById("user_name").value = arr2["user_name"]
+   
+  //  document.getElementById("mobile_no").value = arr2["mobileno"]
+  //  document.getElementById("addhar").value= arr2["aadhar"]
+   
+  //  document.getElementById("address").value = arr2["address"]
+  //  document.getElementById("email").value = arr2["user_email"]
+
+    // // m 
+    // let user=JSON.parse(localStorage.getItem("user"));
+    // let result;
+    // user.find((e)=>{
+    //   if(e["user_email"]==document.getElementById("email").value){
+    //         return result=e;//user[0]
+    //   }
+    // })
+    // console.log(result)
+   
+
+   toggle_btn= document.getElementById("edit_btn");
+
+    let toggled= 0;
+
+    // let change;
+
+     
+    toggle_btn.addEventListener("click",function(){
+
+      if(toggled==0){
+
+      document.getElementById("user_name").removeAttribute("disabled")
+      document.getElementById("mobile_no").removeAttribute("disabled")
+      document.getElementById("addhar").removeAttribute("disabled")
+      document.getElementById("address").removeAttribute("disabled")
+      // document.getElementById("email").removeAttribute("disabled")
+     
+      toggled=1;
+
+      document.getElementById("edit_btn").innerText="save";
+      return;
+     }
+     if(toggled==1){
+      
+      document.getElementById("user_name").setAttribute("disabled","")
+      document.getElementById("mobile_no").setAttribute("disabled","")
+      document.getElementById("addhar").setAttribute("disabled","")
+      document.getElementById("address").setAttribute("disabled","")
+        let mail=document.getElementById("email").value
+         let name=document.getElementById("user_name").value
+         let addhar=document.getElementById("addhar").value
+         let mobile= document.getElementById("mobile_no").value
+         let address=  document.getElementById("address").value
+       toggled=0;
+
+      //  change=1
+      let new_array=JSON.parse(localStorage.getItem("user"));
+      // let new_array1=JSON.parse(localStorage.getItem("userprofile_name"));
+      new_array.find(element=>{
+        if(mail==element["user_email"]){
+          element["user_name"]=name;
+          element["aadhar"]=addhar;
+          element["mobileno"]=mobile;
+          element["address"]=address
+        // return akk=1;
+          localStorage.setItem("user",JSON.stringify(new_array))
+          // localStorage.setItem("userprofile_name",JSON.stringify(new_array))
+        }
+        // else{
+        //   let new_array2=JSON.parse(localStorage.getItem("volunteer"));
+        //   if(new_array2!==null){
+        //   new_array2.find(element=>{
+        //     if(mail==element["user_email"]){
+        //       element["user_name"]=name;
+        //   element["aadhar"]=addhar;
+        //   element["mobileno"]=mobile;
+        //   element["address"]=address
+        // // return akk=1;
+        //   localStorage.setItem("volunteer",JSON.stringify(new_array2))
+        //     }
+        //   })
+        // }
+        // }
+      })
+      
+       
+       document.getElementById("edit_btn").innerText="edit";
+      //   // m 
+      // document.getElementById("edit_btn").addEventListener("click",function(e){
+      // //  ;
+      //   // console.log(document.getElementById("user_name").value)
+      //   result["user_name"]=document.getElementById("user_name").value
+      //   console.log(result)
+      //   localStorage.setItem("user",JSON.stringify(result))
+      //   console.log(user)
+
+      // }
+
+      // // )
+
+      // //  if(change==1){
+      // //     console.log("1")  
+      // //     let new_name=document.getElementById("user_name").value ;
+
+      // //     new_name=arr["user_name"]
+      // //    }
+
+
+
+      return;
+     }
+    })
+function dlt(){
+  let mail=document.getElementById("email").value
+  let dlete
+
+    let new_array=JSON.parse(localStorage.getItem("user"));
+    for(i=0;i<new_array.length;i++){
+     
+        if(mail==new_array[i]["user_email"]){
+           new_array.splice(dlete,1)
+        }
+   
+    }
+}
+
+
+  </script>
+</body>
+</html> 

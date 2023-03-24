@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login & Registration Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/signup.css">
+    <script src="../../assets/sweetalert.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- login and register switching      -->
+
+    <div class="hero">
+       
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" id="LoginBtn">Log In</button>
+                <button type="button" class="toggle-btn" id="RegisterBtn">Register</button>
+            </div>
+
+            <!-- login contents -->
+
+            <form id="login" class="input-group">
+                <h1 class="vollogin">volunteer login</h1>
+                <input type="text" class="input-field" placeholder="User Id" id="logemail" required />
+                <input type="password" class="input-field" placeholder="Enter Password" id="logpassword" required />
+
+                <button type="submit" class="submit-btn">Log In</button>
+                <img src="../../assets/images/login2.jpg" width="400px" alt="">
+            </form>
+            <!-- registe cotent  -->
+            <form id="register" class="input-group">
+
+                <h2 class="volreg">volunteer register</h2>
+
+                <input type="text" class="input-field" placeholder="User Id" required id="name" />
+                <input type="text" class="input-field" placeholder="mobile number" pattern="[0-9]{10,10}" required
+                    id="mobileno" />
+                <input type="text" class="input-field" placeholder="aadhar number" pattern="[0-9]{12,12}" required
+                    id="aadhar" />
+                <input type="text" class="input-field" placeholder="address" required id="address" />
+
+
+                <input type="email" class="input-field" placeholder="Enter Email" required id="email" />
+                <label for="volunteer"><input type="radio" name="user" id="volunteer" required> Volunteer</label>
+                <label for="user"><input type="radio" name="user" id="user">User</label>
+                <input type="password" class="input-field" placeholder="Enter Password" required id="password" />
+                <input type="password" class="input-field" placeholder="Enter Password" required id="confirmpassword" />
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+
+
+        </div>
+    </div>
+    <!-- java script starts  -->
+
+    <script>
+      
+        // script for login and register switching   
+
+        let x = document.getElementById("login");
+        let y = document.getElementById("register");
+        let z = document.getElementById("btn");
+
+        document.querySelector("#LoginBtn").addEventListener("click", function () {
+
+
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0";
+
+
+        })
+        document.querySelector("#RegisterBtn").addEventListener("click", function () {
+
+
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+
+
+
+
+        })
+    </script>
+
+
+
+    <script>
+//   starting of speechSynthesis
+// let msg = new SpeechSynthesisUtterance();
+// let voices = speechSynthesis.getVoices();
+// msg.voice = voices[0];
+// let tags = document.querySelectorAll('p,a,h1,h2,h3'); // add more tags for you project
+// tags.forEach((tag) => {
+//     tag.addEventListener('click', (e) => {
+        
+//         msg.text = e.target.innerText;
+//         tag.style.backgroundColor = "yellow";
+//         tag.style.color = "black";
+//         speechSynthesis.speak(msg);
+        
+//         let interval = setInterval(() => {
+//             if(!speechSynthesis.speaking){
+//                 tag.style.removeProperty('background-color');
+//                 clearInterval(interval);
+//             }
+//         }, 100);
+        
+//     });
+// });
+
+//   end of speechSynthesis
+
+    //  prevent default 
+        let register_1 = document.getElementById("register");
+        register_1.addEventListener("submit", e => {
+            e.preventDefault();
+            isac();
+
+        })
+    //  signup to login move 
+        function move() {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0";
+
+        }
+    //   strating of setting user datas in local storage 
+        function isac() {
+            // getting values from user input field  
+            let Name = document.getElementById("name").value
+            let mobileno = document.getElementById("mobileno").value
+            let email = document.getElementById("email").value
+            let password = document.getElementById("password").value
+            let confirmpassword = document.getElementById("confirmpassword").value
+            let aadhar = document.getElementById("aadhar").value
+
+
+            let role1 = document.getElementById("user").checked
+            let role2 = document.getElementById("volunteer").checked
+
+
+            let address = document.getElementById("address").value
+               
+            // creating array or geting array from local storage 
+            let arr;
+            arr = JSON.parse(localStorage.getItem("user")) ?? []
+            // making the datas as object 
+            let user_data = {
+                "user_name": Name,
+                "password": password,
+                "mobileno": mobileno,
+                "user_email": email,
+                "address": address,
+                "aadhar": aadhar,
+                "user": role1,
+                "volunteer": role2
+            }
+             
+            // checking the pasword are equal and the email alredy registred or not 
+            if (password == confirmpassword) {
+                let email_check = JSON.parse(localStorage.getItem("user"));
+                // let email_check1 = JSON.parse(localStorage.getItem("volunteer"));
+                let checkusermail = 0;
+                if (email_check !== null) {
+
+                    email_check.find(function (e) {
+                        if (e["user_email"] == email) {
+                            return checkusermail = 1
+                        }
+
+                    })
+                }
+
+                // if (email_check1 !== null) {
+                //     email_check1.find(function (e) {
+                //         if (e["user_email"] == email) {
+                //             return checkusermail = 1
+                //         }
+
+                //     })
+                // }
+
+                if (checkusermail == 1) {
+                    swal("sorry!", "the email is already registered", "error");
+                }
+                else {
+
+                    // if (role1) {
+
+
+
+                        arr.push(user_data)
+                        localStorage.setItem("user", JSON.stringify(arr))
+                        move();
+
+
+                    // }
+                    // else {
+
+                        // arr2.push(user_data)
+                        // localStorage.setItem("volunteer", JSON.stringify(arr2))
+                        // move();
+                    // }
+
+                        // }
+             
+                  
+                }
+            }
+                else {
+                        swal("sorry!", "new password and confirm password or not matchced", "error");
+                    }
+                // script for register while user radio button clikced
+
+             
+                    }
+          
+
+
+            //   script for login page 
+          
+            let login_1 = document.getElementById("login");
+            login_1.addEventListener("submit", e => {
+                e.preventDefault();
+                deva();
+            })
+            function deva() {
+            
+                let userloginmail = (document.getElementById("logemail").value);
+                let userloginpassword = (document.getElementById("logpassword").value);
+
+                const userdatas = JSON.parse(localStorage.getItem("user"));
+                // const voldatas = JSON.parse(localStorage.getItem("volunteer"));
+                let check;
+
+                if (userdatas !== null) {
+                    userdatas.find(element => {
+                        // checking the registerd email and password and login email and login password are same
+                        if (element["user_email"] == userloginmail && element["password"] == userloginpassword) {
+                            const userprofile_name = JSON.stringify(element);
+                            localStorage.setItem("userprofile_name", userloginmail)
+                            return check = 1
+
+                        }
+                    })
+                }
+                // if (voldatas !== null) {
+                //     voldatas.find(element => {
+                //         // checking the registerd email and password and login email and login password are same
+                //         if (element["user_email"] == userloginmail && element["password"] == userloginpassword) {
+                //             const userprofile_name = JSON.stringify(element);
+                //             localStorage.setItem("userprofile_name", userloginmail)
+                //             return check = 1
+
+                //         }
+                //     })
+                // }
+                if (check == 1) {
+
+                    window.location.href = "../about/profile.html"
+                }
+                else {
+                    swal("sorry!", "password wrong", "error");
+                }
+
+                
+            }
+    </script>
+</body>
+
+</html>

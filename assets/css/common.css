@@ -1,0 +1,305 @@
+
+.full{
+  position: relative;
+  left: 290px;
+  width: 1190px;
+  padding-bottom: 100px;
+  /* border: 2px solid greenyellow; */
+}
+.inspirefull{
+    position: relative;
+    left: 210px;
+    width: 1190px;
+    padding-bottom: 100px;
+    /* border: 2px solid greenyellow; */
+  }
+.abtusfull{
+    position: relative;
+    left: 210px;
+    width: 1170px;
+    padding-bottom: 100px;
+}
+.govtfull{
+    position: relative;
+    left: 300px;
+    width: 900px;
+    padding-bottom: 100px;
+    /* border: 2px solid greenyellow; */
+}
+.donationfull{
+    position: relative;
+    left: 300px;
+    width: 900px;
+    padding-bottom: 100px;
+    /* border: 2px solid greenyellow; */
+}
+
+
+.tablework{
+    position: relative;
+    left: 210px;
+    width: 1000px;
+    padding-bottom: 100px;
+    margin-top: 100px;
+}
+
+.side-nav{
+    width: 70px;
+    overflow: hidden;
+    height: 100%;
+    background-color:#f2f2ff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px 40px;
+    padding-left: 0px;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+ z-index: 1;
+   
+}
+.side-nav:hover{
+    width: 250px;
+    
+}
+.logo{
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.navlinks{
+    list-style: none;
+    position: relative;
+}
+.navlinks {
+    position: relative;
+    top:20px;
+}
+.navlinks li{
+    padding: 10px 0;
+}
+
+.navlinks li a{
+    color: #6C3DD9;
+    text-decoration: none;
+    padding: 20px 14px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+.navlinks li a i{
+    font-size: 22px;
+    white-space: nowrap;
+    margin-right: 20px;
+}
+
+.active{
+    background-color: #6C3DD9;
+    width:100%;
+    height:47px;
+    position: absolute;
+    left: 6%;
+    top:3% ;
+    z-index: -1;
+    border-radius: 6px;
+    box-shadow:0 5px 10px rgba(255, 255, 255, 0.4) ;
+    display: none;
+    transition: top 0.5s;
+}
+
+.navlinks li:hover a{
+    color: white;
+    transition: 0.3s; 
+}
+.navlinks li:hover i{
+   transform: rotate(360deg);
+    transition: 0.3s; 
+}
+.navlinks li:hover ~ .active{
+    display: block;
+}
+
+
+
+.navlinks li:nth-child(1):hover ~ .active{
+    top:3%
+}
+.navlinks li:nth-child(2):hover ~ .active{
+    top:17%
+}
+.navlinks li:nth-child(3):hover ~ .active{
+    top:32%
+}
+.navlinks li:nth-child(4):hover ~ .active{
+    top:46%
+}
+.navlinks li:nth-child(5):hover ~ .active{
+    top:61%
+}
+.navlinks li:nth-child(6):hover ~ .active{
+    top:75%
+}
+.navlinks li:nth-child(7):hover ~ .active{
+    top:89%
+}
+.navlinks li:nth-child(8):hover ~ .active{
+    top:90.5%
+}
+.side-nav img{
+     margin-left: 30px;
+}
+i{
+    padding-right: 30px;
+    padding-left: 30px;
+   /* width: 60px; */
+   color: black;
+   transition: 1s;
+}
+/* i:hover{
+    transform: rotate(360deg);
+} */
+ul{
+    margin-top: 20px;
+}
+
+@media only screen and (max-width:600px) {
+    .side-nav{
+        width: 110px;
+    }
+    img{
+        display: none;
+    }
+    nav-links li a i p{
+        display: none;
+    }
+    nav-links li a i{
+        margin-right: 0;
+    }
+    nav-links li a{
+        justify-content: center;
+    }
+}
+
+
+
+/* footer  */
+
+footer{
+    background-image: url(../images/wave-haikei.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    padding-top: 40px;
+}
+.foot1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 100px 0px 160px;
+    color: white;
+}
+
+.fb img {
+    padding-left: 15px;
+    
+}
+.icon{
+    margin-left: 135px;
+    /* chan / */
+}
+
+.foot2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 100px 0px 160px;
+    color: white;
+}
+
+.foot2p p {
+    font-weight: 500;
+    padding-top: 20px;
+}
+
+.foot22p {
+    display: flex;
+}
+
+.foot22p p {
+    padding-left: 60px;
+    padding-top: 20px;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+.foot3 {
+    display: flex;
+    justify-content: space-between;
+    color: #6C3DD9;
+    margin: 30px 100px 0px 160px;
+    margin-left: 300px;
+    /* chan */
+}
+.mail{
+    color: white;
+}
+
+.foot3 p {
+    padding-left: 30px;
+}
+@media screen and (max-width:600px)  {
+    .foot1 {
+      color: white;
+      margin-left: 25px;
+      width: 350px;
+    }
+    .foot1 img{
+      width: 100px;
+    }
+    
+    .fb img {
+      padding-left: 15px;
+      width: 25px;
+  
+    }
+    .foot2 {
+      display: contents;
+      color:white;
+      
+    }
+    
+    .foot2p p {
+      font-weight: 500;
+      /* padding-top: 20px; */
+    }
+    
+    .foot22p {
+      display: flex;
+    }
+    
+    .foot22p p {
+      padding-top: 20px;
+      font-weight: 500;
+      margin-bottom: 0px;
+    }
+    
+    .foot3 {
+      margin-left: 0px;
+      color: white;
+      width: 400px;
+    }
+    
+    .foot3 p {
+      font-size: 10px;
+      margin-right: 20px;
+    }
+    .foot3 h4{
+    
+      font-size: 15px;
+      margin-right: 20px;
+    }
+    
+  }
+
