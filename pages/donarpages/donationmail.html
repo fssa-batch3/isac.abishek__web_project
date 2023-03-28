@@ -32,7 +32,8 @@
           </ul>
       </div>
     <div class="container">
-<form  onsubmit="sendemail(); reset(); return false;">
+<form >
+    <!-- onsubmit="sendemail(); reset(); return false;" -->
     
     <h3>get in touch</h3>
     <!-- <div class="flex"> -->
@@ -44,7 +45,7 @@
     <textarea name="message" id="message" rows="4" placeholder="about your request" required></textarea>
 <!-- </div> -->
 <!-- </div> -->
-    <button type="submit">send</button>
+    <button>send</button>
 </form>
     </div>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
@@ -73,9 +74,18 @@
         
 //     });
 // });
+document.querySelector("form").addEventListener("submit",(e)=>{
+    e.preventDefault();
+    sendemail();
+})
        
         function sendemail(){
-          
+         let name=document.getElementById("name").value
+         let email= document.getElementById("email").value
+         let phone= document.getElementById("phone").value
+         let message= document.getElementById("message").value
+
+         if(name!==null && email!== null && phone!==null && message!==null){
             
             Email.send({
     Host : "smtp.elasticemail.com",
@@ -89,11 +99,18 @@
     +"<br> MOBILE NUMBER: "+document.getElementById("phone").value
     +"<br> Hi freshtrust " +document.getElementById("message").value
     
-}).then(
+})
+.then(
+    // console.log(message);
 //   message => swal("yep!", "email sent to us we will contact you soon", "sucess")
      message=> alert(message)
+     
+    // alert("error")
 );
         }
+    }
+
+//         }
    
     </script>
 </body>

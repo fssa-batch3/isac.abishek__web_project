@@ -8,6 +8,8 @@
 	<script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="../../assets/sweetalert.min.js"></script>
+    
 </head>
 
 <body>
@@ -161,6 +163,8 @@
 			let donationarray = JSON.parse(localStorage.getItem("donation_info")) ?? []
 			donationarray.push(donation_datas)
 			localStorage.setItem("donation_info", JSON.stringify(donationarray))
+			swal("thank you!", "Susscesfully donated", "success");
+
 		}
 	}
 
