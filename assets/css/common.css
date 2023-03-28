@@ -165,23 +165,8 @@ ul{
     margin-top: 20px;
 }
 
-@media only screen and (max-width:600px) {
-    .side-nav{
-        width: 110px;
-    }
-    img{
-        display: none;
-    }
-    nav-links li a i p{
-        display: none;
-    }
-    nav-links li a i{
-        margin-right: 0;
-    }
-    nav-links li a{
-        justify-content: center;
-    }
-}
+
+
 
 
 

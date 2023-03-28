@@ -221,6 +221,8 @@
   </footer>
   <script>
 
+// comented screenreader beacuse toggle button not coded 
+
     // let msg = new SpeechSynthesisUtterance();
     // let voices = speechSynthesis.getVoices();
     // msg.voice = voices[0];
@@ -246,6 +248,7 @@
     let div_hospitals
     let img
     let address
+    let hospital_id
     let request_title
     let about_request
     let requested_by
@@ -256,67 +259,26 @@
 
 
 
-    const old_hospital = [
-      {
-        hospitals_images:
-        {
-          "source": "../../assets/images/apollo-hospital-image.jpg",
-          "alternatetext": "hospitalimage"
-        },
-        hospital_title:"Apolo:",
-        doctor_name:"Isac",
-        specialist_in:"Bone Surgery",
-        hospital_address: "7305836758"
-
-      }
-    ]
+    // const old_hospital = [
     //   {
+    //     hospital_id:"001",
     //     hospitals_images:
     //     {
     //       "source": "../../assets/images/apollo-hospital-image.jpg",
     //       "alternatetext": "hospitalimage"
     //     },
-    //     hospital_address: "<span>Apollo Hospitals</span> was among the first few hospitals in the world<br> to leverage technology to facilitate seamless healthcare delivery.<br><br><span>Doctor</span> : Jhon<br><span>Speacilist</span> : Speaclist in bone surgery<br><br><span>Address</span>: Sathyadev Ave, opp.<br> Chettinad Vidyashram, MRC Nagar<br> Raja Annamalai Puram,<br> Chennai, Tamil Nadu 600028",
-
-    //   },
-    //   {
-    //     hospitals_images:
-    //     {
-    //       "source": "../../assets/images/apollo-hospital-image.jpg",
-    //       "alternatetext": "hospitalimage"
-    //     },
-    //     hospital_address: "<span>Apollo Hospitals</span> was among the first few hospitals in the world<br> to leverage technology to facilitate seamless healthcare delivery.<br><br><span>Doctor</span> : Jhon<br><span>Speacilist</span> : Speaclist in bone surgery<br><br><span>Address</span>: Sathyadev Ave, opp.<br> Chettinad Vidyashram, MRC Nagar<br> Raja Annamalai Puram,<br> Chennai, Tamil Nadu 600028",
-    //   },
-    //   {
-    //     hospitals_images:
-    //     {
-    //       "source": "../../assets/images/apollo-hospital-image.jpg",
-    //       "alternatetext": "hospitalimage"
-    //     },
-    //     hospital_address: "<span>Apollo Hospitals</span> was among the first few hospitals in the world<br> to leverage technology to facilitate seamless healthcare delivery.<br><br><span>Doctor</span> : Jhon<br><span>Speacilist</span> : Speaclist in bone surgery<br><br><span>Address</span>: Sathyadev Ave, opp.<br> Chettinad Vidyashram, MRC Nagar<br> Raja Annamalai Puram,<br> Chennai, Tamil Nadu 600028",
-
-    //   },
-    //   {
-    //     hospitals_images:
-    //     {
-    //       "source": "../../assets/images/apollo-hospital-image.jpg",
-    //       "alternatetext": "hospitalimage"
-    //     },
-    //     hospital_address: "<span>Apollo Hospitals</span> was among the first few hospitals in the world<br> to leverage technology to facilitate seamless healthcare delivery.<br><br><span>Doctor</span> : Jhon<br><span>Speacilist</span> : Speaclist in bone surgery<br><br><span>Address</span>: Sathyadev Ave, opp.<br> Chettinad Vidyashram, MRC Nagar<br> Raja Annamalai Puram,<br> Chennai, Tamil Nadu 600028",
-
-    //   },
-    //   {
-    //     hospitals_images:
-    //     {
-    //       "source": "../../assets/images/apollo-hospital-image.jpg",
-    //       "alternatetext": "hospitalimage"
-    //     },
-    //     hospital_address: "<span>Apollo Hospitals</span> was among the first few hospitals in the world<br> to leverage technology to facilitate seamless healthcare delivery.<br><br><span>Doctor</span> : Jhon<br><span>Speacilist</span> : Speaclist in bone surgery<br><br><span>Address</span>: Sathyadev Ave, opp.<br> Chettinad Vidyashram, MRC Nagar<br> Raja Annamalai Puram,<br> Chennai, Tamil Nadu 600028",
+    //     hospital_title:"Apolo:",
+    //     doctor_name:"Isac",
+    //     specialist_in:"Bone Surgery",
+    //     hospital_address: "7305836758"
 
     //   }
     // ]
-    let new_hospital=JSON.parse(localStorage.getItem("hospitalrequests"));
-    let hospitals = old_hospital.concat(new_hospital)
+    // 
+    // let new_hospital=JSON.parse(localStorage.getItem("hospitalrequests"));
+    // let hospitals = old_hospital.concat(new_hospital)
+    let hospitals = JSON.parse(localStorage.getItem("hospitalrequests"));
+
     for (let i = 0; i < hospitals.length; i++) {
 
       //  <div class="hos1"></div>
@@ -335,6 +297,13 @@
       contact_holder.setAttribute("class", "contactholder")
 
       div_hospitals.append(contact_holder);
+
+      hospital_id = document.createElement("p");
+      hospital_id.setAttribute("class", "addressp");
+      // request_title.setAttribute("width","300px");
+      hospital_id.innerHTML ="<span>hospital_id</span>:- "+ hospitals[i].hospital_id;
+      contact_holder.append(hospital_id);
+
 
       request_title = document.createElement("p");
       request_title.setAttribute("class", "addressp");

@@ -9,8 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
   <title>freshtrust</title>
   <link rel="icon" href="assets/images/icon.png">
+  <source src="main.js">
   
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   
 </head>
 
@@ -34,7 +34,7 @@
       </li>
       <li><a href="pages/donarpages/involve.html">GET INVOLVED</a></li>
       <li><a href="pages/volunteerpages/signup.html">BE INSPIRED</a></li>
-      <li><a href="pages/volunteerpages/signup.html">sign up</a></li>
+      <li><a id="sign_up" href="pages/volunteerpages/signup.html">sign up</a></li>
     </ul>
   </div>
 </nav>
@@ -162,29 +162,45 @@
     </div>
   </footer>
 </body>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 <script>
-  AOS.init();
-  let msg = new SpeechSynthesisUtterance();
-// let voices = speechSynthesis.getVoices();
-// msg.voice = voices[0];
-let tags = document.querySelectorAll('p,a,h1,h2,h3'); // add more tags for you project
-tags.forEach((tag) => {
-    tag.addEventListener('click', (e) => {
+//   AOS.init();
+
+// comented screenreader beacuse toggle button not coded 
+
+//   let msg = new SpeechSynthesisUtterance();
+// // let voices = speechSynthesis.getVoices();
+// // msg.voice = voices[0];
+// let tags = document.querySelectorAll('p,a,h1,h2,h3'); // add more tags for you project
+// tags.forEach((tag) => {
+//     tag.addEventListener('click', (e) => {
         
-        msg.text = e.target.innerText;
-        tag.style.backgroundColor = "yellow";
-        tag.style.color = "black";
-        speechSynthesis.speak(msg);
+//         msg.text = e.target.innerText;
+//         tag.style.backgroundColor = "yellow";
+//         tag.style.color = "black";
+//         speechSynthesis.speak(msg);
         
-        let interval = setInterval(() => {
-            if(!speechSynthesis.speaking){
-                tag.style.removeProperty('background-color');
-                clearInterval(interval);
-            }
-        }, 100);
+//         let interval = setInterval(() => {
+//             if(!speechSynthesis.speaking){
+//                 tag.style.removeProperty('background-color');
+//                 clearInterval(interval);
+//             }
+//         }, 100);
         
-    });
-});
+//     });
+// });
+
+
+
+  
+
+const profile = localStorage.getItem("profile")
+const btn = document.getElementById("sign_up")
+// if (profile !== false) {
+//   btn.innerText = "Profile"
+//   window.location.href="about/profile.html"
+
+
+// }
 </script>
 </html>

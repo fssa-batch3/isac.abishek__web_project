@@ -40,6 +40,7 @@
   </nav>
   <section class="sec1">
     <div class="sec1h1 donationbg">
+    <a href="donationmail.html">  <button class="join pointer">request donation now</button></a>
       <h1>Donate now</h1>
     </div>
   </section>
@@ -48,13 +49,6 @@
       <h2>Here is our verified needs of help<br>Help us by donating to help them</h2>
     </section>
   </div>
-  <!-- <section>
-        <h1>add your request</h1>
-        <form>
-          <label for=""></label>
-        </form>
-
-    </section> -->
   <!-- footer starts  -->
   <footer id="footer">
     <div class="foot1">
@@ -99,6 +93,8 @@
   </footer>
   <script>
 
+    // comented screenreader beacuse toggle button not coded 
+
     // let msg = new SpeechSynthesisUtterance();
     // let voices = speechSynthesis.getVoices();
     // msg.voice = voices[0];
@@ -122,6 +118,7 @@
     // });
 
     let div_requests
+    let request_id
     let img
     let address
     let request_title
@@ -134,47 +131,54 @@
     let a1
     let contact_holder;
 
-    let requests;
+    // let requests;
 
 
-        requests=[
-       { 
-        requests_images:
-      {
-        "source": "../../assets/images/flood.jpg",
-        "alternatetext": "hospitalimage"
-      },
-      request_title:"FLOOD:",
-       about_request:"We fresthtrust decided to help flood in kerla help us by donating money.press the donate now to open donation portal",
-       requested_by:"isac",
-      requests_address: "7305836758"
-    },
-    {
-      requests_images:
-      {
-        "source": "../../assets/images/kiddonation.webp",
-        "alternatetext": "hospitalimage"
-      },
-      request_title:"kid donation:",
-       about_request:"We fresthtrust decided to help flood in kerla help us by donating money.press the donate now to open donation portal",
-       requested_by:"isac",
-      requests_address: "7305836758"},
-    {
-      requests_images:
-      {
-        "source": "../../assets/images/fooddonation.jpg",
-        "alternatetext": "hospitalimage"
-      },
-      request_title:"FLOOD:",
-       about_request:"We fresthtrust decided to help flood in kerla help us by donating money.press the donate now to open donation portal",
-       requested_by:"isac",
-      requests_address: "7305836758"
-    }
+    //     requests=[
+        
+    //    { 
+    //     request_id:"0001",
+    //     requests_images:
+    //   {
+    //     "source": "../../assets/images/flood.jpg",
+    //     "alternatetext": "hospitalimage"
+    //   },
+    //   request_title:"FLOOD:",
+    //    about_request:"We fresthtrust decided to help flood in kerla help us by donating money.press the donate now to open donation portal",
+    //    requested_by:"isac",
+    //   requests_address: "7305836758"
+    // },
+    // {
+    //   request_id:"0001",
+    //   requests_images:
+    //   {
+    //     "source": "../../assets/images/kiddonation.webp",
+    //     "alternatetext": "hospitalimage"
+    //   },
+    //   request_title:"kid donation:",
+    //    about_request:"We fresthtrust decided to help flood in kerla help us by donating money.press the donate now to open donation portal",
+    //    requested_by:"isac",
+    //   requests_address: "7305836758"},
+    // {
+    //   request_id:"0001",
+    //   requests_images:
+    //   {
+    //     "source": "../../assets/images/fooddonation.jpg",
+    //     "alternatetext": "hospitalimage"
+    //   },
+    //   request_title:"FLOOD:",
+    //    about_request:"We fresthtrust decided to help flood in kerla help us by donating money.press the donate now to open donation portal",
+    //    requested_by:"isac",
+    //   requests_address: "7305836758"
+    // }
 
-       ]
+    //    ]
     // localStorage.setItem("donationrequests",JSON.stringify(requests));
-    let requestform = JSON.parse(localStorage.getItem("donationrequests"))
-   let new_request=requests.concat(requestform)
+
+    // let requestform = JSON.parse(localStorage.getItem("donationrequests"))
+  //  let new_request=requests.concat(requestform)
+   let new_request=JSON.parse(localStorage.getItem("donationrequests"))
+
 
     // let new_request = JSON.parse(localStorage.getItem("donationrequests"));
 
@@ -203,6 +207,7 @@
 
       contact_holder = document.createElement("div")
       contact_holder.setAttribute("class", "contactholder")
+      div_requests.append(contact_holder)
 
       // const anker = document.createElement("a")
       // anker.setAttribute("href","../../requestfrom.html?pro_id="+new_request[i].request_title)
@@ -212,7 +217,12 @@
       // btn.innerHTML = "EDIT"
       // anker.append(btn)
 
-      div_requests.append(contact_holder);
+
+      request_id = document.createElement("p");
+      request_id.setAttribute("class", "addressp");
+      request_id.innerHTML = "<span>request_id</span>:- "+new_request[i].request_id;
+      contact_holder.append(request_id);
+
 
       request_title = document.createElement("p");
       request_title.setAttribute("class", "addressp");

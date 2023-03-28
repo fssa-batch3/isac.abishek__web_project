@@ -58,12 +58,14 @@
     
      
      <button id="edit_btn" >edit</button>
-     <a href="../../index.html"><button id="logoutbtn">logout</button></a>
-     <button id="deletebtn" onclick="dlt()">delete</button>
+     <!-- <a href="../../index.html"><button id="logoutbtn">logout</button></a> -->
+     <button id="deletebtn">log out</button>
    </div>
  </div>
  
   <script>
+
+// comented screenreader beacuse toggle button n0t coded 
 
 // let msg = new SpeechSynthesisUtterance();
 // let voices = speechSynthesis.getVoices();
@@ -87,10 +89,13 @@
 //     });
 // });
     
+
     let arr = JSON.parse(localStorage.getItem("user"));
-    // let arr2=JSON.parse(localStorage.getItem("volunteer"));
     let userprofile_name=localStorage.getItem("userprofile_name");
    let result;
+
+    // if arr not equal to null e parameter find the user_email and show the value in profile page 
+
         if(arr!==null){
     arr.find( function(e){
       if(userprofile_name==e["user_email"]){
@@ -101,7 +106,8 @@
     document.getElementById("mobile_no").value = result["mobileno"]
     document.getElementById("addhar").value= result["aadhar"]
     
-    // document.getElementById("role").value= result["role"]
+  // checking for the user role is user or volunteer
+
     if(result["user"]==true){
     document.getElementById("role").value= "user"
 
@@ -110,63 +116,20 @@
     document.getElementById("role").value= "volunteer"
 
     }
-
-
-    
     document.getElementById("address").value = result["address"]
     document.getElementById("email").value = result["user_email"]
       }
       
     })
   }
-  //         if(arr2!==null){
-  //   arr2.find( function(e){
-  //     if(userprofile_name==e["user_email"]){
-  //         result=e  
-
-  //         document.getElementById("user_name").value = result["user_name"]
-   
-  //   document.getElementById("mobile_no").value = result["mobileno"]
-  //   document.getElementById("addhar").value= result["aadhar"]
-    
-  //   document.getElementById("address").value = result["address"]
-  //   document.getElementById("email").value = result["user_email"]
-  //     }
-      
-  //   })
-  // }
-    
-    
-    
-
-
-  //   let arr2=JSON.parse(localStorage.getItem("volprofile_name"));
-  //   document.getElementById("user_name").value = arr2["user_name"]
-   
-  //  document.getElementById("mobile_no").value = arr2["mobileno"]
-  //  document.getElementById("addhar").value= arr2["aadhar"]
-   
-  //  document.getElementById("address").value = arr2["address"]
-  //  document.getElementById("email").value = arr2["user_email"]
-
-    // // m 
-    // let user=JSON.parse(localStorage.getItem("user"));
-    // let result;
-    // user.find((e)=>{
-    //   if(e["user_email"]==document.getElementById("email").value){
-    //         return result=e;//user[0]
-    //   }
-    // })
-    // console.log(result)
-   
-
+  
+  // code for button changing to edit and save option 
    toggle_btn= document.getElementById("edit_btn");
 
     let toggled= 0;
 
     // let change;
 
-     
     toggle_btn.addEventListener("click",function(){
 
       if(toggled==0){
@@ -195,76 +158,53 @@
          let address=  document.getElementById("address").value
        toggled=0;
 
-      //  change=1
+    // saving the edited profile 
       let new_array=JSON.parse(localStorage.getItem("user"));
-      // let new_array1=JSON.parse(localStorage.getItem("userprofile_name"));
+      
       new_array.find(element=>{
         if(mail==element["user_email"]){
           element["user_name"]=name;
           element["aadhar"]=addhar;
           element["mobileno"]=mobile;
           element["address"]=address
-        // return akk=1;
+       
           localStorage.setItem("user",JSON.stringify(new_array))
-          // localStorage.setItem("userprofile_name",JSON.stringify(new_array))
+         
         }
-        // else{
-        //   let new_array2=JSON.parse(localStorage.getItem("volunteer"));
-        //   if(new_array2!==null){
-        //   new_array2.find(element=>{
-        //     if(mail==element["user_email"]){
-        //       element["user_name"]=name;
-        //   element["aadhar"]=addhar;
-        //   element["mobileno"]=mobile;
-        //   element["address"]=address
-        // // return akk=1;
-        //   localStorage.setItem("volunteer",JSON.stringify(new_array2))
-        //     }
-        //   })
-        // }
-        // }
+       
       })
       
        
-       document.getElementById("edit_btn").innerText="edit";
-      //   // m 
-      // document.getElementById("edit_btn").addEventListener("click",function(e){
-      // //  ;
-      //   // console.log(document.getElementById("user_name").value)
-      //   result["user_name"]=document.getElementById("user_name").value
-      //   console.log(result)
-      //   localStorage.setItem("user",JSON.stringify(result))
-      //   console.log(user)
-
-      // }
-
-      // // )
-
-      // //  if(change==1){
-      // //     console.log("1")  
-      // //     let new_name=document.getElementById("user_name").value ;
-
-      // //     new_name=arr["user_name"]
-      // //    }
-
-
-
+      document.getElementById("edit_btn").innerText="edit";
       return;
      }
     })
-function dlt(){
-  let mail=document.getElementById("email").value
-  let dlete
 
-    let new_array=JSON.parse(localStorage.getItem("user"));
-    for(i=0;i<new_array.length;i++){
+
+const btn = document.getElementById("deletebtn")
+btn.addEventListener("click",function () {
+  
+
+  // let mail=document.getElementById("email").value
+  // let deleter
+
+  //   let new_array=JSON.parse(localStorage.getItem("user"));
+  //   for(i=0;i<new_array.length;i++){
      
-        if(mail==new_array[i]["user_email"]){
-           new_array.splice(dlete,1)
-        }
+  //       if(mail==new_array[i]["user_email"]){
+  //          new_array.splice(deleter,1)
+  //       }
    
-    }
-}
+  //   }
+  const profile = localStorage.getItem("userprofile_name")
+  const update = delete profile
+
+  localStorage.setItem("userprofile_name",update)
+
+  window.location.href = "../../index.html"
+
+  
+})
 
 
   </script>
