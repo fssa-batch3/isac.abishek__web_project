@@ -27,14 +27,14 @@
 
 
         <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
-        <li><a href="../volunteerpages/signup.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a></li>
+        <li><a id="donationlink"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a></li>
         <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i>
             <p>About</p>
           </a></li>
-        <li><a href="../volunteerpages/signup.html"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
+        <li><a id="gethelp"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
         <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>GetInvolved</a></li>
-        <li><a href="../volunteerpages/signup.html"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
-        <li><a href="../volunteerpages/signup.html"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
+        <li><a id="beinspiredlink"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
+        <li><a id="myprofile"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
         <div class="active"></div>
 
 
@@ -64,7 +64,7 @@
             return you get<br> the satisfaction of time and effort well spent.<br>
           </p>
           <!-- <a href="../volunteerpages/signup.html"> -->
-          <a id="join"><button class="join">Create account</button></a>
+          <a id="join1"><button class="join">Create account</button></a>
           <!-- </a> -->
         </div>
         <img src="../../assets/images/buyproducts.jpg" data-aos="fade-left" data-aos-anchor="#example-anchor"
@@ -83,7 +83,7 @@
             The biggest problem for many people is finding<br> the time to volunteer. It can reduce your choices if you
             don’t have much time to spare,<br> but many busy people do find suitable opportunities.</p>
           <!-- <a href="../volunteerpages/signup.html"> -->
-          <a id="join"><button class="join">Create account</button></a>
+          <a id="join2"><button class="join">Create account</button></a>
           <!-- </a> -->
         </div>
       </section>
@@ -159,15 +159,47 @@
       //   });
       // });
 
-      let button = document.querySelectorAll("#join")
-      console.log(button.length);
+      let arr1 = localStorage.getItem("userprofile_name");
+    
+    // let arr2=JSON.parse(localStorage.getItem("volprofile_name"));
+    let gethelp=  document.getElementById("gethelp");
+    let donation=  document.getElementById("donationlink");
+    let beinspired=document.getElementById("beinspiredlink");
+   let profile=document.getElementById("myprofile");
 
-      let arr = JSON.parse(localStorage.getItem("userprofile_name"));
-      let arr2 = JSON.parse(localStorage.getItem("volprofile_name"));
-      for (i = 0; i <= button.length; i++) {
+    if(arr1==null){
+   
+        gethelp.setAttribute("href","../volunteerpages/signup.html");
+        donation.setAttribute("href","../volunteerpages/signup.html");
+        beinspired.setAttribute("href","../volunteerpages/signup.html");
+        profile.setAttribute("href","../volunteerpages/signup.html");
+    }
+    else{
+       console.log("isac");
+        gethelp.setAttribute("href","gethelp.html");
+        donation.setAttribute("href","../donarpages/donationrequest.html");
+        beinspired.setAttribute("href","../beinspired/inspire.html");
+        profile.setAttribute("href","../volunteerpages/profile.html");
+    } 
+
+
+      let button = document.querySelectorAll(".join")
+      console.log(button.length);
+      // let a=document.querySelectorAll("#join");
+      //       console.log(a[0])
+
+      let arr = localStorage.getItem("userprofile_name");
+      // let arr2 = JSON.parse(localStorage.getItem("volprofile_name"));
+      for (i = 0; i < button.length; i++) {
         button[i].addEventListener("click", function () {
-          if (arr == null && arr2 == null) {
-            button.setAttribute("href", "../volunteerpages/signup.html")
+          if (arr == null) {
+            let a1=document.getElementById("join1")
+            let a2=document.getElementById("join2")
+
+            
+            a1.setAttribute("href", "../volunteerpages/signup.html")
+            a2.setAttribute("href", "../volunteerpages/signup.html")
+
           }
           else {
             swal("sorry!", "you already have account", "error");

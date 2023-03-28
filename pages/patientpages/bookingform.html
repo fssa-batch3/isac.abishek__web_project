@@ -51,7 +51,7 @@
 				<label for="mobile">Mobile</label>
 				<input type="text" id="mobile" name="mobile" required>
 				<label for="mobile">booking date</label>
-				<input type="text" id="calender" name="mobile" pattern="\d{4}-\d{2}-\d{2}" required>
+				<input type="text" id="calender" name="mobile"  required>
 				<button id="submit" onclick="isac()"> submit</button>
 			</form>
  
@@ -78,8 +78,8 @@
 			Host: "smtp.elasticemail.com",
 			Username: "freshtrustproject@gmail.com",
 			Password: "3A631975AD1F826BFD0004A6C73ACFA2BC54",
-			// To: document.getElementById("email").value,
-			To:"isacdevaabishek2@gmail.com",
+			To: document.getElementById("email").value,
+			// To:"isacdevaabishek2@gmail.com",
 			From: "freshtrustproject@gmail.com",
 			Subject: "hospital application",
 			Body: "NAME: " + document.getElementById("name").value

@@ -72,6 +72,7 @@ Expected Result:
    *Click the book now button
    *User views the list of hospitals
    *Click book now and fills the form  and submitted
+   *User recieves acknowlgement mail with 8 digit applicant id from freshtrust@gmail.com
 Expected Result:
    *The user susscesfully booked hospital
 
@@ -98,3 +99,46 @@ Expected Result:
    Expected Result:
    *The user susscesfully requested donation
 
+volunteer works
+    Scenario 1:volunteers Successfully saw the works
+ Steps:
+   *create account as volunteer
+   *Log in as a volunteer.
+   *Navigate to the profile page
+   *User views the works button
+   *Clicks the button saw the volunteer works
+
+   Expected Result:
+   *volunteers Successfully saw the works
+
+
+   Edit profile
+    Scenario 1:user come to edit profile and edited
+ Steps:
+   
+   *Log in as user.
+   *Navigate to the profile page
+   *User views the Edit button
+   *Clicks the button Edit the profile
+   *Save button appears 
+   *Clicks and save it
+
+   Expected Result:
+   *User Succesfully edited the profile
+
+    Log out
+    Scenario 1:user  wants to logout
+ Steps:
+   
+   *Log in as user.
+   *Navigate to the profile page
+   *User views the logout button
+   *Clicks the button
+   *Logged out From the profile 
+   *Now user in home page
+
+   Expected Result:
+   *User Succesfully Logged out
+
+Screen Reader-Yet to finish
+Translator-Yet to finish

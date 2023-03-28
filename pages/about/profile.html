@@ -60,6 +60,8 @@
      <button id="edit_btn" >edit</button>
      <!-- <a href="../../index.html"><button id="logoutbtn">logout</button></a> -->
      <button id="deletebtn">log out</button>
+     <a href="../volunteerpages/volunteerwork.html"><button id="work" >works</button></a>
+
    </div>
  </div>
  
@@ -108,12 +110,14 @@
     
   // checking for the user role is user or volunteer
 
-    if(result["user"]==true){
-    document.getElementById("role").value= "user"
-
+    if(result["volunteer"]==true){
+    document.getElementById("role").value= "volunteer"
+    let works=document.getElementById("work")
+    works.style.display="inline"
+    
     }
     else{
-    document.getElementById("role").value= "volunteer"
+    document.getElementById("role").value= "user"
 
     }
     document.getElementById("address").value = result["address"]
@@ -183,19 +187,7 @@
 
 const btn = document.getElementById("deletebtn")
 btn.addEventListener("click",function () {
-  
-
-  // let mail=document.getElementById("email").value
-  // let deleter
-
-  //   let new_array=JSON.parse(localStorage.getItem("user"));
-  //   for(i=0;i<new_array.length;i++){
-     
-  //       if(mail==new_array[i]["user_email"]){
-  //          new_array.splice(deleter,1)
-  //       }
-   
-  //   }
+ 
   const profile = localStorage.getItem("userprofile_name")
   const update = delete profile
 

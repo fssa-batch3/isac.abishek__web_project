@@ -211,7 +211,7 @@ if(localStorage.getItem("hospitalrequests")){
 else{
 const old_hospital = [
     {
-      hospital_id:"001",
+      
       hospitals_images:
       {
         "source": "../../assets/images/apollo-hospital-image.jpg",
@@ -237,7 +237,7 @@ else{
     requests=[
     
    { 
-    request_id:"0001",
+    
     requests_images:
   {
     "source": "../../assets/images/flood.jpg",

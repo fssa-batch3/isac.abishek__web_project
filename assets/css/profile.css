@@ -16,6 +16,9 @@ body{
  
 
 }
+#work{
+    display: none;
+}
 .profile{
     width: 1000px;
     height: 700px;

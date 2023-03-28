@@ -40,7 +40,7 @@
     <!-- <img src="../../assets/images/donationrequest.jpg" alt="" width="200px" > -->
     <!-- <div class="inputs"> -->
     <input type="text" id="name" placeholder="yourname" required>
-    <input type="text" id="email" placeholder="donationrequest" required>
+    <input type="text" id="request" placeholder="donationrequest" required>
     <input type="text" id="phone" placeholder="yourmobile" required>
     <textarea name="message" id="message" rows="4" placeholder="about your request" required></textarea>
 <!-- </div> -->
@@ -95,7 +95,7 @@ document.querySelector("form").addEventListener("submit",(e)=>{
     From : "freshtrustproject@gmail.com",
     Subject : "here its my donation request",
     Body : "NAME: "+document.getElementById("name").value
-    +"<br> donationrequest: "+document.getElementById("email").value
+    +"<br> donationrequest: "+document.getElementById("request").value
     +"<br> MOBILE NUMBER: "+document.getElementById("phone").value
     +"<br> Hi freshtrust " +document.getElementById("message").value
     
