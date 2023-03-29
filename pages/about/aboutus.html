@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="../../assets/css/aboutus.css">
     <link rel="stylesheet" href="../../assets/css/common.css">
     <script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <!-- body starts  -->
 <body>
@@ -61,15 +59,9 @@
         <section class="aboutsec2">
             <div class="mission">
                 <div class="full abtusfull">
-                <h1 data-aos="fade-zoom-in"
-                data-aos-easing="ease-in-back"
-                data-aos-delay="300"
-                data-aos-offset="0">OUR MISSION</h1>
+                <h1>OUR MISSION</h1>
 
-                <p data-aos="fade-zoom-in"
-                data-aos-easing="ease-in-back"
-                data-aos-delay="300"
-                data-aos-offset="0">we are here to give an oppturnity to difrently abled people to raise them from theri illness<br> give
+                <p>we are here to give an oppturnity to difrently abled people to raise them from theri illness<br> give
                     them good life with lot of motivations by videos and camps and buy them a what they need with our
                     trust
                     <br><br> "Every person above the ordinary has a certain mission that they are called to fulfill."
@@ -136,35 +128,12 @@
             </div>
         </div>
     </footer>
-    <script>
-        AOS.init();
-      </script>
+   
       <script>
 
-// comented screenreader beacuse toggle button not coded 
 
-// let msg = new SpeechSynthesisUtterance();
-// let voices = speechSynthesis.getVoices();
-// msg.voice = voices[0];
-// let tags = document.querySelectorAll('p,a,h1,h2,h3'); 
-// tags.forEach((tag) => {
-//     tag.addEventListener('click', (e) => {
-        
-//         msg.text = e.target.innerText;
-//         tag.style.backgroundColor = "yellow";
 
-//         tag.style.color = "black";
-//         speechSynthesis.speak(msg);
-        
-//         let interval = setInterval(() => {
-//             if(!speechSynthesis.speaking){
-//                 tag.style.removeProperty('background-color');
-//                 clearInterval(interval);
-//             }
-//         }, 100);
-        
-//     });
-// });
+
 
 // code for if user logged in the nav link to the appropriate page 
 // if user not logged in it lead to login page 
@@ -187,7 +156,7 @@ let arr = localStorage.getItem("userprofile_name");
         profile.setAttribute("href","../volunteerpages/signup.html");
     }
     else{
-       console.log("isac");
+      
         gethelp.setAttribute("href","gethelp.html");
         donation.setAttribute("href","../donarpages/donationrequest.html");
         beinspired.setAttribute("href","../beinspired/inspire.html");

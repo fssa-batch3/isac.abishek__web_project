@@ -72,49 +72,12 @@
 </body>
 
 <script>
-
-// comented screenreader beacuse toggle button not coded 
-
-// let msg = new SpeechSynthesisUtterance();
-// let voices = speechSynthesis.getVoices();
-// msg.voice = voices[0];
-// let tags = document.querySelectorAll('p,a,h1,h2,h3'); // add more tags for you project
-// tags.forEach((tag) => {
-//     tag.addEventListener('click', (e) => {
-        
-//         msg.text = e.target.innerText;
-//         tag.style.backgroundColor = "yellow";
-// 		tag.style.color = "black";
-//         speechSynthesis.speak(msg);
-        
-//         let interval = setInterval(() => {
-//             if(!speechSynthesis.speaking){
-//                 tag.style.removeProperty('background-color');
-//                 clearInterval(interval);
-//             }
-//         }, 100);
-        
-//     });
-// });
-	// let arr = JSON.parse(localStorage.getItem("userprofile_name"));
-
-	// document.getElementById("name").value = arr["user_name"]
-
-	// document.getElementById("mobile").value = arr["mobileno"]
-	// document.getElementById("email").value = arr["user_email"]
-
-
-
 	let name = document.getElementById("name").value;
 	let email = document.getElementById("email").value;
 	let mobile = document.getElementById("mobile").value;
 	let amount = document.getElementById("amount");
 	let option = document.getElementsByTagName("option");
 	
-	
-
-    
-
 	let selectedValue;
 	amount.addEventListener("change", (event) => {
 		check = event.target.innerText
