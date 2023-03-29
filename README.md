@@ -140,5 +140,17 @@ volunteer works
    Expected Result:
    *User Succesfully Logged out
 
+Features
+login
+signup
+profile page
+profile Edit and save
+buy product through mail
+book hospital 
+Donation 
+Request Donation
+volunteer works
+
+
 Screen Reader-Yet to finish
 Translator-Yet to finish
