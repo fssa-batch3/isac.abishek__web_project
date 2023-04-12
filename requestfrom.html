@@ -338,6 +338,9 @@ dlt.addEventListener("click",e=>{
 });
   function deleter(){
     let product=document.getElementById("product").checked
+    let hospital=document.getElementById("hospital").checked
+    let request=document.getElementById("donation").checked
+
     if(product){
     let arr=JSON.parse(localStorage.getItem("productrequest"))
     let delname=document.getElementById("request_title").value
@@ -347,8 +350,30 @@ dlt.addEventListener("click",e=>{
         localStorage.setItem("productrequest",JSON.stringify(arr));
        }
     })
+  }
 
-    
+
+  if(hospital){
+    let arr=JSON.parse(localStorage.getItem("hospitalrequests"))
+    let delname=document.getElementById("request_title").value
+    arr.find(function(e,index){
+      if (e["hospital_title"] == delname) {
+        arr.splice(index,1)
+        localStorage.setItem("hospitalrequests",JSON.stringify(arr));
+       }
+    })
+  }
+
+
+  if(request){
+    let arr=JSON.parse(localStorage.getItem("donationrequests"))
+    let delname=document.getElementById("request_title").value
+    arr.find(function(e,index){
+      if (e["request_title"] == delname) {
+        arr.splice(index,1)
+        localStorage.setItem("donationrequests",JSON.stringify(arr));
+       }
+    })
   }
 }
   </script>
