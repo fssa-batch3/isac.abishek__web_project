@@ -14,6 +14,7 @@
 	<!-- include the jQuery UI CSS theme -->
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
 	<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
+	<script src="../../assets/js/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -43,7 +44,7 @@
 			<h1>Book Now</h1>
 			<img src="../../assets/images/donateus.jpg" alt="" width="425px" class="bookimg ">
 			<!-- </div> -->
-			<form>
+			<form  id="register" >
 				<label for="name">Name:</label>
 				<input type="text" id="name" name="name" required>
 				<label for="email">Email:</label>
@@ -51,16 +52,26 @@
 				<label for="mobile">Mobile</label>
 				<input type="text" id="mobile" name="mobile" required>
 				<label for="mobile">booking date</label>
-				<input type="text" id="calender" name="mobile"  required>
+				<input type="text" id="calender" name="mobile" required>
 				<button id="submit" onclick="isac()"> submit</button>
 			</form>
- 
+
 		</div>
 	</div>
 </body>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script>
 
+
+let register_1 = document.getElementById("register");
+        register_1.addEventListener("submit", e => {
+            e.preventDefault();
+		})
+
+	const url = window.location.search;
+	const urlParams = new URLSearchParams(url);
+	const hospitalname = urlParams.get("bookname")
+	console.log(hospitalname);
 
 	let input = "1234567890"
 
@@ -91,7 +102,7 @@
 			//   message => swal("yep!", "email sent to us we will contact you soon", "sucess")
 			message => alert(message)
 		);
-	} 
+	}
 
 
 
@@ -101,7 +112,7 @@
 	$('#calender').datepicker({
 		minDate: today
 	});
-
+	
 
 	function isac() {
 		let name = document.getElementById("name").value;
@@ -110,6 +121,7 @@
 		let calender = document.getElementById("calender").value;
 		console.log(calender);
 		booking_datas = {
+			"hospital_name":hospitalname,
 			"user_name": name,
 			"user_mobile": mobile,
 			"user_email": email,
@@ -119,14 +131,19 @@
 
 		if (name && email && mobile && calender !== null) {
 
-			let bookingarray = JSON.parse(localStorage.getItem("booking_info")) ?? []
+			let bookingarray = []
 			bookingarray.push(booking_datas)
 			localStorage.setItem("booking_info", JSON.stringify(bookingarray))
 		}
 		sendemail();
+		swal("success!", "booking sent", "success");
+		setInterval(re, 1000);
+		function re(){
+		window.location.href="bookhospital.html"
 	}
-    
-	
+	}
+
+
 
 
 

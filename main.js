@@ -214,7 +214,7 @@ const old_hospital = [
       
       hospitals_images:
       {
-        "source": "../../assets/images/apollo-hospital-image.jpg",
+        "source": "https://iili.io/HNRzLYJ.jpg",
         "alternatetext": "hospitalimage"
       },
       hospital_title:"Apolo:",
