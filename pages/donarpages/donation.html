@@ -58,19 +58,21 @@
 				<option value="1000">&#8377 1000</option>
 			</select>
 			
-			<label for="card"><input type="checkbox" name="user" id="card" value="card" >
+			<label for="card"><input type="checkbox" name="user" id="card" value="card" required>
 				<i class="fa-solid fa-credit-card"></i></label>
 				<label for="creditcard">Credit Card Number:</label>
 			<input type="text" id="creditcard" name="creditcard" disabled>
-			<label for="paypal"><input type="radio" name="user" id="paypal" value="paypal" ><i
+			<label for="paypal"><input type="radio" name="user" id="paypal" value="paypal" required><i
 					class="fa-brands fa-paypal"></i></label>
-			<label for="googlepay"><input type="radio" name="user" id="gpay" value="gpay" ><i
+			<label for="googlepay"><input type="radio" name="user" id="gpay" value="gpay" required><i
 					class='fab fa-google-pay'></i></label>
-			<label for="amazonpay"><input type="radio" name="user" id="amazonpay" value="amazonpay" ><i
+			<label for="amazonpay"><input type="radio" name="user" id="amazonpay" value="amazonpay" required><i
 					class="fa-brands fa-amazon-pay"></i></label>
+
+					<button id="submit" onclick="isac()"> submit</button>
 				
 		</form>
-		<button id="submit" onclick="isac()"> submit</button>
+		
 	</div>
 	  </div>
 </body>
