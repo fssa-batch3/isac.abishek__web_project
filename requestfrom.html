@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Add Product to Local Storage</title>
   <style>
-   h1{
+    h1 {
       text-align: center;
     }
-    form{
-      width:500px;
-     margin: auto;
+
+    form {
+      width: 500px;
+      margin: auto;
     }
+
     label {
       /* display: block; */
       margin-bottom: 5px;
     }
-    input, textarea {
-      width:500px; 
+
+    input,
+    textarea {
+      width: 500px;
 
       padding: 5px;
-     margin-bottom: 10px; 
+      margin-bottom: 10px;
     }
+
     button {
       padding: 5px 10px;
       background-color: #007bff;
@@ -29,37 +35,44 @@
       cursor: pointer;
       display: none;
     }
-    #donation,#hospital,#product{
+
+    #donation,
+    #hospital,
+    #product {
       width: 100px;
     }
   </style>
 </head>
+
 <body>
   <h1>Add Product to Local Storage</h1>
   <form>
 
-    <label for="donation">donation</label><input type="radio" name="user" id="donation" value="donation" onclick="selector()" >
-  <label for="hospital">hospital</label><input type="radio" name="user" id="hospital" value="hospital" onclick="selector()" >
-  <label for="product">product</label><input type="radio" name="user" id="product" value="product" onclick="selector()" >
-<!--   
+    <label for="donation">donation</label><input type="radio" name="user" id="donation" value="donation"
+      onclick="selector()">
+    <label for="hospital">hospital</label><input type="radio" name="user" id="hospital" value="hospital"
+      onclick="selector()">
+    <label for="product">product</label><input type="radio" name="user" id="product" value="product"
+      onclick="selector()">
+    <!--   
   <label for="request_id" id="request_id"></label>
   <input type="text" id="req_id" name="request_id"> -->
-  
-    
+
+
     <label for="request_title" id="title"></label>
-    <input type="text" id="request_title" name="request_title"  >
+    <input type="text" id="request_title" name="request_title">
     <label for="about_request" id="about"></label>
-    <input type="text" id="about_request" name="about_request"  >
+    <input type="text" id="about_request" name="about_request">
     <label for="requested_by" id="by"></label>
-    <input type="text" id="requested_by" name="requested_by"  >
+    <input type="text" id="requested_by" name="requested_by">
 
     <!-- fetaure for product  -->
     <label for="requests_address" id="address"></label>
-    <textarea id="requests_address" name="requests_address"  ></textarea>
+    <textarea id="requests_address" name="requests_address"></textarea>
 
 
-<!-- image1  -->
-\
+    <!-- image1  -->
+    \
     <label for="request_img" id="image1"></label>
     <input type="url" id="request_img1" name="request_img">
     <label for="request_img" id="alternate1"></label>
@@ -81,9 +94,13 @@
     <input type="text" id="img_alt4" name="request_title">
 
 
-    <button  id="add-donation" >Add donation request</button><button style="display: block;" id="delete">Delete</button>
-    <button  id="add-product"  >Add Product</button>
-    <button  id="add-hospital" onclick="add_hospital()" >Add hospital</button>
+    <button id="add-donation">Add donation request</button>
+    <button style="display: block;" id="delete">Delete</button>
+
+    <button style="display: block;" id="update">update</button>
+
+    <button id="add-product">Add Product</button>
+    <button id="add-hospital" onclick="add_hospital()">Add hospital</button>
 
   </form>
 
@@ -93,289 +110,436 @@
   <div class="new_requests"></div>
   <script>
     function selector() {
-      
-    
-    let hospital=document.getElementById("hospital").checked
-    let donations=document.getElementById("donation").checked
-    let product=document.getElementById("product").checked
-    if(hospital===false&&donations===false&&product===true){
-      // document.getElementById("request_id").innerText="product id"
 
-      document.getElementById("image1").innerText="product image"
-      document.getElementById("alternate1").innerText="image alternate text"
-      document.getElementById("image2").innerText="product image"
-      document.getElementById("alternate2").innerText="image alternate text"
-      document.getElementById("image3").innerText="product image"
-      document.getElementById("alternate3").innerText="image alternate text"
-      document.getElementById("image4").innerText="product image"
-      document.getElementById("alternate4").innerText="image alternate text"
-      document.getElementById("title").innerText="product title"
-      document.getElementById("about").innerText="about product"
-      document.getElementById("requested_by").setAttribute("disabled","")
-      document.getElementById("request_img2").removeAttribute("disabled")
-      document.getElementById("img_alt2").removeAttribute("disabled")
-      document.getElementById("request_img3").removeAttribute("disabled")
-      document.getElementById("img_alt3").removeAttribute("disabled")
-      document.getElementById("request_img4").removeAttribute("disabled")
-      document.getElementById("img_alt4").removeAttribute("disabled")
-      document.getElementById("by").innerText=""
-      
-      document.getElementById("address").innerText="feature"
-      
-     let button1= document.getElementById("add-product")
-     let button2= document.getElementById("add-hospital")
-     let button3= document.getElementById("add-donation")
-   
 
-      button1.style.display="block"
-      button2.style.display="none"
-      button3.style.display="none"
+      let hospital = document.getElementById("hospital").checked
+      let donations = document.getElementById("donation").checked
+      let product = document.getElementById("product").checked
+      if (hospital === false && donations === false && product === true) {
+        // document.getElementById("request_id").innerText="product id"
 
-     
-      
+        document.getElementById("image1").innerText = "product image"
+        document.getElementById("alternate1").innerText = "image alternate text"
+        document.getElementById("image2").innerText = "product image"
+        document.getElementById("alternate2").innerText = "image alternate text"
+        document.getElementById("image3").innerText = "product image"
+        document.getElementById("alternate3").innerText = "image alternate text"
+        document.getElementById("image4").innerText = "product image"
+        document.getElementById("alternate4").innerText = "image alternate text"
+        document.getElementById("title").innerText = "product title"
+        document.getElementById("about").innerText = "about product"
+        document.getElementById("requested_by").setAttribute("disabled", "")
+        document.getElementById("request_img2").removeAttribute("disabled")
+        document.getElementById("img_alt2").removeAttribute("disabled")
+        document.getElementById("request_img3").removeAttribute("disabled")
+        document.getElementById("img_alt3").removeAttribute("disabled")
+        document.getElementById("request_img4").removeAttribute("disabled")
+        document.getElementById("img_alt4").removeAttribute("disabled")
+        document.getElementById("by").innerText = ""
+
+        document.getElementById("address").innerText = "feature"
+
+        let button1 = document.getElementById("add-product")
+        let button2 = document.getElementById("add-hospital")
+        let button3 = document.getElementById("add-donation")
+
+
+        button1.style.display = "block"
+        button2.style.display = "none"
+        button3.style.display = "none"
+
+
+
+      }
+      if (hospital === false && donations === true && product === false) {
+        // document.getElementById("request_id").innerText="request id"
+        document.getElementById("image1").innerText = "donation request image"
+        document.getElementById("alternate1").innerText = "image alternate text"
+        document.getElementById("title").innerText = "request title"
+        document.getElementById("about").innerText = "about request"
+        document.getElementById("by").innerText = "request by"
+        document.getElementById("address").innerText = "address"
+        document.getElementById("requested_by").removeAttribute("disabled")
+        document.getElementById("requests_address").removeAttribute("disabled")
+        document.getElementById("image2").innerText = ""
+        document.getElementById("alternate2").innerText = ""
+        document.getElementById("image3").innerText = ""
+        document.getElementById("alternate3").innerText = ""
+        document.getElementById("image4").innerText = ""
+        document.getElementById("alternate4").innerText = ""
+
+        document.getElementById("request_img2").setAttribute("disabled", "")
+        document.getElementById("img_alt2").setAttribute("disabled", "")
+        document.getElementById("request_img3").setAttribute("disabled", "")
+        document.getElementById("img_alt3").setAttribute("disabled", "")
+        document.getElementById("request_img4").setAttribute("disabled", "")
+        document.getElementById("img_alt4").setAttribute("disabled", "")
+
+
+        let button1 = document.getElementById("add-product")
+        let button2 = document.getElementById("add-hospital")
+        let button3 = document.getElementById("add-donation")
+
+
+        button1.style.display = "none"
+        button2.style.display = "none"
+        button3.style.display = "block"
+      }
+      if (hospital === true && donations === false && product === false) {
+        // document.getElementById("request_id").innerText="hospital id"
+
+        document.getElementById("image1").innerText = "hospital image"
+        document.getElementById("alternate1").innerText = "image alternate text"
+        document.getElementById("title").innerText = "hospital title"
+        document.getElementById("about").innerText = "doctor name"
+        document.getElementById("by").innerText = "speaclist in"
+        document.getElementById("address").innerText = "address"
+        document.getElementById("requested_by").removeAttribute("disabled")
+        document.getElementById("requests_address").removeAttribute("disabled")
+        document.getElementById("image2").innerText = ""
+        document.getElementById("alternate2").innerText = ""
+        document.getElementById("image3").innerText = ""
+        document.getElementById("alternate3").innerText = ""
+        document.getElementById("image4").innerText = ""
+        document.getElementById("alternate4").innerText = ""
+
+        document.getElementById("request_img2").setAttribute("disabled", "")
+        document.getElementById("img_alt2").setAttribute("disabled", "")
+        document.getElementById("request_img3").setAttribute("disabled", "")
+        document.getElementById("img_alt3").setAttribute("disabled", "")
+        document.getElementById("request_img4").setAttribute("disabled", "")
+        document.getElementById("img_alt4").setAttribute("disabled", "")
+
+        let button1 = document.getElementById("add-product")
+        let button2 = document.getElementById("add-hospital")
+        let button3 = document.getElementById("add-donation")
+
+
+        button1.style.display = "none"
+        button2.style.display = "block"
+        button3.style.display = "none"
+      }
     }
-    if(hospital===false&&donations===true&&product===false){
-      // document.getElementById("request_id").innerText="request id"
-      document.getElementById("image1").innerText="donation request image"
-      document.getElementById("alternate1").innerText="image alternate text"
-      document.getElementById("title").innerText="request title"
-      document.getElementById("about").innerText="about request"
-      document.getElementById("by").innerText="request by"
-      document.getElementById("address").innerText="address"
-      document.getElementById("requested_by").removeAttribute("disabled")
-      document.getElementById("requests_address").removeAttribute("disabled")
-      document.getElementById("image2").innerText=""
-      document.getElementById("alternate2").innerText=""
-      document.getElementById("image3").innerText=""
-      document.getElementById("alternate3").innerText=""
-      document.getElementById("image4").innerText=""
-      document.getElementById("alternate4").innerText=""
-      
-      document.getElementById("request_img2").setAttribute("disabled","")
-      document.getElementById("img_alt2").setAttribute("disabled","")
-      document.getElementById("request_img3").setAttribute("disabled","")
-      document.getElementById("img_alt3").setAttribute("disabled","")
-      document.getElementById("request_img4").setAttribute("disabled","")
-      document.getElementById("img_alt4").setAttribute("disabled","")
-      
 
-      let button1= document.getElementById("add-product")
-     let button2= document.getElementById("add-hospital")
-     let button3= document.getElementById("add-donation")
-   
+    let button3 = document.getElementById("add-donation")
 
-      button1.style.display="none"
-      button2.style.display="none"
-      button3.style.display="block"
-    }
-    if(hospital===true&&donations===false&&product===false){
-      // document.getElementById("request_id").innerText="hospital id"
+    button3.addEventListener("click", e => {
+      donation();
+    })
 
-      document.getElementById("image1").innerText="hospital image"
-      document.getElementById("alternate1").innerText="image alternate text"
-      document.getElementById("title").innerText="hospital title"
-      document.getElementById("about").innerText="doctor name"
-      document.getElementById("by").innerText="speaclist in"
-      document.getElementById("address").innerText="address"
-      document.getElementById("requested_by").removeAttribute("disabled")
-      document.getElementById("requests_address").removeAttribute("disabled")
-      document.getElementById("image2").innerText=""
-      document.getElementById("alternate2").innerText=""
-      document.getElementById("image3").innerText=""
-      document.getElementById("alternate3").innerText=""
-      document.getElementById("image4").innerText=""
-      document.getElementById("alternate4").innerText=""
-    
-      document.getElementById("request_img2").setAttribute("disabled","")
-      document.getElementById("img_alt2").setAttribute("disabled","")
-      document.getElementById("request_img3").setAttribute("disabled","")
-      document.getElementById("img_alt3").setAttribute("disabled","")
-      document.getElementById("request_img4").setAttribute("disabled","")
-      document.getElementById("img_alt4").setAttribute("disabled","")
-      
-      let button1= document.getElementById("add-product")
-     let button2= document.getElementById("add-hospital")
-     let button3= document.getElementById("add-donation")
-   
-
-      button1.style.display="none"
-      button2.style.display="block"
-      button3.style.display="none"
-    }
-  }
-
-  let button3= document.getElementById("add-donation")
-
-  button3.addEventListener("click", e=>{
-    donation();
-  })
-
-function donation(){
-  // let request_id=document.getElementById("req_id").value
-  let request_img=document.getElementById("request_img1").value
-  let img_alt=document.getElementById("img_alt").value
-  let request_title  = document.getElementById("request_title").value
-  let about_request= document.getElementById("about_request").value
-  let requested_by = document.getElementById("requested_by").value
-  let requests_address= document.getElementById("requests_address").value
+    function donation() {
+      // let request_id=document.getElementById("req_id").value
+      let request_img = document.getElementById("request_img1").value
+      let img_alt = document.getElementById("img_alt").value
+      let request_title = document.getElementById("request_title").value
+      let about_request = document.getElementById("about_request").value
+      let requested_by = document.getElementById("requested_by").value
+      let requests_address = document.getElementById("requests_address").value
 
 
-  
-  let newrequests = {
-    // "request_id":request_id,
-    requests_images:
-      {
-        "source": request_img,
-        "alternatetext": img_alt
-      },
-  //  "requests_images":request_img,
-  //  "img_alt":img_alt,
-    "request_title":request_title,
-    "about_request":about_request,
-    "requested_by":requested_by,
-    "requests_address":requests_address
-  };
 
-  
-  let requests = JSON.parse(localStorage.getItem('donationrequests')) ||[];
-
-
-  requests.push(newrequests);
-
-  
-  localStorage.setItem("donationrequests",JSON.stringify(requests));
-  // let view_requests=JSON.parse(localStorage.getItem('productrequest'))
-
-};
-
-let button2= document.getElementById("add-product")
-
-button2.addEventListener("click", e=>{
-  add_product();
-})
-function add_product(){
-  let request_img1=document.getElementById("request_img1").value
-  let img_alt1=document.getElementById("img_alt").value
-  let request_img2=document.getElementById("request_img2").value
-  let img_alt2=document.getElementById("img_alt2").value
-  let request_img3=document.getElementById("request_img3").value
-  let img_alt3=document.getElementById("img_alt3").value
-  let request_img4=document.getElementById("request_img4").value
-  let img_alt4=document.getElementById("img_alt4").value
-  let product_title  = document.getElementById("request_title").value
-  let about_product= document.getElementById("about_request").value
-  let feature=document.getElementById("requests_address").value
-
-  
-  let newrequests = {
-    image1: {
-          "source":request_img1,
-          "alt":img_alt1
-        },
-        image2: {
-          "source":request_img2,
-          "alt":img_alt2
-        },
-        image3: {
-          "source":request_img3,
-          "alt":img_alt3
-        },
-        image4: {
-          "source":request_img4,
-          "alt":img_alt4
-        },
-  //   "requests_images":request_img,
-  //  "img_alt":img_alt,
-    "product_name":product_title,
-    "product_des":about_product,
-    "feature1":feature
-  };
-
-  let requests = JSON.parse(localStorage.getItem('productrequest')) ||[];
-
-  requests.push(newrequests);
-
-  localStorage.setItem("productrequest",JSON.stringify(requests));
-
-}
-
-
-function add_hospital(){
-  // let hospital_id=document.getElementById("req_id").value
-
-  let hospital_title  = document.getElementById("request_title").value
-  let request_img=document.getElementById("request_img1").value
-  let img_alt=document.getElementById("img_alt").value
-  let doctor_name= document.getElementById("about_request").value
-  let specialist_in = document.getElementById("requested_by").value
-  let hospital_address= document.getElementById("requests_address").value
-
-  
-  let newhospital = {
-    // "hospital_id":hospital_id,
-    hospitals_images:
+      let newrequests = {
+        // "request_id":request_id,
+        requests_images:
         {
           "source": request_img,
-          "alternatetext":img_alt
+          "alternatetext": img_alt
         },
-  //  "requests_images":request_img,
-  //  "img_alt":img_alt,
-    "hospital_title":hospital_title,
-    "doctor_name":doctor_name,
-    "specialist_in":specialist_in ,
-    "hospital_address":hospital_address
-  };
+        //  "requests_images":request_img,
+        //  "img_alt":img_alt,
+        "request_title": request_title,
+        "about_request": about_request,
+        "requested_by": requested_by,
+        "requests_address": requests_address
+      };
 
-  
-  let newhospitalrequests = JSON.parse(localStorage.getItem('hospitalrequests')) ||[];
-  newhospitalrequests.push(newhospital);
-  localStorage.setItem("hospitalrequests",JSON.stringify(newhospitalrequests));
-}
 
-let dlt=document.getElementById("delete")
-dlt.addEventListener("click",e=>{
-   deleter()
-});
-  function deleter(){
-    let product=document.getElementById("product").checked
-    let hospital=document.getElementById("hospital").checked
-    let request=document.getElementById("donation").checked
+      let requests = JSON.parse(localStorage.getItem('donationrequests')) || [];
 
-    if(product){
-    let arr=JSON.parse(localStorage.getItem("productrequest"))
-    let delname=document.getElementById("request_title").value
-    arr.find(function(e,index){
-      if (e["product_name"] == delname) {
-        arr.splice(index,1)
-        localStorage.setItem("productrequest",JSON.stringify(arr));
-       }
+
+      requests.push(newrequests);
+
+
+      localStorage.setItem("donationrequests", JSON.stringify(requests));
+      // let view_requests=JSON.parse(localStorage.getItem('productrequest'))
+
+    };
+
+    let button2 = document.getElementById("add-product")
+
+    button2.addEventListener("click", e => {
+      add_product();
     })
-  }
+    function add_product() {
+      let check =0;
+
+         if(JSON.parse(localStorage.getItem("productrequest"))){
+          let name_check=JSON.parse(localStorage.getItem("productrequest"));
+          // console.log(name_check)
+      let product_titles = document.getElementById("request_title").value
+       
+      name_check.find(e=>{
+        if(product_titles==e["product_name"]){
+          alert(product_titles+" already exist")
+          check=1
+        }
+      })
+         }
+      
+      if(check==0){
+
+      
+      let request_img1 = document.getElementById("request_img1").value
+      let img_alt1 = document.getElementById("img_alt").value
+      let request_img2 = document.getElementById("request_img2").value
+      let img_alt2 = document.getElementById("img_alt2").value
+      let request_img3 = document.getElementById("request_img3").value
+      let img_alt3 = document.getElementById("img_alt3").value
+      let request_img4 = document.getElementById("request_img4").value
+      let img_alt4 = document.getElementById("img_alt4").value
+      let about_product = document.getElementById("about_request").value
+      let feature = document.getElementById("requests_address").value
+      let product_title = document.getElementById("request_title").value
+      
+
+      let newrequests = {
+        image1: {
+          "source": request_img1,
+          "alt": img_alt1
+        },
+        image2: {
+          "source": request_img2,
+          "alt": img_alt2
+        },
+        image3: {
+          "source": request_img3,
+          "alt": img_alt3
+        },
+        image4: {
+          "source": request_img4,
+          "alt": img_alt4
+        },
+        //   "requests_images":request_img,
+        //  "img_alt":img_alt,
+        "product_name": product_title,
+        "product_des": about_product,
+        "feature1": feature
+      };
+
+      let requests = JSON.parse(localStorage.getItem('productrequest')) || [];
+
+      requests.push(newrequests);
+
+      localStorage.setItem("productrequest", JSON.stringify(requests));
+      alert("product added")
+    }
+    }
 
 
-  if(hospital){
-    let arr=JSON.parse(localStorage.getItem("hospitalrequests"))
-    let delname=document.getElementById("request_title").value
-    arr.find(function(e,index){
-      if (e["hospital_title"] == delname) {
-        arr.splice(index,1)
-        localStorage.setItem("hospitalrequests",JSON.stringify(arr));
-       }
-    })
-  }
+    function add_hospital() {
+      // let hospital_id=document.getElementById("req_id").value
+
+      let hospital_title = document.getElementById("request_title").value
+      let request_img = document.getElementById("request_img1").value
+      let img_alt = document.getElementById("img_alt").value
+      let doctor_name = document.getElementById("about_request").value
+      let specialist_in = document.getElementById("requested_by").value
+      let hospital_address = document.getElementById("requests_address").value
 
 
-  if(request){
-    let arr=JSON.parse(localStorage.getItem("donationrequests"))
-    let delname=document.getElementById("request_title").value
-    arr.find(function(e,index){
-      if (e["request_title"] == delname) {
-        arr.splice(index,1)
-        localStorage.setItem("donationrequests",JSON.stringify(arr));
-       }
-    })
-  }
-}
+      let newhospital = {
+        // "hospital_id":hospital_id,
+        hospitals_images:
+        {
+          "source": request_img,
+          "alternatetext": img_alt
+        },
+        //  "requests_images":request_img,
+        //  "img_alt":img_alt,
+        "hospital_title": hospital_title,
+        "doctor_name": doctor_name,
+        "specialist_in": specialist_in,
+        "hospital_address": hospital_address
+      };
+
+
+      let newhospitalrequests = JSON.parse(localStorage.getItem('hospitalrequests')) || [];
+      newhospitalrequests.push(newhospital);
+      localStorage.setItem("hospitalrequests", JSON.stringify(newhospitalrequests));
+    }
+
+    let dlt = document.getElementById("delete")
+    dlt.addEventListener("click", e => {
+      deleter()
+    });
+    function deleter() {
+      let product = document.getElementById("product").checked
+      let hospital = document.getElementById("hospital").checked
+      let request = document.getElementById("donation").checked
+
+      if (product) {
+        let arr = JSON.parse(localStorage.getItem("productrequest"))
+        let delname = document.getElementById("request_title").value
+        arr.find(function (e, index) {
+          if (e["product_name"] == delname) {
+            arr.splice(index, 1)
+            localStorage.setItem("productrequest", JSON.stringify(arr));
+          }
+          else {
+            alert("notexist")
+          }
+        })
+      }
+
+
+      if (hospital) {
+        let arr = JSON.parse(localStorage.getItem("hospitalrequests"))
+        let delname = document.getElementById("request_title").value
+        arr.find(function (e, index) {
+          if (e["hospital_title"] == delname) {
+            arr.splice(index, 1)
+            localStorage.setItem("hospitalrequests", JSON.stringify(arr));
+          }
+          else {
+            alert("notexist")
+          }
+        })
+      }
+
+
+      if (request) {
+        let arr = JSON.parse(localStorage.getItem("donationrequests"))
+        let delname = document.getElementById("request_title").value
+        arr.find(function (e, index) {
+          if (e["request_title"] == delname) {
+            arr.splice(index, 1)
+            localStorage.setItem("donationrequests", JSON.stringify(arr));
+          }
+          else {
+            alert("notexist")
+          }
+        })
+      }
+    }
+
+
+
+    let update = document.getElementById("update")
+    update.addEventListener("click", e => {
+      updater()
+    });
+    function updater() {
+      let product = document.getElementById("product").checked
+      let hospital = document.getElementById("hospital").checked
+      let request = document.getElementById("donation").checked
+
+      if (request) {
+        let arr = JSON.parse(localStorage.getItem("donationrequests"))
+        let upname = document.getElementById("request_title").value
+        let request_img = document.getElementById("request_img1").value
+        let img_alt = document.getElementById("img_alt").value
+
+        let about_request = document.getElementById("about_request").value
+        let requested_by = document.getElementById("requested_by").value
+        let requests_address = document.getElementById("requests_address").value
+        // console.log(arr)
+        arr.find(function (e) {
+          if (e["request_title"] == upname) {
+            console.log(e);
+            e["requests_images"]["source"] = request_img,
+              e["requests_images"]["alternatetext"] = img_alt,
+              e["about_request"] = about_request,
+              e["requested_by"] = requested_by,
+              e["requests_address"] = requests_address
+            console.log(e);
+            // console.log(arr)
+            // alert(JSON.stringify(arr))
+            localStorage.setItem("donationrequests", JSON.stringify(arr));
+          }
+          else {
+            alert("notexist")
+          }
+        })
+      }
+
+
+
+
+      if (hospital) {
+        let arr = JSON.parse(localStorage.getItem("hospitalrequests"))
+        let upname = document.getElementById("request_title").value
+        let request_img = document.getElementById("request_img1").value
+        let img_alt = document.getElementById("img_alt").value
+
+        let about_request = document.getElementById("about_request").value
+        let requested_by = document.getElementById("requested_by").value
+        let requests_address = document.getElementById("requests_address").value
+        // console.log(arr)
+        arr.find(function (e) {
+          if (e["hospital_title"] == upname) {
+            console.log(e);
+            e["hospitals_images"]["source"] = request_img,
+              e["hospitals_images"]["alternatetext"] = img_alt,
+              e["doctor_name"] = about_request,
+              e["specialist_in"] = requested_by,
+              e["hospital_address"] = requests_address
+            console.log(e);
+            // console.log(arr)
+            // alert(JSON.stringify(arr))
+            localStorage.setItem("hospitalrequests", JSON.stringify(arr));
+          }
+          else {
+            alert("notexist")
+          }
+        })
+      }
+
+
+      if (product) {
+        let arr = JSON.parse(localStorage.getItem("productrequests"))
+        let upname = document.getElementById("request_title").value
+        let request_img1 = document.getElementById("request_img1").value
+        let img_alt1 = document.getElementById("img_alt").value
+        let request_img2 = document.getElementById("request_img2").value
+        let img_alt2 = document.getElementById("img_alt2").value
+        let request_img3 = document.getElementById("request_img3").value
+        let img_alt3 = document.getElementById("img_alt3").value
+        let request_img4 = document.getElementById("request_img4").value
+        let img_alt4 = document.getElementById("img_alt4").value
+        // let product_title  = document.getElementById("request_title").value
+        let about_product = document.getElementById("about_request").value
+        let feature = document.getElementById("requests_address").value
+        // console.log(arr)
+        arr.find(function (e) {
+          if (e["product_name"] == upname) {
+            console.log(e);
+            e["image1"]["source"] = request_img1,
+              e["image1"]["alternatetext"] = img_alt1,
+              e["image2"]["source"] = request_img2,
+              e["image2"]["alternatetext"] = img_alt2,
+              e["image3"]["source"] = request_img3,
+              e["image3"]["alternatetext"] = img_alt3,
+              e["image4"]["source"] = request_img4,
+              e["image4"]["alternatetext"] = img_alt4,
+              e["product_des"] = about_product,
+              e["feature1"] = feature
+            console.log(e);
+            // console.log(arr)
+            // alert(JSON.stringify(arr))
+            localStorage.setItem("hospitalrequests", JSON.stringify(arr));
+          }
+          else {
+            alert("notexist")
+          }
+        })
+      }
+
+    }
+
+
+
+
   </script>
 </body>
+
 </html>

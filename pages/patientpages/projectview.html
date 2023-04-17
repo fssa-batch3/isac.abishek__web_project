@@ -15,6 +15,11 @@
 </head>
 
 <body>
+  <!-- <div class="checkbox">
+    <label for="click" class="text">screen reader</label>
+    <input type="checkbox" id="click" >
+
+  </div> -->
   <!-- nav starts  -->
   <nav>
     <div class="side-nav">
@@ -40,6 +45,7 @@
       <h1>PRODUCT-<span></span></h1>
     </section>
     <section class="sec2">
+    </section>
     
     <hr>
   </main>
@@ -153,7 +159,7 @@ console.log(project_title);
   img1 = document.createElement("img");
   img1.setAttribute("src", res["image1"]["source"]);
   img1.setAttribute("alt", res["image1"]["alt"]);
-  img1.setAttribute("width", "500px");
+  img1.setAttribute("width", "400px");
   image_div.append(img1)
 
   br = document.createElement("br");
@@ -195,11 +201,13 @@ console.log(project_title);
   dimensions.innerText = "overall dimensions"
   abtproduct.append(dimensions)
 
-  ul = document.createElement("ul")
+  ul = document.createElement("div")
   abtproduct.append(ul)
 
-  li = document.createElement("li");
+  li = document.createElement("p");
+  li.setAttribute("class","prod_desc")
   li.innerHTML = res["feature1"]
+
   ul.append(li)
 
   a = document.createElement("a")

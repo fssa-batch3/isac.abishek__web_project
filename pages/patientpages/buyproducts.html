@@ -11,10 +11,16 @@
   <link rel="stylesheet" href="../../assets/css/common.css">
   <script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
+  <!-- <script src="../../assets/js/screenreader.js"></script> -->
   <title>gethelp</title>
 </head>
 
 <body>
+  <!-- <div class="checkbox">
+    <label for="click" class="text">screen reader</label>
+    <input type="checkbox" id="click" >
+
+  </div> -->
   <nav>
     <div class="side-nav">
       <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg">
@@ -22,7 +28,8 @@
 
 
         <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
-        <li><a href="../donarpages/donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a></li>
+        <li><a href="../donarpages/donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a>
+        </li>
         <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i>
             <p>About</p>
           </a></li>
@@ -36,11 +43,11 @@
   </nav>
 
   <main>
-    <!-- <div class="checkbox">
-      <label for="click" class="text" >screen reader</label>
-      <input type="checkbox" id="click" onclick="reader()">
+    <div class="checkbox">
+      <label for="click" class="text">screen reader</label>
+      <input type="checkbox" id="click" >
 
-    </div> -->
+    </div>
     <div class="gethelpbg">
       <h1>buy products</h1>
 
@@ -53,7 +60,7 @@
           You can get products free and low cost</h2>
       </section>
       <section class="sec3">
-        
+
 
       </section>
   </main>
@@ -113,8 +120,8 @@
     let a_tags;
     let button_tags;
 
-   
-    products =JSON.parse(localStorage.getItem("productrequest"))
+
+    products = JSON.parse(localStorage.getItem("productrequest"))
 
 
     for (let i = 0; i < products.length; i++) {
@@ -159,53 +166,50 @@
       document.querySelector("section.sec3").append(div_products);
     }
 
-// comented screenreader beacuse toggle button not coded 
+   
 
 
-    //     let tags=document.querySelectorAll('h1');
-    //     // let msg;
-    //  tags.forEach((tag)=>{
-    //   tag.addEventListener('click',(e)=>{
-    //     msg.text=e.target.innerText;
-    //     speechSynthesis.speak(msg);
-    //    });
-    //   });
 
 
-    // function reader() {
-      // let toggled = document.getElementById("click");
 
 
-      // let value = toggled.checked;
-      // console.log(value + "first")
-
-      // let msg = new SpeechSynthesisUtterance();//Interface,
-
-      // let tags = document.querySelectorAll('p,a,h1,h2,h3');
-      // if (toggled.checked == true) {
-      //   console.log("isac")
 
 
-      //   // add more tags for you project
-      //   tags.forEach((tag) => {
-      //     tag.addEventListener('click', (e) => {
 
-      //       msg.text = e.target.innerText;
-      //       tag.style.backgroundColor = "yellow";
-      //       tag.style.color = "black";
-      //       speechSynthesis.speak(msg);
 
-      //       let interval = setInterval(() => {
-      //         if (!speechSynthesis.speaking) {
-      //           tag.style.removeProperty('background-color');
-      //           // tag.style.removeProperty('color');
-      //           // tag.style.removeProperty('color');
-      //           clearInterval(interval);
-      //         }
-      //       }, 100);
+    let toggled = document.getElementById("click")
 
-      //     });
-      //   });
+let msg = new SpeechSynthesisUtterance();//Interface,
+
+let tags = document.querySelectorAll('p,a,h1,h2,h3');
+
+
+
+      if (toggled.checked == true) {
+        console.log("isac")
+
+
+        // add more tags for you project
+        tags.forEach((tag) => {
+          tag.addEventListener('click', (e) => {
+
+            msg.text = e.target.innerText;
+            tag.style.backgroundColor = "yellow";
+            tag.style.color = "black";
+            speechSynthesis.speak(msg);
+
+            let interval = setInterval(() => {
+              if (!speechSynthesis.speaking) {
+                tag.style.removeProperty('background-color');
+                // tag.style.removeProperty('color');
+                // tag.style.removeProperty('color');
+                clearInterval(interval);
+              }
+            }, 100);
+
+          });
+        });
+      }
 
 
       //   //  if (toggled.checked==false) {

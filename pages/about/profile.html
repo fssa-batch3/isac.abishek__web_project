@@ -12,6 +12,11 @@
   <link rel="stylesheet" href="../../assets/css/common.css">
 </head>
 <body>
+  <!-- <div class="checkbox">
+    <label for="click" class="text">screen reader</label>
+    <input type="checkbox" id="click" >
+
+  </div> -->
   <div  class="side-nav">
     <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg">
   <ul class="navlinks">
@@ -60,7 +65,7 @@
      <button id="edit_btn" >edit</button>
      <!-- <a href="../../index.html"><button id="logoutbtn">logout</button></a> -->
      <button id="deletebtn">log out</button>
-     <a href="../volunteerpages/volunteerwork.html"><button id="work" >works</button></a>
+     <a id="work"><button id="text"></button></a>
 
    </div>
  </div>
@@ -90,12 +95,20 @@
 
     if(result["volunteer"]==true){
     document.getElementById("role").value= "volunteer"
+   
     let works=document.getElementById("work")
-    works.style.display="inline"
-    
+    let text=document.getElementById("text")
+    text.innerText="works"
+    work.setAttribute("href","../volunteerpages/volunteerwork.html")
     }
     else{
     document.getElementById("role").value= "user"
+   
+    let works=document.getElementById("work")
+    let text=document.getElementById("text")
+    text.innerText="Bookings"
+    
+    work.setAttribute("href","../patientpages/appointment.html")
 
     }
     document.getElementById("address").value = result["address"]
