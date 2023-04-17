@@ -69,7 +69,7 @@
 			<label for="amazonpay"><input type="radio" name="user" id="amazonpay" value="amazonpay" required><i
 					class="fa-brands fa-amazon-pay"></i></label>
 
-					<button id="submit" onclick="isac()"> submit</button>
+					<button id="submit" > submit</button>
 				
 		</form>
 		
@@ -107,6 +107,9 @@
 			document.getElementById("paypal").removeAttribute("disabled");
 			document.getElementById("amazonpay").removeAttribute("disabled");
 		}
+	})
+	document.querySelector("form").addEventListener("submit",(e)=>{
+		function isac()
 	})
 	function isac() {
 		

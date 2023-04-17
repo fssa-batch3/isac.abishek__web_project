@@ -228,6 +228,22 @@
     })
 
     function donation() {
+
+
+      let check =0;
+
+         if(JSON.parse(localStorage.getItem("donationrequests"))){
+          let name_check=JSON.parse(localStorage.getItem("donationrequests"));
+          // console.log(name_check)
+      let product_titles = document.getElementById("request_title").value
+       
+      name_check.find(e=>{
+        if(product_titles==e["request_title"]){
+          alert(product_titles+" already exist")
+          check=1
+        }
+      })
+      if(check==0){
       // let request_id=document.getElementById("req_id").value
       let request_img = document.getElementById("request_img1").value
       let img_alt = document.getElementById("img_alt").value
@@ -262,7 +278,10 @@
 
       localStorage.setItem("donationrequests", JSON.stringify(requests));
       // let view_requests=JSON.parse(localStorage.getItem('productrequest'))
-
+    }
+         }
+      
+      
     };
 
     let button2 = document.getElementById("add-product")
@@ -337,6 +356,23 @@
 
 
     function add_hospital() {
+      let check =0;
+
+if(JSON.parse(localStorage.getItem("hospitalrequests"))){
+ let name_check=JSON.parse(localStorage.getItem("hospitalrequests"));
+ // console.log(name_check)
+let product_titles = document.getElementById("request_title").value
+
+name_check.find(e=>{
+if(product_titles==e["hospital_title"]){
+ alert(product_titles+" already exist")
+ check=1
+}
+})
+}
+
+if(check==0){
+      
       // let hospital_id=document.getElementById("req_id").value
 
       let hospital_title = document.getElementById("request_title").value
@@ -366,6 +402,7 @@
       let newhospitalrequests = JSON.parse(localStorage.getItem('hospitalrequests')) || [];
       newhospitalrequests.push(newhospital);
       localStorage.setItem("hospitalrequests", JSON.stringify(newhospitalrequests));
+    }
     }
 
     let dlt = document.getElementById("delete")

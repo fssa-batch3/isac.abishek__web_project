@@ -83,7 +83,7 @@ let register_1 = document.getElementById("register");
 	for (i = 0; i <= 7; i++) {
 		op += input.charAt(Math.floor(Math.random() * op.length));
 	}
-	console.log(op);
+	
 
 
 	function sendemail() {
@@ -138,13 +138,14 @@ let register_1 = document.getElementById("register");
 			let bookingarray = []
 			bookingarray.push(booking_datas)
 			localStorage.setItem("booking_info", JSON.stringify(bookingarray))
-		}
-		sendemail();
+			sendemail();
 		swal("success!", "booking sent", "success");
 		setInterval(re, 1000);
 		function re(){
 		window.location.href="bookhospital.html"
 	}
+		}
+		
 	}
 
 

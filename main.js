@@ -217,7 +217,7 @@ const old_hospital = [
         "source": "https://iili.io/HNRzLYJ.jpg",
         "alternatetext": "hospitalimage"
       },
-      hospital_title:"Apolo:",
+      hospital_title:"Apolo",
       doctor_name:"Isac",
       specialist_in:"Bone Surgery",
       hospital_address: "7305836758"
@@ -243,7 +243,7 @@ else{
     "source": "../../assets/images/flood.jpg",
     "alternatetext": "hospitalimage"
   },
-  request_title:"FLOOD:",
+  request_title:"FLOOD",
    about_request:"We fresthtrust decided to help flood in kerla help us by donating money.press the donate now to open donation portal",
    requested_by:"isac",
   requests_address: "7305836758"

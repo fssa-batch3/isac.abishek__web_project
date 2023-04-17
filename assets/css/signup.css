@@ -16,14 +16,17 @@
     position: absolute;
 }
 #popup{
-	background-color: green;
+    /* background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/signupvec.jpg); */
+	clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+	background-color: rgb(229, 227, 227);
+	color: #6C3DD9;
 	width: 100px;
 	height: 80px;
 	position: absolute;
 	top:50px;
 	left:800px;
 	z-index: 1;
-	
+	font-size: 13px;
 	 /* margin: 0px auto; */
 	 /* margin-top: 50px; */
 }
