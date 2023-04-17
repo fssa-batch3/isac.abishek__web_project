@@ -10,7 +10,7 @@ else{
             "alt": "tricycle image"
           },
           image2: {
-            "source": "-https://iili.io/HNRIjZN.jpg",
+            "source": "https://iili.io/HNRIjZN.jpg",
             "alt": "tricycle image"
           },
           image3: {

@@ -28,11 +28,12 @@
 
             <form id="login" class="input-group">
                 <h1 class="vollogin">volunteer login</h1>
+
                 <input type="text" class="input-field" placeholder="User Id" id="logemail" required />
                 <input type="password" class="input-field" placeholder="Enter Password" id="logpassword" required />
-
+                <p>dont have account <span id="span">sign up here</span></p>
                 <button type="submit" class="submit-btn">Log In</button>
-                <img src="../../assets/images/login2.jpg" width="400px" alt="">
+                <img src="../../assets/images/login2.jpg" width="400px" alt="img error">
             </form>
             <!-- registe cotent  -->
             <form id="register" class="input-group">
@@ -63,22 +64,23 @@
     <!-- java script starts  -->
 
     <script>
+//         let isacc = document.getElementById("span")
+//         isacc.addEventListener("click", function () {
 
+
+// x.style.left = "50px";
+// y.style.left = "450px";
+// z.style.left = "0";
+
+
+// })
         // script for login and register switching   
 
         let x = document.getElementById("login");
         let y = document.getElementById("register");
         let z = document.getElementById("btn");
 
-        document.querySelector("#LoginBtn").addEventListener("click", function () {
-
-
-            x.style.left = "50px";
-            y.style.left = "450px";
-            z.style.left = "0";
-
-
-        })
+        document.querySelector("#LoginBtn")
         document.querySelector("#RegisterBtn").addEventListener("click", function () {
 
 
@@ -198,20 +200,20 @@
             else {
                 swal("sorry!", "new password and confirm password or not matchced", "error");
             }
-        
+
 
 
         }
         const passwordCheckbox = document.getElementById('showpassword');
         const passwordInput = document.getElementById('password');
-        const confirmpasswords=document.getElementById("confirmpassword")
+        const confirmpasswords = document.getElementById("confirmpassword")
 
         passwordCheckbox.addEventListener('change', function () {
             if (this.checked) {
                 passwordInput.type = 'text';
                 confirmpasswords.type = 'text';
             } else {
-                
+
                 passwordInput.type = 'password';
                 confirmpasswords.type = 'password';
             }
