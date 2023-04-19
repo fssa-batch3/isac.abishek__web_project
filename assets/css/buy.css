@@ -21,55 +21,7 @@ body {
    
   
 
-/* nav bar  */
-.menu-bar {
-    height: 120px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-}
 
-.menu-bar img {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 100px;
-}
-
-.menu-bar ul {
-    list-style: none;
-    display: flex;
-    margin-top: 0px;
-}
-
-.menu-bar ul li {
-    position: relative;
-    margin-right: 30px;
-    list-style: none;
-    font-size: 18px;
-    padding-top: 6px;
-    font-weight: 400;
-}
-
-.menu-bar ul li::after {
-    content: '';
-    display: block;
-    background-color: #6C3DD9;
-    height: 2px;
-    width: 0%;
-    margin: auto;
-    transition: 0.5s;
-}
-
-.menu-bar ul li:hover::after {
-    width: 100%;
-}
-
-.menu-bar ul li a {
-    font-size: 20px;
-    text-decoration: none;
-    color: #6C3DD9;
-}
 
 /* buy bg  */
 .gethelpbg {
@@ -141,13 +93,9 @@ body {
     text-align: center;
     border-radius: 20px;
     margin: 45px;
-    animation-name: new;
-    animation-duration: 4s;
+ 
 }
-@keyframes new{
-    0%{transform: translateX(1500px);opacity: 0;}
-    100%{transform: translateX(0px); opacity: 1;}
-    }
+
 .products img {
     width: 250px;
     height: 250px;

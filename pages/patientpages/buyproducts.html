@@ -61,7 +61,7 @@
       </section>
       <div class="search-container">
         <input type="text" id="search-bar" placeholder="Search product by name...">
-        <button type="button" >Search</button>
+        <button type="button" id="search-btn" >Search</button>
       </div>
       <section class="sec3">
 
@@ -126,12 +126,34 @@
 
 
     products = JSON.parse(localStorage.getItem("productrequest"))
+
+    let searchbox=document.getElementById("search-bar")
+    // let searchbtn=document.getElementsByTagName("h1").value;
+    // console.log(searchbtn);
+    let ret;
+    let item;
+    searchbox.addEventListener("input",(e)=>{
+     let word=e.target.value.toLowerCase();
+     let dic=document.querySelectorAll(".products");
+     dic.forEach(ex=>{
+      let child=ex.children[1].textContent.toLocaleLowerCase();
+      if (child.includes(word)) {
+        
+        ex.style.display="block"
+      }
+      else{
+        ex.style.display="none"
+
+      }
+     })
+    })
+
     products.find(e=>{
       if(e["status"]==true){
            //  <div class="products"> </div>
       div_products = document.createElement("div");
       div_products.setAttribute("class", "products");
-      console.log(div_products)
+      // console.log(div_products)
 
 
       //  <img src="" alt=""/>
