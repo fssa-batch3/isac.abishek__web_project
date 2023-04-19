@@ -13,6 +13,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
   <!-- <script src="../../assets/js/screenreader.js"></script> -->
   <title>gethelp</title>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script src="../../assets/js/translator.js"></script>
 </head>
 
 <body>
@@ -21,6 +23,8 @@
     <input type="checkbox" id="click" >
 
   </div> -->
+  <div id="google_translate_element" class="translate"></div>
+
   <nav>
     <div class="side-nav">
       <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg">
@@ -48,6 +52,7 @@
       <input type="checkbox" id="click" >
 
     </div> -->
+    <div id="google_translate_element" class="translate"></div>
     <div class="gethelpbg">
       <h1>buy products</h1>
 
@@ -125,11 +130,9 @@
     let button_tags;
 
 
-    products = JSON.parse(localStorage.getItem("productrequest"))
 
     let searchbox=document.getElementById("search-bar")
-    // let searchbtn=document.getElementsByTagName("h1").value;
-    // console.log(searchbtn);
+    
     let ret;
     let item;
     searchbox.addEventListener("input",(e)=>{
@@ -137,9 +140,10 @@
      let dic=document.querySelectorAll(".products");
      dic.forEach(ex=>{
       let child=ex.children[1].textContent.toLocaleLowerCase();
-      if (child.includes(word)) {
-        
+      if (child.startsWith(word)   ) {
+       
         ex.style.display="block"
+       
       }
       else{
         ex.style.display="none"
@@ -147,6 +151,7 @@
       }
      })
     })
+    products = JSON.parse(localStorage.getItem("productrequest"))
 
     products.find(e=>{
       if(e["status"]==true){

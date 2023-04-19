@@ -359,3 +359,9 @@ footer{
     border-radius: 4px;
     margin-right: 10px;
   }
+  .translate{
+    position: absolute;
+    top: 0px;
+    right: 100px;
+    
+ }

@@ -13,6 +13,8 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script src="../../assets/js/translator.js"></script>
   <script src="../../assets/sweetalert.min.js"></script>
   <title>donation request</title>
 </head>
@@ -25,6 +27,8 @@
   </div> -->
   <!-- nav bar starts  -->
   <nav>
+    <div id="google_translate_element" class="translate"></div>
+
     <div class="side-nav">
       <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg">
       <ul class="navlinks">
@@ -102,7 +106,26 @@
   </footer>
   <script>
 
+let searchbox=document.getElementById("search-bar")
     
+    let ret;
+    let item;
+    searchbox.addEventListener("input",(e)=>{
+     let word=e.target.value.toLowerCase();
+     let dic=document.querySelectorAll(".hos1");
+     dic.forEach(ex=>{
+      let child=ex.children[1].children[0].children[1].textContent.toLocaleLowerCase();
+      if (child.startsWith(word)   ) {
+       
+        ex.style.display="flex"
+       
+      }
+      else{
+        ex.style.display="none"
+
+      }
+     })
+    })
 
     let div_requests
     // let request_id
@@ -170,7 +193,7 @@
       request_title = document.createElement("p");
       request_title.setAttribute("class", "addressp");
       // request_title.setAttribute("width","300px");
-      request_title.innerHTML ="<span>donation title</span>:- "+e["request_title"];
+      request_title.innerHTML ="<span>donation title</span>:- "+`<span>${e["request_title"]}</span>`;
       contact_holder.append(request_title);
 
       about_request = document.createElement("p");

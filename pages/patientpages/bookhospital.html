@@ -12,7 +12,8 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/book.css">
   <link rel="stylesheet" href="../../assets/css/common.css">
- 
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script src="../../assets/js/translator.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
   <title>gethelp</title>
 </head>
@@ -45,6 +46,8 @@
     </div>
   </nav>
   <!-- content starts  -->
+  <div id="google_translate_element" class="translate"></div>
+
   <section class="sec1">
     <div class="sec1h1">
       <h1>BOOK HOSPITAL</h1>
@@ -105,7 +108,30 @@
   </footer>
   <script>
 
+let searchbox=document.getElementById("search-bar")
+    
+    let ret;
+    let item;
+    let isac=document.querySelectorAll(".addressp")
+    // console.log(isac,"yt")
 
+    searchbox.addEventListener("input",(e)=>{
+     let word=e.target.value.toLowerCase();
+     let dic=document.querySelectorAll(".hos1");
+     dic.forEach(ex=>{
+      let child=ex.children[1].children[0].children[1].textContent.toLocaleLowerCase();
+      console.log(child);
+      if (child.startsWith(word)) {
+       
+        ex.style.display="flex"
+       
+      }
+      else{
+        ex.style.display="none"
+
+      }
+     })
+    })
 
     let div_hospitals
     let img
@@ -157,22 +183,22 @@
       request_title = document.createElement("p");
       request_title.setAttribute("class", "addressp");
       // request_title.setAttribute("width","300px");
-      request_title.innerHTML = "<span>Hospital Name</span>:- " + e["hospital_title"];
+      request_title.innerHTML = "<span>Hospital Name :-</span> " +`<span>${e["hospital_title"]}</span>`;
       contact_holder.append(request_title);
 
       about_request = document.createElement("p");
       about_request.setAttribute("class", "addressp");
-      about_request.innerHTML = "<span>Doctor Name</span>:- " + e.doctor_name;
+      about_request.innerHTML = "<span>Doctor Name:-</span> " + e.doctor_name;
       contact_holder.append(about_request);
 
       requested_by = document.createElement("p");
       requested_by.setAttribute("class", "addressp");
-      requested_by.innerHTML = "<span>Speacilist in </span>:- " + e.specialist_in;
+      requested_by.innerHTML = "<span>Speacilist in :- </span> " + e.specialist_in;
       contact_holder.append(requested_by);
 
       address = document.createElement("p");
       address.setAttribute("class", "addressp");
-      address.innerHTML = "<span>contact</span>:- " + e.hospital_address;
+      address.innerHTML = "<span>contact :-</span> " + e.hospital_address;
       contact_holder.append(address);
 
       // div class dropdown-menu1
