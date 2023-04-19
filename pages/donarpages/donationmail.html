@@ -44,9 +44,9 @@
     <!-- <div class="flex"> -->
     <!-- <img src="../../assets/images/donationrequest.jpg" alt="" width="200px" > -->
     <!-- <div class="inputs"> -->
-    <input type="text" id="name" placeholder="yourname" required>
-    <input type="text" id="request" placeholder="donationrequest" required>
-    <input type="text" id="phone" placeholder="yourmobile" required>
+    <input type="text" id="name" placeholder="yourname" required pattern="[a-zA-Z]+" title="name must only in alphabets">
+    <input type="text" id="request" placeholder="donationrequest title" required pattern="[a-zA-Z]+" title="name must only in alphabets">
+    <input type="text" id="phone" placeholder="yourmobile" required pattern="[0-9]\d*" maxlength="10" title="mobile number must be 10 digit number">
     <textarea name="message" id="message" rows="4" placeholder="about your request" required></textarea>
 <!-- </div> -->
 <!-- </div> -->
@@ -63,7 +63,7 @@ document.querySelector("form").addEventListener("submit",(e)=>{
        
         function sendemail(){
          let name=document.getElementById("name").value
-         let email= document.getElementById("email").value
+         let email= document.getElementById("request").value
          let phone= document.getElementById("phone").value
          let message= document.getElementById("message").value
 
@@ -89,6 +89,10 @@ document.querySelector("form").addEventListener("submit",(e)=>{
      
     // alert("error")
 );
+function re(){
+		window.location.href="donationrequest.html"
+	}
+	setInterval(re, 1000);
         }
     }
 

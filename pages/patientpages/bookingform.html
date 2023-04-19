@@ -50,11 +50,11 @@
 			<!-- </div> -->
 			<form  id="register" >
 				<label for="name">Name:</label>
-				<input type="text" id="name" name="name" required>
+				<input type="text" id="name" name="name" required pattern="[a-zA-Z]+" title="name must only in alphabets">
 				<label for="email">Email:</label>
 				<input type="email" id="email" name="email" required>
 				<label for="mobile">Mobile</label>
-				<input type="text" id="mobile" name="mobile" required>
+				<input type="text" id="mobile" name="mobile" required pattern="[0-9]\d*" maxlength="10" title="mobile number must be 10 digit number" >
 				<label for="mobile">booking date</label>
 				<input type="text" id="calender" name="mobile" required>
 				<button id="submit" onclick="isac()"> submit</button>
@@ -75,7 +75,25 @@ let register_1 = document.getElementById("register");
 	const url = window.location.search;
 	const urlParams = new URLSearchParams(url);
 	const hospitalname = urlParams.get("bookname")
-	console.log(hospitalname);
+
+
+	let hos=JSON.parse(localStorage.getItem("hospitalrequests")) 
+			let img;
+            hos.find(e=>{
+				if(e["hospital_title"]==hospitalname){
+					img=e["hospitals_images"]["source"]
+				}
+			})
+	// let hosimg=urlParams.get("img")
+	// console.log(hospitalname);
+	// const todays = new Date();
+
+	// let arr={
+	// 	"time":todays,
+		
+	// 	"name":hospitalname
+	// }
+	// localStorage.setItem(JSON.stringify("user_bookings",arr))
 
 	let input = "1234567890"
 
@@ -119,6 +137,7 @@ let register_1 = document.getElementById("register");
 	
 
 	function isac() {
+		let user=localStorage.getItem("userprofile_name")
 		let name = document.getElementById("name").value;
 		let email = document.getElementById("email").value;
 		let mobile = document.getElementById("mobile").value;
@@ -140,10 +159,28 @@ let register_1 = document.getElementById("register");
 			localStorage.setItem("booking_info", JSON.stringify(bookingarray))
 			sendemail();
 		swal("success!", "booking sent", "success");
-		setInterval(re, 1000);
+
+        // const todays = new Date();
+			
+				let arr = JSON.parse(localStorage.getItem("user_bookings"))||[]
+				let arrs = {
+					"time": calender,
+					"key1": hospitalname,
+					"key2": op,
+					"user":user,
+					"img":img
+				}
+				arr.push(arrs)
+				localStorage.setItem("user_bookings", JSON.stringify(arr))
+			
+		
+
+
 		function re(){
 		window.location.href="bookhospital.html"
 	}
+	setInterval(re, 1000);
+
 		}
 		
 	}

@@ -45,17 +45,27 @@
             <h3>get in touch</h3>
             <!-- <img src="../../assets/images/donationrequest.jpg" alt=""> -->
 
-            <input type="text" id="name" placeholder="yourname" required>
+            <input type="text" id="name" placeholder="yourname" required pattern="[a-zA-Z]+" title="name must only in alphabets">
             <input type="email" id="email" placeholder="emailid" required>
-            <input type="text" id="phone" placeholder="yourmobile" required>
+            <input type="text" id="phone" placeholder="yourmobile" required pattern="[0-9]\d*" maxlength="10" title="mobile number must be 10 digit number" >
             <textarea name="message" id="message" rows="4" placeholder="say something about you" required></textarea>
             <button type="submit">send</button>
         </form>
     </div>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
+         let user=localStorage.getItem("userprofile_name")
+        const url = window.location.search;
+        const urlParams = new URLSearchParams(url);
+        const productname = urlParams.get("productname")
 
-
+        let pro=JSON.parse(localStorage.getItem("productrequest")) 
+			let img;
+            pro.find(e=>{
+				if(e["product_name"]==productname){
+					img=e["image1"]["source"]
+				}
+			})
 
         let input = "1234567890"
 
@@ -76,18 +86,39 @@
                 To: "isacdevaabishek2@gmail.com",
                 From: "freshtrustproject@gmail.com",
                 Subject: "NEED YOUR PRODUCT FROM FRESHTRUST",
-                Body:"REQUEST ID"+otp+"\n"
-                   + "NAME: " + document.getElementById("name").value
+                Body: "REQUEST ID" + otp + "\n"
+                    + "NAME: " + document.getElementById("name").value
                     + "<br> EMAIL: " + document.getElementById("email").value
                     + "<br> MOBILE NUMBER: " + document.getElementById("phone").value
                     + "<br> Hi freshtrust " + document.getElementById("message").value
-                    
+
             }).then(
                 //   message => swal("yep!", "email sent to us we will contact you soon", "sucess")
                 message => alert(message)
             );
-        }
 
+
+            const todays = new Date();
+            let date_trim=todays.toLocaleDateString()
+
+            let arr = JSON.parse(localStorage.getItem("user_bookings")) || []
+            let arrs = {
+                "time": date_trim,
+                "key1": productname,
+                "key2": otp,
+                "user":user,
+                "img":img
+            }
+            arr.push(arrs)
+            localStorage.setItem("user_bookings", JSON.stringify(arr))
+
+            function re(){
+		window.location.href="buyproducts.html"
+	}
+	setInterval(re, 1000);
+        }
+          
+        
     </script>
 </body>
 

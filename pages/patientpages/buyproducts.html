@@ -43,11 +43,11 @@
   </nav>
 
   <main>
-    <div class="checkbox">
+    <!-- <div class="checkbox">
       <label for="click" class="text">screen reader</label>
       <input type="checkbox" id="click" >
 
-    </div>
+    </div> -->
     <div class="gethelpbg">
       <h1>buy products</h1>
 
@@ -126,13 +126,9 @@
 
 
     products = JSON.parse(localStorage.getItem("productrequest"))
-
-
-    for (let i = 0; i < products.length; i++) {
-
-
-
-      //  <div class="products"> </div>
+    products.find(e=>{
+      if(e["status"]==true){
+           //  <div class="products"> </div>
       div_products = document.createElement("div");
       div_products.setAttribute("class", "products");
       console.log(div_products)
@@ -140,26 +136,26 @@
 
       //  <img src="" alt=""/>
       img_cards = document.createElement("img");
-      img_cards.setAttribute("src", products[i].image1.source);
-      img_cards.setAttribute("alt", products[i].image1.alt);
+      img_cards.setAttribute("src", e["image1"]["source"]);
+      img_cards.setAttribute("alt", e["image1"]["alt"]);
       div_products.append(img_cards);
 
 
       //  <h1 class="card-title"> </h1>
       h1_product_title = document.createElement("h1");
 
-      h1_product_title.innerText = products[i].product_name;
+      h1_product_title.innerText = e["product_name"];
       div_products.append(h1_product_title);
 
       //  <p class="card-text"> </p>
       p_card_text = document.createElement("p");
-      p_card_text.innerText = products[i].product_des;
+      p_card_text.innerText =e["product_des"];
       div_products.append(p_card_text);
 
 
       //  <a href=><button class=join></button><a/>
       a_tags = document.createElement("a");
-      a_tags.setAttribute("href", "projectview.html?name=" + products[i]["product_name"])
+      a_tags.setAttribute("href", "projectview.html?name=" + e["product_name"])
       div_products.append(a_tags);
 
       button_tags = document.createElement("button");
@@ -168,7 +164,50 @@
       a_tags.append(button_tags);
 
       document.querySelector("section.sec3").append(div_products);
-    }
+      }
+    })
+
+    // for (let i = 0; i < products.length; i++) {
+
+
+
+      // //  <div class="products"> </div>
+      // div_products = document.createElement("div");
+      // div_products.setAttribute("class", "products");
+      // console.log(div_products)
+
+
+      // //  <img src="" alt=""/>
+      // img_cards = document.createElement("img");
+      // img_cards.setAttribute("src", products[i].image1.source);
+      // img_cards.setAttribute("alt", products[i].image1.alt);
+      // div_products.append(img_cards);
+
+
+      // //  <h1 class="card-title"> </h1>
+      // h1_product_title = document.createElement("h1");
+
+      // h1_product_title.innerText = products[i].product_name;
+      // div_products.append(h1_product_title);
+
+      // //  <p class="card-text"> </p>
+      // p_card_text = document.createElement("p");
+      // p_card_text.innerText = products[i].product_des;
+      // div_products.append(p_card_text);
+
+
+      // //  <a href=><button class=join></button><a/>
+      // a_tags = document.createElement("a");
+      // a_tags.setAttribute("href", "projectview.html?name=" + products[i]["product_name"])
+      // div_products.append(a_tags);
+
+      // button_tags = document.createElement("button");
+      // button_tags.setAttribute("class", "join");
+      // button_tags.innerText = "contact"
+      // a_tags.append(button_tags);
+
+      // document.querySelector("section.sec3").append(div_products);
+    // }
 
    
 
@@ -181,39 +220,39 @@
 
 
 
-    let toggled = document.getElementById("click")
+//     let toggled = document.getElementById("click")
 
-let msg = new SpeechSynthesisUtterance();//Interface,
+// let msg = new SpeechSynthesisUtterance();//Interface,
 
-let tags = document.querySelectorAll('p,a,h1,h2,h3');
-
-
-
-      if (toggled.checked == true) {
-        console.log("isac")
+// let tags = document.querySelectorAll('p,a,h1,h2,h3');
 
 
-        // add more tags for you project
-        tags.forEach((tag) => {
-          tag.addEventListener('click', (e) => {
 
-            msg.text = e.target.innerText;
-            tag.style.backgroundColor = "yellow";
-            tag.style.color = "black";
-            speechSynthesis.speak(msg);
+//       if (toggled.checked == true) {
+//         console.log("isac")
 
-            let interval = setInterval(() => {
-              if (!speechSynthesis.speaking) {
-                tag.style.removeProperty('background-color');
-                // tag.style.removeProperty('color');
-                // tag.style.removeProperty('color');
-                clearInterval(interval);
-              }
-            }, 100);
 
-          });
-        });
-      }
+//         // add more tags for you project
+//         tags.forEach((tag) => {
+//           tag.addEventListener('click', (e) => {
+
+//             msg.text = e.target.innerText;
+//             tag.style.backgroundColor = "yellow";
+//             tag.style.color = "black";
+//             speechSynthesis.speak(msg);
+
+//             let interval = setInterval(() => {
+//               if (!speechSynthesis.speaking) {
+//                 tag.style.removeProperty('background-color');
+//                 // tag.style.removeProperty('color');
+//                 // tag.style.removeProperty('color');
+//                 clearInterval(interval);
+//               }
+//             }, 100);
+
+//           });
+//         });
+//       }
 
 
       //   //  if (toggled.checked==false) {

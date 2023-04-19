@@ -146,7 +146,7 @@ const productspage= JSON.parse(localStorage.getItem("productrequest"));
 
   let a;
   let button
- 
+ let product_name=res["product_name"]
 project_title=document.createElement("span");
 project_title.innerText=res["product_name"]
 document.querySelector("h1").append(project_title)
@@ -211,7 +211,7 @@ console.log(project_title);
   ul.append(li)
 
   a = document.createElement("a")
-  a.setAttribute("href", "contact.html")
+  a.setAttribute("href", "contact.html?productname="+product_name)
   abtproduct.append(a)
 
   button = document.createElement("button")

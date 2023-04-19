@@ -23,6 +23,8 @@ else{
           },
           product_des:"ISI  MARK  TRICYCLE DOUBLE HAND DRIVE",
           product_name: "tricycle",
+          status:true,
+
           feature1: "Overall Width – 890 mm (+/-10)    Overall Height – 890 mm (+/-10) Steel Tube: Steel tube ERW tubing are conforming  to IS-2039-1991 (25 mm OD X 1.25 mm)   Footrest: M.S. sheet are confirming to IS-277-1969     Tyre& Tube: Tyre& tube (28 X 1.5) are confirming to  IS-2414 & 2415-1969  Wheel Rims: Wheel rims shall be confirming to  IS-630-1961 (28 X 1.5) (32 & 40 hole) Mudguard: Mudguard shall be confirming to IS-6218  or ISI MARK LOTUS  Driving Chain: Driving chain are confirming to  IS-2403-1963 (136 links) Bottom Assembly: Bottom assembly are confirming  to IS-1131-32-33-34-1985 Tool Box (Optional) : Tool box made by the M.S. sheet  provided at underside of seat  Driving Mechanisms: Both Hand Driven",
         
         },
@@ -45,6 +47,8 @@ else{
           },
           product_des:"ISI  MARK  WHEEL CHAIR DOUBLE HAND DRIVE",
           product_name: "wheelchair",
+          status:true,
+
           feature1: "Overall Width – 890 mm (+/-10)    Overall Height – 890 mm (+/-10) Steel Tube: Steel tube ERW tubing are conforming  to IS-2039-1991 (25 mm OD X 1.25 mm)   Footrest: M.S. sheet are confirming to IS-277-1969     Tyre& Tube: Tyre& tube (28 X 1.5) are confirming to  IS-2414 & 2415-1969  Wheel Rims: Wheel rims shall be confirming to  IS-630-1961 (28 X 1.5) (32 & 40 hole) Mudguard: Mudguard shall be confirming to IS-6218  or ISI MARK LOTUS  Driving Chain: Driving chain are confirming to  IS-2403-1963 (136 links) Bottom Assembly: Bottom assembly are confirming  to IS-1131-32-33-34-1985 Tool Box (Optional) : Tool box made by the M.S. sheet  provided at underside of seat  Driving Mechanisms: Both Hand Driven",
         },
         {
@@ -66,6 +70,8 @@ else{
           },
           product_des:"ISI  MARK  BATTRIFIED HEARING AID",
           product_name: "hearingaid",
+          status:true,
+
           feature1: "Overall Width – 890 mm (+/-10)    Overall Height – 890 mm (+/-10) Steel Tube: Steel tube ERW tubing are conforming  to IS-2039-1991 (25 mm OD X 1.25 mm)   Footrest: M.S. sheet are confirming to IS-277-1969     Tyre& Tube: Tyre& tube (28 X 1.5) are confirming to  IS-2414 & 2415-1969  Wheel Rims: Wheel rims shall be confirming to  IS-630-1961 (28 X 1.5) (32 & 40 hole) Mudguard: Mudguard shall be confirming to IS-6218  or ISI MARK LOTUS  Driving Chain: Driving chain are confirming to  IS-2403-1963 (136 links) Bottom Assembly: Bottom assembly are confirming  to IS-1131-32-33-34-1985 Tool Box (Optional) : Tool box made by the M.S. sheet  provided at underside of seat  Driving Mechanisms: Both Hand Driven",
         },
         {
@@ -86,6 +92,7 @@ else{
             "alt": "crutches image"
           },
           product_des:"ISI  MARK STEEL ADJUSTABLE CRUTCHES",
+          status:true,
           product_name: "Crutches",
           feature1: "Overall Width – 890 mm (+/-10)    Overall Height – 890 mm (+/-10) Steel Tube: Steel tube ERW tubing are conforming  to IS-2039-1991 (25 mm OD X 1.25 mm)   Footrest: M.S. sheet are confirming to IS-277-1969     Tyre& Tube: Tyre& tube (28 X 1.5) are confirming to  IS-2414 & 2415-1969  Wheel Rims: Wheel rims shall be confirming to  IS-630-1961 (28 X 1.5) (32 & 40 hole) Mudguard: Mudguard shall be confirming to IS-6218  or ISI MARK LOTUS  Driving Chain: Driving chain are confirming to  IS-2403-1963 (136 links) Bottom Assembly: Bottom assembly are confirming  to IS-1131-32-33-34-1985 Tool Box (Optional) : Tool box made by the M.S. sheet  provided at underside of seat  Driving Mechanisms: Both Hand Driven",
         },
@@ -107,6 +114,7 @@ else{
             "alt": "magnifier image"
           },
           product_des:"ISI  MARK  MAGNIFIER ",
+          status:true,
           product_name: "Magnifier",
           feature1: "Overall Width – 890 mm (+/-10)    Overall Height – 890 mm (+/-10) Steel Tube: Steel tube ERW tubing are conforming  to IS-2039-1991 (25 mm OD X 1.25 mm)   Footrest: M.S. sheet are confirming to IS-277-1969     Tyre& Tube: Tyre& tube (28 X 1.5) are confirming to  IS-2414 & 2415-1969  Wheel Rims: Wheel rims shall be confirming to  IS-630-1961 (28 X 1.5) (32 & 40 hole) Mudguard: Mudguard shall be confirming to IS-6218  or ISI MARK LOTUS  Driving Chain: Driving chain are confirming to  IS-2403-1963 (136 links) Bottom Assembly: Bottom assembly are confirming  to IS-1131-32-33-34-1985 Tool Box (Optional) : Tool box made by the M.S. sheet  provided at underside of seat  Driving Mechanisms: Both Hand Driven",
         },
@@ -128,6 +136,7 @@ else{
             "alt": "scooty image"
           },
           product_des:"ISI  MARK  PETROL SCOOTY",
+          status:true,
           product_name: "bike",
           feature1: "Overall Width – 890 mm (+/-10)    Overall Height – 890 mm (+/-10) Steel Tube: Steel tube ERW tubing are conforming  to IS-2039-1991 (25 mm OD X 1.25 mm)   Footrest: M.S. sheet are confirming to IS-277-1969     Tyre& Tube: Tyre& tube (28 X 1.5) are confirming to  IS-2414 & 2415-1969  Wheel Rims: Wheel rims shall be confirming to  IS-630-1961 (28 X 1.5) (32 & 40 hole) Mudguard: Mudguard shall be confirming to IS-6218  or ISI MARK LOTUS  Driving Chain: Driving chain are confirming to  IS-2403-1963 (136 links) Bottom Assembly: Bottom assembly are confirming  to IS-1131-32-33-34-1985 Tool Box (Optional) : Tool box made by the M.S. sheet  provided at underside of seat  Driving Mechanisms: Both Hand Driven",
     
@@ -150,6 +159,7 @@ else{
             "alt": "stick image"
           },
           product_des:"ISI  MARK  STEEL HAND STICKS",
+          status:true,
           product_name: "stick",
           feature1: "Overall Width – 890 mm (+/-10)    Overall Height – 890 mm (+/-10) Steel Tube: Steel tube ERW tubing are conforming  to IS-2039-1991 (25 mm OD X 1.25 mm)   Footrest: M.S. sheet are confirming to IS-277-1969     Tyre& Tube: Tyre& tube (28 X 1.5) are confirming to  IS-2414 & 2415-1969  Wheel Rims: Wheel rims shall be confirming to  IS-630-1961 (28 X 1.5) (32 & 40 hole) Mudguard: Mudguard shall be confirming to IS-6218  or ISI MARK LOTUS  Driving Chain: Driving chain are confirming to  IS-2403-1963 (136 links) Bottom Assembly: Bottom assembly are confirming  to IS-1131-32-33-34-1985 Tool Box (Optional) : Tool box made by the M.S. sheet  provided at underside of seat  Driving Mechanisms: Both Hand Driven",
         },
@@ -175,6 +185,7 @@ else{
             "alt": "googles image"
           },
           product_des:"ISI  MARK DARK BLAK SUNRAYS GOOGLE",
+          status:true,
           product_name: "googles",
           feature1: "Overall Width – 890 mm (+/-10)    Overall Height – 890 mm (+/-10) Steel Tube: Steel tube ERW tubing are conforming  to IS-2039-1991 (25 mm OD X 1.25 mm)   Footrest: M.S. sheet are confirming to IS-277-1969     Tyre& Tube: Tyre& tube (28 X 1.5) are confirming to  IS-2414 & 2415-1969  Wheel Rims: Wheel rims shall be confirming to  IS-630-1961 (28 X 1.5) (32 & 40 hole) Mudguard: Mudguard shall be confirming to IS-6218  or ISI MARK LOTUS  Driving Chain: Driving chain are confirming to  IS-2403-1963 (136 links) Bottom Assembly: Bottom assembly are confirming  to IS-1131-32-33-34-1985 Tool Box (Optional) : Tool box made by the M.S. sheet  provided at underside of seat  Driving Mechanisms: Both Hand Driven",
         },
@@ -197,6 +208,7 @@ else{
             "alt": "limb image"
           },
           product_des:"ISI  MARK LIGHT WEIGHT ARTIFICIAL LIMB",
+          status:true,
           product_name: "Artificial limbs",
           feature1: "Overall Width – 890 mm (+/-10)  Overall Height – 890 mm (+/-10) Steel Tube: Steel tube ERW tubing are conforming  to IS-2039-1991 (25 mm OD X 1.25 mm)   Footrest: M.S. sheet are confirming to IS-277-1969     Tyre& Tube: Tyre& tube (28 X 1.5) are confirming to  IS-2414 & 2415-1969  Wheel Rims: Wheel rims shall be confirming to  IS-630-1961 (28 X 1.5) (32 & 40 hole) Mudguard: Mudguard shall be confirming to IS-6218  or ISI MARK LOTUS  Driving Chain: Driving chain are confirming to  IS-2403-1963 (136 links) Bottom Assembly: Bottom assembly are confirming  to IS-1131-32-33-34-1985 Tool Box (Optional) : Tool box made by the M.S. sheet  provided at underside of seat  Driving Mechanisms: Both Hand Driven",
         }
@@ -219,7 +231,8 @@ const old_hospital = [
       },
       hospital_title:"Apolo",
       doctor_name:"Isac",
-      specialist_in:"Bone Surgery",
+          status:true,
+          specialist_in:"Bone Surgery",
       hospital_address: "7305836758"
 
     }
@@ -245,7 +258,8 @@ else{
   },
   request_title:"FLOOD",
    about_request:"We fresthtrust decided to help flood in kerla help us by donating money.press the donate now to open donation portal",
-   requested_by:"isac",
+          status:true,
+          requested_by:"isac",
   requests_address: "7305836758"
 }
    ]

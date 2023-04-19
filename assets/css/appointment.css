@@ -16,45 +16,45 @@ body {
 
 
 /* content  */
-.container {
-    /* background: #6C3DD9; */
-    height: 95%;
-}
 
-.appimg img {
-    margin-left: 100px;
-    margin-top: 200px;
-    border-radius: 20px 20px;
-    float: left;
-    box-shadow: -1px 9px 14px 7px rgba(26, 22, 26, 0.52);
-}
-.appimg img:hover{
-    box-shadow: 5px 10px 18px #888888;
-}
-.appimg h4 {
-    color: white;
+h1 {
     text-align: center;
-    padding-top: 20px;
-    
+    margin-top: 50px;
 }
 
-.abtdoc {
+.container {
     display: flex;
-    justify-content: space-between;
-    width: 45%;
-    margin-left: 45%;
-    padding-top: 100px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 65px;
+    margin-bottom: 65px;
+     padding-left: 40px;
 }
 
-.texts h2 {
-    padding-top: 60px;
-    color: white;
-    text-shadow: 1px 1px rgb(124, 118, 118);
+.card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: 10px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    margin-left: 50px;
 }
 
-.infos h4 {
-    padding-top: 65px;
-    font-size: 20px;
-    color: #fff;
-    text-shadow: 1px 1px rgb(124, 118, 118);
+.card img {
+  
+    margin-bottom: 20px;
+    width: 200px;
+    height: 200px;
+}
+
+.card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    margin-bottom: 10px;
 }

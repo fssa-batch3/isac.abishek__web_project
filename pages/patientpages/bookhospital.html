@@ -126,8 +126,9 @@
     // let new_hospital=JSON.parse(localStorage.getItem("hospitalrequests"));
     // let hospitals = old_hospital.concat(new_hospital)
     let hospitals = JSON.parse(localStorage.getItem("hospitalrequests"));
-
-    for (let i = 0; i < hospitals.length; i++) {
+    hospitals.find(e=>{
+      if(e["status"]==true){
+    
 
       //  <div class="hos1"></div>
       div_hospitals = document.createElement("div");
@@ -135,8 +136,8 @@
 
       // <img src="../../assets/images/apollo-hospital-image.jpg" width="500px" alt="apollo-hospital-image">
       img = document.createElement("img");
-      img.setAttribute("src", hospitals[i]["hospitals_images"]["source"]);
-      img.setAttribute("alt", hospitals[i]["hospitals_images"]["alternatetext"]);
+      img.setAttribute("src", e["hospitals_images"]["source"]);
+      img.setAttribute("alt", e["hospitals_images"]["alternatetext"]);
       img.setAttribute("width", "300px");
       img.setAttribute("height", "200px");
       div_hospitals.append(img);
@@ -156,22 +157,22 @@
       request_title = document.createElement("p");
       request_title.setAttribute("class", "addressp");
       // request_title.setAttribute("width","300px");
-      request_title.innerHTML = "<span>Hospital Name</span>:- " + hospitals[i].hospital_title;
+      request_title.innerHTML = "<span>Hospital Name</span>:- " + e["hospital_title"];
       contact_holder.append(request_title);
 
       about_request = document.createElement("p");
       about_request.setAttribute("class", "addressp");
-      about_request.innerHTML = "<span>Doctor Name</span>:- " + hospitals[i].doctor_name;
+      about_request.innerHTML = "<span>Doctor Name</span>:- " + e.doctor_name;
       contact_holder.append(about_request);
 
       requested_by = document.createElement("p");
       requested_by.setAttribute("class", "addressp");
-      requested_by.innerHTML = "<span>Speacilist in </span>:- " + hospitals[i].specialist_in;
+      requested_by.innerHTML = "<span>Speacilist in </span>:- " + e.specialist_in;
       contact_holder.append(requested_by);
 
       address = document.createElement("p");
       address.setAttribute("class", "addressp");
-      address.innerHTML = "<span>contact</span>:- " + hospitals[i].hospital_address;
+      address.innerHTML = "<span>contact</span>:- " + e.hospital_address;
       contact_holder.append(address);
 
       // div class dropdown-menu1
@@ -183,14 +184,14 @@
 
 
       a = document.createElement("a");
-      a.setAttribute("href", "bookingform.html?bookname="+hospitals[i].hospital_title);
+      a.setAttribute("href", "bookingform.html?bookname="+e.hospital_title);
       dropdown1.append(a)
 
 
       button = document.createElement("button");
       button.setAttribute("class", "join");
       button.setAttribute("id", "book_btn");
-      button.setAttribute("data-id", hospitals[i].hospital_title)
+      button.setAttribute("data-id", e.hospital_title)
 
 
       button.innerText = "book now"
@@ -200,7 +201,7 @@
 
       document.querySelector(".sec2").append(div_hospitals);
     }
-
+  })
 
     // let btns = document.querySelectorAll("#book_btn")
     // let bookname;

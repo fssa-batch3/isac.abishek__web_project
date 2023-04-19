@@ -124,10 +124,8 @@
   //  let new_request=requests.concat(requestform)
    let new_request=JSON.parse(localStorage.getItem("donationrequests"))
 
-
-   
-
-    for (let i = 0; i < new_request.length; i++) {
+   new_request.find(e=>{
+      if(e["status"]==true){
 
       //  <div class="hos1"></div>
       div_requests = document.createElement("div");
@@ -136,8 +134,8 @@
       // <img src="../../assets/images/apollo-hospital-image.jpg" width="500px" alt="apollo-hospital-image">
       img = document.createElement("img");
       
-      img.setAttribute("src", new_request[i]["requests_images"]["source"]);
-      img.setAttribute("alt", new_request[i]["requests_images"]["alternatetext"]);
+      img.setAttribute("src", e["requests_images"]["source"]);
+      img.setAttribute("alt", e["requests_images"]["alternatetext"]);
       // img.setAttribute("src", new_request[i]["requests_images"]);
       // img.setAttribute("alt", new_request[i]["img_alt"]);
       img.setAttribute("width", "300px");
@@ -172,22 +170,22 @@
       request_title = document.createElement("p");
       request_title.setAttribute("class", "addressp");
       // request_title.setAttribute("width","300px");
-      request_title.innerHTML ="<span>donation title</span>:- "+ new_request[i].request_title;
+      request_title.innerHTML ="<span>donation title</span>:- "+e["request_title"];
       contact_holder.append(request_title);
 
       about_request = document.createElement("p");
       about_request.setAttribute("class", "addressp");
-      about_request.innerHTML = "<span>about request</span>:- "+new_request[i].about_request;
+      about_request.innerHTML = "<span>about request</span>:- "+e["about_request"];
       contact_holder.append(about_request);
 
       requested_by = document.createElement("p");
       requested_by.setAttribute("class", "addressp");
-      requested_by.innerHTML ="<span>requested by</span>:- "+ new_request[i].requested_by;
+      requested_by.innerHTML ="<span>requested by</span>:- "+ e["requested_by"];
       contact_holder.append(requested_by);
 
       address = document.createElement("p");
       address.setAttribute("class", "addressp");
-      address.innerHTML = "<span>contact</span>:- "+new_request[i].requests_address;
+      address.innerHTML = "<span>contact</span>:- "+e["requests_address"];
       contact_holder.append(address);
 
 
@@ -198,7 +196,7 @@
 
 
       a1 = document.createElement("a");
-      a1.setAttribute("href", "donation.html")
+      a1.setAttribute("href", "donation.html?requestname="+e["request_title"])
       dropdown1.append(a1)
       //    button class join 
       button = document.createElement("button");
@@ -207,6 +205,11 @@
       a1.append(button);
       document.querySelector(".sec2").append(div_requests);
     }
+    })
+
+
+
+
 
   </script>
 </body>

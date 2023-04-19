@@ -8,8 +8,8 @@
 	<script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
-    <script src="../../assets/sweetalert.min.js"></script>
-    
+	<script src="../../assets/js/sweetalert.min.js"></script>
+
 </head>
 
 <body>
@@ -20,112 +20,138 @@
 	  </div> -->
 	<nav>
 		<div class="side-nav">
-		  <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg">
-		<ul class="navlinks">
-			 
-			 
-			  <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
-			  <li><a href="../donarpages/donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a></li>
-			  <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i><p>About</p></a></li>
-			  <li><a href="../patientpages/gethelp.html"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
-			  <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>GetInvolved</a></li>
-			  <li><a href="../beinspired/inspire.html"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
-			  <li><a href="../about/profile.html"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
-			  <div class="active"></div>
-		</div>
-	  </nav>
-	  <div class="full">
-	<div class="container">
-		<!-- <div class="img-container"> -->
-		<h1>Donate Now</h1>
-		<img src="../../assets/images/donateus.jpg" alt="" width="425px" class="donateimg">
-		<!-- </div> -->
-		<form>
-			<label for="name">Name:</label>
-			<input type="text" id="name" name="name" required>
-			<label for="email">Email:</label>
-			<input type="email" id="email" name="email" required>
-			<label for="mobile">Mobile</label>
-			<input type="text" id="mobile" name="mobile" required>
-			<label for="donation-amount">Donation Amount:</label>
-			<select id="amount" name="amount">
-				<option value="0">Select amount</option>
-				<option value="25">&#8377 25</option>
-				<option value="50">&#8377 50</option>
-				<option value="100">&#8377 100</option>
-				<option value="250">&#8377 250</option>
-				<option value="500">&#8377 500</option>
-				<option value="1000">&#8377 1000</option>
-			</select>
-			
-			<label for="card"><input type="checkbox" name="user" id="card" value="card" required>
-				<i class="fa-solid fa-credit-card"></i></label>
-				<label for="creditcard">Credit Card Number:</label>
-			<input type="text" id="creditcard" name="creditcard" disabled>
-			<label for="paypal"><input type="radio" name="user" id="paypal" value="paypal" required><i
-					class="fa-brands fa-paypal"></i></label>
-			<label for="googlepay"><input type="radio" name="user" id="gpay" value="gpay" required><i
-					class='fab fa-google-pay'></i></label>
-			<label for="amazonpay"><input type="radio" name="user" id="amazonpay" value="amazonpay" required><i
-					class="fa-brands fa-amazon-pay"></i></label>
+			<img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg">
+			<ul class="navlinks">
 
-					<button id="submit" > submit</button>
-				
-		</form>
-		
+
+				<li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
+				<li><a href="../donarpages/donationrequest.html"><i
+							class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a></li>
+				<li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i>
+						<p>About</p>
+					</a></li>
+				<li><a href="../patientpages/gethelp.html"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
+				<li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>GetInvolved</a></li>
+				<li><a href="../beinspired/inspire.html"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
+				<li><a href="../about/profile.html"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
+				<div class="active"></div>
+		</div>
+	</nav>
+	<div class="full">
+		<div class="container">
+			<!-- <div class="img-container"> -->
+			<h1>Donate Now</h1>
+			<img src="../../assets/images/donateus.jpg" alt="" width="425px" class="donateimg">
+			<!-- </div> -->
+			<form>
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name" required pattern="[a-zA-Z]+" title="name must only in alphabets">
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required >
+				<label for="mobile">Mobile</label>
+				<input type="text" id="mobile" name="mobile" required pattern="[0-9]\d*" maxlength="10" title="mobile number must be 10 digit number" >
+				<label for="donation-amount">Donation Amount:</label>
+				<select id="amount" name="amount">
+					<option value="0">Select amount</option>
+					<option value="25">&#8377 25</option>
+					<option value="50">&#8377 50</option>
+					<option value="100">&#8377 100</option>
+					<option value="250">&#8377 250</option>
+					<option value="500">&#8377 500</option>
+					<option value="1000">&#8377 1000</option>
+				</select>
+
+				<label for="card"><input type="checkbox" name="user" id="card" value="card" >
+					<i class="fa-solid fa-credit-card"></i></label>
+				<label for="creditcard">Credit Card Number:</label>
+				<input type="text" id="creditcard" name="creditcard" disabled pattern="[0-9]{12,12}+" title="aadhar number must be 12 digit number">
+				<label for="paypal"><input type="radio" name="user" id="paypal" value="paypal" required><i
+						class="fa-brands fa-paypal"></i></label>
+				<label for="googlepay"><input type="radio" name="user" id="gpay" value="gpay" required><i
+						class='fab fa-google-pay'></i></label>
+				<label for="amazonpay"><input type="radio" name="user" id="amazonpay" value="amazonpay" required><i
+						class="fa-brands fa-amazon-pay"></i></label>
+
+				<button id="submit"> submit</button>
+
+			</form>
+
+		</div>
 	</div>
-	  </div>
 </body>
 
 <script>
-	let name = document.getElementById("name").value;
+	const url = window.location.search;
+			const urlParams = new URLSearchParams(url);
+			const reqname = urlParams.get("requestname")
+
+            let donations=JSON.parse(localStorage.getItem("donationrequests")) 
+			let img;
+            donations.find(e=>{
+				if(e["request_title"]==reqname){
+					img=e["requests_images"]["source"]
+				}
+			})
+
+
+
+
+	let name = document.getElementById("name");
 	let email = document.getElementById("email").value;
 	let mobile = document.getElementById("mobile").value;
 	let amount = document.getElementById("amount");
 	let option = document.getElementsByTagName("option");
-	
+
 	let selectedValue;
+	// let selvalue;
 	amount.addEventListener("change", (event) => {
 		check = event.target.innerText
 		selectedValue = event.target.value;
 		console.log(selectedValue);
+		// return selectedValue;
+		// // console.log(selvalue)
+
 	});
 
-	let card= document.getElementById("card")
-	card.addEventListener("click", (event) =>  {
-	 
-		if(card.checked){
+	let card = document.getElementById("card")
+	card.addEventListener("click", (event) => {
+
+		if (card.checked) {
 			document.getElementById("gpay").setAttribute("disabled", "");
 			document.getElementById("paypal").setAttribute("disabled", "");
 			document.getElementById("amazonpay").setAttribute("disabled", "");
 			document.getElementById("creditcard").removeAttribute("disabled")
 		}
-		else{
-			document.getElementById("creditcard").setAttribute("disabled"," ")
-			document.getElementById("creditcard").value=''
+		else {
+			document.getElementById("creditcard").setAttribute("disabled", " ")
+			document.getElementById("creditcard").value = ''
 			document.getElementById("gpay").removeAttribute("disabled");
 			document.getElementById("paypal").removeAttribute("disabled");
 			document.getElementById("amazonpay").removeAttribute("disabled");
 		}
 	})
-	document.querySelector("form").addEventListener("submit",(e)=>{
-		function isac()
+	document.querySelector("form").addEventListener("submit", (e) => {
+		e.preventDefault();
+		isac()
 	})
 	function isac() {
 		
-		 gpay = document.getElementById("gpay").checked;
-		 paypal = document.getElementById("paypal").checked;
-		 amazonpay = document.getElementById("amazonpay").checked;
-		 let creditcard = document.getElementById("creditcard").value;
-		 donation_datas = {
-			"donar_name": name,
-			"donar_mobile": mobile,
-			"donar_email": email,
+          let user=localStorage.getItem("userprofile_name")
+		gpay = document.getElementById("gpay").checked;
+		paypal = document.getElementById("paypal").checked;
+		amazonpay = document.getElementById("amazonpay").checked;
+		let creditcard = document.getElementById("creditcard").value;
+		donation_datas = {
+			"donar_name": name.value,
+			"donar_mobile": mobile.value,
+			"donar_email": email.value,
 			"amount": selectedValue,
 			"card_no": creditcard,
 			"gpay": gpay,
 			"paypal": paypal,
-			"amazonpay": amazonpay
+			"amazonpay": amazonpay,
+
+
 		}
 
 		if (option[0].selected) {
@@ -135,14 +161,50 @@
 			let donationarray = JSON.parse(localStorage.getItem("donation_info")) ?? []
 			donationarray.push(donation_datas)
 			localStorage.setItem("donation_info", JSON.stringify(donationarray))
+			setInterval(re,1000);
 			swal("thank you!", "Susscesfully donated", "success");
+			// window.location.href="donationrequest.html"
+		
+             
+		
+
+
+
+		
+		const todays = new Date();
+            let date_trim=todays.toLocaleDateString()
+			
+
+
+
+
+
+			// if (JSON.parse(localStorage.getItem("user_bookings"))) {
+				let arr = JSON.parse(localStorage.getItem("user_bookings"))||[]
+				let arrs = {
+					"time": date_trim,
+					"key1": reqname,
+					"key2": selectedValue,
+					"user":user,
+					"img":img
+				}
+				arr.push(arrs)
+				localStorage.setItem("user_bookings", JSON.stringify(arr))
+			// }
+			
+			function re(){
+				// swal("thank you!", "Susscesfully donated", "success");
+		window.location.href="donationrequest.html"
+		
+	}
+	// setTimeout(re,3000);
 
 		}
 	}
 
 
 
-	
+
 </script>
 
 </html>
