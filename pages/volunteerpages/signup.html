@@ -56,7 +56,7 @@
                 <label for="user"><input type="radio" name="user" id="user">User</label>
                 <input type="password" class="input-field" placeholder="Enter Password"
                     title="password must contain one symbol,one Capital and no spaces" required id="password"
-                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$" />
+                     pattern="^(?=.*[A-Z])(?=.*[\W])(?!.*\s).{8,12}$"/>
                 <input type="password" class="input-field" placeholder="Enter Password" required id="confirmpassword" />
                 <input type="checkbox" name="password" id="showpassword">show password
                 <button type="submit" class="submit-btn">Register</button>
@@ -66,7 +66,7 @@
         </div>
     </div>
     <!-- java script starts  -->
-
+</body>
     <script>
            
         // script for login and register switching   
@@ -263,6 +263,8 @@
 
         }
     </script>
-</body>
+    
+    <script src="../../assets/js/screenreader.js"></script>
+
 
 </html>

@@ -37,8 +37,10 @@
    
     <img src="../../assets/images/aniyuki-sad-anime-avatar-image-32.jpg" alt="" width="200px" >
     <div class="name name1">
+      <form id="form">
       <i class="fa-solid fa-signature profileicons"></i> <label for="user_name">name : </label>
-      <br><input type="text" id="user_name" disabled>
+      <br>
+      <input type="text" id="user_name" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"  disabled>
      <!-- <p id="user_name">isaxc</p> -->
   </div>
   
@@ -46,10 +48,10 @@
   <div class="main">
     <div class="name2 name">
     <i class="fa-solid fa-mobile-screen profileicons"></i><label for="mobile_no">mobile_no : </label><br>
-   <input type="text" id="mobile_no" disabled><br><br>
+   <input type="text" id="mobile_no" pattern="[0-9]\d*" maxlength="10" onkeypress="return event.charCode >= 48 && event.charCode <= 57"  disabled><br><br>
     <!-- <p id="mobile_no"></p> -->
     <i class="fa-solid fa-id-card profileicons"></i><label for="addhar">addhar : </label><br>
-    <input type="text" id="addhar" disabled><br><br>
+    <input type="text" id="addhar" pattern="[0-9]{12,12}+" onkeypress="return event.charCode >= 48 && event.charCode <= 57" disabled><br><br>
     <i class="fa-solid fa-id-card profileicons"></i><label for="addhar">role : </label><br>
     <input type="text" id="role" disabled><br><br>
     <!-- <p id="addhar"></p> -->
@@ -65,13 +67,19 @@
      <button id="edit_btn" >edit</button>
      <!-- <a href="../../index.html"><button id="logoutbtn">logout</button></a> -->
      <button id="deletebtn">log out</button>
-     <a id="work"><button id="text"></button></a>
+    </form>
+    <a id="work"><button id="text"></button></a>
 
    </div>
  </div>
  
   <script>
+    let form=document.getElementById("form")
+    form.addEventListener("submit", e => {
+            e.preventDefault();
+           
 
+        })
 
     
 
@@ -96,7 +104,7 @@
     if(result["volunteer"]==true){
     document.getElementById("role").value= "volunteer"
    
-    let works=document.getElementById("work")
+    let work=document.getElementById("work")
     let text=document.getElementById("text")
     text.innerText="works"
     work.setAttribute("href","../volunteerpages/volunteerwork.html")
@@ -104,7 +112,7 @@
     else{
     document.getElementById("role").value= "user"
    
-    let works=document.getElementById("work")
+    let work=document.getElementById("work")
     let text=document.getElementById("text")
     text.innerText="Bookings"
     
@@ -142,20 +150,17 @@
      }
      if(toggled==1){
       
-      document.getElementById("user_name").setAttribute("disabled","")
-      document.getElementById("mobile_no").setAttribute("disabled","")
-      document.getElementById("addhar").setAttribute("disabled","")
-      document.getElementById("address").setAttribute("disabled","")
+     
         let mail=document.getElementById("email").value
          let name=document.getElementById("user_name").value
          let addhar=document.getElementById("addhar").value
          let mobile= document.getElementById("mobile_no").value
          let address=  document.getElementById("address").value
        toggled=0;
-
-    // saving the edited profile 
       let new_array=JSON.parse(localStorage.getItem("user"));
-      
+         
+    // saving the edited profile 
+    if((mail&&name&&addhar&&mobile&&address!==null)&&(mail&&name&&addhar&&mobile&&address!==" ")){
       new_array.find(element=>{
         if(mail==element["user_email"]){
           element["user_name"]=name;
@@ -164,13 +169,22 @@
           element["address"]=address
        
           localStorage.setItem("user",JSON.stringify(new_array))
-         
+          document.getElementById("user_name").setAttribute("disabled","")
+      document.getElementById("mobile_no").setAttribute("disabled","")
+      document.getElementById("addhar").setAttribute("disabled","")
+      document.getElementById("address").setAttribute("disabled","")
         }
        
       })
       
        
       document.getElementById("edit_btn").innerText="edit";
+    }
+    else{
+      alert("Please Fill All The Details")
+    }
+      
+    
       return;
      }
     })
@@ -190,6 +204,79 @@ btn.addEventListener("click",function () {
 })
 
 
+  </script>
+  
+  <script src="../../assets/js/screenreader.js"></script>
+  <script src="../../assets/js/contentreader.js"></script>
+  
+  
+  <script>
+    let cnt = -1;
+let tags;
+let tag_length=0;
+
+
+let cnts = -1;
+let tag;
+let tags_length=0;
+
+document.onkeydown = function (event) {
+  if (event.keyCode == 39) {
+    if (cnt < tag_length && cnt >= -1) {
+      cnt++;
+    }
+    screenreader_selector(".side-nav a", cnt, "You reached the end")
+
+  }
+ 
+  if (event.keyCode == 37) {
+    if (cnt > -1) {
+      cnt--;
+    }
+    // console.log(cnt+": 2")
+    screenreader_selector(".side-nav a", cnt, "You are on the top")
+    
+  }
+  if (event.keyCode == 40) {
+    if (cnts < tags_length && cnts >= -1) {
+      cnts++;
+    }
+    screenreader_content("button", cnts, "You reached the end")
+
+  }
+ 
+  if (event.keyCode == 38) {
+    if (cnts > -1) {
+      cnts--;
+    }
+    // console.log(cnt+": 2")
+    screenreader_content("button", cnts, "You are on the top")
+    
+  }
+  if (event.keyCode == 13) {
+    let anchorTags = document.querySelectorAll(".side-nav a");
+    anchorTags[cnt].click();
+  }
+  if (event.keyCode == 16) {
+      let contentanchor=document.querySelectorAll("button")
+      contentanchor[cnts].click();
+    }
+
+
+};
+
+  
+  </script>
+  
+  
+  <script>
+      document.addEventListener('keydown', function(event) {
+    if (event.keyCode >= 37 && event.keyCode <= 40) {
+      event.preventDefault();
+    }
+  });
+  
+  
   </script>
 </body>
 </html> 

@@ -67,7 +67,7 @@
             <p>hey my lovely brothers and sisters<br>here we give you more products at low cost ffroom our
               trust<br>
               Click the below button to buy products<br> which can help you more</p>
-            <a href="../patientpages/buyproducts.html"><button class="join">BUY PRODUCTS</button></a>
+            <a href="../patientpages/buyproducts.html"><button class="join">VIEW PRODUCTS</button></a>
           </div>
           <div class="schemes">
             <h1>Govt Schemes</h1>
@@ -221,7 +221,74 @@
     </div>
   </footer>
 </body>
+<script src="../../assets/js/screenreader.js"></script>
+<script src="../../assets/js/contentreader.js"></script>
+
+
 <script>
+ let cnt = -1;
+  let tags;
+  let tag_length=0;
+  
+  
+  let cnts = -1;
+  let tag;
+  let tags_length=0;
+  
+  document.onkeydown = function (event) {
+    if (event.keyCode == 39) {
+      if (cnt < tag_length && cnt >= -1) {
+        cnt++;
+      }
+      screenreader_selector(".side-nav a", cnt, "You reached the end")
+  
+    }
+   
+    if (event.keyCode == 37) {
+      if (cnt > -1) {
+        cnt--;
+      }
+      // console.log(cnt+": 2")
+      screenreader_selector(".side-nav a", cnt, "You are on the top")
+      
+    }
+    if (event.keyCode == 40) {
+      if (cnts < tags_length && cnts >= -1) {
+        cnts++;
+      }
+      screenreader_content(".helptypes h1,.helptypes a", cnts, "You reached the end")
+  
+    }
+   
+    if (event.keyCode == 38) {
+      if (cnts > -1) {
+        cnts--;
+      }
+      // console.log(cnt+": 2")
+      screenreader_content(".helptypes h1,.helptypes a", cnts, "You are on the top")
+      
+    }
+    if (event.keyCode == 13) {
+      let anchorTags = document.querySelectorAll(".side-nav a");
+      anchorTags[cnt].click();
+    }
+    if (event.keyCode == 16) {
+      let contentanchor=document.querySelectorAll(".helptypes h1,.helptypes a")
+      contentanchor[cnts].click();
+    }
+  
+  };
+
+</script>
+
+
+<script>
+    document.addEventListener('keydown', function(event) {
+  if (event.keyCode >= 37 && event.keyCode <= 40) {
+    event.preventDefault();
+  }
+});
+
 
 </script>
 

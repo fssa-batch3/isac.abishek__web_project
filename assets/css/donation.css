@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    max-width: 810px;
+    width: 900px;
      background-color: #ffffff;
      /* display: flex;
    justify-content: space-between; */
@@ -24,7 +24,8 @@ body {
     padding: 50px;
     padding-bottom: 0px;
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
-
+    /* display: block; */
+    z-index: -1;
 }
 .book{
     margin-top: 150px;

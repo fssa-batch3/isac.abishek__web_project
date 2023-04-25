@@ -92,19 +92,10 @@ iframe{
    
     margin-top: 100px;
     border-radius: 20px;
-    animation-name: new;
-    animation-duration: 4s;
+  
 }
-@keyframes new{
-    0%{
-        transform: translateX(1500px);opacity: 0;
-       
-    }
-    100%{
-        transform: translate(0px);opacity: 1;
-        
-    }
-}
+
+
 
 .nick{
     display: flex;

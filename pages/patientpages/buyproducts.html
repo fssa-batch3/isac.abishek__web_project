@@ -11,19 +11,13 @@
   <link rel="stylesheet" href="../../assets/css/common.css">
   <script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
-  <!-- <script src="../../assets/js/screenreader.js"></script> -->
   <title>gethelp</title>
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script src="../../assets/js/translator.js"></script>
 </head>
 
 <body>
-  <!-- <div class="checkbox">
-    <label for="click" class="text">screen reader</label>
-    <input type="checkbox" id="click" >
 
-  </div> -->
-  <div id="google_translate_element" class="translate"></div>
 
   <nav>
     <div class="side-nav">
@@ -47,11 +41,11 @@
   </nav>
 
   <main>
-    <!-- <div class="checkbox">
+    <div class="checkbox">
       <label for="click" class="text">screen reader</label>
-      <input type="checkbox" id="click" >
+      <input type="checkbox" id="click">
 
-    </div> -->
+    </div>
     <div id="google_translate_element" class="translate"></div>
     <div class="gethelpbg">
       <h1>buy products</h1>
@@ -66,7 +60,7 @@
       </section>
       <div class="search-container">
         <input type="text" id="search-bar" placeholder="Search product by name...">
-        <button type="button" id="search-btn" >Search</button>
+        <button type="button" id="search-btn">Search</button>
       </div>
       <section class="sec3">
 
@@ -127,213 +121,83 @@
     let h1_product_title;
     let p_card_text;
     let a_tags;
+    let a_tags1;
     let button_tags;
 
 
 
-    let searchbox=document.getElementById("search-bar")
-    
+    let searchbox = document.getElementById("search-bar")
+
     let ret;
     let item;
-    searchbox.addEventListener("input",(e)=>{
-     let word=e.target.value.toLowerCase();
-     let dic=document.querySelectorAll(".products");
-     dic.forEach(ex=>{
-      let child=ex.children[1].textContent.toLocaleLowerCase();
-      if (child.startsWith(word)   ) {
-       
-        ex.style.display="block"
-       
-      }
-      else{
-        ex.style.display="none"
+    searchbox.addEventListener("input", (e) => {
+      let word = e.target.value.toLowerCase();
+      let dic = document.querySelectorAll(".products");
+      dic.forEach(ex => {
+        let child = ex.children[1].textContent.toLocaleLowerCase();
+        if (child.startsWith(word)) {
 
-      }
-     })
+          ex.style.display = "block"
+
+        }
+        else {
+          ex.style.display = "none"
+
+        }
+      })
     })
     products = JSON.parse(localStorage.getItem("productrequest"))
 
-    products.find(e=>{
-      if(e["status"]==true){
-           //  <div class="products"> </div>
-      div_products = document.createElement("div");
-      div_products.setAttribute("class", "products");
-      // console.log(div_products)
+    products.find(e => {
+      if (e["status"] == true) {
+        //  <div class="products"> </div>
+        div_products = document.createElement("div");
+        div_products.setAttribute("class", "products");
+        // console.log(div_products)
 
 
-      //  <img src="" alt=""/>
-      img_cards = document.createElement("img");
-      img_cards.setAttribute("src", e["image1"]["source"]);
-      img_cards.setAttribute("alt", e["image1"]["alt"]);
-      div_products.append(img_cards);
+        //  <img src="" alt=""/>
+        img_cards = document.createElement("img");
+        img_cards.setAttribute("src", e["image1"]["source"]);
+        img_cards.setAttribute("alt", e["image1"]["alt"]);
+        div_products.append(img_cards);
+
+        a_tags1 = document.createElement("a");
+        a_tags1.setAttribute("href", "projectview.html?name=" + e["product_name"])
+        div_products.append(a_tags1);
+
+        //  <h1 class="card-title"> </h1>
+        h1_product_title = document.createElement("h1");
+
+        h1_product_title.innerText = e["product_name"];
+        a_tags1.append(h1_product_title);
+
+        //  <p class="card-text"> </p>
+        p_card_text = document.createElement("p");
+        p_card_text.innerText = e["product_des"];
+        div_products.append(p_card_text);
 
 
-      //  <h1 class="card-title"> </h1>
-      h1_product_title = document.createElement("h1");
+        //  <a href=><button class=join></button><a/>
+        a_tags = document.createElement("a");
+        a_tags.setAttribute("href", "projectview.html?name=" + e["product_name"])
+        div_products.append(a_tags);
 
-      h1_product_title.innerText = e["product_name"];
-      div_products.append(h1_product_title);
+       
 
-      //  <p class="card-text"> </p>
-      p_card_text = document.createElement("p");
-      p_card_text.innerText =e["product_des"];
-      div_products.append(p_card_text);
+// Create a button element and assign it to the variable 'button_tags'
+// Set the class attribute of the button element to 'join'
+// Set the innerText of the button element to 'contact'
+// Append the button element to the 'a_tags' element
+ button_tags = document.createElement("button");
+        button_tags.setAttribute("class", "join");
+        button_tags.innerText = "contact"
+        a_tags.append(button_tags);
 
-
-      //  <a href=><button class=join></button><a/>
-      a_tags = document.createElement("a");
-      a_tags.setAttribute("href", "projectview.html?name=" + e["product_name"])
-      div_products.append(a_tags);
-
-      button_tags = document.createElement("button");
-      button_tags.setAttribute("class", "join");
-      button_tags.innerText = "contact"
-      a_tags.append(button_tags);
-
-      document.querySelector("section.sec3").append(div_products);
+        document.querySelector("section.sec3").append(div_products);
       }
     })
 
-    // for (let i = 0; i < products.length; i++) {
-
-
-
-      // //  <div class="products"> </div>
-      // div_products = document.createElement("div");
-      // div_products.setAttribute("class", "products");
-      // console.log(div_products)
-
-
-      // //  <img src="" alt=""/>
-      // img_cards = document.createElement("img");
-      // img_cards.setAttribute("src", products[i].image1.source);
-      // img_cards.setAttribute("alt", products[i].image1.alt);
-      // div_products.append(img_cards);
-
-
-      // //  <h1 class="card-title"> </h1>
-      // h1_product_title = document.createElement("h1");
-
-      // h1_product_title.innerText = products[i].product_name;
-      // div_products.append(h1_product_title);
-
-      // //  <p class="card-text"> </p>
-      // p_card_text = document.createElement("p");
-      // p_card_text.innerText = products[i].product_des;
-      // div_products.append(p_card_text);
-
-
-      // //  <a href=><button class=join></button><a/>
-      // a_tags = document.createElement("a");
-      // a_tags.setAttribute("href", "projectview.html?name=" + products[i]["product_name"])
-      // div_products.append(a_tags);
-
-      // button_tags = document.createElement("button");
-      // button_tags.setAttribute("class", "join");
-      // button_tags.innerText = "contact"
-      // a_tags.append(button_tags);
-
-      // document.querySelector("section.sec3").append(div_products);
-    // }
-
-   
-
-
-
-
-
-
-
-
-
-
-//     let toggled = document.getElementById("click")
-
-// let msg = new SpeechSynthesisUtterance();//Interface,
-
-// let tags = document.querySelectorAll('p,a,h1,h2,h3');
-
-
-
-//       if (toggled.checked == true) {
-//         console.log("isac")
-
-
-//         // add more tags for you project
-//         tags.forEach((tag) => {
-//           tag.addEventListener('click', (e) => {
-
-//             msg.text = e.target.innerText;
-//             tag.style.backgroundColor = "yellow";
-//             tag.style.color = "black";
-//             speechSynthesis.speak(msg);
-
-//             let interval = setInterval(() => {
-//               if (!speechSynthesis.speaking) {
-//                 tag.style.removeProperty('background-color');
-//                 // tag.style.removeProperty('color');
-//                 // tag.style.removeProperty('color');
-//                 clearInterval(interval);
-//               }
-//             }, 100);
-
-//           });
-//         });
-//       }
-
-
-      //   //  if (toggled.checked==false) {
-      //   // msg=" "
-      //   //  voices=" "
-      //   //  tags=" "
-      //   // console.log("off");
-      //   //  }
-
-      // }
-
-      // if (toggled.checked == false) {
-      //   speechSynthesis.cancel();
-      //   msg = " "
-      //   voices = " "
-      //   tags = " "
-      //   console.log("off");
-      //   confirm("1")
-      // }
-      //   else {
-
-      //     let value = toggled.value;
-      //     console.log(value + "second")
-
-
-      //     let msg = " "
-      //     let voices = " "
-      //     //  tags=" "
-      //     let tags = document.querySelectorAll('p,a,h1,h2,h3');
-      //     tags.forEach((tag) => {
-      //       tag.addEventListener('click', (e) => {
-
-      //         msg.text = e.target.innerText;
-      //         // tag.style.backgroundColor = "grey";
-      //         // tag.style.color = "black";
-      //         // speechSynthesis.speak(msg);
-
-
-
-      //       });
-      //     });
-      //     let interval = setInterval(() => {
-      //       if (!speechSynthesis.speaking) {
-      //         tag.style.removeProperty('background-color');
-      //         // tag.style.removeProperty('color')
-      //         // tag.style.removeProperty('color');
-      //         clearInterval(interval);
-      //       }
-      //     }, 100);
-      //     console.log("off");
-
-      //   }
-
-    // }
 
 
 
@@ -341,6 +205,76 @@
 
 
   </script>
+  <script src="../../assets/js/screenreader.js"></script>
+  <script src="../../assets/js/contentreader.js"></script>
+
+ <script>
+let cnt = -1;
+  let tags;
+  let tag_length=0;
+  
+  
+  let cnts = -1;
+  let tag;
+  let tags_length=0;
+  
+  document.onkeydown = function (event) {
+    if (event.keyCode == 39) {
+      if (cnt < tag_length && cnt >= -1) {
+        cnt++;
+      }
+      screenreader_selector(".side-nav a", cnt, "You reached the end")
+  
+    }
+   
+    if (event.keyCode == 37) {
+      if (cnt > -1) {
+        cnt--;
+      }
+      // console.log(cnt+": 2")
+      screenreader_selector(".side-nav a", cnt, "You are on the top")
+      
+    }
+    if (event.keyCode == 40) {
+      if (cnts < tags_length && cnts >= -1) {
+        cnts++;
+      }
+      screenreader_content(".products a", cnts, "You reached the end")
+  
+    }
+   
+    if (event.keyCode == 38) {
+      if (cnts > -1) {
+        cnts--;
+      }
+      // console.log(cnt+": 2")
+      screenreader_content(".products a", cnts, "You are on the top")
+      
+    }
+    if (event.keyCode == 13) {
+      let anchorTags = document.querySelectorAll(".side-nav a");
+      console.log(anchorTags[cnt]);
+      anchorTags[cnt].click();
+      
+    }
+    if (event.keyCode == 16) {
+      let contentanchor=document.querySelectorAll(".products a")
+      contentanchor[cnts].click();
+    }
+  
+  };
+  
+  </script>
+  
+  
+  <script>
+      document.addEventListener('keydown', function(event) {
+    if (event.keyCode >= 37 && event.keyCode <= 40) {
+      event.preventDefault();
+    }
+  });
+
+ </script>
 
 </body>
 

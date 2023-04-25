@@ -34,7 +34,7 @@ flex-direction: column;
 padding: 20px 40px;
 width: 20%;
 border-radius: 10px;
-height: 500px;
+height: 600px;
 margin: auto;
 }
 form h3{
@@ -60,7 +60,7 @@ form textarea::placeholder{
     font-family: 'Merienda', cursive;
 }
 form button{
-    padding: 15px;
+    padding: 10px;
     background: #6C3DD9;
     color:whitesmoke;
     font-size: 18px;
@@ -71,4 +71,13 @@ form button{
     margin: 20px auto 0;
     border-radius: 30px;
     font-family: 'Merienda', cursive;
+}
+
+#voice{
+    /* position: absolute; */
+    /* top: 0px; */
+    z-index: 3;
+    /* left: 500px; */
+    font-size: 10px;
+    width: 300px;
 }

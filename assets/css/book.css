@@ -176,3 +176,11 @@ span{
     color: #6C3DD9;
     font-weight: bolder;
 }
+
+
+.container {
+    position: absolute;
+    top: 50px;
+  right:100px;
+
+}

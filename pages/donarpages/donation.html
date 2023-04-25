@@ -68,7 +68,7 @@
 				<label for="card"><input type="checkbox" name="user" id="card" value="card" >
 					<i class="fa-solid fa-credit-card"></i></label>
 				<label for="creditcard">Credit Card Number:</label>
-				<input type="text" id="creditcard" name="creditcard" disabled pattern="[0-9]{12,12}+" title="aadhar number must be 12 digit number">
+				<input type="text" id="creditcard" name="creditcard" disabled pattern="[0-9]\d*" maxlength="16" title="credit number must be 16 digit number">
 				<label for="paypal"><input type="radio" name="user" id="paypal" value="paypal" required><i
 						class="fa-brands fa-paypal"></i></label>
 				<label for="googlepay"><input type="radio" name="user" id="gpay" value="gpay" required><i
@@ -83,9 +83,32 @@
 		</div>
 	</div>
 </body>
-
 <script>
-	const url = window.location.search;
+	let username=localStorage.getItem("userprofile_name")
+	let users=JSON.parse(localStorage.getItem("user"))
+	let names=document.getElementById("name");
+	let emails=document.getElementById("email");
+	let phone=document.getElementById("mobile");
+
+	users.find(e=>{
+	  if(e["user_email"]==username){
+		names.value=e["user_name"]
+		emails.value=e["user_email"]
+		phone.value=e["mobileno"]
+	   
+	  }
+	})
+  </script>
+<script>
+	
+// This code is used to get the requestname from the URL, parse the donationrequests from the localStorage, 
+// get the source of the request, get the values from the form elements, add an event listener to the amount 
+// element to get the selected value, add an event listener to the card element to enable/disable the payment 
+// methods, add an event listener to the form element to prevent the default action and call the isac() 
+// function, create the donation_datas object, check if the option is selected, create the donationarray, 
+// set the donation_info in the localStorage, create the todays date, create the arr object, push the arr 
+// object to the user_bookings in the localStorage and call the re() function.
+const url = window.location.search;
 			const urlParams = new URLSearchParams(url);
 			const reqname = urlParams.get("requestname")
 
@@ -210,5 +233,76 @@
 
 
 </script>
+<script src="../../assets/js/screenreader.js"></script>
+<script src="../../assets/js/contentreader.js"></script>
 
+
+<script>
+let cnt = -1;
+  let tags;
+  let tag_length=0;
+  
+  
+  let cnts = -1;
+  let tag;
+  let tags_length=0;
+  
+  document.onkeydown = function (event) {
+    if (event.keyCode == 39) {
+      if (cnt < tag_length && cnt >= -1) {
+        cnt++;
+      }
+      screenreader_selector(".side-nav a", cnt, "You reached the end")
+  
+    }
+   
+    if (event.keyCode == 37) {
+      if (cnt > -1) {
+        cnt--;
+      }
+      // console.log(cnt+": 2")
+      screenreader_selector(".side-nav a", cnt, "You are on the top")
+      
+    }
+    if (event.keyCode == 40) {
+      if (cnts < tags_length && cnts >= -1) {
+        cnts++;
+      }
+      screenreader_content("label,button", cnts, "You reached the end")
+  
+    }
+   
+    if (event.keyCode == 38) {
+      if (cnts > -1) {
+        cnts--;
+      }
+      // console.log(cnt+": 2")
+      screenreader_content("label,button", cnts, "You are on the top")
+      
+    }
+    if (event.keyCode == 13) {
+      let anchorTags = document.querySelectorAll(".side-nav a");
+      console.log(anchorTags[cnt]);
+      anchorTags[cnt].click();
+      
+    }
+    if (event.keyCode == 16) {
+      let contentanchor=document.querySelectorAll("label,button")
+      contentanchor[cnts].click();
+    }
+  
+  };
+
+</script>
+
+
+<script>
+	document.addEventListener('keydown', function(event) {
+  if (event.keyCode >= 37 && event.keyCode <= 40) {
+	event.preventDefault();
+  }
+});
+
+
+</script>
 </html>
