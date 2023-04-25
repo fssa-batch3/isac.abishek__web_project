@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/signup.css">
-    <script src="../../assets/js/"></script>
+    <script src="../../assets/js/sweetalert.min.js"></script>
 
 </head>
 
@@ -42,7 +42,7 @@
             <!-- registe cotent  -->
             <form id="register" class="input-group">
 
-                <h2 class="volreg">volunteer register</h2>
+                <h2 class="volreg">register</h2>
 
                 <input type="text" class="input-field" placeholder="User name" title="name must only in alphabets"
                     required id="name" pattern="[a-zA-Z]+" />
@@ -55,7 +55,7 @@
                 <label for="volunteer"><input type="radio" name="user" id="volunteer" required> Volunteer</label>
                 <label for="user"><input type="radio" name="user" id="user">User</label>
                 <input type="password" class="input-field" placeholder="Enter Password"
-                    title="password must contain one symbol,one Capital and no spaces" required id="password"
+                    title="password must contain 8charcters with one symbol,one Capital and no spaces" required id="password"
                      pattern="^(?=.*[A-Z])(?=.*[\W])(?!.*\s).{8,12}$"/>
                 <input type="password" class="input-field" placeholder="Enter Password" required id="confirmpassword" />
                 <input type="checkbox" name="password" id="showpassword">show password
