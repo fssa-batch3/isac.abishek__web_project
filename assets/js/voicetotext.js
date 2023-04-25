@@ -13,7 +13,8 @@ function voice() {
 
 
     // console.log(count);
-let SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+let SpeechRecognition 
+SpeechRecognition= SpeechRecognition || webkitSpeechRecognition;
 let recognition = new SpeechRecognition();
 // let input=document.querySelectorAll("input")
 let input=document.getElementById("message")
