@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script src="../../assets/js/translator.js"></script>
-    <script src="../../assets/sweetalert.min.js"></script>
+    <script src="../../assets/js/sweetalert.min.js"></script>
     <title>gethelp</title>
 </head>
 
@@ -51,10 +51,12 @@
     <input type="text" id="name" placeholder="yourname" required pattern="[a-zA-Z]+" title="name must only in alphabets">
     <input type="text" id="request" placeholder="donationrequest title" required pattern="[a-zA-Z]+" title="name must only in alphabets">
     <input type="text" id="phone" placeholder="yourmobile" required pattern="[0-9]\d*" maxlength="10" title="mobile number must be 10 digit number">
-    <textarea name="message" id="message" rows="4" placeholder="about your request" required>hi i am with diffrently abled.i want some money for operation.Help me by put my condition as request.I hope you contct me soon</textarea>
+    <textarea name="message" id="message" rows="4" placeholder="about your request" required></textarea>
 <!-- </div> -->
 <!-- </div> -->
-    <button>send</button>
+<button type="button" id="voice">Speak about yourself to help you and slash button recall it</button>
+    <button id="hear" type="button">Hear message</button>
+    <button type="submit">send</button>
 </form>
     </div>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
@@ -176,6 +178,12 @@ function re(){
     }
   
   };
+  // if (event.keyCode == 220) {
+  //     let vrr=document.getElementById("message").value
+  //     let iam = new SpeechSynthesisUtterance(vrr);
+  //   speechSynthesis.speak(iam);
+       
+  //   }
   
   </script>
   

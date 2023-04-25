@@ -55,6 +55,20 @@ recognition.start();
 input.value=null
 }
 
+let hear=document.getElementById("hear")
+hear.addEventListener("click",e=>{
+    hearbtn()
+})
+function hearbtn() {
+
+    let vrr=document.getElementById("message").value
+    if(vrr==null){
+        let iam = new SpeechSynthesisUtterance("not recorded yet");
+  speechSynthesis.speak(iam);
+    }
+    let iam = new SpeechSynthesisUtterance(vrr);
+  speechSynthesis.speak(iam);
+}
 
 
 
