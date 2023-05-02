@@ -5,19 +5,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../assets/css/book.css">
+  <link rel="stylesheet" href="../../assets/css/common.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="icon" href="../../assets/images/icon.png">
-  <script src="../../assets/css/book.css"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/book.css">
-  <!-- <link rel="stylesheet" href="../../assets/css/donation.css"> -->
-  <link rel="stylesheet" href="../../assets/css/common.css">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script src="../../assets/js/translator.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
-  <title>gethelp</title>
+  <script src="../../assets/js/sweetalert.min.js"></script>
+  <title>donation request</title>
 </head>
 
 <body>
@@ -28,48 +27,43 @@
   </div> -->
   <!-- nav bar starts  -->
   <nav>
+    <div id="google_translate_element" class="translate"></div>
+
     <div class="side-nav">
-      <a href="../../index.html">  <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg"></a>
+    <a href="../../index.html"> <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg"></a> 
       <ul class="navlinks">
 
 
         <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
-        <li><a href="../donarpages/donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a>
+        <li><a href="donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a>
         </li>
         <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i>
             <p>About</p>
           </a></li>
-        <li><a href="../patientpages/gethelp.html"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
-        <li><a href="../donarpages/place.html"><i class="fa-solid fa-calendar-days"></i>Events</a></li>
-
+        <li><a id="gethelplink"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
+        <li><a href="place.html"><i class="fa-solid fa-calendar-days"></i>Events</a></li>
 
         <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>GetInvolved</a></li>
-        <li><a href="../beinspired/inspire.html"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
-        <li><a href="../about/profile.html"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
+        <li><a id="inspiredlink"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
+        <li><a id="myprofilelink"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
         <div class="active"></div>
-      </ul>
     </div>
   </nav>
-  <!-- content starts  -->
-  <div id="google_translate_element" class="translate"></div>
-
   <section class="sec1">
-    <div class="sec1h1">
-      <h1>BOOK HOSPITAL</h1>
+    <div class="sec1h1 donationbg">
+    <a href="donationmail.html">  <button class="join pointer">request donation now</button></a>
+      <h1>Events</h1>
     </div>
   </section>
   <div class="full">
     <section class="sec2">
-      <h2>Here you can book the hospitals which is nearby you.<br>Here the list of hospitals which is collabed with
-        trust<br>You can get medical help free and low cost</h2>
-      <hr>
+      <h2>Here is our verified needs of help<br>Help us by donating to help them</h2>
       <div class="search-container">
         <input type="text" id="search-bar" placeholder="Search product by name...">
-        <button type="button" >Search</button>
+        <!-- <button type="button" >Search</button> -->
       </div>
     </section>
   </div>
-  
   <!-- footer starts  -->
   <footer id="footer">
     <div class="foot1">
@@ -113,21 +107,41 @@
     </div>
   </footer>
   <script>
+    let arrs = localStorage.getItem("userprofile_name");
+     
+     // let arr2=JSON.parse(localStorage.getItem("volprofile_name"));
+     let gethelp=  document.getElementById("gethelplink");
+    //  let donation=  document.getElementById("donatelink");
+     let beinspired=document.getElementById("inspiredlink");
+    let profile=document.getElementById("myprofilelink");
+ 
+     if(arrs==null){
+     
+         gethelp.setAttribute("href","../volunteerpages/signup.html");
+        //  donation.setAttribute("href","../volunteerpages/signup.html");
+         beinspired.setAttribute("href","../volunteerpages/signup.html");
+         profile.setAttribute("href","../volunteerpages/signup.html");
+     }
+     else{
+        console.log("isac");
+         gethelp.setAttribute("href","../patientpages/gethelp.html");
+        //  donation.setAttribute("href","donationrequest.html");
+         beinspired.setAttribute("href","../beinspired/inspire.html");
+         profile.setAttribute("href","../about/profile.html");
+     } 
+  </script>
+  <script>
 
 let searchbox=document.getElementById("search-bar")
     
     let ret;
     let item;
-    let isac=document.querySelectorAll(".addressp")
-    // console.log(isac,"yt")
-
     searchbox.addEventListener("input",(e)=>{
      let word=e.target.value.toLowerCase();
      let dic=document.querySelectorAll(".hos1");
      dic.forEach(ex=>{
       let child=ex.children[1].children[0].children[1].textContent.toLocaleLowerCase();
-      console.log(child);
-      if (child.startsWith(word)) {
+      if (child.startsWith(word)   ) {
        
         ex.style.display="flex"
        
@@ -139,108 +153,108 @@ let searchbox=document.getElementById("search-bar")
      })
     })
 
-    let div_hospitals
+    let div_requests
+    // let request_id
     let img
     let address
-    // let hospital_id
     let request_title
     let about_request
     let requested_by
     let dropdown1
     let button
     let dropdown_menu1
-    let a
 
+    let a1
+    let contact_holder;
 
-
-
-
-    // let new_hospital=JSON.parse(localStorage.getItem("hospitalrequests"));
-    // let hospitals = old_hospital.concat(new_hospital)
-    let hospitals = JSON.parse(localStorage.getItem("hospitalrequests"));
-    hospitals.find(e=>{
-      if(e["status"]==true){
     
 
+  //   let requestform = JSON.parse(localStorage.getItem("donationrequests"))
+  //  let new_request=requests.concat(requestform)
+   let new_request=JSON.parse(localStorage.getItem("placerequests"))
+
+   new_request.find(e=>{
+      if(e["status"]==true){
+
       //  <div class="hos1"></div>
-      div_hospitals = document.createElement("div");
-      div_hospitals.setAttribute("class", "hos1");
+      div_requests = document.createElement("div");
+      div_requests.setAttribute("class", "hos1");
 
       // <img src="../../assets/images/apollo-hospital-image.jpg" width="500px" alt="apollo-hospital-image">
       img = document.createElement("img");
-      img.setAttribute("src", e["hospitals_images"]["source"]);
-      img.setAttribute("alt", e["hospitals_images"]["alternatetext"]);
+      
+      img.setAttribute("src", e["place_images"]["source"]);
+      img.setAttribute("alt", e["place_images"]["alternatetext"]);
+      // img.setAttribute("src", new_request[i]["requests_images"]);
+      // img.setAttribute("alt", new_request[i]["img_alt"]);
       img.setAttribute("width", "300px");
       img.setAttribute("height", "200px");
-      div_hospitals.append(img);
+      div_requests.append(img);
+
+    
+
+
       //  <p></p> 
+
+
       contact_holder = document.createElement("div")
       contact_holder.setAttribute("class", "contactholder")
+      div_requests.append(contact_holder)
 
-      div_hospitals.append(contact_holder);
+      // const anker = document.createElement("a")
+      // anker.setAttribute("href","../../requestfrom.html?pro_id="+new_request[i].request_title)
+      // contact_holder.append(anker)
 
-      // hospital_id = document.createElement("p");
-      // hospital_id.setAttribute("class", "addressp");
-      // // request_title.setAttribute("width","300px");
-      // hospital_id.innerHTML ="<span>hospital_id</span>:- "+ hospitals[i].hospital_id;
-      // contact_holder.append(hospital_id);
+      // const btn = document.createElement("button")
+      // btn.innerHTML = "EDIT"
+      // anker.append(btn)
+
+
+      // request_id = document.createElement("p");
+      // request_id.setAttribute("class", "addressp");
+      // request_id.innerHTML = "<span>request_id</span>:- "+new_request[i].request_id;
+      // contact_holder.append(request_id);
 
 
       request_title = document.createElement("p");
       request_title.setAttribute("class", "addressp");
       // request_title.setAttribute("width","300px");
-      request_title.innerHTML = "<span>Hospital Name :-</span> " +`<span>${e["hospital_title"]}</span>`;
+      request_title.innerHTML ="<span>Place</span>:- "+`<span>${e["place_title"]}</span>`;
       contact_holder.append(request_title);
 
       about_request = document.createElement("p");
       about_request.setAttribute("class", "addressp");
-      about_request.innerHTML = "<span>Doctor Name:-</span> " + e.doctor_name;
+      about_request.innerHTML = "<span>About</span>:- "+e["about_title"];
       contact_holder.append(about_request);
 
       requested_by = document.createElement("p");
       requested_by.setAttribute("class", "addressp");
-      requested_by.innerHTML = "<span>Speacilist in :- </span> " + e.specialist_in;
+      requested_by.innerHTML ="<span>Organized by</span>:- "+ e["organized_by"];
       contact_holder.append(requested_by);
 
       address = document.createElement("p");
       address.setAttribute("class", "addressp");
-      address.innerHTML = "<span>contact :-</span> " + e.hospital_address;
+      address.innerHTML = "<span>contact</span>:- "+e["place_address"];
       contact_holder.append(address);
+
 
       // div class dropdown-menu1
       dropdown1 = document.createElement("div");
       dropdown1.setAttribute("class", "dropdown1");
-      div_hospitals.append(dropdown1);
+      div_requests.append(dropdown1);
 
+
+      a1 = document.createElement("a");
+      a1.setAttribute("href", "../patientpages/buyproducts.html?requestname="+e["place_title"])
+      dropdown1.append(a1)
       //    button class join 
-
-
-      a = document.createElement("a");
-      a.setAttribute("href", "bookingform.html?bookname="+e.hospital_title);
-      
-
-      dropdown1.append(a)
-
-
       button = document.createElement("button");
       button.setAttribute("class", "join");
-      button.setAttribute("id", "book_btn");
-      button.setAttribute("data-id", e.hospital_title)
-
-
-      button.innerText = "book now"
-      a.append(button);
-
-
-
-      document.querySelector(".sec2").append(div_hospitals);
+      button.innerText = "Get Product"
+      a1.append(button);
+      document.querySelector(".sec2").append(div_requests);
     }
-  })
-
-   
-
-
-
+    })
 
 
 
@@ -252,7 +266,7 @@ let searchbox=document.getElementById("search-bar")
   
   
   <script>
- let cnt = -1;
+    let cnt = -1;
   let tags;
   let tag_length=0;
   
@@ -282,7 +296,7 @@ let searchbox=document.getElementById("search-bar")
       if (cnts < tags_length && cnts >= -1) {
         cnts++;
       }
-      screenreader_content(".contactholder p,.dropdown1 a", cnts, "You reached the end")
+      screenreader_content(".dropdown1 a,.contactholder p", cnts, "You reached the end")
   
     }
    
@@ -291,7 +305,7 @@ let searchbox=document.getElementById("search-bar")
         cnts--;
       }
       // console.log(cnt+": 2")
-      screenreader_content(".contactholder p,.dropdown1 a", cnts, "You are on the top")
+      screenreader_content(".dropdown1 a,.contactholder p", cnts, "You are on the top")
       
     }
     if (event.keyCode == 13) {
@@ -299,11 +313,12 @@ let searchbox=document.getElementById("search-bar")
       anchorTags[cnt].click();
     }
     if (event.keyCode == 16) {
-      let contentanchor=document.querySelectorAll(".contactholder p,.dropdown1 a")
+      let contentanchor=document.querySelectorAll(".dropdown1 a,.contactholder p")
       contentanchor[cnts].click();
     }
   
   };
+  
   </script>
   
   
@@ -315,6 +330,32 @@ let searchbox=document.getElementById("search-bar")
   });
   
   
+  </script>
+  <script>
+    //   document.addEventListener("click",e=>{
+    //   loader()
+    // })
+    function loader() {
+            if(localStorage.getItem("userprofile_name")){
+         console.log("user registered");
+      }
+      else{
+        let iam = new SpeechSynthesisUtterance("Hi there now you are in Events page use up arrow and down arrow to navigate by hearing the Event place nearby you and Click the shift button to get product");
+    speechSynthesis.speak(iam);
+    console.log(iam);
+    
+      }
+    }
+    let intervalID = setInterval(loader,100) // executes every 1 second (1000 ms)
+
+// End the interval after 10 seconds using setTimeout()
+setTimeout(function() {
+  clearInterval(intervalID); // clear the interval using the saved interval ID
+}, 100);
+document.addEventListener("dblclick", e => {
+    loader()
+    // inc=0
+  })
   </script>
 </body>
 

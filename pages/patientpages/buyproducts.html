@@ -21,31 +21,30 @@
 
   <nav>
     <div class="side-nav">
-      <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg">
+      <a href="../../index.html"> <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg"></a>
       <ul class="navlinks">
 
 
         <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
-        <li><a href="../donarpages/donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a>
+        <li><a href=../donarpages/donationrequest.html><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a>
         </li>
         <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i>
             <p>About</p>
           </a></li>
-        <li><a href="../patientpages/gethelp.html"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
+        <li><a id="gethelplink"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
+        <li><a href="../donarpages/place.html"><i class="fa-solid fa-calendar-days"></i>Events</a></li>
+
+
         <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>GetInvolved</a></li>
-        <li><a href="../beinspired/inspire.html"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
-        <li><a href="../about/profile.html"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
+        <li><a id="inspiredlink"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
+        <li><a id="myprofilelink"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
         <div class="active"></div>
       </ul>
     </div>
   </nav>
 
   <main>
-    <div class="checkbox">
-      <label for="click" class="text">screen reader</label>
-      <input type="checkbox" id="click">
-
-    </div>
+    
     <div id="google_translate_element" class="translate"></div>
     <div class="gethelpbg">
       <h1>buy products</h1>
@@ -110,9 +109,38 @@
       </div>
     </div>
   </footer>
+
+
+  <script>
+    let arrs = localStorage.getItem("userprofile_name");
+     
+     // let arr2=JSON.parse(localStorage.getItem("volprofile_name"));
+     let gethelp=  document.getElementById("gethelplink");
+    //  let donation=  document.getElementById("donatelink");
+     let beinspired=document.getElementById("inspiredlink");
+    let profile=document.getElementById("myprofilelink");
+ 
+     if(arrs==null){
+     
+         gethelp.setAttribute("href","../volunteerpages/signup.html");
+        //  donation.setAttribute("href","../volunteerpages/signup.html");
+         beinspired.setAttribute("href","../volunteerpages/signup.html");
+         profile.setAttribute("href","../volunteerpages/signup.html");
+     }
+     else{
+        console.log("isac");
+         gethelp.setAttribute("href","../patientpages/gethelp.html");
+        //  donation.setAttribute("href","../donarpages/donationrequest.html");
+         beinspired.setAttribute("href","../beinspired/inspire.html");
+         profile.setAttribute("href","../about/profile.html");
+     } 
+  </script>
   <script>
 
-
+    const url = window.location.search;
+    const urlParams = new URLSearchParams(url);
+    const placename = urlParams.get("requestname")
+    console.log(placename);
 
 
     let div_products;
@@ -163,7 +191,7 @@
         div_products.append(img_cards);
 
         a_tags1 = document.createElement("a");
-        a_tags1.setAttribute("href", "projectview.html?name=" + e["product_name"])
+        a_tags1.setAttribute("href", "contact.html?name=" + e["product_name"])
         div_products.append(a_tags1);
 
         //  <h1 class="card-title"> </h1>
@@ -180,16 +208,16 @@
 
         //  <a href=><button class=join></button><a/>
         a_tags = document.createElement("a");
-        a_tags.setAttribute("href", "projectview.html?name=" + e["product_name"])
+        a_tags.setAttribute("href", "contact.html?name=" + e["product_name"]+`&placename=${placename}`)
         div_products.append(a_tags);
 
-       
 
-// Create a button element and assign it to the variable 'button_tags'
-// Set the class attribute of the button element to 'join'
-// Set the innerText of the button element to 'contact'
-// Append the button element to the 'a_tags' element
- button_tags = document.createElement("button");
+
+        // Create a button element and assign it to the variable 'button_tags'
+        // Set the class attribute of the button element to 'join'
+        // Set the innerText of the button element to 'contact'
+        // Append the button element to the 'a_tags' element
+        button_tags = document.createElement("button");
         button_tags.setAttribute("class", "join");
         button_tags.innerText = "contact"
         a_tags.append(button_tags);
@@ -208,74 +236,100 @@
   <script src="../../assets/js/screenreader.js"></script>
   <script src="../../assets/js/contentreader.js"></script>
 
- <script>
-let cnt = -1;
-  let tags;
-  let tag_length=0;
-  
-  
-  let cnts = -1;
-  let tag;
-  let tags_length=0;
-  
-  document.onkeydown = function (event) {
-    if (event.keyCode == 39) {
-      if (cnt < tag_length && cnt >= -1) {
-        cnt++;
-      }
-      screenreader_selector(".side-nav a", cnt, "You reached the end")
-  
-    }
-   
-    if (event.keyCode == 37) {
-      if (cnt > -1) {
-        cnt--;
-      }
-      // console.log(cnt+": 2")
-      screenreader_selector(".side-nav a", cnt, "You are on the top")
-      
-    }
-    if (event.keyCode == 40) {
-      if (cnts < tags_length && cnts >= -1) {
-        cnts++;
-      }
-      screenreader_content(".products a", cnts, "You reached the end")
-  
-    }
-   
-    if (event.keyCode == 38) {
-      if (cnts > -1) {
-        cnts--;
-      }
-      // console.log(cnt+": 2")
-      screenreader_content(".products a", cnts, "You are on the top")
-      
-    }
-    if (event.keyCode == 13) {
-      let anchorTags = document.querySelectorAll(".side-nav a");
-      console.log(anchorTags[cnt]);
-      anchorTags[cnt].click();
-      
-    }
-    if (event.keyCode == 16) {
-      let contentanchor=document.querySelectorAll(".products a")
-      contentanchor[cnts].click();
-    }
-  
-  };
-  
-  </script>
-  
-  
   <script>
-      document.addEventListener('keydown', function(event) {
-    if (event.keyCode >= 37 && event.keyCode <= 40) {
-      event.preventDefault();
-    }
-  });
+    let cnt = -1;
+    let tags;
+    let tag_length = 0;
 
- </script>
 
+    let cnts = -1;
+    let tag;
+    let tags_length = 0;
+
+    document.onkeydown = function (event) {
+      if (event.keyCode == 39) {
+        if (cnt < tag_length && cnt >= -1) {
+          cnt++;
+        }
+        screenreader_selector(".side-nav a", cnt, "You reached the end")
+
+      }
+
+      if (event.keyCode == 37) {
+        if (cnt > -1) {
+          cnt--;
+        }
+        // console.log(cnt+": 2")
+        screenreader_selector(".side-nav a", cnt, "You are on the top")
+
+      }
+      if (event.keyCode == 40) {
+        if (cnts < tags_length && cnts >= -1) {
+          cnts++;
+        }
+        screenreader_content(".products a", cnts, "You reached the end")
+
+      }
+
+      if (event.keyCode == 38) {
+        if (cnts > -1) {
+          cnts--;
+        }
+        // console.log(cnt+": 2")
+        screenreader_content(".products a", cnts, "You are on the top")
+
+      }
+      if (event.keyCode == 13) {
+        let anchorTags = document.querySelectorAll(".side-nav a");
+        console.log(anchorTags[cnt]);
+        anchorTags[cnt].click();
+
+      }
+      if (event.keyCode == 16) {
+        let contentanchor = document.querySelectorAll(".products a")
+        contentanchor[cnts].click();
+      }
+
+    };
+
+  </script>
+
+
+  <script>
+    document.addEventListener('keydown', function (event) {
+      if (event.keyCode >= 37 && event.keyCode <= 40) {
+        event.preventDefault();
+      }
+    });
+
+  </script>
+
+
+
+<script>
+document.addEventListener("dblclick", e => {
+    loader()
+    // inc=0
+  })
+function loader() {
+        if(localStorage.getItem("userprofile_name")){
+     console.log("user registered");
+  }
+  else{
+    let iam = new SpeechSynthesisUtterance("Hi there now you are in product page use up arrow and down arrow to navigate by hearing the suitable product and Click the shift button to get product");
+speechSynthesis.speak(iam);
+console.log(iam);
+
+  }
+}
+
+let intervalID = setInterval(loader,100) // executes every 1 second (1000 ms)
+
+// End the interval after 10 seconds using setTimeout()
+setTimeout(function() {
+  clearInterval(intervalID); // clear the interval using the saved interval ID
+}, 100);
+</script>
 </body>
 
 </html>

@@ -54,6 +54,8 @@
       onclick="selector()">
     <label for="product">product</label><input type="radio" name="user" id="product" value="product"
       onclick="selector()">
+      <label for="place">place</label><input type="radio" name="user" id="place" value="place"
+      onclick="selector()">
     <!--   
   <label for="request_id" id="request_id"></label>
   <input type="text" id="req_id" name="request_id"> -->
@@ -77,24 +79,26 @@
     <input type="url" id="request_img1" name="request_img">
     <label for="request_img" id="alternate1"></label>
     <input type="text" id="img_alt" name="request_title">
-    <!-- image2  -->
+    <!-- image2 
     <label for="request_img" id="image2"></label>
     <input type="url" id="request_img2" name="request_img">
     <label for="request_img" id="alternate2"></label>
     <input type="text" id="img_alt2" name="request_title">
-    <!-- imag3  -->
+    imag3 
     <label for="request_img" id="image3"></label>
     <input type="url" id="request_img3" name="request_img">
     <label for="request_img" id="alternate3"></label>
     <input type="text" id="img_alt3" name="request_title">
-    <!-- img4 -->
+    img4
     <label for="request_img" id="image4"></label>
     <input type="url" id="request_img4" name="request_img">
     <label for="request_img" id="alternate4"></label>
-    <input type="text" id="img_alt4" name="request_title">
+    <input type="text" id="img_alt4" name="request_title"> -->
 
 
     <button id="add-donation">Add donation request</button>
+    <button id="add-place">Add place request</button>
+
     <button style="display: block;" id="delete">Delete</button>
 
     <button style="display: block;" id="update">update</button>
@@ -115,43 +119,47 @@
       let hospital = document.getElementById("hospital").checked
       let donations = document.getElementById("donation").checked
       let product = document.getElementById("product").checked
-      if (hospital === false && donations === false && product === true) {
+      let place = document.getElementById("place").checked
+
+      if (product === true) {
         // document.getElementById("request_id").innerText="product id"
 
         document.getElementById("image1").innerText = "product image"
         document.getElementById("alternate1").innerText = "image alternate text"
-        document.getElementById("image2").innerText = "product image"
-        document.getElementById("alternate2").innerText = "image alternate text"
-        document.getElementById("image3").innerText = "product image"
-        document.getElementById("alternate3").innerText = "image alternate text"
-        document.getElementById("image4").innerText = "product image"
-        document.getElementById("alternate4").innerText = "image alternate text"
+        // document.getElementById("image2").innerText = "product image"
+        // document.getElementById("alternate2").innerText = "image alternate text"
+        // document.getElementById("image3").innerText = "product image"
+        // document.getElementById("alternate3").innerText = "image alternate text"
+        // document.getElementById("image4").innerText = "product image"
+        // document.getElementById("alternate4").innerText = "image alternate text"
         document.getElementById("title").innerText = "product title"
         document.getElementById("about").innerText = "about product"
         document.getElementById("requested_by").setAttribute("disabled", "")
-        document.getElementById("request_img2").removeAttribute("disabled")
-        document.getElementById("img_alt2").removeAttribute("disabled")
-        document.getElementById("request_img3").removeAttribute("disabled")
-        document.getElementById("img_alt3").removeAttribute("disabled")
-        document.getElementById("request_img4").removeAttribute("disabled")
-        document.getElementById("img_alt4").removeAttribute("disabled")
+        // document.getElementById("request_img2").removeAttribute("disabled")
+        // document.getElementById("img_alt2").removeAttribute("disabled")
+        // document.getElementById("request_img3").removeAttribute("disabled")
+        // document.getElementById("img_alt3").removeAttribute("disabled")
+        // document.getElementById("request_img4").removeAttribute("disabled")
+        // document.getElementById("img_alt4").removeAttribute("disabled")
         document.getElementById("by").innerText = ""
 
-        document.getElementById("address").innerText = "feature"
+        // document.getElementById("address").innerText = "feature"
 
         let button1 = document.getElementById("add-product")
         let button2 = document.getElementById("add-hospital")
         let button3 = document.getElementById("add-donation")
-
+        let button4 = document.getElementById("add-place")
+         
 
         button1.style.display = "block"
         button2.style.display = "none"
         button3.style.display = "none"
+        button4.style.display = "none"
 
 
 
       }
-      if (hospital === false && donations === true && product === false) {
+      if ( donations === true ) {
         // document.getElementById("request_id").innerText="request id"
         document.getElementById("image1").innerText = "donation request image"
         document.getElementById("alternate1").innerText = "image alternate text"
@@ -161,31 +169,80 @@
         document.getElementById("address").innerText = "address"
         document.getElementById("requested_by").removeAttribute("disabled")
         document.getElementById("requests_address").removeAttribute("disabled")
-        document.getElementById("image2").innerText = ""
-        document.getElementById("alternate2").innerText = ""
-        document.getElementById("image3").innerText = ""
-        document.getElementById("alternate3").innerText = ""
-        document.getElementById("image4").innerText = ""
-        document.getElementById("alternate4").innerText = ""
+        // document.getElementById("image2").innerText = ""
+        // document.getElementById("alternate2").innerText = ""
+        // document.getElementById("image3").innerText = ""
+        // document.getElementById("alternate3").innerText = ""
+        // document.getElementById("image4").innerText = ""
+        // document.getElementById("alternate4").innerText = ""
 
-        document.getElementById("request_img2").setAttribute("disabled", "")
-        document.getElementById("img_alt2").setAttribute("disabled", "")
-        document.getElementById("request_img3").setAttribute("disabled", "")
-        document.getElementById("img_alt3").setAttribute("disabled", "")
-        document.getElementById("request_img4").setAttribute("disabled", "")
-        document.getElementById("img_alt4").setAttribute("disabled", "")
+        // document.getElementById("request_img2").setAttribute("disabled", "")
+        // document.getElementById("img_alt2").setAttribute("disabled", "")
+        // document.getElementById("request_img3").setAttribute("disabled", "")
+        // document.getElementById("img_alt3").setAttribute("disabled", "")
+        // document.getElementById("request_img4").setAttribute("disabled", "")
+        // document.getElementById("img_alt4").setAttribute("disabled", "")
 
 
         let button1 = document.getElementById("add-product")
         let button2 = document.getElementById("add-hospital")
         let button3 = document.getElementById("add-donation")
+        let button4 = document.getElementById("add-place")
+
 
 
         button1.style.display = "none"
         button2.style.display = "none"
         button3.style.display = "block"
+        button4.style.display = "none"
+
       }
-      if (hospital === true && donations === false && product === false) {
+
+
+      if ( place === true ) {
+        // document.getElementById("request_id").innerText="request id"
+        document.getElementById("image1").innerText = "place request image"
+        document.getElementById("alternate1").innerText = "image alternate text"
+        document.getElementById("title").innerText = "place title"
+        document.getElementById("about").innerText = "about request"
+        document.getElementById("by").innerText = "organized by"
+        document.getElementById("address").innerText = "address"
+        document.getElementById("requested_by").removeAttribute("disabled")
+        document.getElementById("requests_address").removeAttribute("disabled")
+        // document.getElementById("image2").innerText = ""
+        // document.getElementById("alternate2").innerText = ""
+        // document.getElementById("image3").innerText = ""
+        // document.getElementById("alternate3").innerText = ""
+        // document.getElementById("image4").innerText = ""
+        // document.getElementById("alternate4").innerText = ""
+
+        // document.getElementById("request_img2").setAttribute("disabled", "")
+        // document.getElementById("img_alt2").setAttribute("disabled", "")
+        // document.getElementById("request_img3").setAttribute("disabled", "")
+        // document.getElementById("img_alt3").setAttribute("disabled", "")
+        // document.getElementById("request_img4").setAttribute("disabled", "")
+        // document.getElementById("img_alt4").setAttribute("disabled", "")
+
+
+        let button1 = document.getElementById("add-product")
+        let button2 = document.getElementById("add-hospital")
+        let button3 = document.getElementById("add-donation")
+        let button4 = document.getElementById("add-place")
+
+
+
+        button1.style.display = "none"
+        button2.style.display = "none"
+        button3.style.display = "none"
+        button4.style.display = "block"
+
+      }
+
+
+
+
+
+      if (hospital === true) {
         // document.getElementById("request_id").innerText="hospital id"
 
         document.getElementById("image1").innerText = "hospital image"
@@ -196,19 +253,19 @@
         document.getElementById("address").innerText = "address"
         document.getElementById("requested_by").removeAttribute("disabled")
         document.getElementById("requests_address").removeAttribute("disabled")
-        document.getElementById("image2").innerText = ""
-        document.getElementById("alternate2").innerText = ""
-        document.getElementById("image3").innerText = ""
-        document.getElementById("alternate3").innerText = ""
-        document.getElementById("image4").innerText = ""
-        document.getElementById("alternate4").innerText = ""
+        // document.getElementById("image2").innerText = ""
+        // document.getElementById("alternate2").innerText = ""
+        // document.getElementById("image3").innerText = ""
+        // document.getElementById("alternate3").innerText = ""
+        // document.getElementById("image4").innerText = ""
+        // document.getElementById("alternate4").innerText = ""
 
-        document.getElementById("request_img2").setAttribute("disabled", "")
-        document.getElementById("img_alt2").setAttribute("disabled", "")
-        document.getElementById("request_img3").setAttribute("disabled", "")
-        document.getElementById("img_alt3").setAttribute("disabled", "")
-        document.getElementById("request_img4").setAttribute("disabled", "")
-        document.getElementById("img_alt4").setAttribute("disabled", "")
+        // document.getElementById("request_img2").setAttribute("disabled", "")
+        // document.getElementById("img_alt2").setAttribute("disabled", "")
+        // document.getElementById("request_img3").setAttribute("disabled", "")
+        // document.getElementById("img_alt3").setAttribute("disabled", "")
+        // document.getElementById("request_img4").setAttribute("disabled", "")
+        // document.getElementById("img_alt4").setAttribute("disabled", "")
 
         let button1 = document.getElementById("add-product")
         let button2 = document.getElementById("add-hospital")
@@ -218,6 +275,8 @@
         button1.style.display = "none"
         button2.style.display = "block"
         button3.style.display = "none"
+        button4.style.display = "none"
+
       }
     }
 
@@ -295,6 +354,91 @@
 
     };
 
+    let button4 = document.getElementById("add-place")
+
+button4.addEventListener("click", e => {
+  place();
+})
+
+function place() {
+
+
+let check = 0;
+console.log(check);
+if (JSON.parse(localStorage.getItem("placerequests"))) {
+  let name_check = JSON.parse(localStorage.getItem("placerequests"));
+  console.log(name_check)
+  let product_titles = document.getElementById("request_title").value
+console.log(product_titles);
+  name_check.find(e => {
+    if (product_titles == e["place_title"]) {
+      if (e["status"] == false) {
+        e["status"] = true
+        console.log("isac");
+        localStorage.setItem("placerequests", JSON.stringify(name_check));
+        console.log("isacd");
+          
+      }
+      else {
+
+        alert(product_titles + " already exist")
+
+      }
+      // alert(product_titles + " already exist")
+      check = 1
+    }
+  })
+  if (check == 0) {
+    // let request_id=document.getElementById("req_id").value
+    let request_img = document.getElementById("request_img1").value
+    let img_alt = document.getElementById("img_alt").value
+    let request_title = document.getElementById("request_title").value
+    let about_request = document.getElementById("about_request").value
+    let requested_by = document.getElementById("requested_by").value
+    let requests_address = document.getElementById("requests_address").value
+
+    console.log("isacss");
+  
+
+    let newrequests = {
+      // "request_id":request_id,
+      place_images:
+      {
+        "source": request_img,
+        "alternatetext": img_alt
+      },
+      //  "requests_images":request_img,
+      //  "img_alt":img_alt,
+      "place_title": request_title,
+      "about_title": about_request,
+      "organized_by": requested_by,
+      "place_address": requests_address,
+      "status": true
+    };
+
+
+    let requests = JSON.parse(localStorage.getItem('placerequests')) || [];
+    console.log("request");
+    
+
+    requests.push(newrequests);
+
+
+    localStorage.setItem("placerequests", JSON.stringify(requests));
+    // let view_requests=JSON.parse(localStorage.getItem('productrequest'))
+  }
+}
+
+
+};
+
+
+
+
+
+
+
+
     let button2 = document.getElementById("add-product")
 
     button2.addEventListener("click", e => {
@@ -333,14 +477,14 @@
 
         let request_img1 = document.getElementById("request_img1").value
         let img_alt1 = document.getElementById("img_alt").value
-        let request_img2 = document.getElementById("request_img2").value
-        let img_alt2 = document.getElementById("img_alt2").value
-        let request_img3 = document.getElementById("request_img3").value
-        let img_alt3 = document.getElementById("img_alt3").value
-        let request_img4 = document.getElementById("request_img4").value
-        let img_alt4 = document.getElementById("img_alt4").value
+        // let request_img2 = document.getElementById("request_img2").value
+        // let img_alt2 = document.getElementById("img_alt2").value
+        // let request_img3 = document.getElementById("request_img3").value
+        // let img_alt3 = document.getElementById("img_alt3").value
+        // let request_img4 = document.getElementById("request_img4").value
+        // let img_alt4 = document.getElementById("img_alt4").value
         let about_product = document.getElementById("about_request").value
-        let feature = document.getElementById("requests_address").value
+        // let feature = document.getElementById("requests_address").value
         let product_title = document.getElementById("request_title").value
 
 
@@ -349,23 +493,23 @@
             "source": request_img1,
             "alt": img_alt1
           },
-          image2: {
-            "source": request_img2,
-            "alt": img_alt2
-          },
-          image3: {
-            "source": request_img3,
-            "alt": img_alt3
-          },
-          image4: {
-            "source": request_img4,
-            "alt": img_alt4
-          },
+          // image2: {
+          //   "source": request_img2,
+          //   "alt": img_alt2
+          // },
+          // image3: {
+          //   "source": request_img3,
+          //   "alt": img_alt3
+          // },
+          // image4: {
+          //   "source": request_img4,
+          //   "alt": img_alt4
+          // },
           //   "requests_images":request_img,
           //  "img_alt":img_alt,
           "product_name": product_title,
           "product_des": about_product,
-          "feature1": feature,
+          // "feature1": feature,
           "status": true
 
         };
@@ -463,6 +607,8 @@
       let product = document.getElementById("product").checked
       let hospital = document.getElementById("hospital").checked
       let request = document.getElementById("donation").checked
+      let place = document.getElementById("place").checked
+
 
       if (product) {
         let arr = JSON.parse(localStorage.getItem("productrequest"))
@@ -525,6 +671,28 @@
             alert("notexist")
           }
       }
+
+
+      if (place) {
+        let arr = JSON.parse(localStorage.getItem("placerequests"))
+        let delname = document.getElementById("request_title").value
+        let dele=0;
+
+        arr.find(function (e, index) {
+          if (e["place_title"] === delname) {
+            // arr.splice(index, 1)
+            e["status"] = false
+
+            localStorage.setItem("placerequests", JSON.stringify(arr));
+            return dele=1
+
+          }
+         
+        })
+        if(dele==0) {
+            alert("notexist")
+          }
+      }
     
   }
 
@@ -541,6 +709,7 @@
 
     let update = document.getElementById("update")
     update.addEventListener("click", e => {
+      e.preventDefault()
       updater()
     });
 
@@ -549,6 +718,8 @@
       let product = document.getElementById("product").checked
       let hospital = document.getElementById("hospital").checked
       let request = document.getElementById("donation").checked
+      let place = document.getElementById("place").checked
+
 
       if (request) {
         let arr = JSON.parse(localStorage.getItem("donationrequests"))
@@ -572,6 +743,38 @@
             // console.log(arr)
             // alert(JSON.stringify(arr))
             localStorage.setItem("donationrequests", JSON.stringify(arr));
+          }
+          else {
+            alert("notexist")
+          }
+        })
+      }
+
+
+      if (place) {
+        let arr = JSON.parse(localStorage.getItem("placerequests"))
+        console.log(arr);
+        let upname = document.getElementById("request_title").value
+        console.log(upname);
+        let request_img = document.getElementById("request_img1").value
+        let img_alt = document.getElementById("img_alt").value
+
+        let about_request = document.getElementById("about_request").value
+        let requested_by = document.getElementById("requested_by").value
+        let requests_address = document.getElementById("requests_address").value
+        // console.log(arr)
+        arr.find(function (e) {
+          if (e["place_title"] === upname) {
+            console.log(e);
+            e["place_images"]["source"] = request_img,
+              e["place_images"]["alternatetext"] = img_alt,
+              e["about_title"] = about_request,
+              e["organized_by"] = requested_by,
+              e["place_address"] = requests_address
+            console.log(e);
+            // console.log(arr)
+            // alert(JSON.stringify(arr))
+            localStorage.setItem("placerequests", JSON.stringify(arr));
           }
           else {
             alert("notexist")
@@ -617,15 +820,15 @@
         let upname = document.getElementById("request_title").value
         let request_img1 = document.getElementById("request_img1").value
         let img_alt1 = document.getElementById("img_alt").value
-        let request_img2 = document.getElementById("request_img2").value
-        let img_alt2 = document.getElementById("img_alt2").value
-        let request_img3 = document.getElementById("request_img3").value
-        let img_alt3 = document.getElementById("img_alt3").value
-        let request_img4 = document.getElementById("request_img4").value
-        let img_alt4 = document.getElementById("img_alt4").value
+        // let request_img2 = document.getElementById("request_img2").value
+        // let img_alt2 = document.getElementById("img_alt2").value
+        // let request_img3 = document.getElementById("request_img3").value
+        // let img_alt3 = document.getElementById("img_alt3").value
+        // let request_img4 = document.getElementById("request_img4").value
+        // let img_alt4 = document.getElementById("img_alt4").value
         // let product_title  = document.getElementById("request_title").value
         let about_product = document.getElementById("about_request").value
-        let feature = document.getElementById("requests_address").value
+        // let feature = document.getElementById("requests_address").value
         // console.log(arr)
         arr.find(function (e) {
           if (e["product_name"] == upname) {
@@ -633,15 +836,15 @@
             console.log(e);
             e["image1"]["source"] = request_img1,
               e["image1"]["alternatetext"] = img_alt1,
-              e["image2"]["source"] = request_img2,
-              e["image2"]["alternatetext"] = img_alt2,
-              e["image3"]["source"] = request_img3,
-              e["image3"]["alternatetext"] = img_alt3,
-              e["image4"]["source"] = request_img4,
-              e["image4"]["alternatetext"] = img_alt4,
+              // e["image2"]["source"] = request_img2,
+              // e["image2"]["alternatetext"] = img_alt2,
+              // e["image3"]["source"] = request_img3,
+              // e["image3"]["alternatetext"] = img_alt3,
+              // e["image4"]["source"] = request_img4,
+              // e["image4"]["alternatetext"] = img_alt4,
               e["product_des"] = about_product,
 
-              e["feature1"] = feature
+              // e["feature1"] = feature
 
             console.log(e);
             // console.log(arr)

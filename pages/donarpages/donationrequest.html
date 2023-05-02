@@ -30,7 +30,7 @@
     <div id="google_translate_element" class="translate"></div>
 
     <div class="side-nav">
-      <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg">
+      <a href="../../index.html"> <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg"></a>
       <ul class="navlinks">
 
 
@@ -40,10 +40,12 @@
         <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i>
             <p>About</p>
           </a></li>
-        <li><a href="../patientpages/gethelp.html"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
+        <li><a id="gethelplink"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
+        <li><a href="place.html"><i class="fa-solid fa-calendar-days"></i>Events</a></li>
+
         <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>GetInvolved</a></li>
-        <li><a href="../beinspired/inspire.html"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
-        <li><a href="../about/profile.html"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
+        <li><a id="inspiredlink"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
+        <li><a id="myprofilelink"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
         <div class="active"></div>
     </div>
   </nav>
@@ -104,6 +106,30 @@
       </div>
     </div>
   </footer>
+  <script>
+     let arrs = localStorage.getItem("userprofile_name");
+     console.log(arrs);
+     // let arr2=JSON.parse(localStorage.getItem("volprofile_name"));
+     let gethelp=  document.getElementById("gethelplink");
+    //  let donation=  document.getElementById("donatelink");
+     let beinspired=document.getElementById("inspiredlink");
+    let profile=document.getElementById("myprofilelink");
+ 
+     if(arrs==null){
+     
+         gethelp.setAttribute("href","../volunteerpages/signup.html");
+        //  donation.setAttribute("href","../volunteerpages/signup.html");
+         beinspired.setAttribute("href","../volunteerpages/signup.html");
+         profile.setAttribute("href","../volunteerpages/signup.html");
+     }
+     else{
+        console.log("isac");
+         gethelp.setAttribute("href","gethelp.html");
+        //  donation.setAttribute("href","../donarpages/donationrequest.html");
+         beinspired.setAttribute("href","../beinspired/inspire.html");
+         profile.setAttribute("href","../about/profile.html");
+     } 
+  </script>
   <script>
 
 let searchbox=document.getElementById("search-bar")
@@ -236,7 +262,6 @@ let searchbox=document.getElementById("search-bar")
 
   </script>
   <script src="../../assets/js/screenreader.js"></script>
-  <script src="../../assets/js/screenreader.js"></script>
   <script src="../../assets/js/contentreader.js"></script>
   
   
@@ -271,7 +296,7 @@ let searchbox=document.getElementById("search-bar")
       if (cnts < tags_length && cnts >= -1) {
         cnts++;
       }
-      screenreader_content(".dropdown1 a,span", cnts, "You reached the end")
+      screenreader_content(".dropdown1 a,p", cnts, "You reached the end")
   
     }
    
@@ -280,7 +305,7 @@ let searchbox=document.getElementById("search-bar")
         cnts--;
       }
       // console.log(cnt+": 2")
-      screenreader_content(".dropdown1 a,span", cnts, "You are on the top")
+      screenreader_content(".dropdown1 a,p", cnts, "You are on the top")
       
     }
     if (event.keyCode == 13) {
@@ -288,7 +313,7 @@ let searchbox=document.getElementById("search-bar")
       anchorTags[cnt].click();
     }
     if (event.keyCode == 16) {
-      let contentanchor=document.querySelectorAll(".dropdown1 a,span")
+      let contentanchor=document.querySelectorAll(".dropdown1 a,p")
       contentanchor[cnts].click();
     }
   

@@ -18,7 +18,7 @@
 
   </div> -->
   <div  class="side-nav">
-    <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg">
+   a <a href="../../index.html">  <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg"></a>
   <ul class="navlinks">
        
         
@@ -26,6 +26,8 @@
         <li><a href="../donarpages/donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a></li>
         <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i>About</a></li>
         <li><a href="../patientpages/gethelp.html"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
+        <li><a href="../donarpages/place.html"><i class="fa-solid fa-calendar-days"></i>Events</a></li>
+
         <li><a href="../donarpages/involve.html"><i class="fa-solid fa-life-ring"></i>GetInvolved</a></li>
         <li><a href="../beinspired/inspire.html"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
         <li><a href="../volunteerpages/profile.html"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
@@ -68,7 +70,7 @@
      <!-- <a href="../../index.html"><button id="logoutbtn">logout</button></a> -->
      <button id="deletebtn">log out</button>
     </form>
-    <a id="work"><button id="text"></button></a>
+    <a href="../patientpages/appointment.html"><button id="text" style="font-size: 11px;">Appointments</button></a>
 
    </div>
  </div>
@@ -103,20 +105,11 @@
 
     if(result["volunteer"]==true){
     document.getElementById("role").value= "volunteer"
-   
-    let work=document.getElementById("work")
-    let text=document.getElementById("text")
-    text.innerText="works"
-    work.setAttribute("href","../volunteerpages/volunteerwork.html")
+ 
     }
     else{
     document.getElementById("role").value= "user"
-   
-    let work=document.getElementById("work")
-    let text=document.getElementById("text")
-    text.innerText="Bookings"
-    
-    work.setAttribute("href","../patientpages/appointment.html")
+  
 
     }
     document.getElementById("address").value = result["address"]
@@ -193,10 +186,8 @@
 const btn = document.getElementById("deletebtn")
 btn.addEventListener("click",function () {
  
-  const profile = localStorage.getItem("userprofile_name")
-  const update = delete profile
-
-  localStorage.setItem("userprofile_name",update)
+   localStorage.removeItem("userprofile_name")
+  
 
   window.location.href = "../../index.html"
 

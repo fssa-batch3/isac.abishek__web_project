@@ -44,7 +44,8 @@
 }
 
 .side-nav{
-    width: 70px;
+  width: 250px;
+
     overflow: hidden;
     height: 100%;
     background-color:#f2f2ff;
@@ -59,10 +60,9 @@
  z-index: 1;
    
 }
-.side-nav:hover{
-    width: 250px;
+/* .side-nav:hover{
     
-}
+} */
 .logo{
     display: flex;
     margin-bottom: 30px;
@@ -128,22 +128,22 @@
     top:3%
 }
 .navlinks li:nth-child(2):hover ~ .active{
-    top:17%
+    top:16%
 }
 .navlinks li:nth-child(3):hover ~ .active{
-    top:32%
+    top:28%
 }
 .navlinks li:nth-child(4):hover ~ .active{
-    top:46%
+    top:41%
 }
 .navlinks li:nth-child(5):hover ~ .active{
-    top:61%
+    top:53%
 }
 .navlinks li:nth-child(6):hover ~ .active{
-    top:75%
+    top:65%
 }
 .navlinks li:nth-child(7):hover ~ .active{
-    top:89%
+    top:78%
 }
 .navlinks li:nth-child(8):hover ~ .active{
     top:90.5%

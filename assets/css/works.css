@@ -3,7 +3,37 @@
     margin: 0;
     padding: 0;
 }
+.gethelpbg {
+    background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/govt2.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    min-height: 30vh;
+    text-align: center;
+    font-size: 40px;
+    padding-top: 150px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: white;
+    letter-spacing: 1px;
+    /* width: 1137px; */
+}
+/* animation*/
+.gethelpbg h1{
+    background: url(../images/back.png);
+    color: transparent;
+    -webkit-text-stroke: 0.50px white;
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation:back 20s linear infinite;
+}
 
+@keyframes back{
+    100%{
+        background-position: 2000px 0;
+    }
+}
 body {
     font-family: 'Merienda', cursive;
    
@@ -24,6 +54,7 @@ table {
     border-collapse: collapse;
     width: 100%;
     margin: auto;
+    /* margin-left: 0px; */
     
 }
 caption{
@@ -48,16 +79,12 @@ td {
 }
 
 table {
-    width: 1150px;
+    width: 1050px;
     margin: 90px;
     border: 2px solid gray;
-    animation-name: new;
-    animation-duration: 4s;
+ 
 }
-@keyframes new{
-    0%{ transform: translateX(1500px);opacity: 0;}
-    100%{transform: translateX(0px);opacity: 1;}
-    }
+
 h1 {
     text-align: center;
     color: #6C3DD9;

@@ -16,20 +16,21 @@
 	<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
 	<script src="../../assets/js/sweetalert.min.js"></script>
 	<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script src="../../assets/js/translator.js"></script>
+	<script src="../../assets/js/translator.js"></script>
 </head>
 
 <body>
-    <!-- <div class="checkbox">
+	<!-- <div class="checkbox">
 		<label for="click" class="text">screen reader</label>
 		<input type="checkbox" id="click" >
   
 	  </div> -->
-	  <div id="google_translate_element" class="translate"></div>
+	<div id="google_translate_element" class="translate"></div>
 
 	<nav>
 		<div class="side-nav">
-			<img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg">
+			<a href="../../index.html"> <img src="../../assets/images/logo.png" width="250px" alt="image error"
+					class="logoimg"></a>
 			<ul class="navlinks">
 
 
@@ -40,6 +41,9 @@
 						<p>About</p>
 					</a></li>
 				<li><a href="../patientpages/gethelp.html"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
+				<li><a href="../donarpages/place.html"><i class="fa-solid fa-calendar-days"></i>Events</a></li>
+
+
 				<li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>GetInvolved</a></li>
 				<li><a href="../beinspired/inspire.html"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
 				<li><a href="../about/profile.html"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
@@ -52,13 +56,15 @@
 			<h1>Book Now</h1>
 			<img src="../../assets/images/donateus.jpg" alt="" width="425px" class="bookimg ">
 			<!-- </div> -->
-			<form  id="register" >
+			<form id="register">
 				<label for="name">Name:</label>
-				<input type="text" id="name" name="name" required pattern="[a-zA-Z]+" title="name must only in alphabets">
+				<input type="text" id="name" name="name" required pattern="[a-zA-Z]+"
+					title="name must only in alphabets">
 				<label for="email">Email:</label>
 				<input type="email" id="email" name="email" required>
 				<label for="mobile">Mobile</label>
-				<input type="text" id="mobile" name="mobile" required pattern="[0-9]\d*" maxlength="10" title="mobile number must be 10 digit number" >
+				<input type="text" id="mobile" name="mobile" required pattern="[0-9]\d*" maxlength="10"
+					title="mobile number must be 10 digit number">
 				<label for="mobile">booking date</label>
 				<input type="text" id="calender" name="mobile" required>
 				<button id="submit" onclick="isac()"> submit</button>
@@ -70,48 +76,48 @@
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 
 <script>
-	let username=localStorage.getItem("userprofile_name")
-	let users=JSON.parse(localStorage.getItem("user"))
-	let name=document.getElementById("name");
-	let email=document.getElementById("email");
-	let phone=document.getElementById("mobile");
+	let username = localStorage.getItem("userprofile_name")
+	let users = JSON.parse(localStorage.getItem("user"))
+	let name = document.getElementById("name");
+	let email = document.getElementById("email");
+	let phone = document.getElementById("mobile");
 
-	users.find(e=>{
-	  if(e["user_email"]==username){
-		name.value=e["user_name"]
-		email.value=e["user_email"]
-		phone.value=e["mobileno"]
-	   
-	  }
+	users.find(e => {
+		if (e["user_email"] == username) {
+			name.value = e["user_name"]
+			email.value = e["user_email"]
+			phone.value = e["mobileno"]
+
+		}
 	})
-  </script>
+</script>
 <script>
 
 
-let register_1 = document.getElementById("register");
-        register_1.addEventListener("submit", e => {
-            e.preventDefault();
-		})
+	let register_1 = document.getElementById("register");
+	register_1.addEventListener("submit", e => {
+		e.preventDefault();
+	})
 
 	const url = window.location.search;
 	const urlParams = new URLSearchParams(url);
 	const hospitalname = urlParams.get("bookname")
 
 
-	let hos=JSON.parse(localStorage.getItem("hospitalrequests")) 
-			let img;
-            hos.find(e=>{
-				if(e["hospital_title"]==hospitalname){
-					img=e["hospitals_images"]["source"]
-				}
-			})
+	let hos = JSON.parse(localStorage.getItem("hospitalrequests"))
+	let img;
+	hos.find(e => {
+		if (e["hospital_title"] == hospitalname) {
+			img = e["hospitals_images"]["source"]
+		}
+	})
 	// let hosimg=urlParams.get("img")
 	// console.log(hospitalname);
 	// const todays = new Date();
 
 	// let arr={
 	// 	"time":todays,
-		
+
 	// 	"name":hospitalname
 	// }
 	// localStorage.setItem(JSON.stringify("user_bookings",arr))
@@ -122,7 +128,7 @@ let register_1 = document.getElementById("register");
 	for (i = 0; i <= 7; i++) {
 		op += input.charAt(Math.floor(Math.random() * op.length));
 	}
-	
+
 
 
 	function sendemail() {
@@ -155,17 +161,17 @@ let register_1 = document.getElementById("register");
 	$('#calender').datepicker({
 		minDate: today
 	});
-	
+
 
 	function isac() {
-		let user=localStorage.getItem("userprofile_name")
+		let user = localStorage.getItem("userprofile_name")
 		let name = document.getElementById("name").value;
 		let email = document.getElementById("email").value;
 		let mobile = document.getElementById("mobile").value;
 		let calender = document.getElementById("calender").value;
 		console.log(calender);
 		booking_datas = {
-			"hospital_name":hospitalname,
+			"hospital_name": hospitalname,
 			"user_name": name,
 			"user_mobile": mobile,
 			"user_email": email,
@@ -179,31 +185,31 @@ let register_1 = document.getElementById("register");
 			bookingarray.push(booking_datas)
 			localStorage.setItem("booking_info", JSON.stringify(bookingarray))
 			sendemail();
-		swal("success!", "booking sent", "success");
+			swal("success!", "booking sent", "success");
 
-        // const todays = new Date();
-			
-				let arr = JSON.parse(localStorage.getItem("user_bookings"))||[]
-				let arrs = {
-					"time": calender,
-					"key1": hospitalname,
-					"key2": op,
-					"user":user,
-					"img":img
-				}
-				arr.push(arrs)
-				localStorage.setItem("user_bookings", JSON.stringify(arr))
-			
-		
+			// const todays = new Date();
+
+			let arr = JSON.parse(localStorage.getItem("user_bookings")) || []
+			let arrs = {
+				"time": calender,
+				"key1": hospitalname,
+				"key2": op,
+				"user": user,
+				"img": img
+			}
+			arr.push(arrs)
+			localStorage.setItem("user_bookings", JSON.stringify(arr))
 
 
-		function re(){
-		window.location.href="bookhospital.html"
-	}
-	setInterval(re, 1000);
+
+
+			function re() {
+				window.location.href = "bookhospital.html"
+			}
+			setInterval(re, 1000);
 
 		}
-		
+
 	}
 
 
@@ -216,69 +222,70 @@ let register_1 = document.getElementById("register");
 
 
 <script>
- let cnt = -1;
-  let tags;
-  let tag_length=0;
-  
-  
-  let cnts = -1;
-  let tag;
-  let tags_length=0;
-  
-  document.onkeydown = function (event) {
-    if (event.keyCode == 39) {
-      if (cnt < tag_length && cnt >= -1) {
-        cnt++;
-      }
-      screenreader_selector(".side-nav a", cnt, "You reached the end")
-  
-    }
-   
-    if (event.keyCode == 37) {
-      if (cnt > -1) {
-        cnt--;
-      }
-      // console.log(cnt+": 2")
-      screenreader_selector(".side-nav a", cnt, "You are on the top")
-      
-    }
-    if (event.keyCode == 40) {
-      if (cnts < tags_length && cnts >= -1) {
-        cnts++;
-      }
-      screenreader_content("label,button", cnts, "You reached the end")
-  
-    }
-   
-    if (event.keyCode == 38) {
-      if (cnts > -1) {
-        cnts--;
-      }
-      // console.log(cnt+": 2")
-      screenreader_content("label,button", cnts, "You are on the top")
-      
-    }
-    if (event.keyCode == 13) {
-      let anchorTags = document.querySelectorAll(".side-nav a");
-      anchorTags[cnt].click();
-    }
-    if (event.keyCode == 16) {
-      let contentanchor=document.querySelectorAll("label,button")
-      contentanchor[cnts].click();
-    }
-  
-  };
+	let cnt = -1;
+	let tags;
+	let tag_length = 0;
+
+
+	let cnts = -1;
+	let tag;
+	let tags_length = 0;
+
+	document.onkeydown = function (event) {
+		if (event.keyCode == 39) {
+			if (cnt < tag_length && cnt >= -1) {
+				cnt++;
+			}
+			screenreader_selector(".side-nav a", cnt, "You reached the end")
+
+		}
+
+		if (event.keyCode == 37) {
+			if (cnt > -1) {
+				cnt--;
+			}
+			// console.log(cnt+": 2")
+			screenreader_selector(".side-nav a", cnt, "You are on the top")
+
+		}
+		if (event.keyCode == 40) {
+			if (cnts < tags_length && cnts >= -1) {
+				cnts++;
+			}
+			screenreader_content("label,button", cnts, "You reached the end")
+
+		}
+
+		if (event.keyCode == 38) {
+			if (cnts > -1) {
+				cnts--;
+			}
+			// console.log(cnt+": 2")
+			screenreader_content("label,button", cnts, "You are on the top")
+
+		}
+		if (event.keyCode == 13) {
+			let anchorTags = document.querySelectorAll(".side-nav a");
+			anchorTags[cnt].click();
+		}
+		if (event.keyCode == 16) {
+			let contentanchor = document.querySelectorAll("label,button")
+			contentanchor[cnts].click();
+		}
+
+	};
 
 </script>
 
 
 <script>
-	document.addEventListener('keydown', function(event) {
-  if (event.keyCode >= 37 && event.keyCode <= 40) {
-	event.preventDefault();
-  }
-});
+	document.addEventListener('keydown', function (event) {
+		if (event.keyCode >= 37 && event.keyCode <= 40) {
+			event.preventDefault();
+		}
+	});
 
 
 </script>
+
 </html>

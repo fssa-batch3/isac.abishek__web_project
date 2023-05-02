@@ -2,243 +2,323 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/contact.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="../../assets/css/common.css">
-    <script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="../../assets/images/icon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
-    <script src="../../assets/js/sweetalert.min.js"></script>
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../assets/css/contact.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="../../assets/css/common.css">
+  <script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
+  <link rel="icon" href="../../assets/images/icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
+  <script src="../../assets/js/sweetalert.min.js"></script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script src="../../assets/js/translator.js"></script>
 
-    <title>gethelp</title>
+  <title>gethelp</title>
 </head>
 
 <body>
-    <!-- <div class="checkbox">
+  <!-- <div class="checkbox">
         <label for="click" class="text">screen reader</label>
         <input type="checkbox" id="click" >
   
       </div> -->
-    <div id="google_translate_element" class="translate"></div>
+  <div id="google_translate_element" class="translate"></div>
 
-    <div class="side-nav">
-        <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg">
-        <ul class="navlinks">
+  <div class="side-nav">
+    <a href="../../index.html"> <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg"></a>
+    <ul class="navlinks">
 
 
-            <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
-            <li><a href="../donarpages/donationrequest.html"><i
-                        class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a></li>
-            <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i>
-                    <p>About</p>
-                </a></li>
-            <li><a href="../patientpages/gethelp.html"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
-            <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>GetInvolved</a></li>
-            <li><a href="../beinspired/inspire.html"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
-            <li><a href="../about/profile.html"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
-            <div class="active"></div>
-        </ul>
-    </div>
-    <div class="container">
-        <form onsubmit="sendemail(); reset(); return false;">
+      <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
+      <li><a href="../donarpages/donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a>
+      </li>
+      <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i>
+          <p>About</p>
+        </a></li>
+      <li><a id="gethelplink"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
+      <li><a href="../donarpages/place.html"><i class="fa-solid fa-calendar-days"></i>Events</a></li>
 
-            <h3>get in touch</h3>
-            <!-- <img src="../../assets/images/donationrequest.jpg" alt=""> -->
 
-            <input type="text" id="name" placeholder="yourname" required pattern="[a-zA-Z]+" title="name must only in alphabets">
+      <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>GetInvolved</a></li>
+      <li><a id="inspiredlink"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
+      <li><a id="myprofilelink"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
+      <div class="active"></div>
+    </ul>
+  </div>
+  <div class="container">
+    <form onsubmit="sendemail(); reset(); return false;">
 
-            <input type="email" id="email" placeholder="emailid" required>
-            
-            <input type="text" id="phone" placeholder="yourmobile" required pattern="[0-9]\d*" maxlength="10" title="mobile number must be 10 digit number" >
-            <textarea name="message" id="message" rows="4" placeholder="say something about you"  required></textarea>
-            <button type="button" id="voice">Speak about yourself to help you and slash button recall it</button>
-            <button id="hear" type="button">Hear message</button>
+      <h3>Contact Us to Get Product On Event Days</h3>
+      <!-- <img src="../../assets/images/donationrequest.jpg" alt=""> -->
 
-            <button type="submit">send</button>
-              
-        </form>
-        
+      <input type="text" id="name" placeholder="yourname" required pattern="[a-zA-Z]+"
+        title="name must only in alphabets">
 
-    </div>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+      <input type="email" id="email" placeholder="emailid" required>
 
-    <script>
-      let username=localStorage.getItem("userprofile_name")
-      let users=JSON.parse(localStorage.getItem("user"))
-      let name=document.getElementById("name");
-      let email=document.getElementById("email");
-      let phone=document.getElementById("phone");
+      <input type="text" id="phone" placeholder="yourmobile" required pattern="[0-9]\d*" maxlength="10"
+        title="mobile number must be 10 digit number">
+      <textarea name="message" id="message" rows="4" placeholder="say something about you" required></textarea>
+      <button type="button" id="voice">Speak about yourself to help you and slash button recall it</button>
+      <button id="hear" type="button">Hear message</button>
 
-      users.find(e=>{
-        if(e["user_email"]==username){
-          name.value=e["user_name"]
-          email.value=e["user_email"]
-          phone.value=e["mobileno"]
-         
+      <button type="submit" id="mail">send</button>
+
+    </form>
+
+
+  </div>
+  <script>
+    let arrs = localStorage.getItem("userprofile_name");
+     console.log(arrs);
+     // let arr2=JSON.parse(localStorage.getItem("volprofile_name"));
+     let gethelp=  document.getElementById("gethelplink");
+    //  let donation=  document.getElementById("donatelink");
+     let beinspired=document.getElementById("inspiredlink");
+    let profile=document.getElementById("myprofilelink");
+ 
+     if(arrs==null){
+     
+         gethelp.setAttribute("href","../volunteerpages/signup.html");
+        //  donation.setAttribute("href","../volunteerpages/signup.html");
+         beinspired.setAttribute("href","../volunteerpages/signup.html");
+         profile.setAttribute("href","../volunteerpages/signup.html");
+     }
+     else{
+        console.log("isac");
+         gethelp.setAttribute("href","gethelp.html");
+        //  donation.setAttribute("href","../donarpages/donationrequest.html");
+         beinspired.setAttribute("href","../beinspired/inspire.html");
+         profile.setAttribute("href","../about/profile.html");
+     } 
+  </script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+  <script>
+    let username = localStorage.getItem("userprofile_name")
+
+    if (localStorage.getItem("userprofile_name")) {
+      let users = JSON.parse(localStorage.getItem("user"))
+      let name = document.getElementById("name");
+      let email = document.getElementById("email");
+      let phone = document.getElementById("phone");
+
+      users.find(e => {
+        if (e["user_email"] == username) {
+          name.value = e["user_name"]
+          email.value = e["user_email"]
+          phone.value = e["mobileno"]
+
         }
       })
-    </script>
-    <script>
-         let user=localStorage.getItem("userprofile_name")
-        const url = window.location.search;
-        const urlParams = new URLSearchParams(url);
-        const productname = urlParams.get("productname")
+    }
 
-        let pro=JSON.parse(localStorage.getItem("productrequest")) 
-			let img;
-            pro.find(e=>{
-				if(e["product_name"]==productname){
-					img=e["image1"]["source"]
-				}
-			})
+  </script>
+  <script>
+    let user = localStorage.getItem("userprofile_name")
+    const url = window.location.search.substring(1).split("&");
+    console.log(url)
+    let placesel = url[0].split("=")[1]
+    let productname = url[1].split("=")[1]
+    // let placesel ="  "
+    // let productname="   "
 
-        
-//This code is used to generate a random OTP, send an email to the user with the OTP, and store the product details in the local storage.
-//let user=localStorage.getItem('userprofile_name')
-       
-        let input = '1234567890'
-
-        let otp = '';
-        for (i = 0; i <= 7; i++) {
-            otp += input.charAt(Math.floor(Math.random() * otp.length));
+    if (localStorage.getItem("userprofile_name")) {
+      let pro = JSON.parse(localStorage.getItem("productrequest"))
+      let img;
+      pro.find(e => {
+        if (e["product_name"] == productname) {
+          img = e["image1"]["source"]
         }
-        console.log(otp);
+      })
+      const todays = new Date();
+      let date_trim = todays.toLocaleDateString()
+
+      let arr = JSON.parse(localStorage.getItem('user_bookings')) || []
+      let arrs = {
+        'time': date_trim,
+        'key1': productname,
+        'key2': otp,
+        'user': user,
+        'place': placesel,
+        'img': img
+      }
+      arr.push(arrs)
+      localStorage.setItem('user_bookings', JSON.stringify(arr))
+
+      // function re() {
+      //   window.location.href = 'buyproducts.html'
+      // }
+      // setInterval(re, 1000);
+    }
 
 
-        function sendemail() {
 
 
-            Email.send({
-                Host: 'smtp.elasticemail.com',
-                Username: 'freshtrustproject@gmail.com',
-                Password: '3A631975AD1F826BFD0004A6C73ACFA2BC54',
-                To: 'isacdevaabishek2@gmail.com',
-                From: 'freshtrustproject@gmail.com',
-                Subject: 'NEED YOUR PRODUCT FROM FRESHTRUST',
-                Body: 'REQUEST ID' + otp + '\n'
-                    + 'NAME: ' + document.getElementById('name').value
-                    + '<br> EMAIL: ' + document.getElementById('email').value
-                    + '<br> MOBILE NUMBER: ' + document.getElementById('phone').value
-                    + '<br> Hi freshtrust ' + document.getElementById('message').value
-
-            }).then(
-                //   message => swal('yep!', 'email sent to us we will contact you soon', 'sucess')
-                message => alert(message)
-            );
 
 
-            const todays = new Date();
-            let date_trim=todays.toLocaleDateString()
 
-            let arr = JSON.parse(localStorage.getItem('user_bookings')) || []
-            let arrs = {
-                'time': date_trim,
-                'key1': productname,
-                'key2': otp,
-                'user':user,
-                'img':img
-            }
-            arr.push(arrs)
-            localStorage.setItem('user_bookings', JSON.stringify(arr))
 
-            function re(){
-		window.location.href='buyproducts.html'
-	}
-	setInterval(re, 1000);
-        }
-//This code is used to generate a random OTP, send an email to the user 
-//with the OTP, and store the product details in the local storage. 
-//It gets the product name from the URL, gets the image source from the 
-//local storage, generates a random OTP, sends an email to the user with 
-//the OTP, and stores the product details in the local storage. Finally, 
-//it redirects the user to the buyproducts.html page.
- 
 
-    </script>
+
+
+
+    
+
+    let input = '1234567890'
+
+    let otp = '';
+    for (i = 0; i <= 7; i++) {
+      otp += input.charAt(Math.floor(Math.random() * otp.length));
+    }
+    console.log(otp);
+
+    let mail=document.getElementById("mail")
+    mail.addEventListener("submit",e=>{
+      sendemail()
+    })
+    
+    function sendemail() {
+
+
+      Email.send({
+        Host: 'smtp.elasticemail.com',
+        Username: 'freshtrustproject@gmail.com',
+        Password: '3A631975AD1F826BFD0004A6C73ACFA2BC54',
+        To: 'isacdevaabishek2@gmail.com',
+        From: 'freshtrustproject@gmail.com',
+        Subject: 'NEED YOUR PRODUCT FROM FRESHTRUST',
+        Body: 'REQUEST ID' + otp + '\n'
+
+          + '<br> Hi freshtrust ' + document.getElementById('message').value
+          + '<br>place: ' + placesel
+          + '<br> product: ' + productname
+
+      }).then(
+        //   message => swal('yep!', 'email sent to us we will contact you soon', 'sucess')
+        message => alert(message)
+      );
+      
+      setInterval(re, 10000);
+    }
+    function re() {
+        window.location.href = 'buyproducts.html'
+      }
+
+  </script>
   <script src="../../assets/js/screenreader.js"></script>
   <script src="../../assets/js/contentreader.js"></script>
-  
-  
+
+
   <script>
     let cnt = -1;
-  let tags;
-  let tag_length=0;
-  
-  
-  let cnts = -1;
-  let tag;
-  let tags_length=0;
-  
-  document.onkeydown = function (event) {
-    if (event.keyCode == 39) {
-      if (cnt < tag_length && cnt >= -1) {
-        cnt++;
-       
+    let tags;
+    let tag_length = 0;
+
+
+    let cnts = -1;
+    let tag;
+    let tags_length = 0;
+
+    document.onkeydown = function (event) {
+      if (event.keyCode == 39) {
+        if (cnt < tag_length && cnt >= -1) {
+          cnt++;
+
+        }
+        screenreader_selector(".side-nav a", cnt, "You reached the end")
+
       }
-      screenreader_selector(".side-nav a", cnt, "You reached the end")
-  
-    }
-   
-    if (event.keyCode == 37) {
-      if (cnt > -1) {
-        cnt--;
+
+      if (event.keyCode == 37) {
+        if (cnt > -1) {
+          cnt--;
+        }
+        // console.log(cnt+": 2")
+        screenreader_selector(".side-nav a", cnt, "You are on the top")
+
       }
-      // console.log(cnt+": 2")
-      screenreader_selector(".side-nav a", cnt, "You are on the top")
-      
-    }
-    if (event.keyCode == 40) {
-      if (cnts < tags_length && cnts >= -1) {
-        cnts++;
+      if (event.keyCode == 40) {
+        if (cnts < tags_length && cnts >= -1) {
+          cnts++;
+        }
+        screenreader_content("h3,button", cnts, "You reached the end")
+
       }
-      screenreader_content("button", cnts, "You reached the end")
-  
-    }
-   
-    if (event.keyCode == 38) {
-      if (cnts > -1) {
-        cnts--;
+
+      if (event.keyCode == 38) {
+        if (cnts > -1) {
+          cnts--;
+        }
+        // console.log(cnt+": 2")
+        screenreader_content("h3,button", cnts, "You are on the top")
+
       }
-      // console.log(cnt+": 2")
-      screenreader_content("button", cnts, "You are on the top")
-      
-    }
-    if (event.keyCode == 13) {
-      let anchorTags = document.querySelectorAll(".side-nav a");
-      anchorTags[cnt].click();
-    }
-    if (event.keyCode == 16) {
-      let contentanchor=document.querySelectorAll("button")
-      contentanchor[cnts].click();
-    }
-    if (event.keyCode == 220) {
-      let vrr=document.getElementById("message").value
-      let iam = new SpeechSynthesisUtterance(vrr);
-    speechSynthesis.speak(iam);
-       
-    }
-  
-  };
-  
+      if (event.keyCode == 13) {
+        let anchorTags = document.querySelectorAll(".side-nav a");
+        anchorTags[cnt].click();
+      }
+      if (event.keyCode == 16) {
+        let contentanchor = document.querySelectorAll("h3,button")
+        contentanchor[cnts].click();
+      }
+      if (event.keyCode == 220) {
+        let vrr = document.getElementById("message").value
+        let iam = new SpeechSynthesisUtterance(vrr);
+        speechSynthesis.speak(iam);
+
+      }
+
+    };
+
   </script>
-  
-  
+
+
   <script>
-      document.addEventListener('keydown', function(event) {
-    if (event.keyCode >= 37 && event.keyCode <= 40) {
-      event.preventDefault();
-    }
-  });
-  
-  
+    document.addEventListener('keydown', function (event) {
+      if (event.keyCode >= 37 && event.keyCode <= 40) {
+        event.preventDefault();
+      }
+    });
+
+
   </script>
-<script src="../../assets/js/voicetotext.js"></script>
-  
+
 </body>
+<script>
+  // document.addEventListener("", e => {
+  //   loader()
+  // })
+  function loader() {
+    if (localStorage.getItem("userprofile_name")) {
+      console.log("user registered");
+    }
+    else {
+      document.getElementById("name").value = "User"
+      document.getElementById("email").value = "User@email"
+      document.getElementById("phone").value = "8608841226"
+      let iam = new SpeechSynthesisUtterance("Hi there now you are in contact page use up arrow and down arrow to navigate by hearing the message by speak and hear button and Click the shift button when you selet the send button then press enter at last ");
+      speechSynthesis.speak(iam);
+      console.log(iam);
+
+    }
+  }
+
+  let intervalID = setInterval(loader,100) // executes every 1 second (1000 ms)
+
+// End the interval after 10 seconds using setTimeout()
+setTimeout(function() {
+  clearInterval(intervalID); // clear the interval using the saved interval ID
+}, 100);
+
+document.addEventListener("dblclick", e => {
+    loader()
+    // inc=0
+  })
+  
+</script>
+<script src="../../assets/js/voicetotext.js"></script>
 
 </html>

@@ -14,100 +14,6 @@ body {
     background-position: center;
 }
 
-.menu-bar {
-    height: 120px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-}
-
-.menu-bar img {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 100px;
-}
-
-.menu-bar ul {
-    list-style: none;
-    display: flex;
-    margin-top: 0px;
-}
-
-.menu-bar ul li {
-    position: relative;
-    margin-right: 30px;
-    list-style: none;
-    font-size: 18px;
-    padding-top: 6px;
-    font-weight: 400;
-}
-
-.menu-bar ul li::after {
-    content: '';
-    display: block;
-    background-color: #6C3DD9;
-    height: 2px;
-    width: 0%;
-    margin: auto;
-    transition: 0.5s;
-}
-
-.menu-bar ul li:hover::after {
-    width: 100%;
-}
-
-.menu-bar ul li a {
-    font-size: 20px;
-    text-decoration: none;
-    color: #6C3DD9;
-}
-@media screen and (max-width:600px) {
-    .menu-bar {
-      height: 80px;
-      display:contents ;
-      justify-content: space-between;
-      align-items: none;
-      position: sticky;
-      top: 0px;
-      /* border: 2px solid red; */
-      background-color: #fff;
-    
-    }
-    
-    .menu-bar img {
-      margin-left:0px;
-      margin-top: 0px;
-      width: 80px;
-      /* border: 2px solid red; */
-      position: relative;
-      left:40%;
-      
-    }
-    
-    .menu-bar ul {
-      display: flex;
-      margin-top: 10px;
-      width:550px;
-      margin-left: 10px;
-      /* border: 2px solid red; */
-     
-    }
-    
-    .menu-bar ul li {
-      position: relative;
-      margin-right: 13px;
-      list-style: none;
-      padding-top: 6px;
-      
-    }
-    .menu-bar ul li a {
-      font-size: 9px;
-      text-decoration: none;
-      color: #6C3DD9;
-     
-    }
-}
 /* buy bg  */
 .gethelpbg {
     background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/govt2.jpg);
@@ -164,7 +70,7 @@ body {
     color: white;
     font-weight: 500;
     position: relative;
-    left: 190px;
+    left: 250px;
     padding: 20px 85px;
     border: none;
     animation-name: slide;
