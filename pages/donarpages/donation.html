@@ -92,7 +92,9 @@
 	let names=document.getElementById("name");
 	let emails=document.getElementById("email");
 	let phone=document.getElementById("mobile");
+     if(username!==null){
 
+	
 	users.find(e=>{
 	  if(e["user_email"]==username){
 		names.value=e["user_name"]
@@ -101,6 +103,7 @@
 	   
 	  }
 	})
+}
   </script>
 <script>
 	

@@ -35,12 +35,12 @@
 
 
         <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
-        <li><a id="donationlink"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a></li>
+        <li><a href="../donarpages/donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a></li>
         <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i>
             <p>About</p>
           </a></li>
         <li><a id="gethelp"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
-        <li><a href="place.html"><i class="fa-solid fa-truck-medical"></i>Events</a></li>
+        <li><a href="place.html"><i class="fa-solid fa-calendar-days"></i>Events</a></li>
 
         <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>GetInvolved</a></li>
         <li><a id="beinspiredlink"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
@@ -144,21 +144,21 @@
 
     let arr1 = localStorage.getItem("userprofile_name");
     let gethelp=  document.getElementById("gethelp");
-    let donation=  document.getElementById("donationlink");
+    // let donation=  document.getElementById("donationlink");
     let beinspired=document.getElementById("beinspiredlink");
    let profile=document.getElementById("myprofile");
 
     if(arr1==null||arr==false){
    
         gethelp.setAttribute("href","../volunteerpages/signup.html");
-        donation.setAttribute("href","../volunteerpages/signup.html");
+        // donation.setAttribute("href","../volunteerpages/signup.html");
         beinspired.setAttribute("href","../volunteerpages/signup.html");
         profile.setAttribute("href","../volunteerpages/signup.html");
     }
     else{
        console.log("isac");
         gethelp.setAttribute("href","../patientpages/gethelp.html");
-        donation.setAttribute("href","../donarpages/donationrequest.html");
+        // donation.setAttribute("href","../donarpages/donationrequest.html");
         beinspired.setAttribute("href","../beinspired/inspire.html");
         profile.setAttribute("href","../about/profile.html");
     } 

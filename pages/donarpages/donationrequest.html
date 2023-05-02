@@ -245,7 +245,15 @@ let searchbox=document.getElementById("search-bar")
 
 
       a1 = document.createElement("a");
-      a1.setAttribute("href", "donation.html?requestname="+e["request_title"])
+      if(localStorage.getItem("userprofile_name")){
+        a1.setAttribute("href", "donation.html?requestname="+e["request_title"])
+
+      }
+      else{
+      a1.setAttribute("href", "../volunteerpages/signup.html") 
+
+      
+      }
       dropdown1.append(a1)
       //    button class join 
       button = document.createElement("button");
