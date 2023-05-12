@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="../../assets/css/common.css">
     <link rel="icon" href="../../assets/images/icon.png">
     <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script src="../../assets/js/translator.js"></script>
+ 
     <title>gethelp</title>
 </head>
 
@@ -287,7 +286,8 @@
     </div>
 </footer>
 </body>
-
+<input type="text" id="message">
+  <script src="../../assets/js/voicenavigator.js"></script>
 <script>
 
     
@@ -321,7 +321,6 @@
 
    
 </script>
-<script src="../../assets/js/screenreader.js"></script>
 <script src="../../assets/js/screenreader.js"></script>
 <script src="../../assets/js/contentreader.js"></script>
 
@@ -381,7 +380,33 @@
   };
 
 </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", e => {
+        loader("Hi there now you are in government schemes page you can view schemes")
+    })
 
+    document.addEventListener("dblclick", e => {
+      loader("Hi there now you are in government schemes page you can view schemes")
+    }) 
+    function micon(){
+        let micoff = new SpeechSynthesisUtterance("mic on");
+      speechSynthesis.speak(micoff);
+      }
+
+      function starter(){
+      converter("a,button")
+      }
+      
+      function inter(n){
+        setInterval(starter,n)
+      }
+    function inter1(e){
+        setInterval(micon,e)
+        inter(e+5000)
+        inter1(e+9000)
+      }
+      inter1(5000)
+    </script>
 
 <script>
     document.addEventListener('keydown', function(event) {

@@ -79,10 +79,10 @@
     <input type="url" id="request_img1" name="request_img">
     <label for="request_img" id="alternate1"></label>
     <input type="text" id="img_alt" name="request_title">
-    <!-- image2 
-    <label for="request_img" id="image2"></label>
-    <input type="url" id="request_img2" name="request_img">
-    <label for="request_img" id="alternate2"></label>
+    <!-- image2  -->
+    <label for="event" id="event"></label>
+    <input type="url" id="event" name="event">
+    <!-- <label for="request_img" id="alternate2"></label>
     <input type="text" id="img_alt2" name="request_title">
     imag3 
     <label for="request_img" id="image3"></label>
@@ -126,7 +126,7 @@
 
         document.getElementById("image1").innerText = "product image"
         document.getElementById("alternate1").innerText = "image alternate text"
-        // document.getElementById("image2").innerText = "product image"
+        document.getElementById("event").innerText = "event"
         // document.getElementById("alternate2").innerText = "image alternate text"
         // document.getElementById("image3").innerText = "product image"
         // document.getElementById("alternate3").innerText = "image alternate text"
@@ -169,7 +169,7 @@
         document.getElementById("address").innerText = "address"
         document.getElementById("requested_by").removeAttribute("disabled")
         document.getElementById("requests_address").removeAttribute("disabled")
-        // document.getElementById("image2").innerText = ""
+        document.getElementById("event").innerText = ""
         // document.getElementById("alternate2").innerText = ""
         // document.getElementById("image3").innerText = ""
         // document.getElementById("alternate3").innerText = ""
@@ -209,7 +209,7 @@
         document.getElementById("address").innerText = "address"
         document.getElementById("requested_by").removeAttribute("disabled")
         document.getElementById("requests_address").removeAttribute("disabled")
-        // document.getElementById("image2").innerText = ""
+        document.getElementById("event").innerText = ""
         // document.getElementById("alternate2").innerText = ""
         // document.getElementById("image3").innerText = ""
         // document.getElementById("alternate3").innerText = ""
@@ -253,7 +253,7 @@
         document.getElementById("address").innerText = "address"
         document.getElementById("requested_by").removeAttribute("disabled")
         document.getElementById("requests_address").removeAttribute("disabled")
-        // document.getElementById("image2").innerText = ""
+        document.getElementById("event").innerText = ""
         // document.getElementById("alternate2").innerText = ""
         // document.getElementById("image3").innerText = ""
         // document.getElementById("alternate3").innerText = ""
@@ -320,7 +320,7 @@
           let about_request = document.getElementById("about_request").value
           let requested_by = document.getElementById("requested_by").value
           let requests_address = document.getElementById("requests_address").value
-
+        
 
 
           let newrequests = {

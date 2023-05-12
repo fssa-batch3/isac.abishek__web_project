@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="../../assets/css/aboutus.css">
     <link rel="stylesheet" href="../../assets/css/common.css">
     <script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script src="../../assets/js/translator.js"></script>
 </head>
 <!-- body starts  -->
 <body>
@@ -23,16 +21,16 @@
       <ul class="navlinks">
            
             
-            <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
-            <li><a id="donationlink"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a></li>
-            <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i><p>About</p></a></li>
+            <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>schemes</a></li>
+            <li><a id="donationlink"><i class="fa-solid fa-circle-dollar-to-slot"></i>donate</a></li>
+            <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i><p>about</p></a></li>
 
-            <li><a id="gethelp"><i class="fa-solid fa-truck-medical"></i> Gethelp</a></li>
-        <li><a href="../donarpages/place.html"><i class="fa-solid fa-calendar-days"></i>Events</a></li>
+            <li><a id="gethelp"><i class="fa-solid fa-truck-medical"></i>get help</a></li>
+        <li><a href="../donarpages/place.html"><i class="fa-solid fa-calendar-days"></i>offering</a></li>
 
-            <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>GetInvolved</a></li>
-            <li><a id="beinspiredlink"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
-            <li><a id="myprofile"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
+            <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>get involved</a></li>
+            <li><a id="beinspiredlink"><i class="fa-solid fa-dragon"></i>be inspired</a></li>
+            <li><a id="myprofile"><i class="fa-solid fa-hospital-user"></i>profile</a></li>
             <div class="active"></div>
           </ul>
       </div>
@@ -139,7 +137,9 @@
             </div>
         </div>
     </footer>
-   
+    <input type="text" id="message" style="margin-left: 300px;">
+    <script src="../../assets/js/voicenavigator.js"></script>
+    <script src="../../assets/js/autospeech.js"></script>
       <script>
 
 
@@ -177,6 +177,34 @@ let arr = localStorage.getItem("userprofile_name");
 
 
    </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", e => {
+      loader("hi now your are in about page ")
+  })
+
+  document.addEventListener("dblclick", e => {
+    loader("hi now your are in about page")
+  }) 
+   function micon(){
+      let micoff = new SpeechSynthesisUtterance("mic on");
+     speechSynthesis.speak(micoff);
+    }
+
+    function starter(){
+    converter("a,button")
+    }
+    
+    function inter(n){
+      setInterval(starter,n)
+    }
+  function inter1(e){
+      setInterval(micon,e)
+      inter(e+2000)
+      inter1(e+7000)
+    }
+    inter1(5000)
+  </script>
   <script src="../../assets/js/screenreader.js"></script>
   <script src="../../assets/js/contentreader.js"></script>
   
@@ -196,7 +224,7 @@ let arr = localStorage.getItem("userprofile_name");
       if (cnt < tag_length && cnt >= -1) {
         cnt++;
       }
-      screenreader_selector(".side-nav a", cnt, "You reached the end")
+      screenreader_selector(".navlinks a", cnt, "You reached the end")
   
     }
    
@@ -205,7 +233,7 @@ let arr = localStorage.getItem("userprofile_name");
         cnt--;
       }
       // console.log(cnt+": 2")
-      screenreader_selector(".side-nav a", cnt, "You are on the top")
+      screenreader_selector(".navlinks a", cnt, "You are on the top")
       
     }
     if (event.keyCode == 40) {
@@ -225,11 +253,12 @@ let arr = localStorage.getItem("userprofile_name");
       
     }
     if (event.keyCode == 13) {
-      let anchorTags = document.querySelectorAll(".side-nav a");
+      let anchorTags = document.querySelectorAll(".navlinks a");
       anchorTags[cnt].click();
     }
   
   };
+  
   
   </script>
   

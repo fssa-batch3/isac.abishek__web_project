@@ -15,10 +15,10 @@ body {
   background-position: center;
 }
 
-@keyframes slide{
+/* @keyframes slide{
   0%{opacity: 0;}
   100%{ opacity: 1;}
-  }
+  } */
 
 .menu-bar {
   height: 120px;

@@ -2,23 +2,38 @@
 <html>
   <head>
     <title>Speech Synthesis Demo</title>
+    <script src="assets/js/voicenavigator.js"></script>
   </head>
   <body>
+    <div class="menu-bar">
+      <img src="assets/images/logo.png" width="200px" alt="error">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="pages/donarpages/place.html">EVENTS</a></li>
+        <li><a href="pages/about/schemes.html">SCHEMES</a></li>
+        <li><a href="pages/donarpages/donationrequest.html">DONATE US</a></li>
+        <li><a href="pages/about/aboutus.html">ABOUT</a></li>
+        <li><a href="#">GET HELP</a>
+  
+          <div class="dropdown-menu">
+            <ul>
+              <li><a id="gethelplink">User login</a></li>
+            </ul>
+          </div>
+        </li>
+       
+  
+        <li><a href="pages/donarpages/involve.html">GET INVOLVED</a></li>
+        <li><a id="inspiredlink">BE INSPIRED</a></li>
+        <li><a  href="pages/volunteerpages/signup.html" target="_self">sign up</a></li>
+      </ul>
+    </div>
+   <input type="text" id="message" style="display: none;">
     <script>
-      // Wait for the page to load before speaking
-      
-      window.addEventListener('dblclick', (event) => {
-        // Check if the browser supports speech synthesis
-        if ('speechSynthesis' in window) {
-          // Create a new SpeechSynthesisUtterance object with the greeting
-          const greeting = new SpeechSynthesisUtterance('Hi! Welcome to our website.');
-            console.log(greeting);
-          // Speak the greeting
-          window.speechSynthesis.speak(greeting);
-        } else {
-          console.log('Speech synthesis is not supported.');
-        }
-      });
+    converter(".menu-bar a")
     </script>
   </body>
 </html>
+
+
+

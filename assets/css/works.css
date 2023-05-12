@@ -90,10 +90,69 @@ h1 {
     color: #6C3DD9;
     margin-bottom: 30px;
     margin-top: 30px;
-    animation-name: slide;
-    animation-duration: 2s;
+  
 }
-@keyframes slide{
-    0%{opacity: 0;}
-    100%{ opacity: 1;}
-    }
+
+#join {
+    cursor: pointer;
+    background-color: #6C3DD9;
+    color: white;
+    font-weight: 500;
+   
+    padding: 20px 85px;
+    border: none;
+    /* margin-top: 40px; */
+    position: absolute;
+    right: 0px;
+
+}
+
+#join:hover {
+    background-color:#d4c1ff;
+    color: #6C3DD9;
+    border: 1px solid #6C3DD9;
+    /* padding: 18px 83px; */
+}
+.datas{
+    height: 500px;
+    width: 500px;
+    background-color: white;
+    position: absolute;
+    top: 8%;
+    left: 35%;
+    border-radius: 30px;
+   
+    
+}
+#close{
+    position: absolute;
+    right: 0%;
+    top: 0px;
+}
+.datas h2{
+    text-align: center;
+    color: #6C3DD9;
+    margin: 20px 0px;
+}
+input{
+    width: 300px;
+    height: 50px;
+    margin: 20px 90px;
+}
+#submit_btn{
+    cursor: pointer;
+    background-color: #6C3DD9;
+    color: white;
+    font-weight: 500;
+   position: absolute;
+   right: 10px;
+   margin-top: 30px;
+    padding: 20px 85px;
+    border: none;
+}
+#submit_btn:hover{
+    background-color:#d4c1ff;
+    color: #6C3DD9;
+    border: 1px solid #6C3DD9;
+
+}

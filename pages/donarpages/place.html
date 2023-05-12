@@ -13,8 +13,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script src="../../assets/js/translator.js"></script>
+
   <script src="../../assets/js/sweetalert.min.js"></script>
   <title>donation request</title>
 </head>
@@ -27,25 +26,24 @@
   </div> -->
   <!-- nav bar starts  -->
   <nav>
-    <div id="google_translate_element" class="translate"></div>
-
+    
     <div class="side-nav">
     <a href="../../index.html"> <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg"></a> 
       <ul class="navlinks">
 
 
-        <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
-        <li><a href="donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a>
+        <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>schemes</a></li>
+        <li><a href="donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>donate</a>
         </li>
         <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i>
             <p>About</p>
           </a></li>
-        <li><a id="gethelplink"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
-        <li><a href="place.html"><i class="fa-solid fa-calendar-days"></i>Events</a></li>
+        <li><a id="gethelplink"><i class="fa-solid fa-truck-medical"></i>get help</a></li>
+        <li><a href="place.html"><i class="fa-solid fa-calendar-days"></i>offering</a></li>
 
-        <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>GetInvolved</a></li>
-        <li><a id="inspiredlink"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
-        <li><a id="myprofilelink"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
+        <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>get involved</a></li>
+        <li><a id="inspiredlink"><i class="fa-solid fa-dragon"></i>be inspired</a></li>
+        <li><a id="myprofilelink"><i class="fa-solid fa-hospital-user"></i>your profile</a></li>
         <div class="active"></div>
     </div>
   </nav>
@@ -106,6 +104,8 @@
       </div>
     </div>
   </footer>
+  <input type="text" id="message" style="margin-left:400px ;">
+  
   <script>
     let arrs = localStorage.getItem("userprofile_name");
      
@@ -141,7 +141,7 @@ let searchbox=document.getElementById("search-bar")
      let dic=document.querySelectorAll(".hos1");
      dic.forEach(ex=>{
       let child=ex.children[1].children[0].children[1].textContent.toLocaleLowerCase();
-      if (child.startsWith(word)   ) {
+      if (child.startsWith(word)){
        
         ex.style.display="flex"
        
@@ -201,19 +201,7 @@ let searchbox=document.getElementById("search-bar")
       contact_holder.setAttribute("class", "contactholder")
       div_requests.append(contact_holder)
 
-      // const anker = document.createElement("a")
-      // anker.setAttribute("href","../../requestfrom.html?pro_id="+new_request[i].request_title)
-      // contact_holder.append(anker)
 
-      // const btn = document.createElement("button")
-      // btn.innerHTML = "EDIT"
-      // anker.append(btn)
-
-
-      // request_id = document.createElement("p");
-      // request_id.setAttribute("class", "addressp");
-      // request_id.innerHTML = "<span>request_id</span>:- "+new_request[i].request_id;
-      // contact_holder.append(request_id);
 
 
       request_title = document.createElement("p");
@@ -245,13 +233,22 @@ let searchbox=document.getElementById("search-bar")
 
 
       a1 = document.createElement("a");
-      a1.setAttribute("href", "../patientpages/buyproducts.html?requestname="+e["place_title"])
+      if(e["event"]==="event"){
+      a1.setAttribute("href", "../patientpages/contact.html?requestname="+e["place_title"])
+      
+      }
+      else{
+        a1.setAttribute("href", "../patientpages/buyproducts.html?requestname="+e["place_title"])
+
+      }
+      a1.setAttribute("id", "cont");
+      a1.innerText =e["place_title"]
       dropdown1.append(a1)
       //    button class join 
-      button = document.createElement("button");
-      button.setAttribute("class", "join");
-      button.innerText = "Get Product"
-      a1.append(button);
+      // button = document.createElement("button");
+      // button.setAttribute("class", "join");
+      // button.innerText =e["place_title"]
+      // a1.append(button);
       document.querySelector(".sec2").append(div_requests);
     }
     })
@@ -263,6 +260,8 @@ let searchbox=document.getElementById("search-bar")
   </script>
   <script src="../../assets/js/screenreader.js"></script>
   <script src="../../assets/js/contentreader.js"></script>
+  <script src="../../assets/js/autospeech.js"></script>
+  <script src="../../assets/js/voicenavigator.js"></script>
   
   
   <script>
@@ -297,7 +296,7 @@ let searchbox=document.getElementById("search-bar")
         cnts++;
       }
       screenreader_content(".dropdown1 a,.contactholder p", cnts, "You reached the end")
-  
+     
     }
    
     if (event.keyCode == 38) {
@@ -331,32 +330,36 @@ let searchbox=document.getElementById("search-bar")
   
   
   </script>
+
+
   <script>
-    //   document.addEventListener("click",e=>{
-    //   loader()
-    // })
-    function loader() {
-            if(localStorage.getItem("userprofile_name")){
-         console.log("user registered");
-      }
-      else{
-        let iam = new SpeechSynthesisUtterance("Hi there now you are in Events page use up arrow and down arrow to navigate by hearing the Event place nearby you and Click the shift button to get product");
-    speechSynthesis.speak(iam);
-    console.log(iam);
+      
     
-      }
+    document.addEventListener("DOMContentLoaded", e => {
+        loader("Hi there now you are in Events page use up arrow and down arrow to navigate  by hearing the Event place nearby you and Click the shift button to get product or say the place after mic on")
+    })
+  
+    document.addEventListener("dblclick", e => {
+      loader("Hi there now you are in Events page use up arrow and down arrow to navigate by hearing the Event place nearby you and Click the shift button to get product")
+    })
+    function micon(){
+      let micoff = new SpeechSynthesisUtterance("mic on");
+     speechSynthesis.speak(micoff);
     }
-    let intervalID = setInterval(loader,100) // executes every 1 second (1000 ms)
 
-// End the interval after 10 seconds using setTimeout()
-setTimeout(function() {
-  clearInterval(intervalID); // clear the interval using the saved interval ID
-}, 100);
-document.addEventListener("dblclick", e => {
-    loader()
-    // inc=0
-  })
-  </script>
-</body>
-
+    function starter(){
+    converter("a,button")
+    }
+    
+    function inter(n){
+      setInterval(starter,n)
+    }
+  function inter1(e){
+      setInterval(micon,e)
+      inter(e+2000)
+      inter1(e+7000)
+    }
+    inter1(16000)
+    </script>
+  
 </html>

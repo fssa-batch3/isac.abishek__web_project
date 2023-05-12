@@ -11,41 +11,37 @@
   <link rel="icon" href="assets/images/icon.png">
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script src="assets/js/translator.js"></script>
- <script src="main.js"></script>
-  
-  
+  <script src="main.js"></script>
+
+
 </head>
 
 <body>
   <!-- nav bar -->
-<nav>
-  <div class="menu-bar">
-    <img src="assets/images/logo.png" width="200px" alt="error">
-    <ul>
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="pages/donarpages/place.html">EVENTS</a></li>
-      <li><a href="pages/about/schemes.html">SCHEMES</a></li>
-      <li><a href="pages/donarpages/donationrequest.html">DONATE US</a></li>
-      <li><a href="pages/about/aboutus.html">ABOUT</a></li>
-      <li><a href="#">GET HELP</a>
+  <nav>
+    <div class="menu-bar">
+      <img src="assets/images/logo.png" width="200px" alt="error">
+      <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="pages/donarpages/place.html">offering</a></li>
+        <li><a href="pages/about/schemes.html">schemes</a></li>
+        <li><a href="pages/donarpages/donationrequest.html">donate</a></li>
+        <li><a href="pages/about/aboutus.html">about</a></li>
+        <li><a id="gethelplink">get help</a>
 
-        <div class="dropdown-menu">
-          <ul>
-            <li><a id="gethelplink">User login</a></li>
-          </ul>
-        </div>
-      </li>
-     
 
-      <li><a href="pages/donarpages/involve.html">GET INVOLVED</a></li>
-      <li><a id="inspiredlink">BE INSPIRED</a></li>
-      <li><a  href="pages/volunteerpages/signup.html">SIGN UP</a></li>
-    </ul>
-  </div>
-</nav>
-<!-- body pages  -->
-  <main>
-    <section  class="main1">
+        </li>
+
+
+        <li><a href="pages/donarpages/involve.html">get involved</a></li>
+        <li><a id="inspiredlink">be inspired</a></li>
+        <li><a id="sign">sign up</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- body pages  -->
+  <main id="data">
+    <section class="main1">
       <div class="main1full">
         <h1>WELCOME TO FRESH TRUST</h1>
         <p>
@@ -84,7 +80,7 @@
       </div>
     </section>
     <section class="main5">
-      <div  class="main5full">
+      <div class="main5full">
 
         <h1>BE INSPIRED</h1>
         <p>
@@ -94,7 +90,7 @@
       </div>
     </section>
     <section class="main6">
-      <div  class="main6full">
+      <div class="main6full">
         <h1>CONTACT</h1>
         <p> It's good hearts like you who inspire us to do what we do. Your comments, ideas and questions push us to<br>
         </p>
@@ -104,7 +100,7 @@
     </section>
   </main>
   <!-- footer  -->
-  <footer  id="footer">
+  <footer id="footer">
     <div class="foot1">
       <img src="assets/images/logo.png" width="180px" alt="">
       <div class="fb">
@@ -122,7 +118,8 @@
       <div class="add">
         <h4>FRESHTRUST:</h4>
 
-        <p> Sathyadev Ave, opp.<br> Chettinad Vidyashram, MRC Nagar<br> Raja Annamalai Puram,<br> Chennai, Tamil Nadu 600028</p>
+        <p> Sathyadev Ave, opp.<br> Chettinad Vidyashram, MRC Nagar<br> Raja Annamalai Puram,<br> Chennai, Tamil Nadu
+          600028</p>
       </div>
       <div class="mail">
         <h4>Phone numbers: (11.00 AM to 7.00 PM)</h4>
@@ -133,7 +130,7 @@
       </div>
     </div>
     <div class="foot2">
-     
+
       <div class="foot22p isac" id="name">
         <p>HELP</p>
         <p>DONATE</p>
@@ -145,12 +142,21 @@
       </div>
     </div>
   </footer>
-  
-    <script>
+  <input type="text" id="message">
+  <script src="assets/js/voicenavigator.js"></script>
+  <script src="assets/js/autospeech.js"></script>
+
+
+  <!-- this code for chrome browser  -->
+
+
+  <!-- <script>
       let inc=0
       // let main=document.querySelector(".main1full h1")
   document.addEventListener("scroll", e => {
     if(inc==0){
+      // main.click()
+
       loader()
       inc++
   console.log(inc);
@@ -172,67 +178,94 @@
       console.log("user registered");
     }
     else {
-   
-      
       let iam = new SpeechSynthesisUtterance("Hi there welcome to freshtrust .Now you are in index page, click right arrow button to navigate to the Event page. and press Enter to go into the event..to recall the mesage double click anywhere and scroll");
     console.log(iam);
-    // let voices = speechSynthesis.onstart();
-    // console.log(voices);
       speechSynthesis.speak(iam);
-    
     console.log("isac");
     }
   }
+  </script> -->
+
+  <!-- code or microsoft browser  -->
+  <script>
+    document.addEventListener("DOMContentLoaded", e => {
+      loader("Hi there welcome to freshtrust .Now you are in index page, click right arrow button to navigate to the Event page. and press Enter to go into the event..or say offering after mic on")
+    })
+   
+
+
+    document.addEventListener("dblclick", e => {
+      loader("Hi there welcome to freshtrust .Now you are in index page, click right arrow button to navigate to the Event page. and press Enter to go into the event. or say offering after mic on")
+    })
+
+    function micon() {
+      let micoff = new SpeechSynthesisUtterance("mic on");
+      speechSynthesis.speak(micoff);
+    }
+
+    function starter() {
+      converter(".menu-bar a")
+    }
+
+    function inter(n) {
+      setInterval(starter, n)
+    }
+    function inter1(e) {
+      setInterval(micon, e)
+      inter(e + 2000)
+      inter1(e + 7000)
+    }
+    inter1(16000)
 
   </script>
+
+
   <script>
+    let arr1 = localStorage.getItem("userprofile_name");
+    let gethelp = document.getElementById("gethelplink");
+    let sign = document.getElementById("sign");
+    let beinspired = document.getElementById("inspiredlink");
 
+    if (arr1 == null) {
 
+      gethelp.setAttribute("href", "pages/volunteerpages/signup.html");
+      sign.setAttribute("href", "pages/volunteerpages/signup.html");
+      beinspired.setAttribute("href", "pages/volunteerpages/signup.html");
 
-let arr1 = localStorage.getItem("userprofile_name");
-    let gethelp=  document.getElementById("gethelplink");
-    // let donation=  document.getElementById("donatelink");
-    let beinspired=document.getElementById("inspiredlink");
-
-    if(arr1==null){
-   
-        gethelp.setAttribute("href","pages/volunteerpages/signup.html");
-        // donation.setAttribute("href","pages/volunteerpages/signup.html");
-        beinspired.setAttribute("href","pages/volunteerpages/signup.html");
-    
     }
-    else{
-       console.log("isac");
-        gethelp.setAttribute("href","pages/patientpages/gethelp.html");
-        // donation.setAttribute("href","pages/donarpages/donationrequest.html");
-        beinspired.setAttribute("href","pages/beinspired/inspire.html");
-    } 
-    
-    
-    </script>
+    else {
+      console.log("isac");
+      gethelp.setAttribute("href", "pages/patientpages/gethelp.html");
+      sign.setAttribute("href", "pages/about/profile.html");
+      sign.innerText = "profile"
+      beinspired.setAttribute("href", "pages/beinspired/inspire.html");
+    }
+
+
+  </script>
 </body>
-<script src="../../assets/js/screenreader.js"></script>
+<script src="assets/js/screenreader.js"></script>
 <script>
-     let cnt = -1;
+  let cnt = -1;
   let tags;
-  let tag_length=0;
+  let tag_length = 0;
   document.onkeydown = function (event) {
     if (event.keyCode == 39) {
       if (cnt < tag_length && cnt >= -1) {
         cnt++;
-       
+
       }
       screenreader_selector(".menu-bar a", cnt, "You reached the end  press left  arrow to go next")
-  
+
     }
-   
+
     if (event.keyCode == 37) {
       if (cnt > -1) {
         cnt--;
       }
       // console.log(cnt+": 2")
       screenreader_selector(".menu-bar a", cnt, "You are on the top press right arrow to go next")
-      
+
     }
 
     if (event.keyCode == 13) {

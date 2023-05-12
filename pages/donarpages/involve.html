@@ -10,10 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="icon" href="../../assets/images/icon.png">
   <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
-  
+
   <script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script src="../../assets/js/translator.js"></script>
+  
   <script src="../../assets/js/sweetalert.min.js"></script>
   <title>gethelp</title>
 </head>
@@ -30,12 +29,14 @@
     <div id="google_translate_element" class="translate"></div>
 
     <div class="side-nav">
-      <a href="../../index.html"> <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg"></a>
+      <a href="../../index.html"> <img src="../../assets/images/logo.png" width="250px" alt="image error"
+          class="logoimg"></a>
       <ul class="navlinks">
 
 
         <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
-        <li><a href="../donarpages/donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a></li>
+        <li><a href="../donarpages/donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a>
+        </li>
         <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i>
             <p>About</p>
           </a></li>
@@ -80,18 +81,17 @@
         <img src="../../assets/images/buyproducts.jpg" width="600px" alt="error">
       </section><br>
       <section class="sec1">
-        <img src="../../assets/images/donate1.jpg"width="500px" alt="error">
+        <img src="../../assets/images/donate1.jpg" width="500px" alt="error">
         <div class="donate">
-          <h1> BE A DONAR</h1>
-          <p>In
-            addition, volunteering can be a way to meet new people, learn new skills,<br> and gain useful experienceThe
+          <h1>Volunteer Works</h1>
+          <p>volunteering can be a way to meet new people, learn new skills,<br> and gain useful experienceThe
             opportunities are huge. There is something<br> that you can do with whatever skills and experience you have.
             The best way<br> to see what is available is to contact us.
             The biggest problem for many people is finding<br> the time to volunteer. It can reduce your choices if you
             don’t have much time to spare,<br> but many busy people do find suitable opportunities.</p>
-         
-          <a id="join2"><button class="join">Create account</button></a>
-         
+
+          <a id="join1"><button class="join">See Works</button></a>
+
         </div>
       </section>
     </div>
@@ -137,31 +137,42 @@
         </div>
       </div>
     </footer>
-   
+    <input type="text" id="message">
+    <script src="../../assets/js/voicenavigator.js"></script>
     <script>
 
-     
 
-    let arr1 = localStorage.getItem("userprofile_name");
-    let gethelp=  document.getElementById("gethelp");
-    // let donation=  document.getElementById("donationlink");
-    let beinspired=document.getElementById("beinspiredlink");
-   let profile=document.getElementById("myprofile");
 
-    if(arr1==null||arr==false){
-   
-        gethelp.setAttribute("href","../volunteerpages/signup.html");
+      let arr1 = localStorage.getItem("userprofile_name");
+      let volunteers = [];
+      let a = document.querySelectorAll("#join1")
+
+      let arr2 = JSON.parse(localStorage.getItem("user"))
+      // arr2.forEach(e => {
+      //   if(e["volunteer"]==true){
+      // //  volunteers.push(e["user_email"])
+      //   }
+      //   console.log(volunteers);
+      // });
+      let gethelp = document.getElementById("gethelp");
+      // let donation=  document.getElementById("donationlink");
+      let beinspired = document.getElementById("beinspiredlink");
+      let profile = document.getElementById("myprofile");
+
+      if (arr1 == null || arr1 == false) {
+
+        gethelp.setAttribute("href", "../volunteerpages/signup.html");
         // donation.setAttribute("href","../volunteerpages/signup.html");
-        beinspired.setAttribute("href","../volunteerpages/signup.html");
-        profile.setAttribute("href","../volunteerpages/signup.html");
-    }
-    else{
-       console.log("isac");
-        gethelp.setAttribute("href","../patientpages/gethelp.html");
+        beinspired.setAttribute("href", "../volunteerpages/signup.html");
+        profile.setAttribute("href", "../volunteerpages/signup.html");
+      }
+      else {
+        console.log("isac");
+        gethelp.setAttribute("href", "../patientpages/gethelp.html");
         // donation.setAttribute("href","../donarpages/donationrequest.html");
-        beinspired.setAttribute("href","../beinspired/inspire.html");
-        profile.setAttribute("href","../about/profile.html");
-    } 
+        beinspired.setAttribute("href", "../beinspired/inspire.html");
+        profile.setAttribute("href", "../about/profile.html");
+      }
 
 
       let button = document.querySelectorAll(".join")
@@ -171,97 +182,140 @@
 
       let arr = localStorage.getItem("userprofile_name");
       // let arr2 = JSON.parse(localStorage.getItem("volprofile_name"));
-      for (i = 0; i < button.length; i++) {
-        button[i].addEventListener("click", function () {
-          if (arr == null) {
-            let a1=document.getElementById("join1")
-            let a2=document.getElementById("join2")
+      // for (i = 0; i < button.length; i++) {
+      //   button[i].addEventListener("click", function () {
+      //     if (arr1 !== null) {
+      //       let a1 = document.getElementById("join1")
+      //       let a2 = document.getElementById("join2")
 
-            
-            a1.setAttribute("href", "../volunteerpages/signup.html")
-            a2.setAttribute("href", "../volunteerpages/signup.html")
+      //       arr2.forEach(e => {
+      //         if (e["volunteer"] == true) {
+      //           volunteers.push(e)
+      //           volunteers.find(el=>{
+      //             if(el["user_email"]==arr1){
+      //               console.log("current user is volunteer");
+      //           a2.setAttribute("href", "../volunteerpages/volunteerwork.html")
+      //             }
+      //           })
 
+
+
+      //         }
+
+      //       });
+
+      //     }
+      //     else {
+      //       a1.setAttribute("href", "../volunteerpages/signup.html")
+
+      //       swal("sorry!", "you dont have account", "error");
+      //     }
+      //   })
+      // }
+      let inc = 0
+      button.forEach(element => {
+        element.addEventListener("click", e => {
+          if (arr1 !== null) {
+            arr2.find(e => {
+              if (e["user_email"] == arr1 && e["volunteer"] == true) {
+                inc = 1
+              }
+
+            })
           }
           else {
-            swal("sorry!", "you already have account", "error");
+            window.location.href = "../volunteerpages/signup.html"
           }
-        })
-      }
+          if (inc == 0) {
+            button.forEach(ey => {
+              ey.addEventListener("click", ex => {
+                console.log("isac");
+                swal("sorry!", "you have User Account", "error");
 
+              })
+            })
+          }
+          else {
+            button[0].addEventListener("click", n => {
+              swal("sorry!", "you already have volunteer account", "error");
+            })
+            a[1].setAttribute("href", "../volunteerpages/volunteerwork.html")
+          }
+
+        })
+      });
+
+    </script>
+    <script src="../../assets/js/screenreader.js"></script>
+    <script src="../../assets/js/contentreader.js"></script>
+
+
+    <script>
+      let cnt = -1;
+      let tags;
+      let tag_length = 0;
+
+
+      let cnts = -1;
+      let tag;
+      let tags_length = 0;
+
+      document.onkeydown = function (event) {
+        if (event.keyCode == 39) {
+          if (cnt < tag_length && cnt >= -1) {
+            cnt++;
+          }
+          screenreader_selector(".side-nav a", cnt, "You reached the end")
+
+        }
+
+        if (event.keyCode == 37) {
+          if (cnt > -1) {
+            cnt--;
+          }
+          // console.log(cnt+": 2")
+          screenreader_selector(".side-nav a", cnt, "You are on the top")
+
+        }
+        if (event.keyCode == 40) {
+          if (cnts < tags_length && cnts >= -1) {
+            cnts++;
+          }
+          screenreader_content(".volunteer h1,.volunteer a,.donate h1,.dontate a", cnts, "You reached the end")
+
+        }
+
+        if (event.keyCode == 38) {
+          if (cnts > -1) {
+            cnts--;
+          }
+          // console.log(cnt+": 2")
+          screenreader_content(".volunteer h1,.volunteer a,.donate h1,.dontate a", cnts, "You are on the top")
+
+        }
+        if (event.keyCode == 13) {
+          let anchorTags = document.querySelectorAll(".side-nav a");
+          anchorTags[cnt].click();
+        }
+        if (event.keyCode == 16) {
+          let contentanchor = document.querySelectorAll(".volunteer h1,.volunteer a,.donate h1,.dontate a")
+          contentanchor[cnts].click();
+        }
+
+      };
+
+    </script>
+
+
+    <script>
+      document.addEventListener('keydown', function (event) {
+        if (event.keyCode >= 37 && event.keyCode <= 40) {
+          event.preventDefault();
+        }
+      });
 
 
     </script>
-  <script src="../../assets/js/screenreader.js"></script>
-  <script src="../../assets/js/screenreader.js"></script>
-  <script src="../../assets/js/contentreader.js"></script>
-  
-  
-  <script>
-      let cnt = -1;
-  let tags;
-  let tag_length=0;
-  
-  
-  let cnts = -1;
-  let tag;
-  let tags_length=0;
-  
-  document.onkeydown = function (event) {
-    if (event.keyCode == 39) {
-      if (cnt < tag_length && cnt >= -1) {
-        cnt++;
-      }
-      screenreader_selector(".side-nav a", cnt, "You reached the end")
-  
-    }
-   
-    if (event.keyCode == 37) {
-      if (cnt > -1) {
-        cnt--;
-      }
-      // console.log(cnt+": 2")
-      screenreader_selector(".side-nav a", cnt, "You are on the top")
-      
-    }
-    if (event.keyCode == 40) {
-      if (cnts < tags_length && cnts >= -1) {
-        cnts++;
-      }
-      screenreader_content(".volunteer h1,.volunteer a,.donate h1,.dontate a", cnts, "You reached the end")
-  
-    }
-   
-    if (event.keyCode == 38) {
-      if (cnts > -1) {
-        cnts--;
-      }
-      // console.log(cnt+": 2")
-      screenreader_content(".volunteer h1,.volunteer a,.donate h1,.dontate a", cnts, "You are on the top")
-      
-    }
-    if (event.keyCode == 13) {
-      let anchorTags = document.querySelectorAll(".side-nav a");
-      anchorTags[cnt].click();
-    }
-    if (event.keyCode == 16) {
-      let contentanchor=document.querySelectorAll(".volunteer h1,.volunteer a,.donate h1,.dontate a")
-      contentanchor[cnts].click();
-    }
-  
-  };
-  
-  </script>
-  
-  
-  <script>
-      document.addEventListener('keydown', function(event) {
-    if (event.keyCode >= 37 && event.keyCode <= 40) {
-      event.preventDefault();
-    }
-  });
-  
-  
-  </script>
 </body>
 
 </html>

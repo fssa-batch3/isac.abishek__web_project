@@ -31,8 +31,8 @@
 	 /* margin-top: 50px; */
 }
 .form-box {
-	width: 380px;
-	height: 650px;
+	width: 400px;
+	height: 700px;
 	position: relative;
 	margin:6% auto;
 	background: #FFF;
@@ -163,10 +163,13 @@ h2{
     position:absolute;
     z-index: 1;
   
-    bottom:450px;
+    bottom:500px;
     left: 50px;
     margin:auto;
     text-align: center;
     color: #6C3DD9;
   
+}
+#accessblity{
+	margin-top: 20px;
 }

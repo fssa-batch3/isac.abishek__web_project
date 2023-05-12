@@ -53,7 +53,9 @@
                 <input type="text" class="input-field" placeholder="address" required id="address" />
                 <input type="email" class="input-field" placeholder="Enter Email" required id="email" />
                 <label for="volunteer"><input type="radio" name="user" id="volunteer" required> Volunteer</label>
-                <label for="user"><input type="radio" name="user" id="user">User</label>
+                <label for="user"><input type="radio" name="user" id="user">User</label><br>
+                <label for="accessblity"><input type="checkbox" name="accessblity" id="accessblity">Accessblity</label>
+                
                 <input type="password" class="input-field" placeholder="Enter Password"
                     title="password must contain 8charcters with one symbol,one Capital and no spaces" required id="password"
                      pattern="^(?=.*[A-Z])(?=.*[\W])(?!.*\s).{8,12}$"/>
@@ -127,7 +129,7 @@
             let password = document.getElementById("password").value
             let confirmpassword = document.getElementById("confirmpassword").value
             let aadhar = document.getElementById("aadhar").value
-
+            let accessblity=document.getElementById("accessblity").checked
 
             let role1 = document.getElementById("user").checked
             let role2 = document.getElementById("volunteer").checked
@@ -147,13 +149,13 @@
                 "address": address,
                 "aadhar": aadhar,
                 "user": role1,
-                "volunteer": role2
+                "volunteer": role2,
+                "accessblity":accessblity
             }
 
             // checking the pasword are equal and the email alredy registred or not 
             if (password == confirmpassword) {
                 let email_check = JSON.parse(localStorage.getItem("user"));
-                // let email_check1 = JSON.parse(localStorage.getItem("volunteer"));
                 let checkusermail = 0;
                 if (email_check !== null) {
 
@@ -164,41 +166,13 @@
 
                     })
                 }
-
-                // if (email_check1 !== null) {
-                //     email_check1.find(function (e) {
-                //         if (e["user_email"] == email) {
-                //             return checkusermail = 1
-                //         }
-
-                //     })
-                // }
-
                 if (checkusermail == 1) {
                     swal("sorry!", "the email is already registered", "error");
                 }
                 else {
-
-                    // if (role1) {
-
-
-
                     arr.push(user_data)
                     localStorage.setItem("user", JSON.stringify(arr))
                     move();
-
-
-                    // }
-                    // else {
-
-                    // arr2.push(user_data)
-                    // localStorage.setItem("volunteer", JSON.stringify(arr2))
-                    // move();
-                    // }
-
-                    // }
-
-
                 }
             }
             else {

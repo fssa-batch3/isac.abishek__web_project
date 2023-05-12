@@ -18,19 +18,19 @@
 
   </div> -->
   <div  class="side-nav">
-   a <a href="../../index.html">  <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg"></a>
+   <a href="../../index.html">  <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg"></a>
   <ul class="navlinks">
        
         
-        <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
-        <li><a href="../donarpages/donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a></li>
-        <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i>About</a></li>
-        <li><a href="../patientpages/gethelp.html"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
-        <li><a href="../donarpages/place.html"><i class="fa-solid fa-calendar-days"></i>Events</a></li>
+        <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>schemes</a></li>
+        <li><a href="../donarpages/donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>donate</a></li>
+        <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i>about</a></li>
+        <li><a href="../patientpages/gethelp.html"><i class="fa-solid fa-truck-medical"></i>get help</a></li>
+        <li><a href="../donarpages/place.html"><i class="fa-solid fa-calendar-days"></i>offering</a></li>
 
-        <li><a href="../donarpages/involve.html"><i class="fa-solid fa-life-ring"></i>GetInvolved</a></li>
-        <li><a href="../beinspired/inspire.html"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
-        <li><a href="../volunteerpages/profile.html"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
+        <li><a href="../donarpages/involve.html"><i class="fa-solid fa-life-ring"></i>getvinvolved</a></li>
+        <li><a href="../beinspired/inspire.html"><i class="fa-solid fa-dragon"></i>be inspired</a></li>
+        <li><a href="../volunteerpages/profile.html"><i class="fa-solid fa-hospital-user"></i>profile</a></li>
         <div class="active"></div>
       </ul>
   </div>
@@ -43,7 +43,11 @@
       <i class="fa-solid fa-signature profileicons"></i> <label for="user_name">name : </label>
       <br>
       <input type="text" id="user_name" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"  disabled>
-     <!-- <p id="user_name">isaxc</p> -->
+      <br><br><i class="fa-solid fa-signature profileicons"></i> <label for="accessblity">accessblity </label>
+      <br>
+      <input type="checkbox" id="accessblity" disabled>
+     
+      <!-- <p id="user_name">isaxc</p> -->
   </div>
   
 </div>
@@ -70,17 +74,17 @@
      <!-- <a href="../../index.html"><button id="logoutbtn">logout</button></a> -->
      <button id="deletebtn">log out</button>
     </form>
-    <a href="../patientpages/appointment.html"><button id="text" style="font-size: 11px;">Appointments</button></a>
+    <a href="../patientpages/appointment.html"><button id="text" style="font-size: 11px;">My activities</button></a>
 
    </div>
  </div>
- 
+ <input type="text" id="message" style="margin-left: 300px;">
+    <script src="../../assets/js/voicenavigator.js"></script>
+    <script src="../../assets/js/autospeech.js"></script>
   <script>
     let form=document.getElementById("form")
     form.addEventListener("submit", e => {
             e.preventDefault();
-           
-
         })
 
     
@@ -97,7 +101,15 @@
           result=e  
 
           document.getElementById("user_name").value = result["user_name"]
-   
+          if (e["accessblity"]===true) {
+          document.getElementById("accessblity").checked=true
+            
+          }
+          else{
+          document.getElementById("accessblity").checked=false
+
+          }
+
     document.getElementById("mobile_no").value = result["mobileno"]
     document.getElementById("addhar").value= result["aadhar"]
     
@@ -134,7 +146,7 @@
       document.getElementById("mobile_no").removeAttribute("disabled")
       document.getElementById("addhar").removeAttribute("disabled")
       document.getElementById("address").removeAttribute("disabled")
-      // document.getElementById("email").removeAttribute("disabled")
+      document.getElementById("accessblity").removeAttribute("disabled")
      
       toggled=1;
 
@@ -149,6 +161,15 @@
          let addhar=document.getElementById("addhar").value
          let mobile= document.getElementById("mobile_no").value
          let address=  document.getElementById("address").value
+
+         let accessblity;
+         if(document.getElementById("accessblity").checked){
+          accessblity=true
+         }
+         else{
+          accessblity=false
+         }
+          
        toggled=0;
       let new_array=JSON.parse(localStorage.getItem("user"));
          
@@ -160,12 +181,16 @@
           element["aadhar"]=addhar;
           element["mobileno"]=mobile;
           element["address"]=address
+          element["accessblity"]=accessblity
+
        
           localStorage.setItem("user",JSON.stringify(new_array))
           document.getElementById("user_name").setAttribute("disabled","")
       document.getElementById("mobile_no").setAttribute("disabled","")
       document.getElementById("addhar").setAttribute("disabled","")
       document.getElementById("address").setAttribute("disabled","")
+      document.getElementById("accessblity").setAttribute("disabled","")
+
         }
        
       })
@@ -256,9 +281,36 @@ document.onkeydown = function (event) {
 
 };
 
+
   
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", e => {
+        loader("hi now your are in profile page you can turn off the accessblity option")
+    })
   
+    document.addEventListener("dblclick", e => {
+      loader("hi now your are in profile page you can turn off the accessblity option")
+    }) 
+     function micon(){
+        let micoff = new SpeechSynthesisUtterance("mic on");
+       speechSynthesis.speak(micoff);
+      }
+  
+      function starter(){
+      converter("a,button")
+      }
+      
+      function inter(n){
+        setInterval(starter,n)
+      }
+    function inter1(e){
+        setInterval(micon,e)
+        inter(e+2000)
+        inter1(e+7000)
+      }
+      inter1(10000)
+    </script>
   
   <script>
       document.addEventListener('keydown', function(event) {

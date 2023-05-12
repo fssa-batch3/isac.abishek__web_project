@@ -2,6 +2,25 @@
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
-    "husky": "^8.0.3"
+    "@html-eslint/eslint-plugin": "^0.18.0",
+    "@html-eslint/parser": "^0.18.0",
+    "eslint": "^8.39.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-code-complexity": "^1.1.1",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-prettier-standard": "^4.0.1",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-html": "^7.1.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-vue": "^9.11.0",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.8",
+    "prettier-config-standard": "^5.0.0"
   }
 }

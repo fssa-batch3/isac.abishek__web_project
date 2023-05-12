@@ -11,8 +11,7 @@
     <script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
     <link rel="icon" href="../../assets/images/icon.png">
     <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script src="../../assets/js/translator.js"></script>
+  
     <script src="../../assets/js/sweetalert.min.js"></script>
     <title>gethelp</title>
 </head>
@@ -23,7 +22,6 @@
         <input type="checkbox" id="click" >
   
       </div> -->
-    <div id="google_translate_element" class="translate"></div>
 
     <div  class="side-nav">
       <a href="../../index.html">   <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg"></a>
@@ -61,6 +59,9 @@
     <button type="submit">send</button>
 </form>
     </div>
+    <script src="../../assets/js/autospeech.js"></script>
+    <input type="text" id="message">
+    <script src="../../assets/js/voicenavigator.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
       let username=localStorage.getItem("userprofile_name")
@@ -200,6 +201,17 @@ function re(){
   
   </script>
 </body>
+<script>
+  document.addEventListener("DOMContentLoaded", e => {
+    loader("Hi there now you are in request donation page ")
+
+  })
+
+  document.addEventListener("dblclick", e => {
+    loader("Hi there now you are in request donation page ")
+
+  })
+  </script>
 <script src="../../assets/js/voicetotext.js"></script>
 
 </html>

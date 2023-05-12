@@ -232,7 +232,7 @@ else {
         "source": "https://iili.io/HNRzLYJ.jpg",
         "alternatetext": "hospitalimage"
       },
-      hospital_title: "apolo",
+      hospital_title: "apollo",
       doctor_name: "Isac",
       status: true,
       specialist_in: "Bone Surgery",
@@ -257,12 +257,25 @@ else {
       requests_images:
       {
         "source": "../../assets/images/flood.jpg",
-        "alternatetext": "hospitalimage"
+        "alternatetext": "flood"
       },
       request_title: "flood",
       about_request: "We fresthtrust decided to help flood in kerla help us by donating money.press the donate now to open donation portal",
       status: true,
       requested_by: "isac",
+      requests_address: "7305836758"
+    },
+    {
+
+      requests_images:
+      {
+        "source": "https://iili.io/HUfsTgV.jpg",
+        "alternatetext": "marina"
+      },
+      request_title: "marina Walk",
+      about_request: "We fresthtrust planned a event for diffrently abled people to visit marina beach so need some money to arrange the event .So please donate as mush as possible ",
+      status: true,
+      requested_by: "Fresh trust",
       requests_address: "7305836758"
     }
   ]
@@ -286,14 +299,32 @@ else {
       place_images:
       {
         "source": "https://iili.io/H8lK1MQ.jpg",
+        
         "alternatetext": "hospitalimage"
       },
       place_title: "Island Ground",
       about_title: "Product Donating And Distribuations",
       status: true,
+      event:"donation",      
+      organized_by: "Freshtrust",
+      place_address: "7305836758"
+    },
+    {
+
+      place_images:
+      {
+        "source": "https://iili.io/HUfsTgV.jpg",
+        
+        "alternatetext": "marina beach"
+      },
+      place_title:"Marina beach",
+      about_title: "Walk on marina beach",
+      status: true,
+      event:"event",
       organized_by: "Freshtrust",
       place_address: "7305836758"
     }
+
   ]
   localStorage.setItem("placerequests", JSON.stringify(place));
 }

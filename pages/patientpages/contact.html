@@ -12,8 +12,7 @@
   <link rel="icon" href="../../assets/images/icon.png">
   <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
   <script src="../../assets/js/sweetalert.min.js"></script>
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script src="../../assets/js/translator.js"></script>
+  
 
   <title>gethelp</title>
 </head>
@@ -31,19 +30,19 @@
     <ul class="navlinks">
 
 
-      <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
-      <li><a href="../donarpages/donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a>
+      <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>schemes</a></li>
+      <li><a href="../donarpages/donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>donate</a>
       </li>
       <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i>
-          <p>About</p>
+          <p>about</p>
         </a></li>
-      <li><a id="gethelplink"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
-      <li><a href="../donarpages/place.html"><i class="fa-solid fa-calendar-days"></i>Events</a></li>
+      <li><a id="gethelplink"><i class="fa-solid fa-truck-medical"></i>gethelp</a></li>
+      <li><a href="../donarpages/place.html"><i class="fa-solid fa-calendar-days"></i>offering</a></li>
 
 
-      <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>GetInvolved</a></li>
-      <li><a id="inspiredlink"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
-      <li><a id="myprofilelink"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
+      <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>get involved</a></li>
+      <li><a id="inspiredlink"><i class="fa-solid fa-dragon"></i>be inspired</a></li>
+      <li><a id="myprofilelink"><i class="fa-solid fa-hospital-user"></i>your profile</a></li>
       <div class="active"></div>
     </ul>
   </div>
@@ -53,15 +52,15 @@
       <h3>Contact Us to Get Product On Event Days</h3>
       <!-- <img src="../../assets/images/donationrequest.jpg" alt=""> -->
 
-      <input type="text" id="name" placeholder="yourname" required pattern="[a-zA-Z]+"
+      <input type="text" id="name" placeholder="yourname"  pattern="[a-zA-Z]+"
         title="name must only in alphabets">
 
-      <input type="email" id="email" placeholder="emailid" required>
+      <input type="email" id="email" placeholder="emailid" >
 
-      <input type="text" id="phone" placeholder="yourmobile" required pattern="[0-9]\d*" maxlength="10"
+      <input type="text" id="phone" placeholder="yourmobile"   maxlength="10"
         title="mobile number must be 10 digit number">
       <textarea name="message" id="message" rows="4" placeholder="say something about you" required></textarea>
-      <button type="button" id="voice">Speak about yourself to help you and slash button recall it</button>
+      <button type="button" id="voice">Speak about yourself to help you </button>
       <button id="hear" type="button">Hear message</button>
 
       <button type="submit" id="mail">send</button>
@@ -70,6 +69,9 @@
 
 
   </div>
+  <script src="../../assets/js/autospeech.js"></script>
+  <input type="text" id="message">
+  <script src="../../assets/js/voicenavigator.js"></script>
   <script>
     let arrs = localStorage.getItem("userprofile_name");
      console.log(arrs);
@@ -124,6 +126,8 @@
     let productname = url[1].split("=")[1]
     // let placesel ="  "
     // let productname="   "
+    document.getElementById("name").value=placesel
+     document.getElementById("phone").value=productname
 
     if (localStorage.getItem("userprofile_name")) {
       let pro = JSON.parse(localStorage.getItem("productrequest"))
@@ -153,20 +157,6 @@
       // }
       // setInterval(re, 1000);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
     let input = '1234567890'
 
     let otp = '';
@@ -195,12 +185,16 @@
           + '<br> Hi freshtrust ' + document.getElementById('message').value
           + '<br>place: ' + placesel
           + '<br> product: ' + productname
+          
 
       }).then(
+        
         //   message => swal('yep!', 'email sent to us we will contact you soon', 'sucess')
-        message => alert(message)
+        (message) =>{ console.log(message)}
       );
-      
+      let micoff = new SpeechSynthesisUtterance("message sent");
+ //   console.log(iam);
+     speechSynthesis.speak(micoff);
       setInterval(re, 10000);
     }
     function re() {
@@ -287,38 +281,18 @@
   </script>
 
 </body>
+
 <script>
-  // document.addEventListener("", e => {
-  //   loader()
-  // })
-  function loader() {
-    if (localStorage.getItem("userprofile_name")) {
-      console.log("user registered");
-    }
-    else {
-      document.getElementById("name").value = "User"
-      document.getElementById("email").value = "User@email"
-      document.getElementById("phone").value = "8608841226"
-      let iam = new SpeechSynthesisUtterance("Hi there now you are in contact page use up arrow and down arrow to navigate by hearing the message by speak and hear button and Click the shift button when you selet the send button then press enter at last ");
-      speechSynthesis.speak(iam);
-      console.log(iam);
+  document.addEventListener("DOMContentLoaded", e => {
+    loader("Hi there now you are in contact page use up arrow and down arrow to navigate by hearing the command and Click the shift button to contact")
 
-    }
-  }
-
-  let intervalID = setInterval(loader,100) // executes every 1 second (1000 ms)
-
-// End the interval after 10 seconds using setTimeout()
-setTimeout(function() {
-  clearInterval(intervalID); // clear the interval using the saved interval ID
-}, 100);
-
-document.addEventListener("dblclick", e => {
-    loader()
-    // inc=0
   })
-  
-</script>
+
+  document.addEventListener("dblclick", e => {
+    loader("Hi there now you are in contact page use up arrow and down arrow to navigate by hearing the command and Click the shift button to contact")
+
+  })
+  </script>
 <script src="../../assets/js/voicetotext.js"></script>
 
 </html>

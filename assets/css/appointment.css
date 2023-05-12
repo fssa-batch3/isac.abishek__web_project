@@ -28,7 +28,9 @@ h1 {
     justify-content: center;
     margin-top: 65px;
     margin-bottom: 65px;
+    margin-left: 300px;
      padding-left: 40px;
+     width: 1000px;
 }
 
 .card {

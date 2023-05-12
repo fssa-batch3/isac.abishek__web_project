@@ -13,8 +13,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script src="../../assets/js/translator.js"></script>
+  
   <script src="../../assets/js/sweetalert.min.js"></script>
   <title>donation request</title>
 </head>
@@ -34,24 +33,24 @@
       <ul class="navlinks">
 
 
-        <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
-        <li><a href="../donarpages/donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a>
+        <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>schemes</a></li>
+        <li><a href="../donarpages/donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>donate</a>
         </li>
         <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i>
-            <p>About</p>
+            <p>about</p>
           </a></li>
-        <li><a id="gethelplink"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
-        <li><a href="place.html"><i class="fa-solid fa-calendar-days"></i>Events</a></li>
+        <li><a id="gethelplink"><i class="fa-solid fa-truck-medical"></i>get help</a></li>
+        <li><a href="place.html"><i class="fa-solid fa-calendar-days"></i>offering</a></li>
 
-        <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>GetInvolved</a></li>
-        <li><a id="inspiredlink"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
-        <li><a id="myprofilelink"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
+        <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>get involved</a></li>
+        <li><a id="inspiredlink"><i class="fa-solid fa-dragon"></i>be inspired</a></li>
+        <li><a id="myprofilelink"><i class="fa-solid fa-hospital-user"></i>profile</a></li>
         <div class="active"></div>
     </div>
   </nav>
   <section class="sec1">
     <div class="sec1h1 donationbg">
-    <a href="donationmail.html">  <button class="join pointer">request donation now</button></a>
+    <a href="donationmail.html">  <button class="join pointer">request donation</button></a>
       <h1>Donate now</h1>
     </div>
   </section>
@@ -60,7 +59,7 @@
       <h2>Here is our verified needs of help<br>Help us by donating to help them</h2>
       <div class="search-container">
         <input type="text" id="search-bar" placeholder="Search product by name...">
-        <button type="button" >Search</button>
+        <!-- <button type="button" >Search</button> -->
       </div>
     </section>
   </div>
@@ -106,6 +105,9 @@
       </div>
     </div>
   </footer>
+  <input type="text" id="message" style="margin-left: 300px;">
+  <script src="../../assets/js/voicenavigator.js"></script>
+  <script src="../../assets/js/autospeech.js"></script>
   <script>
      let arrs = localStorage.getItem("userprofile_name");
      console.log(arrs);
@@ -124,7 +126,7 @@
      }
      else{
         console.log("isac");
-         gethelp.setAttribute("href","gethelp.html");
+         gethelp.setAttribute("href","../patientpages/gethelp.html");
         //  donation.setAttribute("href","../donarpages/donationrequest.html");
          beinspired.setAttribute("href","../beinspired/inspire.html");
          profile.setAttribute("href","../about/profile.html");
@@ -326,9 +328,34 @@ let searchbox=document.getElementById("search-bar")
     }
   
   };
-  
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", e => {
+        loader("hi now your are in donation page you raise your donation request by saying request donation")
+    })
   
+    document.addEventListener("dblclick", e => {
+      loader("hi now your are in donation page you raise your donation request by saying request donation")
+    }) 
+     function micon(){
+        let micoff = new SpeechSynthesisUtterance("mic on");
+       speechSynthesis.speak(micoff);
+      }
+  
+      function starter(){
+      converter("a,button")
+      }
+      
+      function inter(n){
+        setInterval(starter,n)
+      }
+    function inter1(e){
+        setInterval(micon,e)
+        inter(e+2000)
+        inter1(e+7000)
+      }
+      inter1(10000)
+    </script>
   
   <script>
       document.addEventListener('keydown', function(event) {

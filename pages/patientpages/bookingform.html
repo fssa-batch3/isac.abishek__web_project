@@ -15,8 +15,7 @@
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
 	<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
 	<script src="../../assets/js/sweetalert.min.js"></script>
-	<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-	<script src="../../assets/js/translator.js"></script>
+
 </head>
 
 <body>
@@ -73,6 +72,8 @@
 		</div>
 	</div>
 </body>
+<input type="text" id="message">
+  <script src="../../assets/js/voicenavigator.js"></script>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 
 <script>
@@ -193,7 +194,7 @@
 			let arrs = {
 				"time": calender,
 				"key1": hospitalname,
-				"key2": op,
+				"key2": "booking id:- "+ op,
 				"user": user,
 				"img": img
 			}

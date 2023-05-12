@@ -15,8 +15,7 @@
     integrity="">
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script src="../../assets/js/translator.js"></script>
+   
     <title>schemes</title>
 </head>
 <body>
@@ -32,15 +31,15 @@
         <a href="../../index.html"> <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg"></a>
       <ul class="navlinks">
            
-            <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
-            <li><a id="donationlink"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a></li>
-            <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i><p>About</p></a></li>
-            <li><a id="gethelp"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
-            <li><a href="../donarpages/place.html"><i class="fa-solid fa-calendar-days"></i>Events</a></li>
+            <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>schemes</a></li>
+            <li><a id="donationlink"><i class="fa-solid fa-circle-dollar-to-slot"></i>donate</a></li>
+            <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i><p>about</p></a></li>
+            <li><a id="gethelp"><i class="fa-solid fa-truck-medical"></i>get help</a></li>
+            <li><a href="../donarpages/place.html"><i class="fa-solid fa-calendar-days"></i>offering</a></li>
 
-            <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>GetInvolved</a></li>
-            <li><a id="beinspiredlink"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
-            <li><a id="myprofile"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
+            <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>get involved</a></li>
+            <li><a id="beinspiredlink"><i class="fa-solid fa-dragon"></i>be inspired</a></li>
+            <li><a id="myprofile"><i class="fa-solid fa-hospital-user"></i>profile</a></li>
             <div class="active"></div>
         
 
@@ -51,7 +50,6 @@
 </nav>
 <main>
   <!-- content starts  -->
-  <div id="google_translate_element" class="translate"></div>
  
     <section>
         <div class="gethelpbg">
@@ -63,7 +61,7 @@
             <div class="volunteer">
                 <h1>GOVERNMENT SCHEMES</h1>
                 <p>In order to provide effective rehabilitation services to the differently abled persons, during 1993,<br> a separate Directorate for the Rehabilitation of the Differently Abled Persons<br> was formed by bifurcating the Directorate of Social Welfare. <br> </p>
-                    <a href="../patientpages/govt.html"><button class="join">VIEW SCHEMES</button></a>
+                    <a href="../patientpages/govt.html"><button class="join">view schemes</button></a>
             </div>
           <img src="../../assets/images/schemes.jpg" width="400px"  alt="error">
         </section><br>
@@ -72,7 +70,7 @@
         <div class="donate">
             <h1>HOW TO APPLY</h1>
             <p>Click the below button to  know how to apply for the government schemes in little steps</p>
-                <a href="apply.html"><button class="join">CLICK HERE</button></a>
+                <a href="apply.html"><button class="join">apply</button></a>
         </div>
     </section>
   </div>
@@ -117,7 +115,9 @@
           </div>
         </div>
       </footer>
-   
+      <input type="text" id="message" style="margin-left: 300px;">
+    <script src="../../assets/js/voicenavigator.js"></script>
+    <script src="../../assets/js/autospeech.js"></script>
       <script>
 
     
@@ -217,8 +217,34 @@ let arr = localStorage.getItem("userprofile_name");
       event.preventDefault();
     }
   });
-  
-  
   </script>
+   <script>
+    document.addEventListener("DOMContentLoaded", e => {
+        loader("hi now your are in schemes page you can select to view or hear by saying view schemes and how to apply for it by saying apply")
+    })
+  
+    document.addEventListener("dblclick", e => {
+      loader("hi now your are in schemes page you can select to view or hear by saying view schemes and how to apply for it by saying apply")
+    }) 
+     function micon(){
+        let micoff = new SpeechSynthesisUtterance("mic on");
+       speechSynthesis.speak(micoff);
+      }
+  
+      function starter(){
+      converter("a,button")
+      }
+      
+      function inter(n){
+        setInterval(starter,n)
+      }
+    function inter1(e){
+        setInterval(micon,e)
+        inter(e+2000)
+        inter1(e+7000)
+      }
+      inter1(10000)
+    </script>
       </body>
+      
       </html>

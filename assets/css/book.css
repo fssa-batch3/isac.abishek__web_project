@@ -7,17 +7,13 @@
 body {
     font-family: 'Merienda', cursive;
     margin: 0px;
-    
+
     background-image: url(../images/circle-scatter-haikei3.png);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
-@keyframes slide{
-    0%{opacity: 0;}
-    100%{ opacity: 1;}
-    }
 
 /* content starts  */
 .sec1h1 {
@@ -35,21 +31,24 @@ body {
     color: white;
     letter-spacing: 1px;
 }
-.donationbg{
+
+.donationbg {
     background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/donationrequest.jpg);
     background-position: bottom;
 }
+
 /* animation*/
-.sec1h1 h1{
+.sec1h1 h1 {
     background: url(../images/back.png);
     color: transparent;
     -webkit-text-stroke: 0.50px white;
     -webkit-background-clip: text;
     background-position: 0 0;
-    animation:back 20s linear infinite;
+    animation: back 20s linear infinite;
 }
-@keyframes back{
-    100%{
+
+@keyframes back {
+    100% {
         background-position: 2000px 0;
     }
 }
@@ -62,6 +61,7 @@ body {
     /* animation-name: slide;
     animation-duration: 2s; */
 }
+
 /* button  */
 .join {
     cursor: pointer;
@@ -71,71 +71,59 @@ body {
     padding: 20px 65px;
     border: none;
     margin-top: 80px;
-    animation-name: slide;
-    animation-duration: 2s;
+
     border-radius: 20px;
-    position: relative; 
-    right: 50px;
-    text-transform: uppercase;
+    position: relative;
+    right: 0px;
+    bottom: 90px;
+    text-transform: lowercase;
 }
 
 .join:hover {
     background-color: #f2f2ff;
     color: #6C3DD9;
     /* border: 2px solid #6C3DD9 */
-    
-   
+
+
 }
-.pointer{
+
+#cont {
+    cursor: pointer;
+    background-color: #6C3DD9;
+    color: white;
+    font-weight: bold;
+    padding: 20px 65px;
+    border: none;
+    text-transform: lowercase;
+
+    border-radius: 20px;
+}
+
+.pointer {
     position: absolute;
     right: 0px;
-    top: 0px;
+    bottom: 680px;
+
 }
+
 /* drop down style  */
 .dropdown-menu {
     position: relative;
     right: 250px;
     display: none;
     width: 350px;
-} 
-.dropdown1{
-   height: 0px;
 }
-.dropdown-menu1 {
-    display: none;
-    position: relative;
-    right: 250px;
-    border: 2px solid #6C3DD9
+
+.dropdown1 {
+    margin-top: 75px;
+
+    height: 100px;
+    width: 500px;
 }
 
 
-.dropdown-menu1 ul li {
-    margin-bottom: 10px;
-    list-style: none;
 
-}
 
-.dropdown-menu1 ul li a {
-    text-decoration: none;
-    padding-left: 60px;
-    padding-bottom:50px ;
-}
-
-.dropdown1:hover .dropdown-menu1 {
-    background-color: aliceblue;
-    height: 130px;
-    width: 170px;
-    border: 2px solid #6C3DD9;
-    display: block;
-    position: relative;
-    right: 0px;
-   margin-top: 10px;
-    padding-bottom: 15px;
-}
-#drop{
-    margin-top: 0px auto;
-    
-}
 
 
 /* .dropdown1:hover .dropdown-menu ul li {
@@ -148,8 +136,8 @@ body {
     justify-content: space-evenly;
     padding-top: 40px;
     padding-bottom: 60px;
-animation-name: slide;
-height: 200px;
+    animation-name: slide;
+    height: 200px;
 }
 
 .hos1 img {
@@ -159,6 +147,7 @@ height: 200px;
     animation-name: slide;
     box-shadow: 5px 10px 18px #888888;
 }
+
 .hos1 p {
     padding-top: 10px;
     margin-left: 120px;
@@ -169,10 +158,12 @@ height: 200px;
     animation-name: slide;
     animation-duration: 2s;
 }
-.contactholder{
+
+.contactholder {
     width: 800px;
 }
-span{
+
+span {
     color: #6C3DD9;
     font-weight: bolder;
 }
@@ -181,6 +172,6 @@ span{
 .container {
     position: absolute;
     top: 50px;
-  right:100px;
+    right: 100px;
 
 }
