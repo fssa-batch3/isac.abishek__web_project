@@ -56,9 +56,7 @@
       onclick="selector()">
       <label for="place">place</label><input type="radio" name="user" id="place" value="place"
       onclick="selector()">
-    <!--   
-  <label for="request_id" id="request_id"></label>
-  <input type="text" id="req_id" name="request_id"> -->
+
 
 
     <label for="request_title" id="title"></label>
@@ -67,33 +65,16 @@
     <input type="text" id="about_request" name="about_request">
     <label for="requested_by" id="by"></label>
     <input type="text" id="requested_by" name="requested_by">
-
-    <!-- fetaure for product  -->
     <label for="requests_address" id="address"></label>
     <textarea id="requests_address" name="requests_address"></textarea>
-
-
-    <!-- image1  -->
-
     <label for="request_img" id="image1"></label>
     <input type="url" id="request_img1" name="request_img">
     <label for="request_img" id="alternate1"></label>
     <input type="text" id="img_alt" name="request_title">
-    <!-- image2  -->
-    <label for="event" id="event"></label>
-    <input type="url" id="event" name="event">
-    <!-- <label for="request_img" id="alternate2"></label>
-    <input type="text" id="img_alt2" name="request_title">
-    imag3 
-    <label for="request_img" id="image3"></label>
-    <input type="url" id="request_img3" name="request_img">
-    <label for="request_img" id="alternate3"></label>
-    <input type="text" id="img_alt3" name="request_title">
-    img4
-    <label for="request_img" id="image4"></label>
-    <input type="url" id="request_img4" name="request_img">
-    <label for="request_img" id="alternate4"></label>
-    <input type="text" id="img_alt4" name="request_title"> -->
+    <label for="event" id="eventname"></label>
+    <input type="text" id="event" name="event">
+
+
 
 
     <button id="add-donation">Add donation request</button>
@@ -122,42 +103,24 @@
       let place = document.getElementById("place").checked
 
       if (product === true) {
-        // document.getElementById("request_id").innerText="product id"
-
         document.getElementById("image1").innerText = "product image"
         document.getElementById("alternate1").innerText = "image alternate text"
-        document.getElementById("event").innerText = "event"
-        // document.getElementById("alternate2").innerText = "image alternate text"
-        // document.getElementById("image3").innerText = "product image"
-        // document.getElementById("alternate3").innerText = "image alternate text"
-        // document.getElementById("image4").innerText = "product image"
-        // document.getElementById("alternate4").innerText = "image alternate text"
         document.getElementById("title").innerText = "product title"
         document.getElementById("about").innerText = "about product"
         document.getElementById("requested_by").setAttribute("disabled", "")
-        // document.getElementById("request_img2").removeAttribute("disabled")
-        // document.getElementById("img_alt2").removeAttribute("disabled")
-        // document.getElementById("request_img3").removeAttribute("disabled")
-        // document.getElementById("img_alt3").removeAttribute("disabled")
-        // document.getElementById("request_img4").removeAttribute("disabled")
-        // document.getElementById("img_alt4").removeAttribute("disabled")
-        document.getElementById("by").innerText = ""
+        document.getElementById("requests_address").setAttribute("disabled", "")
 
-        // document.getElementById("address").innerText = "feature"
+        document.getElementById("eventname").innerText = ""
 
+        document.getElementById("event").setAttribute("disabled", "")
         let button1 = document.getElementById("add-product")
         let button2 = document.getElementById("add-hospital")
         let button3 = document.getElementById("add-donation")
-        let button4 = document.getElementById("add-place")
-         
-
+        let button4 = document.getElementById("add-place")  
         button1.style.display = "block"
         button2.style.display = "none"
         button3.style.display = "none"
         button4.style.display = "none"
-
-
-
       }
       if ( donations === true ) {
         // document.getElementById("request_id").innerText="request id"
@@ -169,28 +132,13 @@
         document.getElementById("address").innerText = "address"
         document.getElementById("requested_by").removeAttribute("disabled")
         document.getElementById("requests_address").removeAttribute("disabled")
-        document.getElementById("event").innerText = ""
-        // document.getElementById("alternate2").innerText = ""
-        // document.getElementById("image3").innerText = ""
-        // document.getElementById("alternate3").innerText = ""
-        // document.getElementById("image4").innerText = ""
-        // document.getElementById("alternate4").innerText = ""
+        document.getElementById("eventname").innerText = ""
 
-        // document.getElementById("request_img2").setAttribute("disabled", "")
-        // document.getElementById("img_alt2").setAttribute("disabled", "")
-        // document.getElementById("request_img3").setAttribute("disabled", "")
-        // document.getElementById("img_alt3").setAttribute("disabled", "")
-        // document.getElementById("request_img4").setAttribute("disabled", "")
-        // document.getElementById("img_alt4").setAttribute("disabled", "")
-
-
+        document.getElementById("event").setAttribute("disabled", "")
         let button1 = document.getElementById("add-product")
         let button2 = document.getElementById("add-hospital")
         let button3 = document.getElementById("add-donation")
         let button4 = document.getElementById("add-place")
-
-
-
         button1.style.display = "none"
         button2.style.display = "none"
         button3.style.display = "block"
@@ -209,21 +157,9 @@
         document.getElementById("address").innerText = "address"
         document.getElementById("requested_by").removeAttribute("disabled")
         document.getElementById("requests_address").removeAttribute("disabled")
-        document.getElementById("event").innerText = ""
-        // document.getElementById("alternate2").innerText = ""
-        // document.getElementById("image3").innerText = ""
-        // document.getElementById("alternate3").innerText = ""
-        // document.getElementById("image4").innerText = ""
-        // document.getElementById("alternate4").innerText = ""
+        document.getElementById("event").removeAttribute("disabled")
 
-        // document.getElementById("request_img2").setAttribute("disabled", "")
-        // document.getElementById("img_alt2").setAttribute("disabled", "")
-        // document.getElementById("request_img3").setAttribute("disabled", "")
-        // document.getElementById("img_alt3").setAttribute("disabled", "")
-        // document.getElementById("request_img4").setAttribute("disabled", "")
-        // document.getElementById("img_alt4").setAttribute("disabled", "")
-
-
+        document.getElementById("eventname").innerText = "event/donation"
         let button1 = document.getElementById("add-product")
         let button2 = document.getElementById("add-hospital")
         let button3 = document.getElementById("add-donation")
@@ -243,8 +179,6 @@
 
 
       if (hospital === true) {
-        // document.getElementById("request_id").innerText="hospital id"
-
         document.getElementById("image1").innerText = "hospital image"
         document.getElementById("alternate1").innerText = "image alternate text"
         document.getElementById("title").innerText = "hospital title"
@@ -253,20 +187,9 @@
         document.getElementById("address").innerText = "address"
         document.getElementById("requested_by").removeAttribute("disabled")
         document.getElementById("requests_address").removeAttribute("disabled")
-        document.getElementById("event").innerText = ""
-        // document.getElementById("alternate2").innerText = ""
-        // document.getElementById("image3").innerText = ""
-        // document.getElementById("alternate3").innerText = ""
-        // document.getElementById("image4").innerText = ""
-        // document.getElementById("alternate4").innerText = ""
+        document.getElementById("eventname").innerText = ""
 
-        // document.getElementById("request_img2").setAttribute("disabled", "")
-        // document.getElementById("img_alt2").setAttribute("disabled", "")
-        // document.getElementById("request_img3").setAttribute("disabled", "")
-        // document.getElementById("img_alt3").setAttribute("disabled", "")
-        // document.getElementById("request_img4").setAttribute("disabled", "")
-        // document.getElementById("img_alt4").setAttribute("disabled", "")
-
+        document.getElementById("event").setAttribute("disabled", "")
         let button1 = document.getElementById("add-product")
         let button2 = document.getElementById("add-hospital")
         let button3 = document.getElementById("add-donation")
@@ -396,7 +319,7 @@ console.log(product_titles);
     let about_request = document.getElementById("about_request").value
     let requested_by = document.getElementById("requested_by").value
     let requests_address = document.getElementById("requests_address").value
-
+    let event=document.getElementById("event").value
     console.log("isacss");
   
 
@@ -413,7 +336,8 @@ console.log(product_titles);
       "about_title": about_request,
       "organized_by": requested_by,
       "place_address": requests_address,
-      "status": true
+      "status": true,
+      "event":event
     };
 
 
@@ -762,24 +686,34 @@ console.log(product_titles);
         let about_request = document.getElementById("about_request").value
         let requested_by = document.getElementById("requested_by").value
         let requests_address = document.getElementById("requests_address").value
+        let event=document.getElementById("event").value
+        console.log(event+"eve");
         // console.log(arr)
+        let check=0
+        let newvalues;
         arr.find(function (e) {
           if (e["place_title"] === upname) {
-            console.log(e);
-            e["place_images"]["source"] = request_img,
-              e["place_images"]["alternatetext"] = img_alt,
-              e["about_title"] = about_request,
-              e["organized_by"] = requested_by,
-              e["place_address"] = requests_address
-            console.log(e);
-            // console.log(arr)
-            // alert(JSON.stringify(arr))
-            localStorage.setItem("placerequests", JSON.stringify(arr));
-          }
-          else {
-            alert("notexist")
+            check=1
+            return newvalues=e
+           
           }
         })
+        console.log(newvalues);
+        if(check===1){
+      
+          newvalues["place_images"]["source"] = request_img,
+          newvalues["place_images"]["alternatetext"] = img_alt,
+          newvalues["about_title"] = about_request,
+          newvalues["organized_by"] = requested_by,
+          newvalues["place_address"] = requests_address
+          newvalues["event"]=event
+            console.log(newvalues);
+            localStorage.setItem("placerequests", JSON.stringify(arr));
+        }
+        else{
+          alert("notexist")
+
+        }
       }
 
 
