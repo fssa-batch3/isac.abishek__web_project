@@ -12,7 +12,7 @@
   <link rel="icon" href="../../assets/images/icon.png">
   <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
   <script src="../../assets/js/sweetalert.min.js"></script>
-  
+
 
   <title>gethelp</title>
 </head>
@@ -26,7 +26,8 @@
   <div id="google_translate_element" class="translate"></div>
 
   <div class="side-nav">
-    <a href="../../index.html"> <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg"></a>
+    <a href="../../index.html"> <img src="../../assets/images/logo.png" width="250px" alt="image error"
+        class="logoimg"></a>
     <ul class="navlinks">
 
 
@@ -47,54 +48,55 @@
     </ul>
   </div>
   <div class="container">
-    <form onsubmit="sendemail(); reset(); return false;">
+    <form >
+      <!-- onsubmit="sendemail(); reset(); return false;" -->
 
       <h3>Contact Us to Get Product On Event Days</h3>
       <!-- <img src="../../assets/images/donationrequest.jpg" alt=""> -->
 
-      <input type="text" id="name" placeholder="yourname"  pattern="[a-zA-Z]+"
-        title="name must only in alphabets">
+      <input type="text" id="name" placeholder="yourname" >
 
-      <input type="email" id="email" placeholder="emailid" >
+      <input type="email" id="email" placeholder="emailid">
 
-      <input type="text" id="phone" placeholder="yourmobile"   maxlength="10"
+      <input type="text" id="phone" placeholder="yourmobile" maxlength="10"
         title="mobile number must be 10 digit number">
       <textarea name="message" id="message" rows="4" placeholder="say something about you" required></textarea>
-      <button type="button" id="voice">Speak about yourself to help you </button>
+      <button type="button" id="voice">tell you contact number and address by pressing shift </button>
       <button id="hear" type="button">Hear message</button>
 
-      <button type="submit" id="mail">send</button>
+      <button type="submit"  id="mail">send</button>
 
     </form>
 
 
+
   </div>
   <script src="../../assets/js/autospeech.js"></script>
-  <input type="text" id="message">
-  <script src="../../assets/js/voicenavigator.js"></script>
+  <!-- <input type="text" id="message"> -->
+  <!-- <script src="../../assets/js/voicenavigator.js"></script> -->
   <script>
-    let arrs = localStorage.getItem("userprofile_name");
-     console.log(arrs);
-     // let arr2=JSON.parse(localStorage.getItem("volprofile_name"));
-     let gethelp=  document.getElementById("gethelplink");
+    let profile_name = localStorage.getItem("userprofile_name");
+    console.log(arrs);
+    // let arr2=JSON.parse(localStorage.getItem("volprofile_name"));
+    let gethelp = document.getElementById("gethelplink");
     //  let donation=  document.getElementById("donatelink");
-     let beinspired=document.getElementById("inspiredlink");
-    let profile=document.getElementById("myprofilelink");
- 
-     if(arrs==null){
-     
-         gethelp.setAttribute("href","../volunteerpages/signup.html");
-        //  donation.setAttribute("href","../volunteerpages/signup.html");
-         beinspired.setAttribute("href","../volunteerpages/signup.html");
-         profile.setAttribute("href","../volunteerpages/signup.html");
-     }
-     else{
-        console.log("isac");
-         gethelp.setAttribute("href","gethelp.html");
-        //  donation.setAttribute("href","../donarpages/donationrequest.html");
-         beinspired.setAttribute("href","../beinspired/inspire.html");
-         profile.setAttribute("href","../about/profile.html");
-     } 
+    let beinspired = document.getElementById("inspiredlink");
+    let profile = document.getElementById("myprofilelink");
+
+    if (profile_name== null) {
+
+      gethelp.setAttribute("href", "../volunteerpages/signup.html");
+      //  donation.setAttribute("href","../volunteerpages/signup.html");
+      beinspired.setAttribute("href", "../volunteerpages/signup.html");
+      profile.setAttribute("href", "../volunteerpages/signup.html");
+    }
+    else {
+      console.log("isac");
+      gethelp.setAttribute("href", "gethelp.html");
+      //  donation.setAttribute("href","../donarpages/donationrequest.html");
+      beinspired.setAttribute("href", "../beinspired/inspire.html");
+      profile.setAttribute("href", "../about/profile.html");
+    } 
   </script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
 
@@ -120,16 +122,29 @@
   </script>
   <script>
     let user = localStorage.getItem("userprofile_name")
+    let otp = '';
+
+    // if(window.location.search.substring(1).split("&")){
     const url = window.location.search.substring(1).split("&");
+
     console.log(url)
-    let placesel = url[0].split("=")[1]
-    let productname = url[1].split("=")[1]
+    let  productname = url[0].split("=")[1]
+    let placesel= url[1].split("=")[1]
+    console.log(placesel);
+    // }
+
     // let placesel ="  "
     // let productname="   "
-    document.getElementById("name").value=placesel
-     document.getElementById("phone").value=productname
-
     if (localStorage.getItem("userprofile_name")) {
+
+    }
+    else {
+      document.getElementById("name").value = placesel
+      document.getElementById("phone").value = productname
+    }
+
+
+    // if (localStorage.getItem("userprofile_name")) {
       let pro = JSON.parse(localStorage.getItem("productrequest"))
       let img;
       pro.find(e => {
@@ -139,8 +154,15 @@
       })
       const todays = new Date();
       let date_trim = todays.toLocaleDateString()
+      let input = '1234567890'
 
+      for (i = 0; i <= 7; i++) {
+        otp += input.charAt(Math.floor(Math.random() * otp.length));
+      }
+      console.log(otp);
       let arr = JSON.parse(localStorage.getItem('user_bookings')) || []
+      let arr2 = JSON.parse(localStorage.getItem('admin')) || []
+
       let arrs = {
         'time': date_trim,
         'key1': productname,
@@ -150,26 +172,19 @@
         'img': img
       }
       arr.push(arrs)
+      arr2.push(arrs)
+
       localStorage.setItem('user_bookings', JSON.stringify(arr))
+      localStorage.setItem('admin', JSON.stringify(arr2))
 
-      // function re() {
-      //   window.location.href = 'buyproducts.html'
-      // }
-      // setInterval(re, 1000);
-    }
-    let input = '1234567890'
+    // }
 
-    let otp = '';
-    for (i = 0; i <= 7; i++) {
-      otp += input.charAt(Math.floor(Math.random() * otp.length));
-    }
-    console.log(otp);
 
-    let mail=document.getElementById("mail")
-    mail.addEventListener("submit",e=>{
-      sendemail()
-    })
-    
+    document.querySelector("form").addEventListener("submit",(e)=>{
+    e.preventDefault();
+    sendemail();
+})
+
     function sendemail() {
 
 
@@ -185,21 +200,30 @@
           + '<br> Hi freshtrust ' + document.getElementById('message').value
           + '<br>place: ' + placesel
           + '<br> product: ' + productname
-          
+            
 
       }).then(
-        
+
         //   message => swal('yep!', 'email sent to us we will contact you soon', 'sucess')
-        (message) =>{ console.log(message)}
+        (message) => { console.log(message) }
+    //  message=> alert(message)
+
       );
-      let micoff = new SpeechSynthesisUtterance("message sent");
- //   console.log(iam);
-     speechSynthesis.speak(micoff);
-      setInterval(re, 10000);
+      let sent = new SpeechSynthesisUtterance("message sent to us You will redirect to index page we wil contact you soon");
+      //   console.log(iam);
+      speechSynthesis.speak(sent);
+      // setInterval(re, 10000);
+  //     function re(){
+	// 	window.location.href="buyproducts.html"
+	// }
+	setInterval(re, 10000);
+
+      console.log("mail");
+
     }
     function re() {
-        window.location.href = 'buyproducts.html'
-      }
+      window.location.href = '../../index.html'
+    }
 
   </script>
   <script src="../../assets/js/screenreader.js"></script>
@@ -284,7 +308,7 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", e => {
-    loader("Hi there now you are in contact page use up arrow and down arrow to navigate by hearing the command and Click the shift button to contact")
+    loader("Hi there now you are in contact page use up arrow and down arrow to navigate by hearing the command and Click the shift button to contact ")
 
   })
 
@@ -292,7 +316,7 @@
     loader("Hi there now you are in contact page use up arrow and down arrow to navigate by hearing the command and Click the shift button to contact")
 
   })
-  </script>
+</script>
 <script src="../../assets/js/voicetotext.js"></script>
 
 </html>

@@ -215,6 +215,8 @@ const url = window.location.search;
 
 			// if (JSON.parse(localStorage.getItem("user_bookings"))) {
 				let arr = JSON.parse(localStorage.getItem("user_bookings"))||[]
+				let arr2 = JSON.parse(localStorage.getItem("admin"))||[]
+
 				let arrs = {
 					"time": date_trim,
 					"key1": reqname,
@@ -223,7 +225,11 @@ const url = window.location.search;
 					"img":img
 				}
 				arr.push(arrs)
+				arr2.push(arrs)
+
 				localStorage.setItem("user_bookings", JSON.stringify(arr))
+				localStorage.setItem("admin", JSON.stringify(arr2))
+
 			// }
 			
 			function re(){

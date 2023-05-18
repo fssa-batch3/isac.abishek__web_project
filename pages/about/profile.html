@@ -74,7 +74,7 @@
      <!-- <a href="../../index.html"><button id="logoutbtn">logout</button></a> -->
      <button id="deletebtn">log out</button>
     </form>
-    <a href="../patientpages/appointment.html"><button id="text" style="font-size: 11px;">My activities</button></a>
+    <button id="activity" style="font-size: 11px;">My activities</button>
 
    </div>
  </div>
@@ -82,15 +82,25 @@
     <script src="../../assets/js/voicenavigator.js"></script>
     <script src="../../assets/js/autospeech.js"></script>
   <script>
+    let userprofile_name=localStorage.getItem("userprofile_name");
+
     let form=document.getElementById("form")
     form.addEventListener("submit", e => {
             e.preventDefault();
         })
 
-    
+    let activity=document.getElementById("activity")
+    activity.addEventListener("click",()=>{
+        if(userprofile_name=="freshtrustadmin@gmail.com"){
+          window.location.href="admin.html"
+        }
+        else{
+          window.location.href="../patientpages/appointment.html"
+
+        }
+    })
 
     let arr = JSON.parse(localStorage.getItem("user"));
-    let userprofile_name=localStorage.getItem("userprofile_name");
    let result;
 
     // if arr not equal to null e parameter find the user_email and show the value in profile page 
@@ -292,24 +302,7 @@ document.onkeydown = function (event) {
     document.addEventListener("dblclick", e => {
       loader("hi now your are in profile page you can turn off the accessblity option")
     }) 
-     function micon(){
-        let micoff = new SpeechSynthesisUtterance("mic on");
-       speechSynthesis.speak(micoff);
-      }
-  
-      function starter(){
-      converter("a,button")
-      }
-      
-      function inter(n){
-        setInterval(starter,n)
-      }
-    function inter1(e){
-        setInterval(micon,e)
-        inter(e+2000)
-        inter1(e+7000)
-      }
-      inter1(10000)
+     
     </script>
   
   <script>

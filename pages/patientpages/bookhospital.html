@@ -247,25 +247,7 @@ let searchbox=document.getElementById("search-bar")
   
     document.addEventListener("dblclick", e => {
       loader("Hi there now you are in book hospital page  select hospital and say the name of the hospital after mic on")
-    }) 
-     function micon(){
-        let micoff = new SpeechSynthesisUtterance("mic on");
-       speechSynthesis.speak(micoff);
-      }
-  
-      function starter(){
-      converter("a,button")
-      }
-      
-      function inter(n){
-        setInterval(starter,n)
-      }
-    function inter1(e){
-        setInterval(micon,e)
-        inter(e+5000)
-        inter1(e+9000)
-      }
-      inter1(5000)
+    })
     </script>
   <script src="../../assets/js/screenreader.js"></script>
   <script src="../../assets/js/contentreader.js"></script>

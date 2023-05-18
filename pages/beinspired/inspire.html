@@ -300,20 +300,6 @@
     let micoff = new SpeechSynthesisUtterance("mic on");
     speechSynthesis.speak(micoff);
   }
-
-  function starter() {
-    converter("a,button")
-  }
-
-  function inter(n) {
-    setInterval(starter, n)
-  }
-  function inter1(e) {
-    setInterval(micon, e)
-    inter(e + 2000)
-    inter1(e + 7000)
-  }
-  inter1(5000)
 </script>
 
 

@@ -156,24 +156,6 @@
   document.addEventListener("dblclick", e => {
     loader("hi now your are in your activities page")
   }) 
-   function micon(){
-      let micoff = new SpeechSynthesisUtterance("mic on");
-     speechSynthesis.speak(micoff);
-    }
-
-    function starter(){
-    converter("a,button")
-    }
-    
-    function inter(n){
-      setInterval(starter,n)
-    }
-  function inter1(e){
-      setInterval(micon,e)
-      inter(e+2000)
-      inter1(e+7000)
-    }
-    inter1(5000)
   </script>
   <script src="../../assets/js/screenreader.js"></script>
   <script src="../../assets/js/contentreader.js"></script>

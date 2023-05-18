@@ -1,4 +1,70 @@
 // function converter(selector){
+
+let userarr = JSON.parse(localStorage.getItem("user"))
+let activeuser = localStorage.getItem("userprofile_name")
+let micon=0
+if(localStorage.getItem("userprofile_name")){
+    userarr.find(e=>{
+        if(e["user_email"]===activeuser){
+           if(e["accessblity"]===true){
+            micon=1
+           }
+          
+        }
+    })
+}
+else{
+  miconer()
+}
+if(micon===1){
+  miconer()
+}
+
+function miconer() {
+  function micon(){
+    let micoff = new SpeechSynthesisUtterance("mic on");
+   speechSynthesis.speak(micoff);
+  }
+  
+  function starter() {
+    converter("a,button")
+  }
+  
+  function inter(n) {
+    setInterval(starter, n)
+  }
+  
+  function inter1(e) {
+    setInterval(micon,e)
+    inter(e + 2000)
+    if (e <= 20000) {
+      return inter1(e + 7000)
+    }
+    else {
+      return 0
+    }
+  }
+  inter1(16000)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function con(li){
 
     // let li=document.querySelectorAll(`${selector}`)
@@ -35,42 +101,104 @@ function con(li){
  };
  
  recognition.start();
+
+
+ 
+//   function inter(n){
+//     setInterval(starter,n)
+//   }
+// function inter1(e){
+//     setInterval(micon,e)
+//     inter(e+2000)
+//     inter1(e+7000)
+//   }
+//   inter1(16000)
  }
  function converter(selector) {
     let li=document.querySelectorAll(`${selector}`)
     console.log(li);
     let userarr = JSON.parse(localStorage.getItem("user"))
     let activeuser = localStorage.getItem("userprofile_name")
-    let check = 0;
-    let check2=0;
-    if (JSON.parse(localStorage.getItem("user"))) {
-        // console.log("user registered");
-        userarr.find(e => {
-            if (activeuser === e["user_email"]) {
-                check2=0
+    // let check = 0;
+    // let check2=0;
+    // if (JSON.parse(localStorage.getItem("user"))) {
+    //     // console.log("user registered");
+    //     userarr.find(e => {
+    //         if (activeuser === e["user_email"]) {
+    //             check2=0
 
-                if (e["accessblity"] === true) {
-                    return check = 1
-                }
+    //             if (e["accessblity"] === true) {
+    //                 return check = 1
+    //             }
                
-            }
-            else{
-                check2=1
-            }
-        })
-        if(check2===1){
-            con(li)
-            //   console.log("new user not first user");
-      }
-        if (check == 1) {
-           con(li)
-        }
-        else {
-            // console.log("assecblity false");
-        }
-    }
-    else {
-       con(li)
-        // console.log("firtst user");
-    }
+    //         }
+    //         else{
+    //             check2=1
+    //         }
+    //     })
+    //     if(check2===1){
+    //         con(li)
+    //         //   console.log("new user not first user");
+    //   }
+    //     if (check == 1) {
+    //        con(li)
+    //     }
+    //     else {
+    //         // console.log("assecblity false");
+    //     }
+    // }
+    // else {
+    //    con(li)
+    //     // console.log("firtst user");
+        
+    // }
+
+
+
+
+    let podu=0
+  if(localStorage.getItem("userprofile_name")){
+      userarr.find(e=>{
+          if(e["user_email"]===activeuser){
+             if(e["accessblity"]===true){
+              podu=1
+             }
+            
+          }
+      })
+  }
+  else{
+    con(li)
+  }
+  if(podu===1){
+    con(li)
+  }
 }
+
+
+
+
+// function micon(){
+//   let micoff = new SpeechSynthesisUtterance("mic on");
+//  speechSynthesis.speak(micoff);
+// }
+
+// function starter() {
+//   converter("a,button")
+// }
+
+// function inter(n) {
+//   setInterval(starter, n)
+// }
+
+// function inter1(e) {
+//   setInterval(micon,e)
+//   inter(e + 2000)
+//   if (e <= 20000) {
+//     return inter1(e + 7000)
+//   }
+//   else {
+//     return 0
+//   }
+// }
+// inter1(16000)

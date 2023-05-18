@@ -172,10 +172,14 @@ let searchbox=document.getElementById("search-bar")
   //   let requestform = JSON.parse(localStorage.getItem("donationrequests"))
   //  let new_request=requests.concat(requestform)
    let new_request=JSON.parse(localStorage.getItem("placerequests"))
-
+   const todays = new Date();
+            let date_trim=todays.toLocaleDateString()
+            console.log(date_trim);
    new_request.find(e=>{
       if(e["status"]==true){
+             if(e["eventdate"]!==date_trim){
 
+             
       //  <div class="hos1"></div>
       div_requests = document.createElement("div");
       div_requests.setAttribute("class", "hos1");
@@ -214,10 +218,13 @@ let searchbox=document.getElementById("search-bar")
       about_request.setAttribute("class", "addressp");
       about_request.innerHTML = "<span>About</span>:- "+e["about_title"];
       contact_holder.append(about_request);
+          
+
+      
 
       requested_by = document.createElement("p");
       requested_by.setAttribute("class", "addressp");
-      requested_by.innerHTML ="<span>Organized by</span>:- "+ e["organized_by"];
+      requested_by.innerHTML ="<span>Event date</span>:- "+ e["eventdate"];
       contact_holder.append(requested_by);
 
       address = document.createElement("p");
@@ -251,9 +258,10 @@ let searchbox=document.getElementById("search-bar")
       // a1.append(button);
       document.querySelector(".sec2").append(div_requests);
     }
+    }
     })
 
-
+   
 
 
 
@@ -342,24 +350,6 @@ let searchbox=document.getElementById("search-bar")
     document.addEventListener("dblclick", e => {
       loader("Hi there now you are in Events page use up arrow and down arrow to navigate by hearing the Event place nearby you and Click the shift button to get product")
     })
-    function micon(){
-      let micoff = new SpeechSynthesisUtterance("mic on");
-     speechSynthesis.speak(micoff);
-    }
-
-    function starter(){
-    converter("a,button")
-    }
-    
-    function inter(n){
-      setInterval(starter,n)
-    }
-  function inter1(e){
-      setInterval(micon,e)
-      inter(e+2000)
-      inter1(e+7000)
-    }
-    inter1(16000)
     </script>
   
 </html>

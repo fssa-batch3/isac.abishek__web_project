@@ -12,7 +12,7 @@
   <script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
   <title>gethelp</title>
- 
+
 </head>
 
 <body>
@@ -20,7 +20,8 @@
 
   <nav>
     <div class="side-nav">
-      <a href="../../index.html"> <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg"></a>
+      <a href="../../index.html"> <img src="../../assets/images/logo.png" width="250px" alt="image error"
+          class="logoimg"></a>
       <ul class="navlinks">
 
 
@@ -43,8 +44,8 @@
   </nav>
 
   <main>
-    
-    
+
+
     <div class="gethelpbg">
       <h1>buy products</h1>
 
@@ -111,31 +112,31 @@
   <input type="text" id="message" style="margin-left: 300px;">
   <script src="../../assets/js/voicenavigator.js"></script>
   <script src="../../assets/js/autospeech.js"></script>
- 
+
 
   <script>
     let arrs = localStorage.getItem("userprofile_name");
-     
-     // let arr2=JSON.parse(localStorage.getItem("volprofile_name"));
-     let gethelp=  document.getElementById("gethelplink");
+
+    // let arr2=JSON.parse(localStorage.getItem("volprofile_name"));
+    let gethelp = document.getElementById("gethelplink");
     //  let donation=  document.getElementById("donatelink");
-     let beinspired=document.getElementById("inspiredlink");
-    let profile=document.getElementById("myprofilelink");
- 
-     if(arrs==null){
-     
-         gethelp.setAttribute("href","../volunteerpages/signup.html");
-        //  donation.setAttribute("href","../volunteerpages/signup.html");
-         beinspired.setAttribute("href","../volunteerpages/signup.html");
-         profile.setAttribute("href","../volunteerpages/signup.html");
-     }
-     else{
-        console.log("isac");
-         gethelp.setAttribute("href","../patientpages/gethelp.html");
-        //  donation.setAttribute("href","../donarpages/donationrequest.html");
-         beinspired.setAttribute("href","../beinspired/inspire.html");
-         profile.setAttribute("href","../about/profile.html");
-     } 
+    let beinspired = document.getElementById("inspiredlink");
+    let profile = document.getElementById("myprofilelink");
+
+    if (arrs == null) {
+
+      gethelp.setAttribute("href", "../volunteerpages/signup.html");
+      //  donation.setAttribute("href","../volunteerpages/signup.html");
+      beinspired.setAttribute("href", "../volunteerpages/signup.html");
+      profile.setAttribute("href", "../volunteerpages/signup.html");
+    }
+    else {
+      console.log("isac");
+      gethelp.setAttribute("href", "../patientpages/gethelp.html");
+      //  donation.setAttribute("href","../donarpages/donationrequest.html");
+      beinspired.setAttribute("href", "../beinspired/inspire.html");
+      profile.setAttribute("href", "../about/profile.html");
+    } 
   </script>
   <script>
 
@@ -210,7 +211,7 @@
 
         //  <a href=><button class=join></button><a/>
         a_tags = document.createElement("a");
-        a_tags.setAttribute("href", "contact.html?name=" + e["product_name"]+`&placename=${placename}`)
+        a_tags.setAttribute("href", "contact.html?name=" + e["product_name"] + `&placename=${placename}`)
         div_products.append(a_tags);
 
 
@@ -231,7 +232,7 @@
   </script>
   <script src="../../assets/js/screenreader.js"></script>
   <script src="../../assets/js/contentreader.js"></script>
-   <!-- <script src="../../assets/js/autospeech.js"></script> -->
+  <!-- <script src="../../assets/js/autospeech.js"></script> -->
 
   <script>
     let cnt = -1;
@@ -301,34 +302,37 @@
 
   </script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", e => {
-    loader("Hi there now you are in product page use up arrow and down arrow to navigate by hearing the suitable product and Click the shift button to get product or say the product name after mic on")
+  <script>
+    document.addEventListener("DOMContentLoaded", e => {
+      loader("Hi there now you are in product page use up arrow and down arrow to navigate by hearing the suitable product and Click the shift button to get product or say the product name after mic on")
 
-  })
+    })
 
-  document.addEventListener("dblclick", e => {
-    loader("Hi there now you are in product page use up arrow and down arrow to navigate by hearing the suitable product and Click the shift button to get product")
+    document.addEventListener("dblclick", e => {
+      loader("Hi there now you are in product page use up arrow and down arrow to navigate by hearing the suitable product and Click the shift button to get product")
 
-  })
-  function micon(){
-      let micoff = new SpeechSynthesisUtterance("mic on");
-     speechSynthesis.speak(micoff);
-    }
+    })
 
-    function starter(){
-    converter("a,button")
-    }
-    
-    function inter(n){
-      setInterval(starter,n)
-    }
-  function inter1(e){
-      setInterval(micon,e)
-      inter(e+2000)
-      inter1(e+7000)
-    }
-    inter1(16000)
+
+    // function starter() {
+    //   converter("a,button")
+    // }
+
+    // function inter(n) {
+    //   setInterval(starter, n)
+    // }
+
+    // function inter1(e) {
+    //   setInterval(micon,e)
+    //   inter(e + 2000)
+    //   if (e <= 20000) {
+    //     return inter1(e + 7000)
+    //   }
+    //   else {
+    //     return 0
+    //   }
+    // }
+    // inter1(16000)
   </script>
 </body>
 

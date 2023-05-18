@@ -306,7 +306,7 @@ else {
       about_title: "Product Donating And Distribuations",
       status: true,
       event:"donation",      
-      organized_by: "Freshtrust",
+      eventdate: "25/5/2023",
       place_address: "7305836758"
     },
     {
@@ -321,7 +321,7 @@ else {
       about_title: "Walk on marina beach",
       status: true,
       event:"event",
-      organized_by: "Freshtrust",
+      eventdate: "20/5/2023",
       place_address: "7305836758"
     }
 

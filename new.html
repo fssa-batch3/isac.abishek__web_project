@@ -4,9 +4,35 @@
     <title>Speech Synthesis Demo</title>
     <script src="assets/js/voicenavigator.js"></script>
   </head>
+  <style>
+    input{
+      margin-left: 20px;
+      /* padding-bottom: 200px; */
+
+      /* margin-bottom: 50px; */
+    }
+    label{
+      margin-left: 20px;
+      padding-bottom: 200px;
+    }
+    #holder{
+      display: flex;
+      height: 300px;
+      width: 150px;
+      background-color: rgb(139, 27, 243);
+      /* flex-direction: row; */
+      position: absolute; bottom: 140px ; right: 40px; 
+      visibility:hidden;
+        /* display: none;     */
+    }
+    img{
+      position: absolute; bottom: 40px ; right: 70px;
+    }
+
+  </style>
   <body>
-    <div class="menu-bar">
-      <img src="assets/images/logo.png" width="200px" alt="error">
+    <div class="side-nav">
+      <!-- <img src="assets/images/logo.png" width="200px" alt="error"> -->
       <ul>
         <li><a href="index.html">HOME</a></li>
         <li><a href="pages/donarpages/place.html">EVENTS</a></li>
@@ -28,11 +54,57 @@
         <li><a  href="pages/volunteerpages/signup.html" target="_self">sign up</a></li>
       </ul>
     </div>
-   <input type="text" id="message" style="display: none;">
-    <script>
-    converter(".menu-bar a")
-    </script>
+ 
+      <p>isac</p>
+      <p>deva</p>
+      <p>abishek</p>
+      <p>two</p>
+      <p>gmail</p>
+   
+    <input type="text" id="message" style="margin-left: 300px;">
+       <div id="holder">
+        <!-- visibility: hidden; -->
+        <div class="child">
+        <label for="1">screenreader</label><br>
+        <label for="2">voicenavigator</label><br>
+        <label for="3">autospeech</label><br>
+        <label for="4">input filler</label><br>
+      </div>
+      <div id="child">
+        <input type="checkbox" name="1" id="1" ><br>
+        
+        <input type="checkbox" name="2" id="2"><br>
+      
+        <input type="checkbox" name="3" id="3"><br>
+        
+        <input type="checkbox" name="4" id="4"><br>
+      </div>
+
+       </div>
+       <img src="assets/images/whatsapp.png" alt=""  width="70px" id="toggle">
+      
   </body>
+  <script>
+    let toggle=document.querySelector("#toggle")
+    console.log(toggle);
+    let holder=document.querySelector("#holder")
+    console.log(holder);
+   let opener=0
+    toggle.addEventListener("click",()=>{
+     
+      if (opener===0) {
+      holder.style.visibility="visible"
+     return opener=1
+      }
+      else{
+      holder.style.visibility="hidden"
+     return opener=0
+      
+      }
+      // holder.style.visiblity="visible"
+    })
+    
+  </script>
 </html>
 
 
