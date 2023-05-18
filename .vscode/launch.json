@@ -5,11 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         
+        
         {
-            "type": "chrome",
+            "type": "msedge",
             "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080",
+            "name": "Launch msedge against localhost",
+            "url": "http://localhost:5501",
             "webRoot": "${workspaceFolder}"
         }
     ]

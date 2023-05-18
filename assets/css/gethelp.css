@@ -5,57 +5,15 @@
 }
 
 body {
-    font-family: 'Raleway', sans-serif;
-}
-/* nav bar  */
-.menu-bar {
-    height: 120px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
+   
+    font-family: 'Merienda', cursive;
+    background-image: url(../images/bodybg.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-.menu-bar img {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 100px;
-}
-
-.menu-bar ul {
-    list-style: none;
-    display: flex;
-    margin-top: 0px;
-}
-
-.menu-bar ul li {
-    position: relative;
-    margin-right: 30px;
-    list-style: none;
-    font-size: 18px;
-    padding-top: 6px;
-    font-weight: 400;
-}
-
-.menu-bar ul li::after {
-    content: '';
-    display: block;
-    background-color: #d70f64;
-    height: 2px;
-    width: 0%;
-    margin: auto;
-    transition: 0.5s;
-}
-
-.menu-bar ul li:hover::after {
-    width: 100%;
-}
-
-.menu-bar ul li a {
-    font-size: 20px;
-    text-decoration: none;
-    color: #d70f64;
-}
 
 /* dropdown menu style */
 .dropdown-menu1 {
@@ -72,9 +30,9 @@ body {
 }
 .dropdown1:hover .dropdown-menu1 {
     background-color: aliceblue;
-    height: 70px;
+    height: 100px;
     width: 190px;
-    border-bottom: 2px solid #d70f64;
+    border-bottom: 2px solid #6C3DD9;
     border-top: 10px solid white;
     display: block;
     position: absolute;
@@ -89,56 +47,11 @@ body {
 .dropdown1:hover .dropdown-menu ul li { 
     width: 120px;
 }
-@media screen and (max-width:600px) {
-    .menu-bar {
-      height: 80px;
-      display:contents ;
-      justify-content: space-between;
-      align-items: none;
-      position: sticky;
-      top: 0px;
-      /* border: 2px solid red; */
-      background-color: #fff;
-    
-    }
-    
-    .menu-bar img {
-      margin-left:0px;
-      margin-top: 0px;
-      width: 80px;
-      /* border: 2px solid red; */
-      position: relative;
-      left:40%;
-      
-    }
-    
-    .menu-bar ul {
-      display: flex;
-      margin-top: 10px;
-      width:550px;
-      margin-left: 10px;
-      /* border: 2px solid red; */
-     
-    }
-    
-    .menu-bar ul li {
-      position: relative;
-      margin-right: 13px;
-      list-style: none;
-      padding-top: 6px;
-      
-    }
-    .menu-bar ul li a {
-      font-size: 9px;
-      text-decoration: none;
-      color: #d70f64;
-     
-    }
-}
+
 
 /* get help background img  */
 .gethelpbg {
-    background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/gethelpmain.jpg);
+    background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/gethelpbg.jpg);
     background-attachment: fixed;
     background-size: 1510px;
     background-position: center;
@@ -154,7 +67,7 @@ body {
 }
 @media screen and (max-width:600px) {
     .gethelpbg {
-        background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/gethelpmain.jpg);
+        background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/gethelpbg.jpg);
         background-attachment: fixed;
         background-size: 700px;
         background-position: top;
@@ -189,7 +102,7 @@ body {
 .join {
     cursor: pointer;
     background-color: white;
-    color: #d70f64;
+    color: #6C3DD9;
     font-weight: 500;
     position: relative;
     left: 70px;
@@ -198,16 +111,26 @@ body {
     margin-top: 80px;
     animation-name: slide;
     animation-duration: 2s;
+    border-radius: 20px;
 }
 .helptypes {
-    display: flex;
-    justify-content: space-around;
+   
+    background-image: url(../images/circle-scatter-haikei\ \(1\).png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
     position: relative;
     top: 100px;
-    background-color: #d70f64;
+    /* z-index: -1; */
+
+}
+.gethelp{
+    display: flex;
+    justify-content: space-around;
+   
     padding-top: 100px;
     padding-bottom: 50px;
-
 }
 .helptypes p {
     text-align: center;
@@ -230,6 +153,7 @@ body {
 
 .info {
     height: 500px;
+    margin-top: 100px;
 }
 
 .medicinfo h1 {
@@ -237,7 +161,7 @@ body {
     top: 150px;
     margin-left: 100px;
     font-weight: 400;
-    color: #d70f64;
+    color: #6C3DD9;
 }
 
 .medicinfo p {
@@ -247,7 +171,7 @@ body {
     height: 250px;
     font-size: 25px;
     margin: 0px 100px;
-    color: #d70f64;
+    color: #6C3DD9;
     text-shadow: 1px 1px rgb(124, 118, 118);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -262,11 +186,12 @@ body {
 
 .medicimgs img{
     margin-left: 50px;
-    width: 500px;
+    width: 400px;
     transition: 0.3s;
     border-radius: 20px;
     animation-name: new;
 animation-duration: 8s;
+
 
 }
 
@@ -300,9 +225,16 @@ animation-duration: 8s;
 }
 
 .productinfo {
-    background-color: #d70f64;
+    
+    background-image: url(../images/circle-scatter-haikei\ \(1\).png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
     height: 800px;
-    z-index: -1;
+    /* z-index: -1; */
+    position: relative;
+    top: 300px;
 }
 
 .productinfo p {
@@ -315,6 +247,7 @@ animation-duration: 8s;
     color: white;
     text-shadow: 1px 1px rgb(124, 118, 118);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 }
 
 .productsimgs {
@@ -322,15 +255,17 @@ animation-duration: 8s;
     position: relative;
     top: 20px;
     overflow-x: scroll;
+
     overflow-y: hidden;
 }
 
 .productinfo img {
     margin-left: 40px;
-    width: 500px;
+    width: 400px;
     transition: 0.3s;
     animation-name: new;
 animation-duration: 4s;
+/* border: 2px solid red; */
 }
 .productsimgs img:hover {
     transform: scale(1.1);
@@ -341,7 +276,7 @@ animation-duration: 4s;
     display: none;
 }
 
-.medicimgs {
+/* .medicimgs {
     display: flex;
     position: relative;
     top: 180px;
@@ -362,7 +297,7 @@ animation-duration: 4s;
 
 .medicimgs::-webkit-scrollbar {
     display: none;
-}
+} */
 
 .govtinfo {
     background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/medical-camp.jpg);
@@ -370,6 +305,8 @@ animation-duration: 4s;
     background-position: center;
     background-size: 1587px;
     min-height: 100vh;
+    position: relative;
+    top: 300px;
 }
 
 .govtinfo h1 {
@@ -377,7 +314,7 @@ animation-duration: 4s;
     top: 150px;
     margin-left: 100px;
     font-weight: 400;
-    color: #d70f64;
+    color: #6C3DD9;
 }
 
 .govtinfo p {
@@ -394,11 +331,12 @@ animation-duration: 4s;
 /* footer  */
 #footer{
     position: relative;
-   top: 2150px;
+   top: 250px;
 }
 footer {
-    background-color: #d70f64;
+   background-image: url(../images/footer1.png);
     padding-top: 50px;
+    /* z-index: -1; */
 }
 .foot1 {
     display: flex;

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/profile.css">
+  <link rel="stylesheet" href="../../assets/css/common.css">
+</head>
+<body>
+  <!-- <div class="checkbox">
+    <label for="click" class="text">screen reader</label>
+    <input type="checkbox" id="click" >
+
+  </div> -->
+  <div  class="side-nav">
+   <a href="../../index.html">  <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg"></a>
+  <ul class="navlinks">
+       
+        
+        <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>schemes</a></li>
+        <li><a href="../donarpages/donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>donate</a></li>
+        <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i>about</a></li>
+        <li><a href="../patientpages/gethelp.html"><i class="fa-solid fa-truck-medical"></i>get help</a></li>
+        <li><a href="../donarpages/place.html"><i class="fa-solid fa-calendar-days"></i>offering</a></li>
+
+        <li><a href="../donarpages/involve.html"><i class="fa-solid fa-life-ring"></i>getvinvolved</a></li>
+        <li><a href="../beinspired/inspire.html"><i class="fa-solid fa-dragon"></i>be inspired</a></li>
+        <li><a href="../volunteerpages/profile.html"><i class="fa-solid fa-hospital-user"></i>profile</a></li>
+        <div class="active"></div>
+      </ul>
+  </div>
+ <div class="profile">
+  <div class="imgcontainer">
+   
+    <img src="../../assets/images/aniyuki-sad-anime-avatar-image-32.jpg" alt="" width="200px" >
+    <div class="name name1">
+      <form id="form">
+      <i class="fa-solid fa-signature profileicons"></i> <label for="user_name">name : </label>
+      <br>
+      <input type="text" id="user_name" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"  disabled>
+      <br><br><i class="fa-solid fa-signature profileicons"></i> <label for="accessblity">accessblity </label>
+      <br>
+      <input type="checkbox" id="accessblity" disabled>
+     
+      <!-- <p id="user_name">isaxc</p> -->
+  </div>
+  
+</div>
+  <div class="main">
+    <div class="name2 name">
+    <i class="fa-solid fa-mobile-screen profileicons"></i><label for="mobile_no">mobile_no : </label><br>
+   <input type="text" id="mobile_no" pattern="[0-9]\d*" maxlength="10" onkeypress="return event.charCode >= 48 && event.charCode <= 57"  disabled><br><br>
+    <!-- <p id="mobile_no"></p> -->
+    <i class="fa-solid fa-id-card profileicons"></i><label for="addhar">addhar : </label><br>
+    <input type="text" id="addhar" pattern="[0-9]{12,12}+" onkeypress="return event.charCode >= 48 && event.charCode <= 57" disabled><br><br>
+    <i class="fa-solid fa-id-card profileicons"></i><label for="addhar">role : </label><br>
+    <input type="text" id="role" disabled><br><br>
+    <!-- <p id="addhar"></p> -->
+     <i class="fa-solid fa-envelope profileicons"></i><label for="email">email : </label><br>
+    <input type="text" id="email"disabled><br><br>
+    <!-- <p id="email"></p> -->
+   <i class="fa-solid fa-location-dot profileicons"></i><label for="address">address : </label><br>
+    <input type="text" id="address" disabled><br><br>
+    <!-- <p id="address"></p> -->
+    </div>
+    
+     
+     <button id="edit_btn" >edit</button>
+     <!-- <a href="../../index.html"><button id="logoutbtn">logout</button></a> -->
+     <button id="deletebtn">log out</button>
+    </form>
+    <button id="activity" style="font-size: 11px;">My activities</button>
+
+   </div>
+ </div>
+ <input type="text" id="message" style="margin-left: 300px;">
+    <script src="../../assets/js/voicenavigator.js"></script>
+    <script src="../../assets/js/autospeech.js"></script>
+  <script>
+    let userprofile_name=localStorage.getItem("userprofile_name");
+
+    let form=document.getElementById("form")
+    form.addEventListener("submit", e => {
+            e.preventDefault();
+        })
+
+    let activity=document.getElementById("activity")
+    activity.addEventListener("click",()=>{
+        if(userprofile_name=="freshtrustadmin@gmail.com"){
+          window.location.href="admin.html"
+        }
+        else{
+          window.location.href="../patientpages/appointment.html"
+
+        }
+    })
+
+    let arr = JSON.parse(localStorage.getItem("user"));
+   let result;
+
+    // if arr not equal to null e parameter find the user_email and show the value in profile page 
+
+        if(arr!==null){
+    arr.find( function(e){
+      if(userprofile_name==e["user_email"]){
+          result=e  
+
+          document.getElementById("user_name").value = result["user_name"]
+          if (e["accessblity"]===true) {
+          document.getElementById("accessblity").checked=true
+            
+          }
+          else{
+          document.getElementById("accessblity").checked=false
+
+          }
+
+    document.getElementById("mobile_no").value = result["mobileno"]
+    document.getElementById("addhar").value= result["aadhar"]
+    
+  // checking for the user role is user or volunteer
+
+    if(result["volunteer"]==true){
+    document.getElementById("role").value= "volunteer"
+ 
+    }
+    else{
+    document.getElementById("role").value= "user"
+  
+
+    }
+    document.getElementById("address").value = result["address"]
+    document.getElementById("email").value = result["user_email"]
+      }
+      
+    })
+  }
+  
+  // code for button changing to edit and save option 
+   toggle_btn= document.getElementById("edit_btn");
+
+    let toggled= 0;
+
+    // let change;
+
+    toggle_btn.addEventListener("click",function(){
+
+      if(toggled==0){
+
+      document.getElementById("user_name").removeAttribute("disabled")
+      document.getElementById("mobile_no").removeAttribute("disabled")
+      document.getElementById("addhar").removeAttribute("disabled")
+      document.getElementById("address").removeAttribute("disabled")
+      document.getElementById("accessblity").removeAttribute("disabled")
+     
+      toggled=1;
+
+      document.getElementById("edit_btn").innerText="save";
+      return;
+     }
+     if(toggled==1){
+      
+     
+        let mail=document.getElementById("email").value
+         let name=document.getElementById("user_name").value
+         let addhar=document.getElementById("addhar").value
+         let mobile= document.getElementById("mobile_no").value
+         let address=  document.getElementById("address").value
+
+         let accessblity;
+         if(document.getElementById("accessblity").checked){
+          accessblity=true
+         }
+         else{
+          accessblity=false
+         }
+          
+       toggled=0;
+      let new_array=JSON.parse(localStorage.getItem("user"));
+         
+    // saving the edited profile 
+    if((mail&&name&&addhar&&mobile&&address!==null)&&(mail&&name&&addhar&&mobile&&address!==" ")){
+      new_array.find(element=>{
+        if(mail==element["user_email"]){
+          element["user_name"]=name;
+          element["aadhar"]=addhar;
+          element["mobileno"]=mobile;
+          element["address"]=address
+          element["accessblity"]=accessblity
+
+       
+          localStorage.setItem("user",JSON.stringify(new_array))
+          document.getElementById("user_name").setAttribute("disabled","")
+      document.getElementById("mobile_no").setAttribute("disabled","")
+      document.getElementById("addhar").setAttribute("disabled","")
+      document.getElementById("address").setAttribute("disabled","")
+      document.getElementById("accessblity").setAttribute("disabled","")
+
+        }
+       
+      })
+      
+       
+      document.getElementById("edit_btn").innerText="edit";
+    }
+    else{
+      alert("Please Fill All The Details")
+    }
+      
+    
+      return;
+     }
+    })
+
+
+const btn = document.getElementById("deletebtn")
+btn.addEventListener("click",function () {
+ 
+   localStorage.removeItem("userprofile_name")
+  
+
+  window.location.href = "../../index.html"
+
+  
+})
+
+
+  </script>
+  
+  <script src="../../assets/js/screenreader.js"></script>
+  <script src="../../assets/js/contentreader.js"></script>
+  
+  
+  <script>
+    let cnt = -1;
+let tags;
+let tag_length=0;
+
+
+let cnts = -1;
+let tag;
+let tags_length=0;
+
+document.onkeydown = function (event) {
+  if (event.keyCode == 39) {
+    if (cnt < tag_length && cnt >= -1) {
+      cnt++;
+    }
+    screenreader_selector(".side-nav a", cnt, "You reached the end")
+
+  }
+ 
+  if (event.keyCode == 37) {
+    if (cnt > -1) {
+      cnt--;
+    }
+    // console.log(cnt+": 2")
+    screenreader_selector(".side-nav a", cnt, "You are on the top")
+    
+  }
+  if (event.keyCode == 40) {
+    if (cnts < tags_length && cnts >= -1) {
+      cnts++;
+    }
+    screenreader_content("button", cnts, "You reached the end")
+
+  }
+ 
+  if (event.keyCode == 38) {
+    if (cnts > -1) {
+      cnts--;
+    }
+    // console.log(cnt+": 2")
+    screenreader_content("button", cnts, "You are on the top")
+    
+  }
+  if (event.keyCode == 13) {
+    let anchorTags = document.querySelectorAll(".side-nav a");
+    anchorTags[cnt].click();
+  }
+  if (event.keyCode == 16) {
+      let contentanchor=document.querySelectorAll("button")
+      contentanchor[cnts].click();
+    }
+
+
+};
+
+
+  
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", e => {
+        loader("hi now your are in profile page you can turn off the accessblity option")
+    })
+  
+    document.addEventListener("dblclick", e => {
+      loader("hi now your are in profile page you can turn off the accessblity option")
+    }) 
+     
+    </script>
+  
+  <script>
+      document.addEventListener('keydown', function(event) {
+    if (event.keyCode >= 37 && event.keyCode <= 40) {
+      event.preventDefault();
+    }
+  });
+  
+  
+  </script>
+</body>
+</html> 

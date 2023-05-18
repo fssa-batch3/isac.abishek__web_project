@@ -7,35 +7,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/govt.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../assets/css/common.css">
     <link rel="icon" href="../../assets/images/icon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
+ 
     <title>gethelp</title>
 </head>
 
 <body>
+    <!-- <div class="checkbox">
+    <label for="click" class="text">screen reader</label>
+    <input type="checkbox" id="click" >
+
+  </div> -->
+  <div id="google_translate_element" class="translate"></div>
+
     <nav>
-    <div class="menu-bar">
-        <img src="../../assets/images/logo.png" width="200px" alt="">
-        <ul>
-            
-            <li><a href="../../index.html">HOME</a></li>
-            <li><a href="../about/schemes.html">SCHEMES</a></li>
-            <li><a href="../donarpages/donarlogin.html">DONATE US</a></li>
-            <li><a href="../about/aboutus.html">ABOUT</a></li>
-            <li><a href="../patientpages/gethelp.html">GET HELP</a>
-            </li>
-            <li><a href="../donarpages/involve.html">GET INVOLVED</a></li>
-            <li><a href="../beinspired/inspire.html">BE INSPIRED</a></li>
-        </ul>
-    </div>
+        <div class="side-nav">
+            <a href="../../index.html">  <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg"></a>
+          <ul class="navlinks">
+               
+             
+                <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
+                <li><a id="donationlink"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a></li>
+                <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i><p>About</p></a></li>
+                <li><a  id="gethelp"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
+                <li><a href="../donarpages/place.html"><i class="fa-solid fa-calendar-days"></i>Events</a></li>
+
+
+                <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>GetInvolved</a></li>
+                <li><a id="beinspiredlink"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
+                <li><a id="myprofile"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
+                <div class="active"></div>
+              </ul>
+          </div>
 </nav>
 <!-- body starts  -->
 <main>
+    
     <section class="sec1">
         <div class="sec1h1">
             <h1>GOVERNMENT SCHEMES </h1>
         </div>
     </section>
+    <div class="full govtfull">
     <section class="sec2">
         <table><caption>govt scehems</caption>
             <tr>
@@ -226,11 +242,12 @@
             </tr>
           </table>
     </section>
+</div>
 </main>
 <!-- footer  -->
 <footer>
     <div class="foot1">
-        <img src="../../assets/images/logo.png" width="180px" alt="">
+        <img src="../../assets/images/logo.png" width="180px" alt="" class="icon">
         <div class="fb">
 
             <a href=""> <img src="../../assets/images/facebook.png" width="45px" alt="image error"></a>
@@ -269,4 +286,117 @@
     </div>
 </footer>
 </body>
+<input type="text" id="message">
+  <script src="../../assets/js/voicenavigator.js"></script>
+<script>
+
+    
+
+
+// code for if user logged in the nav link to the appropriate page 
+// if user not logged in it lead to login page 
+
+     let arr = localStorage.getItem("userprofile_name");
+     console.log(arr)
+    // let arr2=JSON.parse(localStorage.getItem("volprofile_name"));
+    let gethelp=  document.getElementById("gethelp");
+    let donation=  document.getElementById("donationlink");
+    let beinspired=document.getElementById("beinspiredlink");
+   let profile=document.getElementById("myprofile");
+
+    if(arr==null||arr==false){
+    
+        gethelp.setAttribute("href","../volunteerpages/signup.html");
+        donation.setAttribute("href","../volunteerpages/signup.html");
+        beinspired.setAttribute("href","../volunteerpages/signup.html");
+        profile.setAttribute("href","../volunteerpages/signup.html");
+    }
+    else{
+       console.log("isac");
+        gethelp.setAttribute("href","../patientpages/gethelp.html");
+        donation.setAttribute("href","../donarpages/donationrequest.html");
+        beinspired.setAttribute("href","../beinspired/inspire.html");
+        profile.setAttribute("href","../about/profile.html");
+    } 
+
+   
+</script>
+<script src="../../assets/js/screenreader.js"></script>
+<script src="../../assets/js/contentreader.js"></script>
+
+
+<script>
+ let cnt = -1;
+  let tags;
+  let tag_length=0;
+  
+  
+  let cnts = -1;
+  let tag;
+  let tags_length=0;
+  
+  document.onkeydown = function (event) {
+    if (event.keyCode == 39) {
+      if (cnt < tag_length && cnt >= -1) {
+        cnt++;
+      }
+      screenreader_selector(".side-nav a", cnt, "You reached the end")
+  
+    }
+   
+    if (event.keyCode == 37) {
+      if (cnt > -1) {
+        cnt--;
+      }
+      // console.log(cnt+": 2")
+      screenreader_selector(".side-nav a", cnt, "You are on the top")
+      
+    }
+    if (event.keyCode == 40) {
+      if (cnts < tags_length && cnts >= -1) {
+        cnts++;
+      }
+      screenreader_content("th,td", cnts, "You reached the end")
+  
+    }
+   
+    if (event.keyCode == 38) {
+      if (cnts > -1) {
+        cnts--;
+      }
+      // console.log(cnt+": 2")
+      screenreader_content("th,td", cnts, "You are on the top")
+      
+    }
+    if (event.keyCode == 13) {
+      let anchorTags = document.querySelectorAll(".side-nav a");
+      anchorTags[cnt].click();
+    }
+    if (event.keyCode == 16) {
+      let contentanchor=document.querySelectorAll("th,td")
+      contentanchor[cnts].click();
+    }
+  
+  };
+
+</script>
+  <script>
+    document.addEventListener("DOMContentLoaded", e => {
+        loader("Hi there now you are in government schemes page you can view schemes")
+    })
+
+    document.addEventListener("dblclick", e => {
+      loader("Hi there now you are in government schemes page you can view schemes")
+    }) 
+    </script>
+
+<script>
+    document.addEventListener('keydown', function(event) {
+  if (event.keyCode >= 37 && event.keyCode <= 40) {
+    event.preventDefault();
+  }
+});
+
+
+</script>
 </html>

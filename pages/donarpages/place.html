@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../assets/css/book.css">
+  <link rel="stylesheet" href="../../assets/css/common.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" href="../../assets/images/icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
+
+  <script src="../../assets/js/sweetalert.min.js"></script>
+  <title>donation request</title>
+</head>
+
+<body>
+  <!-- <div class="checkbox">
+    <label for="click" class="text">screen reader</label>
+    <input type="checkbox" id="click" >
+
+  </div> -->
+  <!-- nav bar starts  -->
+  <nav>
+    
+    <div class="side-nav">
+    <a href="../../index.html"> <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg"></a> 
+      <ul class="navlinks">
+
+
+        <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>schemes</a></li>
+        <li><a href="donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>donate</a>
+        </li>
+        <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i>
+            <p>About</p>
+          </a></li>
+        <li><a id="gethelplink"><i class="fa-solid fa-truck-medical"></i>get help</a></li>
+        <li><a href="place.html"><i class="fa-solid fa-calendar-days"></i>offering</a></li>
+
+        <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>get involved</a></li>
+        <li><a id="inspiredlink"><i class="fa-solid fa-dragon"></i>be inspired</a></li>
+        <li><a id="myprofilelink"><i class="fa-solid fa-hospital-user"></i>your profile</a></li>
+        <div class="active"></div>
+    </div>
+  </nav>
+  <section class="sec1">
+    <div class="sec1h1 donationbg">
+    <a href="donationmail.html">  <button class="join pointer">request donation now</button></a>
+      <h1>Events</h1>
+    </div>
+  </section>
+  <div class="full">
+    <section class="sec2">
+      <h2>Here is our verified needs of help<br>Help us by donating to help them</h2>
+      <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search product by name...">
+        <!-- <button type="button" >Search</button> -->
+      </div>
+    </section>
+  </div>
+  <!-- footer starts  -->
+  <footer id="footer">
+    <div class="foot1">
+      <img src="../../assets/images/logo.png" width="180px" alt="apollo-hospital-image" class="icon">
+      <div class="fb">
+
+        <a href=""> <img src="../../assets/images/facebook.png" width="45px" alt="fb"></a>
+        <a href=""> <img src="../../assets/images/youtube.png" width="45px" alt="youtube"></a>
+        <a href=""> <img src="../../assets/images/insta.png" width="45px" alt="insta"></a>
+        <a href=""> <img src="../../assets/images/mail.png" width="45px" alt="mail"></a>
+        <a href=""> <img src="../../assets/images/whatsapp.png" width="45px" alt="watsap"></a>
+      </div>
+    </div>
+
+
+    <div class="foot3">
+      <div class="add">
+        <h3>FRESHTRUST:</h3>
+
+        <p> Sathyadev Ave, opp.<br> Chettinad Vidyashram, MRC Nagar<br> Raja Annamalai Puram,<br> Chennai, Tamil Nadu
+          600028</p>
+      </div>
+      <div class="mail">
+        <h4>Phone numbers: (11.00 AM to 7.00 PM)</h4>
+        <p> +91-123456789<br>
+          +91-123456789
+          <br>Email: isacdevaabishek@gamil.com
+        </p>
+      </div>
+    </div>
+    <div class="foot2">
+      <div class="foot2p">
+        <p>&copy;2022</p>
+      </div>
+      <div class="foot22p">
+        <p>HELP</p>
+        <p>DONATE</p>
+        <p>BLESSED</p>
+
+      </div>
+    </div>
+  </footer>
+  <input type="text" id="message" style="margin-left:400px ;">
+  
+  <script>
+    let arrs = localStorage.getItem("userprofile_name");
+     
+     // let arr2=JSON.parse(localStorage.getItem("volprofile_name"));
+     let gethelp=  document.getElementById("gethelplink");
+    //  let donation=  document.getElementById("donatelink");
+     let beinspired=document.getElementById("inspiredlink");
+    let profile=document.getElementById("myprofilelink");
+ 
+     if(arrs==null){
+     
+         gethelp.setAttribute("href","../volunteerpages/signup.html");
+        //  donation.setAttribute("href","../volunteerpages/signup.html");
+         beinspired.setAttribute("href","../volunteerpages/signup.html");
+         profile.setAttribute("href","../volunteerpages/signup.html");
+     }
+     else{
+        console.log("isac");
+         gethelp.setAttribute("href","../patientpages/gethelp.html");
+        //  donation.setAttribute("href","donationrequest.html");
+         beinspired.setAttribute("href","../beinspired/inspire.html");
+         profile.setAttribute("href","../about/profile.html");
+     } 
+  </script>
+  <script>
+
+let searchbox=document.getElementById("search-bar")
+    
+    let ret;
+    let item;
+    searchbox.addEventListener("input",(e)=>{
+     let word=e.target.value.toLowerCase();
+     let dic=document.querySelectorAll(".hos1");
+     dic.forEach(ex=>{
+      let child=ex.children[1].children[0].children[1].textContent.toLocaleLowerCase();
+      if (child.startsWith(word)){
+       
+        ex.style.display="flex"
+       
+      }
+      else{
+        ex.style.display="none"
+
+      }
+     })
+    })
+
+    let div_requests
+    // let request_id
+    let img
+    let address
+    let request_title
+    let about_request
+    let requested_by
+    let dropdown1
+    let button
+    let dropdown_menu1
+
+    let a1
+    let contact_holder;
+
+    
+
+  //   let requestform = JSON.parse(localStorage.getItem("donationrequests"))
+  //  let new_request=requests.concat(requestform)
+   let new_request=JSON.parse(localStorage.getItem("placerequests"))
+   const todays = new Date();
+            let date_trim=todays.toLocaleDateString()
+            console.log(date_trim);
+   new_request.find(e=>{
+      if(e["status"]==true){
+             if(e["eventdate"]!==date_trim){
+
+             
+      //  <div class="hos1"></div>
+      div_requests = document.createElement("div");
+      div_requests.setAttribute("class", "hos1");
+
+      // <img src="../../assets/images/apollo-hospital-image.jpg" width="500px" alt="apollo-hospital-image">
+      img = document.createElement("img");
+      
+      img.setAttribute("src", e["place_images"]["source"]);
+      img.setAttribute("alt", e["place_images"]["alternatetext"]);
+      // img.setAttribute("src", new_request[i]["requests_images"]);
+      // img.setAttribute("alt", new_request[i]["img_alt"]);
+      img.setAttribute("width", "300px");
+      img.setAttribute("height", "200px");
+      div_requests.append(img);
+
+    
+
+
+      //  <p></p> 
+
+
+      contact_holder = document.createElement("div")
+      contact_holder.setAttribute("class", "contactholder")
+      div_requests.append(contact_holder)
+
+
+
+
+      request_title = document.createElement("p");
+      request_title.setAttribute("class", "addressp");
+      // request_title.setAttribute("width","300px");
+      request_title.innerHTML ="<span>Place</span>:- "+`<span>${e["place_title"]}</span>`;
+      contact_holder.append(request_title);
+
+      about_request = document.createElement("p");
+      about_request.setAttribute("class", "addressp");
+      about_request.innerHTML = "<span>About</span>:- "+e["about_title"];
+      contact_holder.append(about_request);
+          
+
+      
+
+      requested_by = document.createElement("p");
+      requested_by.setAttribute("class", "addressp");
+      requested_by.innerHTML ="<span>Event date</span>:- "+ e["eventdate"];
+      contact_holder.append(requested_by);
+
+      address = document.createElement("p");
+      address.setAttribute("class", "addressp");
+      address.innerHTML = "<span>contact</span>:- "+e["place_address"];
+      contact_holder.append(address);
+
+
+      // div class dropdown-menu1
+      dropdown1 = document.createElement("div");
+      dropdown1.setAttribute("class", "dropdown1");
+      div_requests.append(dropdown1);
+
+
+      a1 = document.createElement("a");
+      if(e["event"]==="event"){
+      a1.setAttribute("href", "../patientpages/contact.html?requestname="+e["place_title"])
+      
+      }
+      else{
+        a1.setAttribute("href", "../patientpages/buyproducts.html?requestname="+e["place_title"])
+
+      }
+      a1.setAttribute("id", "cont");
+      a1.innerText =e["place_title"]
+      dropdown1.append(a1)
+      //    button class join 
+      // button = document.createElement("button");
+      // button.setAttribute("class", "join");
+      // button.innerText =e["place_title"]
+      // a1.append(button);
+      document.querySelector(".sec2").append(div_requests);
+    }
+    }
+    })
+
+   
+
+
+
+  </script>
+  <script src="../../assets/js/screenreader.js"></script>
+  <script src="../../assets/js/contentreader.js"></script>
+  <script src="../../assets/js/autospeech.js"></script>
+  <script src="../../assets/js/voicenavigator.js"></script>
+  
+  
+  <script>
+    let cnt = -1;
+  let tags;
+  let tag_length=0;
+  
+  
+  let cnts = -1;
+  let tag;
+  let tags_length=0;
+  
+  document.onkeydown = function (event) {
+    if (event.keyCode == 39) {
+      if (cnt < tag_length && cnt >= -1) {
+        cnt++;
+      }
+      screenreader_selector(".side-nav a", cnt, "You reached the end")
+  
+    }
+   
+    if (event.keyCode == 37) {
+      if (cnt > -1) {
+        cnt--;
+      }
+      // console.log(cnt+": 2")
+      screenreader_selector(".side-nav a", cnt, "You are on the top")
+      
+    }
+    if (event.keyCode == 40) {
+      if (cnts < tags_length && cnts >= -1) {
+        cnts++;
+      }
+      screenreader_content(".dropdown1 a,.contactholder p", cnts, "You reached the end")
+     
+    }
+   
+    if (event.keyCode == 38) {
+      if (cnts > -1) {
+        cnts--;
+      }
+      // console.log(cnt+": 2")
+      screenreader_content(".dropdown1 a,.contactholder p", cnts, "You are on the top")
+      
+    }
+    if (event.keyCode == 13) {
+      let anchorTags = document.querySelectorAll(".side-nav a");
+      anchorTags[cnt].click();
+    }
+    if (event.keyCode == 16) {
+      let contentanchor=document.querySelectorAll(".dropdown1 a,.contactholder p")
+      contentanchor[cnts].click();
+    }
+  
+  };
+  
+  </script>
+  
+  
+  <script>
+      document.addEventListener('keydown', function(event) {
+    if (event.keyCode >= 37 && event.keyCode <= 40) {
+      event.preventDefault();
+    }
+  });
+  
+  
+  </script>
+
+
+  <script>
+      
+    
+    document.addEventListener("DOMContentLoaded", e => {
+        loader("Hi there now you are in Events page use up arrow and down arrow to navigate  by hearing the Event place nearby you and Click the shift button to get product or say the place after mic on")
+    })
+  
+    document.addEventListener("dblclick", e => {
+      loader("Hi there now you are in Events page use up arrow and down arrow to navigate by hearing the Event place nearby you and Click the shift button to get product")
+    })
+    </script>
+  
+</html>

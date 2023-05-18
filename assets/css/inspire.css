@@ -5,107 +5,18 @@
 }
 
 body {
-    font-family: 'Raleway', sans-serif;
+    
     margin: 0px;
-    background-color: #f2f2ff;
-}
-/* navbar  */
-.menu-bar {
-    height: 120px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0px;
-    background-color: #fff;
-
-}
-
-.menu-bar img {
-    margin-left: 100px;
-}
-
-.menu-bar ul {
-    display: flex;
-}
-
-.menu-bar ul li {
-    position: relative;
-    margin-right: 30px;
-    list-style: none;
-    font-size: 18px;
-    padding-top: 6px;
-    font-weight: 400;
-}
-
-/* nav hover style  */
-.menu-bar ul li::after {
-    content: '';
-    display: block;
-    background-color: #d70f64;
-    height: 2px;
-    width: 0%;
-    margin: auto;
-    transition: 0.5s;
-}
-
-.menu-bar ul li:hover::after {
-    width: 100%;
-}
-
-.menu-bar ul li a {
-    font-size: 20px;
-    text-decoration: none;
-    color: #d70f64;
-}
-@media screen and (max-width:600px) {
-    .menu-bar {
-      height: 80px;
-      display:contents ;
-      justify-content: space-between;
-      align-items: none;
-      position: sticky;
-      top: 0px;
-      /* border: 2px solid red; */
-      background-color: #fff;
+    font-family: 'Merienda', cursive;
+    background-image: url(../images/bodybg.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     
-    }
-    
-    .menu-bar img {
-      margin-left:0px;
-      margin-top: 0px;
-      width: 80px;
-      /* border: 2px solid red; */
-      position: relative;
-      left:40%;
-      
-    }
-    
-    .menu-bar ul {
-      display: flex;
-      margin-top: 10px;
-      width:550px;
-      margin-left: 10px;
-      /* border: 2px solid red; */
-     
-    }
-    
-    .menu-bar ul li {
-      position: relative;
-      margin-right: 13px;
-      list-style: none;
-      padding-top: 6px;
-      
-    }
-    .menu-bar ul li a {
-      font-size: 9px;
-      text-decoration: none;
-      color: #d70f64;
-     
-    }
 }
 .sec1h1 {
-    background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/inspirebg.jpg);
+    background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/Happy\ disabled\ athlete\ running\ in\ park.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position: 0%;
@@ -181,19 +92,10 @@ iframe{
    
     margin-top: 100px;
     border-radius: 20px;
-    animation-name: new;
-    animation-duration: 4s;
+  
 }
-@keyframes new{
-    0%{
-        transform: translateX(1500px);opacity: 0;
-       
-    }
-    100%{
-        transform: translate(0px);opacity: 1;
-        
-    }
-}
+
+
 
 .nick{
     display: flex;
@@ -241,103 +143,3 @@ iframe{
     background-repeat: no-repeat;
     color: #f2f2ff;
 }
-/* footer  */
-.foot1 {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 100px 0px 160px;
-    color: white;
-}
-#footer{
-    background-color: #d70f64;
-}
-.fb img {
-    padding-left: 15px;
-}
-
-.foot2 {
-    display: flex;
-    justify-content: space-between;
-    margin: 0px 100px 0px 160px;
-    color: white;
-}
-
-.foot2p p {
-    font-weight: 500;
-    padding-top: 20px;
-}
-
-.foot22p {
-    display: flex;
-}
-
-.foot22p p {
-    padding-left: 60px;
-    padding-top: 20px;
-    font-weight: 500;
-    margin-bottom: 50px;
-}
-
-.foot3 {
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    margin: 30px 100px 0px 160px;
-}
-
-.foot3 p {
-    padding-left: 30px;
-}
-@media screen and (max-width:600px)  {
-    .foot1 {
-      color: white;
-      margin-left: 25px;
-      width: 350px;
-    }
-    .foot1 img{
-      width: 100px;
-    }
-    
-    .fb img {
-      padding-left: 15px;
-      width: 25px;
-  
-    }
-    .foot2 {
-      display: contents;
-      color:white;
-      
-    }
-    
-    .foot2p p {
-      font-weight: 500;
-      /* padding-top: 20px; */
-    }
-    
-    .foot22p {
-      display: flex;
-    }
-    
-    .foot22p p {
-      padding-top: 20px;
-      font-weight: 500;
-      margin-bottom: 0px;
-    }
-    
-    .foot3 {
-      margin-left: 0px;
-      color: white;
-      width: 400px;
-    }
-    
-    .foot3 p {
-      font-size: 10px;
-      margin-right: 20px;
-    }
-    .foot3 h4{
-    
-      font-size: 15px;
-      margin-right: 20px;
-    }
-    
-  }

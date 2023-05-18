@@ -5,15 +5,20 @@
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Merienda', cursive;
   margin: 0px;
-
+  
+  background-image: url(../images/bodybg.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-@keyframes slide{
+/* @keyframes slide{
   0%{opacity: 0;}
   100%{ opacity: 1;}
-  }
+  } */
 
 .menu-bar {
   height: 120px;
@@ -46,7 +51,7 @@ body {
 .menu-bar ul li::after {
   content: '';
   display: block;
-  background-color: #d70f64;
+  background-color: #6C3DD9;
   height: 2px;
   width: 0%;
   margin: auto;
@@ -60,7 +65,7 @@ body {
 .menu-bar ul li a {
   font-size: 20px;
   text-decoration: none;
-  color: #d70f64;
+  color: #6C3DD9;
 }
 
 /* dropdown menu style */
@@ -111,7 +116,7 @@ body {
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 1px;
-  color: #d70f64;
+  color: #6C3DD9;
   animation-name: slide;
   animation-duration: 2s;
 }
@@ -171,7 +176,7 @@ body {
   .menu-bar ul li a {
     font-size: 9px;
     text-decoration: none;
-    color: #d70f64;
+    color: #6C3DD9;
    
   }
   .main1 {
@@ -191,7 +196,7 @@ body {
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 1px;
-    color: #d70f64;
+    color: #6C3DD9;
     animation-name: slide;
     animation-duration: 2s;
   }
@@ -208,8 +213,9 @@ body {
   }
   
   .main1full img {
-    margin-left: 200px;
+    /* margin-left: 500px;
     width: 10px;
+    border: 2px solid green; */
   }
 }
 
@@ -223,7 +229,7 @@ body {
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 1px;
-  color: #d70f64;
+  color: #6C3DD9;
   
 }
 
@@ -238,10 +244,10 @@ body {
 
 .learn {
   color: #fff;
-  background-color: #d70f64;
+  background-color: #6C3DD9;
   font-weight: 500;
   margin-top: 20px;
-  margin-left: 210px;
+  margin-left: 230px;
   padding: 20px 50px 20px 50px;
   border: none;
   text-transform: uppercase;
@@ -249,9 +255,9 @@ body {
 }
 
 .learn:hover {
-  color: #d70f64;
+  color: #6C3DD9;
   background-color: white;
-  border: 2px solid #d70f64;
+  border: 2px solid #6C3DD9;
   transform: scale(1.1);
 }
 @media screen and (max-width:600px){
@@ -268,7 +274,7 @@ body {
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 1px;
-    color: #d70f64;
+    color: #6C3DD9;
     
   }
   
@@ -285,10 +291,10 @@ body {
   
   .learn {
     color: #fff;
-    background-color: #d70f64;
+    background-color: #6C3DD9;
     font-weight: 500;
     margin-top: 20px;
-    margin-left: 110px;
+    margin-left: 120px;
     padding: 20px 50px 20px 50px;
     border: none;
     text-transform: uppercase;
@@ -315,7 +321,7 @@ body {
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 1px;
-  color: #d70f64;
+  color: #6C3DD9;
 }
 
 .main3full p {
@@ -329,7 +335,7 @@ body {
 
 .gethelp {
   color: white;
-  background-color: #d70f64;
+  background-color: #6C3DD9;
   font-weight: 500;
   margin-top: 20px;
   margin-left: 330px;
@@ -340,9 +346,9 @@ body {
 }
 
 .gethelp:hover {
-  color: #d70f64;
+  color: #6C3DD9;
   background-color: white;
-  border: 2px solid #d70f64;
+  border: 2px solid #6C3DD9;
   transform: scale(1.1);
 }
 @media screen and (max-width:600px) {
@@ -362,7 +368,7 @@ body {
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 1px;
-    color: #d70f64;
+    color: #6C3DD9;
   }
   
   .main3full p {
@@ -377,7 +383,7 @@ body {
   
   .gethelp {
     color: white;
-    background-color: #d70f64;
+    background-color: #6C3DD9;
     font-weight: 500;
     margin-top: 20px;
     margin-left: 110px;
@@ -402,7 +408,7 @@ body {
 }
 
 .main4full h1 {
-  color: #d70f64;
+  color: #6C3DD9;
   text-align: center;
   font-size: 40px;
   margin: 0 0 20px;
@@ -421,7 +427,7 @@ body {
 }
 
 .join {
-  background-color: #d70f64;
+  background-color: #6C3DD9;
   color: white;
   font-weight: 500;
   margin-top: 20px;
@@ -433,9 +439,9 @@ body {
 }
 
 .join:hover {
-  color: #d70f64;
+  color: #6C3DD9;
   background-color: white;
-  border: 2px solid #d70f64;
+  border: 2px solid #6C3DD9;
   transform: scale(1.1);
 }
 @media screen and (max-width:600px) {
@@ -450,7 +456,7 @@ body {
   }
   
   .main4full h1 {
-    color: #d70f64;
+    color: #6C3DD9;
     text-align: center;
     font-size: 40px;
     margin: 0 0 20px;
@@ -470,7 +476,7 @@ body {
   
   .join {
     color: white;
-    background-color: #d70f64;
+    background-color: #6C3DD9;
     font-weight: 500;
     margin-top: 20px;
     margin-left: 120px;
@@ -500,7 +506,7 @@ body {
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 1px;
-  color: #d70f64;
+  color: #6C3DD9;
 }
 
 .main5full p {
@@ -525,7 +531,7 @@ body {
 
 /* contact  */
 .main6 {
-  background-color: #d70f64;
+  background-color: #6C3DD9;
   background-size: 1750px;
   display: flex;
   justify-content: center;
@@ -553,7 +559,7 @@ body {
 }
 
 .CONTACTS {
-  color: #d70f64;
+  color: #6C3DD9;
   background-color: white;
   font-weight: 500;
   margin-top: 20px;
@@ -566,7 +572,7 @@ body {
 
 .CONTACTS:hover {
   color: white;
-  background-color: #d70f64;
+  background-color: #6C3DD9;
   border: 2px solid white;
   transform: scale(1.1);
 }
@@ -575,7 +581,7 @@ body {
     min-height: 40vh;
     padding-bottom:100px;
     padding-top: 0px;
-    background-color: #d70f64;
+    background-color: #6C3DD9;
   }
   
   .main6full h1 {
@@ -600,7 +606,7 @@ body {
   }
   
   .CONTACTS {
-    color: #d70f64;
+    color: #6C3DD9;
     background-color: white;
     font-weight: 500;
     margin-top: 20px;
@@ -615,7 +621,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin: 20px 100px 0px 160px;
-  color: #d70f64;
+  color: #6C3DD9;
 }
 
 .fb img {
@@ -626,7 +632,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin: 0px 100px 0px 160px;
-  color: #d70f64;
+  color: #6C3DD9;
 }
 
 .foot2p p {
@@ -648,16 +654,17 @@ body {
 .foot3 {
   display: flex;
   justify-content: space-between;
-  color: #d70f64;
+  color: #6C3DD9;
   margin: 30px 100px 0px 160px;
 }
 
 .foot3 p {
   padding-left: 30px;
 }
+
 @media screen and (max-width:600px)  {
   .foot1 {
-    color: #d70f64;
+    color: #6C3DD9;
     margin-left: 25px;
     width: 350px;
   }
@@ -672,7 +679,7 @@ body {
   }
   .foot2 {
     display: contents;
-    color: #d70f64;
+    color: #6C3DD9;
     
   }
   
@@ -693,7 +700,7 @@ body {
   
   .foot3 {
     margin-left: 0px;
-    color: #d70f64;
+    color: #6C3DD9;
     width: 400px;
   }
   

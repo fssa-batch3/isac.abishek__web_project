@@ -6,55 +6,78 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/involve.css">
+    <link rel="stylesheet" href="../../assets/css/common.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" href="../../assets/images/icon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap">
+    <script
+    src="https://kit.fontawesome.com/ee40c53027.js"
+    crossorigin="anonymous"
+    integrity="">
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
+   
     <title>schemes</title>
 </head>
 <body>
   <!-- nav bar starts  -->
+  <!-- <div class="checkbox">
+      <label for="click" class="text">screen reader</label>
+      <input type="checkbox" id="click" >
+
+    </div> -->
     <nav>
-    <div class="menu-bar">
-        <img src="../../assets/images/logo.png" width="200px" alt="image error">
-        <ul>
-            
-            <li><a href="../../index.html">HOME</a></li>
-            <li><a href="schemes.html">SCHEMES</a></li>
-            <li><a href="../donarpages/donarlogin.html">DONATE US</a></li>
-            <li><a href="../about/aboutus.html">ABOUT</a></li>
-            <li><a href="../patientpages/gethelp.html">GET HELP</a></li>
-            <li><a href="../donarpages/involve.html">GET INVOLVED</a></li>
-            <li><a href="../beinspired/inspire.html">BE INSPIRED</a></li>
+    <!-- <div class="menu-bar"> -->
+      <div class="side-nav">
+        <a href="../../index.html"> <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg"></a>
+      <ul class="navlinks">
+           
+            <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>schemes</a></li>
+            <li><a id="donationlink"><i class="fa-solid fa-circle-dollar-to-slot"></i>donate</a></li>
+            <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i><p>about</p></a></li>
+            <li><a id="gethelp"><i class="fa-solid fa-truck-medical"></i>get help</a></li>
+            <li><a href="../donarpages/place.html"><i class="fa-solid fa-calendar-days"></i>offering</a></li>
+
+            <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>get involved</a></li>
+            <li><a id="beinspiredlink"><i class="fa-solid fa-dragon"></i>be inspired</a></li>
+            <li><a id="myprofile"><i class="fa-solid fa-hospital-user"></i>profile</a></li>
+            <div class="active"></div>
+        
+
+          </ul>
+      </div>
         </ul>
-    </div>
+    <!-- </div> -->
 </nav>
 <main>
   <!-- content starts  -->
+ 
     <section>
         <div class="gethelpbg">
             <h1>SCHEMES</h1>
         </div>
     </section>
+    <div class="full">
         <section class="sec1">
             <div class="volunteer">
                 <h1>GOVERNMENT SCHEMES</h1>
                 <p>In order to provide effective rehabilitation services to the differently abled persons, during 1993,<br> a separate Directorate for the Rehabilitation of the Differently Abled Persons<br> was formed by bifurcating the Directorate of Social Welfare. <br> </p>
-                    <a href="../patientpages/govt.html"><button class="join">VIEW SCHEMES</button></a>
+                    <a href="../patientpages/govt.html"><button class="join">view schemes</button></a>
             </div>
-          <img src="../../assets/images/tn.png" width="400px"  alt="error">
+          <img src="../../assets/images/schemes.jpg" width="400px"  alt="error">
         </section><br>
         <section class="sec1">
-            <img src="../../assets/images/Steps-for-success-job.webp" width="400px" alt="error">
+            <img src="../../assets/images/suscces.jpg" width="400px" alt="error">
         <div class="donate">
             <h1>HOW TO APPLY</h1>
             <p>Click the below button to  know how to apply for the government schemes in little steps</p>
-                <a href="apply.html"><button class="join">CLICK HERE</button></a>
+                <a href="apply.html"><button class="join">apply</button></a>
         </div>
     </section>
+  </div>
     <!-- footer starts  -->
     <footer id="footer">
         <div class="foot1">
-          <img src="../../assets/images/logo.png" width="180px" alt="">
+          <img src="../../assets/images/logo.png" width="180px" alt="error" class="icon">
           <div class="fb">
       
             <a href=""> <img src="../../assets/images/facebook.png" width="45px" alt="image error"></a>
@@ -92,5 +115,118 @@
           </div>
         </div>
       </footer>
+      <input type="text" id="message" style="margin-left: 300px;">
+    <script src="../../assets/js/voicenavigator.js"></script>
+    <script src="../../assets/js/autospeech.js"></script>
+      <script>
+
+    
+
+// code for if user logged in the nav link to the appropriate page 
+// if user not logged in it lead to login page 
+
+
+let arr = localStorage.getItem("userprofile_name");
+     
+    // let arr2=JSON.parse(localStorage.getItem("volprofile_name"));
+    let gethelp=  document.getElementById("gethelp");
+    let donation=  document.getElementById("donationlink");
+    let beinspired=document.getElementById("beinspiredlink");
+   let profile=document.getElementById("myprofile");
+
+    if(arr==null||arr==false){
+    
+        gethelp.setAttribute("href","../volunteerpages/signup.html");
+        donation.setAttribute("href","../volunteerpages/signup.html");
+        beinspired.setAttribute("href","../volunteerpages/signup.html");
+        profile.setAttribute("href","../volunteerpages/signup.html");
+    }
+    else{
+       console.log("isac");
+        gethelp.setAttribute("href","../patientpages/gethelp.html");
+        donation.setAttribute("href","../donarpages/donationrequest.html");
+        beinspired.setAttribute("href","../beinspired/inspire.html");
+        profile.setAttribute("href","../about/profile.html");
+    } 
+   
+      </script>
+  <script src="../../assets/js/screenreader.js"></script>
+  <script src="../../assets/js/contentreader.js"></script>
+  
+  
+  <script>
+    let cnt = -1;
+  let tags;
+  let tag_length=0;
+  
+  
+  let cnts = -1;
+  let tag;
+  let tags_length=0;
+  
+  document.onkeydown = function (event) {
+    if (event.keyCode == 39) {
+      if (cnt < tag_length && cnt >= -1) {
+        cnt++;
+      }
+      screenreader_selector(".side-nav a", cnt, "You reached the end")
+  
+    }
+   
+    if (event.keyCode == 37) {
+      if (cnt > -1) {
+        cnt--;
+      }
+      // console.log(cnt+": 2")
+      screenreader_selector(".side-nav a", cnt, "You are on the top")
+      
+    }
+    if (event.keyCode == 40) {
+      if (cnts < tags_length && cnts >= -1) {
+        cnts++;
+      }
+      screenreader_content(".donate h1,.donate a,.donate p,.volunteer h1,.volunteer p,.volunteer a", cnts, "You reached the end")
+  
+    }
+   
+    if (event.keyCode == 38) {
+      if (cnts > -1) {
+        cnts--;
+      }
+      // console.log(cnt+": 2")
+      screenreader_content(".donate h1,.donate a,.donate p,.volunteer h1,.volunteer p,.volunteer a", cnts, "You are on the top")
+      
+    }
+    if (event.keyCode == 13) {
+      let anchorTags = document.querySelectorAll(".side-nav a");
+      anchorTags[cnt].click();
+    }
+    if (event.keyCode == 16) {
+      let contentanchor=document.querySelectorAll(".donate h1,.donate a,.donate p,.volunteer h1,.volunteer p,.volunteer a")
+      contentanchor[cnts].click();
+    }
+  
+  };
+  
+  </script>
+  
+  
+  <script>
+      document.addEventListener('keydown', function(event) {
+    if (event.keyCode >= 37 && event.keyCode <= 40) {
+      event.preventDefault();
+    }
+  });
+  </script>
+   <script>
+    document.addEventListener("DOMContentLoaded", e => {
+        loader("hi now your are in schemes page you can select to view or hear by saying view schemes and how to apply for it by saying apply")
+    })
+  
+    document.addEventListener("dblclick", e => {
+      loader("hi now your are in schemes page you can select to view or hear by saying view schemes and how to apply for it by saying apply")
+    })
+    </script>
       </body>
+      
       </html>

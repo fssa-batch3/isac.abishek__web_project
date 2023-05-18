@@ -3,61 +3,46 @@
     margin: 0;
     padding: 0;
 }
-
-body {
-    font-family: 'Raleway', sans-serif;
-}
-
-/* nav bar  */
-.menu-bar {
-    height: 120px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-}
-
-.menu-bar img {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 100px;
-}
-
-.menu-bar ul {
-    list-style: none;
-    display: flex;
-    margin-top: 0px;
-}
-
-.menu-bar ul li {
-    position: relative;
-    margin-right: 30px;
-    list-style: none;
-    font-size: 18px;
-    padding-top: 6px;
+.gethelpbg {
+    background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/govt2.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    min-height: 30vh;
+    text-align: center;
+    font-size: 40px;
+    padding-top: 150px;
+    text-transform: uppercase;
     font-weight: 400;
+    color: white;
+    letter-spacing: 1px;
+    /* width: 1137px; */
+}
+/* animation*/
+.gethelpbg h1{
+    background: url(../images/back.png);
+    color: transparent;
+    -webkit-text-stroke: 0.50px white;
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation:back 20s linear infinite;
 }
 
-.menu-bar ul li::after {
-    content: '';
-    display: block;
-    background-color: #d70f64;
-    height: 2px;
-    width: 0%;
-    margin: auto;
-    transition: 0.5s;
+@keyframes back{
+    100%{
+        background-position: 2000px 0;
+    }
 }
-
-.menu-bar ul li:hover::after {
-    width: 100%;
+body {
+    font-family: 'Merienda', cursive;
+   
+    background-image: url(../images/bodybg.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
-
-.menu-bar ul li a {
-    font-size: 20px;
-    text-decoration: none;
-    color: #d70f64;
-}
-
 table,
 td,
 th {
@@ -68,6 +53,9 @@ th {
 table {
     border-collapse: collapse;
     width: 100%;
+    margin: auto;
+    /* margin-left: 0px; */
+    
 }
 caption{
     display: none;
@@ -78,11 +66,11 @@ td {
 }
 
 tr:nth-child(odd) {
-    background-color: #fbcee1;
+    background-color: #d4c1ff;
 }
 
 th {
-    background-color: #d70f64;
+    background-color: #6C3DD9;
     color: white;
 }
 
@@ -91,78 +79,80 @@ td {
 }
 
 table {
-    width: 1300px;
+    width: 1050px;
     margin: 90px;
     border: 2px solid gray;
-    animation-name: new;
-    animation-duration: 4s;
+ 
 }
-@keyframes new{
-    0%{ transform: translateX(1500px);opacity: 0;}
-    100%{transform: translateX(0px);opacity: 1;}
-    }
+
 h1 {
     text-align: center;
-    color: #d70f64;
+    color: #6C3DD9;
     margin-bottom: 30px;
     margin-top: 30px;
-    animation-name: slide;
-    animation-duration: 2s;
-}
-@keyframes slide{
-    0%{opacity: 0;}
-    100%{ opacity: 1;}
-    }
-footer {
-    background-color: #d70f64;
-    padding-top: 50px;
+  
 }
 
-.foot1 {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 100px 0px 160px;
+#join {
+    cursor: pointer;
+    background-color: #6C3DD9;
     color: white;
-}
-
-.fb img {
-    padding-left: 15px;
-}
-
-.foot2 {
-    display: flex;
-    justify-content: space-between;
-    margin: 0px 100px 0px 160px;
-    color: white;
-}
-
-.foot2p p {
     font-weight: 500;
-    padding-top: 20px;
+   
+    padding: 20px 85px;
+    border: none;
+    /* margin-top: 40px; */
+    position: absolute;
+    right: 0px;
+
 }
 
-.foot22p {
-    display: flex;
+#join:hover {
+    background-color:#d4c1ff;
+    color: #6C3DD9;
+    border: 1px solid #6C3DD9;
+    /* padding: 18px 83px; */
 }
-
-.foot22p p {
-    padding-left: 60px;
-    padding-top: 20px;
-    font-weight: 500;
-    margin-bottom: 50px;
+.datas{
+    height: 500px;
+    width: 500px;
+    background-color: white;
+    position: absolute;
+    top: 8%;
+    left: 35%;
+    border-radius: 30px;
+   
+    
 }
-
-.foot3 {
-    display: flex;
-    justify-content: space-between;
+#close{
+    position: absolute;
+    right: 0%;
+    top: 0px;
+}
+.datas h2{
+    text-align: center;
+    color: #6C3DD9;
+    margin: 20px 0px;
+}
+input{
+    width: 300px;
+    height: 50px;
+    margin: 20px 90px;
+}
+#submit_btn{
+    cursor: pointer;
+    background-color: #6C3DD9;
     color: white;
-    margin: 30px 100px 0px 160px;
+    font-weight: 500;
+   position: absolute;
+   right: 10px;
+   margin-top: 30px;
+    padding: 20px 85px;
+    border: none;
 }
+#submit_btn:hover{
+    background-color:#d4c1ff;
+    color: #6C3DD9;
+    border: 1px solid #6C3DD9;
 
-.add p {
-    padding-left: 30px;
-}
-
-.mail p {
-    padding-left: 30px;
 }

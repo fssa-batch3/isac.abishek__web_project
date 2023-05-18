@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../assets/css/productview.css">
+  <link rel="stylesheet" href="../../assets/css/common.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <script src="https://kit.fontawesome.com/98f622c388.js" crossorigin="anonymous"></script>
+  <link rel="icon" href="../../assets/images/icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script src="../../assets/js/translator.js"></script>
+  <title>gethelp</title>
+</head>
+
+<body>
+  <!-- <div class="checkbox">
+    <label for="click" class="text">screen reader</label>
+    <input type="checkbox" id="click" >
+
+  </div> -->
+  <!-- nav starts  -->
+  <div id="google_translate_element" class="translate"></div>
+
+  <nav>
+    <div class="side-nav">
+      <a href="../../index.html">  <img src="../../assets/images/logo.png" width="250px" alt="image error" class="logoimg"></a>
+    <ul class="navlinks">
+              
+          <li><a href="../about/schemes.html"><i class="fa-solid fa-gift"></i>Schemes</a></li>
+          <li><a href="../donarpages/donationrequest.html"><i class="fa-solid fa-circle-dollar-to-slot"></i>Donatenow</a></li>
+          <li><a href="../about/aboutus.html"><i class="fa-solid fa-users"></i><p>About</p></a></li>
+          <li><a href="../patientpages/gethelp.html"><i class="fa-solid fa-truck-medical"></i>Gethelp</a></li>
+          <li><a href="../donarpages/place.html"><i class="fa-solid fa-calendar-days"></i>Events</a></li>
+
+
+          <li><a href="../donarpages/involve.html"><i class="fa-brands fa-superpowers"></i>GetInvolved</a></li>
+          <li><a href="../beinspired/inspire.html"><i class="fa-solid fa-dragon"></i>BeInspired</a></li>
+          <li><a href="../about/profile.html"><i class="fa-solid fa-hospital-user"></i>Yourprofile</a></li>
+          <div class="active"></div>
+        </ul>
+    </div>
+  </nav>
+  <div class="full">
+  <!-- content  -->
+  <main>
+    
+    <section class="sec1">
+      <h1>PRODUCT-<span></span></h1>
+    </section>
+    <section class="sec2">
+    </section>
+    
+    <hr>
+  </main>
+</div>
+  <footer id="footer">
+    <div class="foot1">
+      <img src="../../assets/images/logo.png" width="180px" alt="">
+      <div class="fb">
+
+        <a href="#"> <img src="../../assets/images/facebook.png" width="45px" alt="imageerror"></a>
+        <a href="#"> <img src="../../assets/images/youtube.png" width="45px" alt="imageerror"></a>
+        <a href="#"> <img src="../../assets/images/insta.png" width="45px" alt="imageerror"></a>
+        <a href="#"> <img src="../../assets/images/mail.png" width="45px" alt="imageerror"></a>
+        <a href="#"> <img src="../../assets/images/whatsapp.png" width="45px" alt="imageerror"></a>
+      </div>
+    </div>
+
+
+    <div class="foot3">
+      <div class="add">
+        <h4>FRESHTRUST:</h4>
+
+        <p> Sathyadev Ave, opp.<br> Chettinad Vidyashram, MRC Nagar<br> Raja Annamalai Puram,<br> Chennai, Tamil Nadu
+          600028</p>
+      </div>
+      <div class="mail">
+        <h4>Phone numbers: (11.00 AM to 7.00 PM)</h4>
+        <p> +91-123456789<br>
+          +91-123456789
+          <br>Email: isacdevaabishek@gamil.com
+        </p>
+      </div>
+    </div>
+    <div class="foot2">
+      <div class="foot2p">
+        <p>&copy;2022</p>
+      </div>
+      <div class="foot22p">
+        <p>HELP</p>
+        <p>DONATE</p>
+        <p>BLESSED</p>
+
+      </div>
+    </div>
+  </footer>
+
+</body>
+<script>
+   
+
+
+
+
+const productspage= JSON.parse(localStorage.getItem("productrequest"));
+  const url = window.location.search;
+  const urlParams = new URLSearchParams(url);
+  const username = urlParams.get("name")
+  console.log(username);
+
+
+
+  let res;
+  productspage.find(
+    function (e) {
+      // let value=
+      if (e["product_name"] == username) {
+        // return true;
+        return res = e;
+        // console.log(res)
+      }
+      else {
+        // return false;
+        return res = 0
+      }
+    }
+    
+    )
+
+  console.log(res);
+
+  
+  let project_title;
+  let image_div;
+  let img1;
+  let img2;
+  let img3;
+  let img4;
+  let br;
+  let abtproduct;
+  let description;
+
+  let title;
+  let dimensions;
+  let ul;
+  let li;
+  
+
+
+  let a;
+  let button
+ let product_name=res["product_name"]
+project_title=document.createElement("span");
+project_title.innerText=res["product_name"]
+document.querySelector("h1").append(project_title)
+console.log(project_title);
+
+  let sec = document.querySelector(".sec2");
+  image_div = document.createElement("div");
+  image_div.setAttribute("class", "triimage");
+
+  img1 = document.createElement("img");
+  img1.setAttribute("src", res["image1"]["source"]);
+  img1.setAttribute("alt", res["image1"]["alt"]);
+  img1.setAttribute("width", "400px");
+  image_div.append(img1)
+
+  br = document.createElement("br");
+  image_div.append(br)
+
+  img2 = document.createElement("img");
+  img2.setAttribute("src", res["image2"]["source"]);
+  img2.setAttribute("alt", res["image2"]["alt"]);
+  img2.setAttribute("width", "200px");
+  image_div.append(img2)
+
+  img3 = document.createElement("img");
+  img3.setAttribute("src", res["image3"]["source"]);
+  img3.setAttribute("alt", res["image3"]["alt"]);
+  img3.setAttribute("width", "200px");
+  img3.setAttribute("id", "img3");
+  image_div.append(img3)
+
+  img4 = document.createElement("img");
+  img4.setAttribute("src", res["image4"]["source"]);
+  img4.setAttribute("alt", res["image4"]["alt"]);
+  img4.setAttribute("width", "200px");
+  image_div.append(img4)
+  sec.append(image_div)
+
+  abtproduct = document.createElement("div");
+  abtproduct.setAttribute("class", "abttri");
+
+
+  description = document.createElement("h2")
+  description.innerText = "Description"
+  abtproduct.append(description)
+
+  title = document.createElement("p")
+  title.innerText = res["product_des"]
+  abtproduct.append(title)
+
+  dimensions = document.createElement("h3")
+  dimensions.innerText = "overall dimensions"
+  abtproduct.append(dimensions)
+
+  ul = document.createElement("div")
+  abtproduct.append(ul)
+
+  li = document.createElement("p");
+  li.setAttribute("class","prod_desc")
+  li.innerHTML = res["feature1"]
+
+  ul.append(li)
+
+  a = document.createElement("a")
+  a.setAttribute("href", "contact.html?productname="+product_name)
+  abtproduct.append(a)
+
+  button = document.createElement("button")
+  button.setAttribute("class", "join")
+  button.innerText = "contact now"
+  a.append(button)
+  sec.append(abtproduct);
+
+  // comented screenreader beacuse toggle button not coded 
+
+//   let msg = new SpeechSynthesisUtterance();
+// let voices = speechSynthesis.getVoices();
+// msg.voice = voices[0];
+// let tags = document.querySelectorAll('p,a,h1,h2,h3'); // add more tags for you project
+// tags.forEach((tag) => {
+//     tag.addEventListener('click', (e) => {
+        
+//         msg.text = e.target.innerText;
+//         tag.style.backgroundColor = "yellow";
+//         tag.style.color = "black";
+//         speechSynthesis.speak(msg);
+        
+//         let interval = setInterval(() => {
+//             if(!speechSynthesis.speaking){
+//                 tag.style.removeProperty('background-color');
+//                 clearInterval(interval);
+//             }
+//         }, 100);
+        
+//     });
+// });
+</script>
+<script src="../../assets/js/screenreader.js"></script>
+<script src="../../assets/js/contentreader.js"></script>
+
+
+<script>
+ let cnt = -1;
+  let tags;
+  let tag_length=0;
+  
+  
+  let cnts = -1;
+  let tag;
+  let tags_length=0;
+  
+  document.onkeydown = function (event) {
+    if (event.keyCode == 39) {
+      if (cnt < tag_length && cnt >= -1) {
+        cnt++;
+      }
+      screenreader_selector(".side-nav a", cnt, "You reached the end")
+  
+    }
+   
+    if (event.keyCode == 37) {
+      if (cnt > -1) {
+        cnt--;
+      }
+      // console.log(cnt+": 2")
+      screenreader_selector(".side-nav a", cnt, "You are on the top")
+      
+    }
+    if (event.keyCode == 40) {
+      if (cnts < tags_length && cnts >= -1) {
+        cnts++;
+      }
+      screenreader_content(".sec1 h1,.sec2 a", cnts, "You reached the end")
+  
+    }
+   
+    if (event.keyCode == 38) {
+      if (cnts > -1) {
+        cnts--;
+      }
+      // console.log(cnt+": 2")
+      screenreader_content(".sec1 h1,.sec2 a", cnts, "You are on the top")
+      
+    }
+    if (event.keyCode == 13) {
+      let anchorTags = document.getElementsByTagName(".side-nav a");
+      anchorTags[cnt].click();
+    }
+    if (event.keyCode == 16) {
+      let contentanchor=document.querySelectorAll(".sec1 h1,.sec2 a")
+      contentanchor[cnts].click();
+    }
+  
+  };
+
+</script>
+
+
+<script>
+    document.addEventListener('keydown', function(event) {
+  if (event.keyCode >= 37 && event.keyCode <= 40) {
+    event.preventDefault();
+  }
+});
+
+
+</script>
+</html>

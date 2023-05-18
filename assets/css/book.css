@@ -5,65 +5,16 @@
 }
 
 body {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Merienda', cursive;
     margin: 0px;
-    background-color: #f2f2ff;
-}
-@keyframes slide{
-    0%{opacity: 0;}
-    100%{ opacity: 1;}
-    }
-/* navbar  */
-.menu-bar {
-    height: 120px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0px;
-    background-color: #fff;
 
+    background-image: url(../images/circle-scatter-haikei3.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-.menu-bar img {
-    margin-left: 100px;
-}
-
-.menu-bar ul {
-    display: flex;
-}
-
-.menu-bar ul li {
-    position: relative;
-    margin-right: 30px;
-    list-style: none;
-    font-size: 18px;
-    padding-top: 6px;
-    font-weight: 400;
-}
-
-/* nav hover style  */
-.menu-bar ul li::after {
-    content: '';
-    display: block;
-    background-color: #d70f64;
-    height: 2px;
-    width: 0%;
-    margin: auto;
-    transition: 0.5s;
-}
-
-.menu-bar ul li:hover::after {
-    width: 100%;
-}
-
-.menu-bar ul li a {
-    font-size: 20px;
-    text-decoration: none;
-    color: #d70f64;
-}
-
-/* nav bar ends  */
 /* content starts  */
 .sec1h1 {
     background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/bookback.jpg);
@@ -80,17 +31,24 @@ body {
     color: white;
     letter-spacing: 1px;
 }
+
+.donationbg {
+    background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/donationrequest.jpg);
+    background-position: bottom;
+}
+
 /* animation*/
-.sec1h1 h1{
+.sec1h1 h1 {
     background: url(../images/back.png);
     color: transparent;
     -webkit-text-stroke: 0.50px white;
     -webkit-background-clip: text;
     background-position: 0 0;
-    animation:back 20s linear infinite;
+    animation: back 20s linear infinite;
 }
-@keyframes back{
-    100%{
+
+@keyframes back {
+    100% {
         background-position: 2000px 0;
     }
 }
@@ -100,78 +58,86 @@ body {
     text-align: center;
     padding-top: 50px;
     padding-bottom: 50px;
-    animation-name: slide;
-    animation-duration: 2s;
+    /* animation-name: slide;
+    animation-duration: 2s; */
 }
+
 /* button  */
 .join {
     cursor: pointer;
-    background-color: #d70f64;
+    background-color: #6C3DD9;
     color: white;
-    font-weight: 500;
-    position: relative;
-    padding: 20px 85px;
+    font-weight: bold;
+    padding: 20px 65px;
     border: none;
     margin-top: 80px;
-animation-name: slide;
-animation-duration: 2s;
+
+    border-radius: 20px;
+    position: relative;
+    right: 0px;
+    bottom: 90px;
+    text-transform: lowercase;
 }
 
 .join:hover {
     background-color: #f2f2ff;
-    color: #d70f64;
-    border: 1px solid #d70f64;
-    padding: 18px 83px;
+    color: #6C3DD9;
+    /* border: 2px solid #6C3DD9 */
+
+
 }
+
+#cont {
+    cursor: pointer;
+    background-color: #6C3DD9;
+    color: white;
+    font-weight: bold;
+    padding: 20px 65px;
+    border: none;
+    text-transform: lowercase;
+
+    border-radius: 20px;
+}
+
+.pointer {
+    position: absolute;
+    right: 0px;
+    bottom: 680px;
+
+}
+
 /* drop down style  */
 .dropdown-menu {
     position: relative;
+    right: 250px;
     display: none;
-    width: 400px;
+    width: 350px;
 }
 
-.dropdown-menu1 {
-    display: none;
-    border: 2px solid #d70f64
+.dropdown1 {
+    margin-top: 75px;
+
+    height: 100px;
+    width: 500px;
 }
 
-.dropdown-menu1 ul li {
-    margin-bottom: 20px;
-    list-style: none;
-}
 
-.dropdown-menu1 ul li a {
-    text-decoration: none;
-    padding-left: 60px;
-    padding-top: 30px;
-}
 
-.dropdown1:hover .dropdown-menu1 {
-    background-color: aliceblue;
-    height: 80px;
-    width: 190px;
-    border: 2px solid #d70f64;
-    display: block;
-    position: relative;
-    left: 30%;
-    top: 10%;
-    padding-bottom: 15px;
-}
 
-.dropdown1:hover .dropdown-menu ul {
-    margin: 10px;
-}
 
-.dropdown1:hover .dropdown-menu ul li {
+
+/* .dropdown1:hover .dropdown-menu ul li {
     width: 120px;
-}
+    border: 2px solid green;
+} */
 
 .hos1 {
     display: flex;
     justify-content: space-evenly;
     padding-top: 40px;
     padding-bottom: 60px;
-animation-name: slide;
+    animation-name: slide;
+    height: 200px;
 }
 
 .hos1 img {
@@ -179,75 +145,33 @@ animation-name: slide;
     transition: 0.5s;
     animation-duration: 2s;
     animation-name: slide;
-}
-
-.hos1 img:hover {
     box-shadow: 5px 10px 18px #888888;
 }
 
 .hos1 p {
-    padding-top: 30px;
+    padding-top: 10px;
+    margin-left: 120px;
     width: 500px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Merienda', cursive;
+    font-size: 20px;
     font-weight: bold;
     animation-name: slide;
     animation-duration: 2s;
 }
-/* footer  */
-#footer {
-    position: relative;
+
+.contactholder {
+    width: 800px;
 }
 
-footer {
-    background-color: #d70f64;
-    padding-top: 50px;
+span {
+    color: #6C3DD9;
+    font-weight: bolder;
 }
 
-.foot1 {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 100px 0px 160px;
-    color: white;
-}
 
-.fb img {
-    padding-left: 15px;
-}
+.container {
+    position: absolute;
+    top: 50px;
+    right: 100px;
 
-.foot2 {
-    display: flex;
-    justify-content: space-between;
-    margin: 0px 100px 0px 160px;
-    color: white;
-}
-
-.foot2p p {
-    font-weight: 500;
-    padding-top: 20px;
-}
-
-.foot22p {
-    display: flex;
-}
-
-.foot22p p {
-    padding-left: 60px;
-    padding-top: 20px;
-    font-weight: 500;
-    margin-bottom: 50px;
-}
-
-.foot3 {
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    margin: 30px 100px 0px 160px;
-}
-
-.add p {
-    padding-left: 30px;
-}
-
-.mail p {
-    padding-left: 30px;
 }

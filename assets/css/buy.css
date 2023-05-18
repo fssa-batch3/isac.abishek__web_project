@@ -2,68 +2,33 @@
 * {
     margin: 0;
     padding: 0;
+    /* color: white; */
 }
 
 body {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Merienda', cursive;
+    background-image: url(../images/bodybg.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    
 }
 
-/* nav bar  */
-.menu-bar {
-    height: 120px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-}
 
-.menu-bar img {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 100px;
-}
 
-.menu-bar ul {
-    list-style: none;
-    display: flex;
-    margin-top: 0px;
-}
+   
+  
 
-.menu-bar ul li {
-    position: relative;
-    margin-right: 30px;
-    list-style: none;
-    font-size: 18px;
-    padding-top: 6px;
-    font-weight: 400;
-}
 
-.menu-bar ul li::after {
-    content: '';
-    display: block;
-    background-color: #d70f64;
-    height: 2px;
-    width: 0%;
-    margin: auto;
-    transition: 0.5s;
-}
-
-.menu-bar ul li:hover::after {
-    width: 100%;
-}
-
-.menu-bar ul li a {
-    font-size: 20px;
-    text-decoration: none;
-    color: #d70f64;
-}
 
 /* buy bg  */
 .gethelpbg {
-    background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/buybg.png);
+    background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/buybg.jpg);
     background-attachment: fixed;
     background-size: cover;
-    background-position: top;
+    background-position: center;
     background-repeat: no-repeat;
     min-height: 30vh;
     text-align: center;
@@ -73,6 +38,7 @@ body {
     font-weight: 400;
     color: white;
     letter-spacing: 1px;
+    
 }
 /* animation*/
 .gethelpbg h1{
@@ -103,40 +69,36 @@ body {
 
 .join {
     cursor: pointer;
-    background-color: #d70f64;
+    background-color: #6C3DD9;
     color: white;
     font-weight: 500;
     position: relative;
-    padding: 20px 85px;
+    padding: 20px 75px;
     border: none;
     margin-top: 40px;
 
 }
 
 .join:hover {
-    background-color: #f2f2ff;
-    color: #d70f64;
-    border: 1px solid #d70f64;
-    padding: 18px 83px;
+    background-color:#d4c1ff ;
+    color: #6C3DD9;
+    border: 1px solid #6C3DD9;
+    /* padding: 18px 83px; */
 }
 
 .products {
-    background-color: rgb(255, 239, 239);
+    background-color:#d4c1ff;
     height: 550px;
-    width: 400px;
+    width: 300px;
     text-align: center;
     border-radius: 20px;
     margin: 45px;
-    animation-name: new;
-    animation-duration: 4s;
+ 
 }
-@keyframes new{
-    0%{transform: translateX(1500px);opacity: 0;}
-    100%{transform: translateX(0px); opacity: 1;}
-    }
+
 .products img {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     margin-top: 50px;
     border-radius: 10px;
 }
@@ -155,52 +117,4 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
-/* footer  */
-.foot1 {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 100px 0px 160px;
-    color: white;
-}
 
-#footer {
-    background-color: #d70f64;
-}
-
-.fb img {
-    padding-left: 15px;
-}
-
-.foot2 {
-    display: flex;
-    justify-content: space-between;
-    margin: 0px 100px 0px 160px;
-    color: white;
-}
-
-.foot2p p {
-    font-weight: 500;
-    padding-top: 20px;
-}
-
-.foot22p {
-    display: flex;
-}
-
-.foot22p p {
-    padding-left: 60px;
-    padding-top: 20px;
-    font-weight: 500;
-    margin-bottom: 50px;
-}
-
-.foot3 {
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    margin: 30px 100px 0px 160px;
-}
-
-.foot3 p {
-    padding-left: 30px;
-}

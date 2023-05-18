@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login & Registration Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/signup.css">
+    <script src="../../assets/js/sweetalert.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- login and register switching      -->
+    <div id="popup">dont have account sign up here</div>
+
+    <div class="hero">
+
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+           
+
+                <button type="button" class="toggle-btn" id="LoginBtn">Log In</button>
+                
+                <button type="button" class="toggle-btn" id="RegisterBtn">Register</button>
+                
+            </div>
+            <!-- login contents -->
+
+            <form id="login" class="input-group">
+                <h1 class="vollogin">volunteer login</h1>
+
+                <input type="text" class="input-field" placeholder="User Email" id="logemail" required />
+                <input type="password" class="input-field" placeholder="Enter Password" id="logpassword" required />
+                  
+                <button type="submit" class="submit-btn">Log In</button>
+                <img src="../../assets/images/login2.jpg" width="400px" alt="img error">
+            </form>
+            <!-- registe cotent  -->
+            <form id="register" class="input-group">
+
+                <h2 class="volreg">Volunteer register</h2>
+
+                <input type="text" class="input-field" placeholder="User name" title="name must only in alphabets"
+                    required id="name" pattern="[a-zA-Z]+" />
+                <input type="text" class="input-field" placeholder="mobile number" pattern="[0-9]\d*" maxlength="10"
+                    required id="mobileno" title="mobile number must be 10 digit number" />
+                <input type="text" class="input-field" placeholder="aadhar number" pattern="[0-9]{12,12}+" required
+                    id="aadhar" title="aadhar number must be 12 digit number" />
+                <input type="text" class="input-field" placeholder="address" required id="address" />
+                <input type="email" class="input-field" placeholder="Enter Email" required id="email" />
+                <label for="volunteer"><input type="radio" name="user" id="volunteer" required> Volunteer</label>
+                <label for="user"><input type="radio" name="user" id="user">User</label><br>
+                <label for="accessblity"><input type="checkbox" name="accessblity" id="accessblity">Accessblity</label>
+                
+                <input type="password" class="input-field" placeholder="Enter Password"
+                    title="password must contain 8charcters with one symbol,one Capital and no spaces" required id="password"
+                     pattern="^(?=.*[A-Z])(?=.*[\W])(?!.*\s).{8,12}$"/>
+                <input type="password" class="input-field" placeholder="Enter Password" required id="confirmpassword" />
+                <input type="checkbox" name="password" id="showpassword">show password
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+
+
+        </div>
+    </div>
+    <!-- java script starts  -->
+</body>
+    <script>
+           
+        // script for login and register switching   
+
+        let x = document.getElementById("login");
+        let y = document.getElementById("register");
+        let z = document.getElementById("btn");
+
+        document.querySelector("#LoginBtn").addEventListener("click", function () {
+
+
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0";
+
+
+        })
+        document.querySelector("#RegisterBtn").addEventListener("click", function () {
+
+
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+
+           document.getElementById("email").value=" "
+          
+
+
+        })
+    </script>
+
+
+
+    <script>
+
+
+
+        //  prevent default 
+        let register_1 = document.getElementById("register");
+        register_1.addEventListener("submit", e => {
+            e.preventDefault();
+            isac();
+
+        })
+        //  signup to login move 
+        function move() {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0";
+
+        }
+        //   strating of setting user datas in local storage 
+        function isac() {
+            // getting values from user input field  
+            let Name = document.getElementById("name").value
+            let mobileno = document.getElementById("mobileno").value
+            let email = document.getElementById("email").value
+            let password = document.getElementById("password").value
+            let confirmpassword = document.getElementById("confirmpassword").value
+            let aadhar = document.getElementById("aadhar").value
+            let accessblity=document.getElementById("accessblity").checked
+
+            let role1 = document.getElementById("user").checked
+            let role2 = document.getElementById("volunteer").checked
+
+
+            let address = document.getElementById("address").value
+
+            // creating array or geting array from local storage 
+            let arr;
+            arr = JSON.parse(localStorage.getItem("user")) ?? []
+            // making the datas as object 
+            let user_data = {
+                "user_name": Name,
+                "password": password,
+                "mobileno": mobileno,
+                "user_email": email,
+                "address": address,
+                "aadhar": aadhar,
+                "user": role1,
+                "volunteer": role2,
+                "accessblity":accessblity
+            }
+
+            // checking the pasword are equal and the email alredy registred or not 
+            if (password == confirmpassword) {
+                let email_check = JSON.parse(localStorage.getItem("user"));
+                let checkusermail = 0;
+                if (email_check !== null) {
+
+                    email_check.find(function (e) {
+                        if (e["user_email"] == email) {
+                            return checkusermail = 1
+                        }
+
+                    })
+                }
+                if (checkusermail == 1) {
+                    swal("sorry!", "the email is already registered", "error");
+                }
+                else {
+                    arr.push(user_data)
+                    localStorage.setItem("user", JSON.stringify(arr))
+                    move();
+                }
+            }
+            else {
+                swal("sorry!", "new password and confirm password or not matchced", "error");
+            }
+        
+
+
+        }
+        const passwordCheckbox = document.getElementById('showpassword');
+        const passwordInput = document.getElementById('password');
+        const confirmpasswords=document.getElementById("confirmpassword")
+
+        passwordCheckbox.addEventListener('change', function () {
+            if (this.checked) {
+                passwordInput.type = 'text';
+                confirmpasswords.type = 'text';
+            } else {
+                
+                passwordInput.type = 'password';
+                confirmpasswords.type = 'password';
+            }
+        });
+
+
+        //   script for login page 
+
+        let login_1 = document.getElementById("login");
+        login_1.addEventListener("submit", e => {
+            e.preventDefault();
+            deva();
+        })
+        function deva() {
+
+            let userloginmail = (document.getElementById("logemail").value);
+            let userloginpassword = (document.getElementById("logpassword").value);
+
+            const userdatas = JSON.parse(localStorage.getItem("user"));
+            // const voldatas = JSON.parse(localStorage.getItem("volunteer"));
+            let check;
+
+            if (userdatas !== null) {
+                userdatas.find(element => {
+                    // checking the registerd email and password and login email and login password are same
+                    if (element["user_email"] == userloginmail && element["password"] == userloginpassword) {
+                        const userprofile_name = JSON.stringify(element);
+                        localStorage.setItem("userprofile_name", userloginmail)
+                        return check = 1
+
+                    }
+                })
+            }
+
+            if (check == 1) {
+
+                window.location.href = "../about/profile.html"
+            }
+            else {
+                swal("sorry!", "password wrong or email not exist", "error");
+            }
+
+
+        }
+    </script>
+    
+    <script src="../../assets/js/screenreader.js"></script>
+
+
+</html>
