@@ -61,7 +61,7 @@
       <input type="text" id="phone" placeholder="yourmobile" maxlength="10"
         title="mobile number must be 10 digit number">
       <textarea name="message" id="message" rows="4" placeholder="say something about you" required></textarea>
-      <button type="button" id="voice">tell you contact number and address by pressing shift </button>
+      <button type="button" id="voice">tell your contact number pressing shift </button>
       <button id="hear" type="button">Hear message</button>
 
       <button type="submit"  id="mail">send</button>
@@ -209,14 +209,14 @@
     //  message=> alert(message)
 
       );
-      let sent = new SpeechSynthesisUtterance("message sent to us You will redirect to index page we wil contact you soon");
+      let sent = new SpeechSynthesisUtterance("message sent to us... You will redirect to index page we wil contact you soon");
       //   console.log(iam);
       speechSynthesis.speak(sent);
       // setInterval(re, 10000);
   //     function re(){
 	// 	window.location.href="buyproducts.html"
 	// }
-	setInterval(re, 10000);
+	setInterval(re, 7000);
 
       console.log("mail");
 
